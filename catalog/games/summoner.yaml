@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "summoner"
+name: "Summoner"
+platform: win32
