@@ -125,7 +125,10 @@ export interface IgdbCreds {
 
 /** Credentials from IGDB_CLIENT_ID and IGDB_CLIENT_SECRET, if both are set. */
 export function igdbCredsFromEnv(env: NodeJS.ProcessEnv = process.env): IgdbCreds | null {
-  return env.IGDB_CLIENT_ID && env.IGDB_CLIENT_SECRET ? { clientId: env.IGDB_CLIENT_ID, clientSecret: env.IGDB_CLIENT_SECRET } : null;
+  // Trimmed: secrets pasted from the clipboard can carry a trailing newline.
+  const clientId = env.IGDB_CLIENT_ID?.trim();
+  const clientSecret = env.IGDB_CLIENT_SECRET?.trim();
+  return clientId && clientSecret ? { clientId, clientSecret } : null;
 }
 
 let igdbToken: { value: string; expires: number } | null = null;
@@ -141,7 +144,11 @@ export async function igdbSearch(
       `https://id.twitch.tv/oauth2/token?${new URLSearchParams({ client_id: creds.clientId, client_secret: creds.clientSecret, grant_type: "client_credentials" })}`,
       { method: "POST" },
     );
-    if (!res.ok) throw new Error(`IGDB auth failed: HTTP ${res.status}`);
+    if (!res.ok) {
+      // Twitch says why (e.g. "invalid client secret"); it never echoes the credentials.
+      const why = ((await res.json().catch(() => ({}))) as { message?: string }).message;
+      throw new Error(`IGDB auth failed: HTTP ${res.status}${why ? ` (${why})` : ""}`);
+    }
     const t = (await res.json()) as { access_token: string; expires_in: number };
     igdbToken = { value: t.access_token, expires: Date.now() + t.expires_in * 1000 };
   }
