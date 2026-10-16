@@ -18,6 +18,7 @@ export interface RepoFacts {
   treeTruncated: boolean;
   readme: string; // first 20 KB of the README, lowercased
   reportArtifacts: string[]; // *_report artifact names on the newest default-branch push run
+  reportFiles: Record<string, string>; // artifact name → the report's file name inside it, from the workflow's upload step
 }
 
 interface RepoResponse {
@@ -45,13 +46,14 @@ export async function fetchFacts(github: GitHub, fullName: string): Promise<Repo
       `/repos/${repo.full_name}/git/trees/${branch}?recursive=1`,
     ),
     github.getText(`/repos/${repo.full_name}/readme`, "application/vnd.github.raw+json", 20_000),
-    github.get<{ workflow_runs: { id: number; workflow_id: number }[] }>(
+    github.get<{ workflow_runs: { id: number; workflow_id: number; path?: string }[] }>(
       `/repos/${repo.full_name}/actions/runs?branch=${branch}&event=push&status=success&per_page=10`,
     ),
   ]);
   // The newest run is often a docs or lint workflow; look at up to three
   // different workflows' latest runs for report artifacts.
   let reportArtifacts: string[] = [];
+  let reportFiles: Record<string, string> = {};
   const seenWorkflows = new Set<number>();
   for (const run of runs?.workflow_runs ?? []) {
     if (seenWorkflows.has(run.workflow_id)) continue;
@@ -60,6 +62,15 @@ export async function fetchFacts(github: GitHub, fullName: string): Promise<Repo
       `/repos/${repo.full_name}/actions/runs/${run.id}/artifacts?per_page=100`,
     );
     reportArtifacts = (artifacts?.artifacts ?? []).map((a) => a.name).filter((n) => /report/i.test(n));
+    if (reportArtifacts.length && run.path) {
+      // One read of the workflow file says which file each report artifact holds (report.json, progress.json, ...).
+      const workflow = await github.getText(
+        `/repos/${repo.full_name}/contents/${run.path.split("/").map(encodeURIComponent).join("/")}?ref=${branch}`,
+        "application/vnd.github.raw+json",
+        200_000,
+      );
+      reportFiles = uploadedReportFiles(workflow ?? "", reportArtifacts);
+    }
     if (reportArtifacts.length || seenWorkflows.size >= 3) break;
   }
   return {
@@ -79,8 +90,53 @@ export async function fetchFacts(github: GitHub, fullName: string): Promise<Repo
     treeTruncated: tree?.truncated ?? false,
     readme: (readme ?? "").toLowerCase(),
     reportArtifacts,
+    reportFiles,
   };
 }
+
+/**
+ * Which file each artifact holds, from a workflow's actions/upload-artifact steps:
+ * `name: ${{ matrix.id }}_report` with `path: ./build/progress.json` → { SLUS_010.13_report: "progress.json" }.
+ * A single uploaded file lands at the artifact's root under its own name. Steps that
+ * upload a folder, a glob or several paths are skipped.
+ */
+export function uploadedReportFiles(workflow: string, artifacts: string[]): Record<string, string> {
+  const out: Record<string, string> = {};
+  const lines = workflow.split(/\r?\n/);
+  for (let i = 0; i < lines.length; i++) {
+    if (!/uses:\s*["']?actions\/upload-artifact@/.test(lines[i]!)) continue;
+    // Look backwards to the step's `- ` and forwards to its end for `name:` and `path:` under `with:`.
+    let name: string | null = null;
+    let path: string | null = null;
+    let start = i;
+    while (start > 0 && !/^\s*-\s/.test(lines[start]!)) start--;
+    const stepIndent = indentOf(lines[start]!);
+    let end = i + 1;
+    while (end < lines.length && (lines[end]!.trim() === "" || indentOf(lines[end]!) > stepIndent)) end++;
+    let withIndent = -1;
+    for (let j = start; j < end; j++) {
+      const line = lines[j]!;
+      if (line.trim() === "") continue;
+      if (withIndent >= 0 && indentOf(line) <= withIndent) withIndent = -1;
+      if (/^\s*(-\s*)?with:\s*$/.test(line)) withIndent = indentOf(line);
+      else if (withIndent >= 0) {
+        const m = /^\s*(name|path):\s*(.*?)\s*$/.exec(line);
+        if (m?.[1] === "name") name = unquote(m[2]!);
+        if (m?.[1] === "path") path = unquote(m[2]!);
+      }
+    }
+    if (!name || !path || /^[|>]/.test(path) || /[*?\n]/.test(path)) continue;
+    const file = path.replace(/\/+$/, "").split("/").pop()!;
+    if (!/\.json$/i.test(file)) continue;
+    const pattern = new RegExp(`^${name.split(/\$\{\{[^}]*\}\}/).map(escapeRe).join(".+")}$`);
+    for (const a of artifacts) if (pattern.test(a) && !(a in out)) out[a] = file;
+  }
+  return out;
+}
+
+const indentOf = (line: string) => /^(\s*)/.exec(line)![1]!.length;
+const unquote = (s: string) => s.replace(/\s+#.*$/, "").replace(/^(["'])(.*)\1$/, "$2");
+const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 /** owner/name from a GitHub URL, or null for anything else. */
 export function repoFromUrl(url: string): string | null {
