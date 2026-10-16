@@ -194,7 +194,8 @@
  "alebello7276/xkrnl-decomp": {
   "repo": "AleBello7276/xkrnl-decomp",
   "action": "review",
-  "reason": "game not confirmed"
+  "reason": "game not confirmed",
+  "issue": 10
  },
  "alice-2010/decomp": {
   "repo": "Alice-2010/Decomp",
@@ -444,7 +445,8 @@
  "g-guthrie/topspin4-decomp": {
   "repo": "g-guthrie/topspin4-decomp",
   "action": "review",
-  "reason": "game not confirmed"
+  "reason": "game not confirmed",
+  "issue": 11
  },
  "iirg4x/marioparty6": {
   "repo": "iirg4x/marioparty6",
@@ -1304,7 +1306,7 @@
  "kooshnoo/pokemon-rumble": {
   "repo": "KooShnoo/pokemon-rumble",
   "action": "review",
-  "reason": "game not confirmed (description says \"Wii game Pok\u00e9mon Rumble\")"
+  "reason": "game not confirmed (description says \"Wii game Pokémon Rumble\")"
  },
  "lemiur/avp2-reconstructed": {
   "repo": "lemiur/AVP2-Reconstructed",
@@ -1519,7 +1521,7 @@
  "mparisi20/paradise": {
   "repo": "mparisi20/paradise",
   "action": "review",
-  "reason": "game not confirmed (description says \"Viva Pi\u00f1ata\")"
+  "reason": "game not confirmed (description says \"Viva Piñata\")"
  },
  "open-ribbon/open-ribbon": {
   "repo": "open-ribbon/open-ribbon",
@@ -3212,5 +3214,15 @@
   "repo": "troikoss/nfsu2-re",
   "action": "hold",
   "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "thegh0stship/battletanx": {
+  "repo": "TheGh0stShip/BattleTanx",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "battletanx",
+  "game": "BattleTanx",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 1
  }
 }
