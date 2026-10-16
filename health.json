@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_at": "2026-10-16T14:57:14.291Z",
+  "updated_at": "2026-10-16T14:57:40.699Z",
   "targets": {
     "1080/japan-usa-en-ja": {
       "run_id": 38796963214,
@@ -78,6 +78,14 @@
       "run_id": 38786417252,
       "last_attempt_at": "2026-10-16T13:35:22.296Z",
       "last_success_at": "2026-10-16T13:35:22.296Z",
+      "consecutive_failures": 0,
+      "last_error": null,
+      "anomaly": null
+    },
+    "battletanx/usa": {
+      "run_id": 38857200956,
+      "last_attempt_at": "2026-10-16T14:57:39.274Z",
+      "last_success_at": "2026-10-16T14:57:39.274Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
@@ -1491,6 +1499,10 @@
       "default_branch_checked_at": "2026-10-16T13:12:01.174Z",
       "last_commit_at": "2026-10-14T04:50:57Z",
       "commits_checked_at": "2026-10-16T13:17:08.493Z"
+    },
+    "battletanx": {
+      "default_branch": "main",
+      "default_branch_checked_at": "2026-10-16T14:57:39.771Z"
     },
     "battletanx-global-assault": {
       "default_branch": "main",
