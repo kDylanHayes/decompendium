@@ -91,7 +91,11 @@ export function identify(e: Evidence, index: GameIndex): Identification {
 /** A title guess from a description like "Decompilation of Rock Band 3 (Wii)". */
 export function titleFromDescription(description: string): string | null {
   const m = /(?:decompilation|disassembly|decomp|reconstruction)(?:\s+project)?\s+(?:of|for)\s+(?:the\s+)?(.+?)(?:\s*[([,;]|\.(?:\s|$)|\s+(?:for|on|using|by|brought)\b|$)/i.exec(description);
-  return m ? m[1]!.trim() : null;
+  if (m) return m[1]!.trim();
+  // "Clean-room Top Spin 4 decompilation and ...", "Dr. Mario 64 decomp"
+  const before = /^(?:an?\s+|the\s+)?(?:(?:matching|byte-matching|clean-room|wip|work-in-progress|open-source|unofficial|full)\s+)*(.+?)\s+(?:decompilation|decomp|disassembly)\b/i.exec(description);
+  const t = before?.[1]?.trim();
+  return t && t.split(/\s+/).length <= 8 ? t : null;
 }
 
 /**
@@ -133,11 +137,15 @@ export function igdbCredsFromEnv(env: NodeJS.ProcessEnv = process.env): IgdbCred
 
 let igdbToken: { value: string; expires: number } | null = null;
 
-/** Search IGDB for games by title. Returns up to five candidates with their platforms and other names. */
+/**
+ * Search IGDB for games by title: its fuzzy search (top 20), or with `exact`, a
+ * case-insensitive name match. Returns candidates with their platforms and other names.
+ */
 export async function igdbSearch(
   title: string,
   creds: IgdbCreds,
   fetch: typeof globalThis.fetch = globalThis.fetch,
+  exact = false,
 ): Promise<{ name: string; platforms: string[]; alt: string[] }[]> {
   if (!igdbToken || igdbToken.expires < Date.now() + 60_000) {
     const res = await fetch(
@@ -155,7 +163,9 @@ export async function igdbSearch(
   const res = await fetch("https://api.igdb.com/v4/games", {
     method: "POST",
     headers: { "Client-ID": creds.clientId, Authorization: `Bearer ${igdbToken.value}`, Accept: "application/json" },
-    body: `search "${title.replace(/["\\]/g, "")}"; fields name,alternative_names.name,platforms.name; limit 5;`,
+    body: exact
+      ? `fields name,alternative_names.name,platforms.name; where name ~ "${title.replace(/["\\]/g, "")}"; limit 20;`
+      : `search "${title.replace(/["\\]/g, "")}"; fields name,alternative_names.name,platforms.name; limit 20;`,
   });
   if (!res.ok) throw new Error(`IGDB search failed: HTTP ${res.status}`);
   const games = (await res.json()) as { name: string; platforms?: { name: string }[]; alternative_names?: { name: string }[] }[];
@@ -171,24 +181,32 @@ export async function identifyByIgdb(
   hint: string, // repo name, description and README start, for platform words
   creds: IgdbCreds,
   fetch: typeof globalThis.fetch = globalThis.fetch,
-): Promise<Identification | null> {
-  const results = await igdbSearch(title, creds, fetch);
+): Promise<{ id: Identification | null; note: string }> {
   // Spaces don't count: "topspin 4" matches "Top Spin 4".
   const tight = (t: string) => strip(t).replace(/ /g, "");
   const key = tight(title);
-  const match = results.find((g) => tight(g.name) === key || g.alt.some((a) => tight(a) === key));
-  if (!match) return null;
+  const isMatch = (g: { name: string; alt: string[] }) => tight(g.name) === key || g.alt.some((a) => tight(a) === key);
+  let results = await igdbSearch(title, creds, fetch);
+  let match = results.find(isMatch);
+  if (!match) {
+    // The fuzzy search can rank an exact title below longer ones ("Summoners War" above "Summoner").
+    const exact = await igdbSearch(title, creds, fetch, true);
+    match = exact.find(isMatch);
+    if (!match) results = [...results, ...exact];
+  }
+  if (!match) {
+    const seen = [...new Set(results.map((g) => g.name))].slice(0, 5);
+    return { id: null, note: `no IGDB title matches "${title}"${seen.length ? ` (closest: ${seen.join(", ")})` : ""}` };
+  }
   const platforms = [...new Set(match.platforms.map((p) => IGDB_PLATFORMS[p]).filter((p): p is string => !!p))];
   const mentioned = platforms.filter((p) => new RegExp(`\\b(${platformWords(p).join("|")})\\b`, "i").test(hint));
   const platform = platforms.length === 1 ? platforms[0]! : mentioned.length === 1 ? mentioned[0]! : null;
-  if (!platform) return null;
+  if (!platform) {
+    return { id: null, note: `IGDB has "${match.name}" on ${match.platforms.join(", ") || "no listed platform"}, and the repo doesn't say which` };
+  }
   return {
-    status: "identified",
-    title: match.name,
-    platform,
-    releases: [],
-    nonGame: null,
-    aliases: tight(match.name) === key ? [] : [title],
+    id: { status: "identified", title: match.name, platform, releases: [], nonGame: null, aliases: tight(match.name) === key ? [] : [title] },
+    note: `IGDB: "${match.name}"`,
   };
 }
 

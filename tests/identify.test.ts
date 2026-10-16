@@ -138,6 +138,8 @@ describe("evidence", () => {
     assert.equal(titleFromDescription("A decompilation of Super Smash Bros Melee brought to you by a bunch of clever folks"), "Super Smash Bros Melee");
     assert.equal(titleFromDescription("Matching decomp for Rock Band 3 using dtk"), "Rock Band 3");
     assert.equal(titleFromDescription("Tools and notes"), null);
+    assert.equal(titleFromDescription("Clean-room Top Spin 4 decompilation and source reconstruction"), "Top Spin 4");
+    assert.equal(titleFromDescription("Dr. Mario 64 decomp"), "Dr. Mario 64");
     assert.equal(titleFromRepoName("topspin4-decomp"), "topspin 4");
     assert.equal(titleFromRepoName("PartnersInTimeDECOMP"), "Partners In Time");
     assert.equal(titleFromRepoName("Turok-Rage-Wars-Decomp"), "Turok Rage Wars");
@@ -152,16 +154,18 @@ describe("evidence", () => {
           : new Response(JSON.stringify(games))) as typeof fetch;
     const creds = { clientId: "id", clientSecret: "secret" };
     const rb3 = [{ name: "Rock Band 3", platforms: [{ name: "Wii" }, { name: "Xbox 360" }, { name: "PlayStation 3" }] }];
-    const r = await identifyByIgdb("Rock Band 3", "decomp of rock band 3 wii using dtk", creds, fake(rb3));
+    const r = (await identifyByIgdb("Rock Band 3", "decomp of rock band 3 wii using dtk", creds, fake(rb3))).id;
     assert.equal(r?.title, "Rock Band 3");
     assert.equal(r?.platform, "wii");
-    // Several platforms and none named in the repo: not confirmed.
-    assert.equal(await identifyByIgdb("Rock Band 3", "matching decomp", creds, fake(rb3)), null);
+    // Several platforms and none named in the repo: not confirmed, and the note says why.
+    const unsure = await identifyByIgdb("Rock Band 3", "matching decomp", creds, fake(rb3));
+    assert.equal(unsure.id, null);
+    assert.match(unsure.note, /doesn't say which/);
     // A near title is not a match.
-    assert.equal(await identifyByIgdb("Rock Band", "wii", creds, fake(rb3)), null);
+    assert.equal((await identifyByIgdb("Rock Band", "wii", creds, fake(rb3))).id, null);
     const alt = [{ name: "Chulip", alternative_names: [{ name: "Chu-Ri-Pu" }], platforms: [{ name: "PlayStation 2" }] }];
-    assert.equal((await identifyByIgdb("Chu-Ri-Pu", "", creds, fake(alt)))?.title, "Chulip");
+    assert.equal((await identifyByIgdb("Chu-Ri-Pu", "", creds, fake(alt))).id?.title, "Chulip");
     const ts4 = [{ name: "Top Spin 4", platforms: [{ name: "Xbox 360" }] }];
-    assert.equal((await identifyByIgdb("topspin 4", "", creds, fake(ts4)))?.title, "Top Spin 4");
+    assert.equal((await identifyByIgdb("topspin 4", "", creds, fake(ts4))).id?.title, "Top Spin 4");
   });
 });

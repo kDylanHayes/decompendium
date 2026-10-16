@@ -106,14 +106,16 @@ export async function checkSubmission(sub: Submission, ctx: CheckContext): Promi
     const guesses = [sub.game, titleFromDescription(facts.description), titleFromRepoName(facts.fullName.split("/")[1]!)]
       .filter((g): g is string => !!g)
       .filter((g, i, all) => all.findIndex((x) => x.toLowerCase() === g.toLowerCase()) === i);
+    const igdbNotes: string[] = [];
     for (const guess of !id.title && creds ? guesses : []) {
       if (!creds) break;
       try {
         const viaIgdb = await identifyByIgdb(guess, `${facts.fullName} ${facts.description} ${facts.readme.slice(0, 3000)}`, creds);
-        if (viaIgdb) {
-          id = viaIgdb;
+        if (viaIgdb.id) {
+          id = viaIgdb.id;
           break;
         }
+        igdbNotes.push(viaIgdb.note);
       } catch (err) {
         add("info", `IGDB lookup failed: ${(err as Error).message}`);
         break;
@@ -126,8 +128,10 @@ export async function checkSubmission(sub: Submission, ctx: CheckContext): Promi
       add("pass", `Game: **${id.title}** on ${platformName(id.platform!)}, from ${where}.`);
       if (sub.platform && sub.platform !== id.platform) add("warn", `The form says ${platformName(sub.platform)}, but the evidence says ${platformName(id.platform!)}.`);
     } else if (sub.game) {
+      if (igdbNotes.length) add("info", `IGDB: ${igdbNotes.join("; ")}.`);
       add("warn", `Couldn't confirm the game from ROM hashes, product codes or IGDB, so the game name from the form ("${sub.game}") will be used. A maintainer will check it's a game.`);
     } else {
+      if (igdbNotes.length) add("info", `IGDB: ${igdbNotes.join("; ")}.`);
       add("fail", "Couldn't identify the game, and the form doesn't name it: edit the issue and fill in **Game** (and **Platform**), and the bot checks it again.");
     }
   } else add("info", "Game identification is unavailable in this run.");
