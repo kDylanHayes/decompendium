@@ -45,7 +45,7 @@ Ingestion runs every 6 hours and writes to the `data` branch:
 
 ```
 snapshots/<project>/<target>.jsonl  append-only progress history
-reports/<project>/<target>.json     latest full report (if 5 MB or less)
+reports/<project>/<target>.json     latest full report (off for now; see config.yaml)
 health.json                         fetch state, errors and repo activity per target
 ```
 

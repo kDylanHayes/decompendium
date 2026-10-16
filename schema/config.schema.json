@@ -42,7 +42,7 @@
       "properties": {
         "report_download_bytes": { "type": "integer", "minimum": 1 },
         "report_read_bytes": { "type": "integer", "minimum": 1 },
-        "report_store_bytes": { "type": "integer", "minimum": 1 },
+        "report_store_bytes": { "type": "integer", "minimum": 0 },
         "fetch_timeout_seconds": { "type": "integer", "minimum": 1 }
       }
     },
