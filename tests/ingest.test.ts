@@ -55,6 +55,21 @@ describe("parseObjdiff", () => {
     assert.deepEqual(legacy.measures.linked, { matched: 250, total: 1000 });
   });
 
+  it("reads decomp.dev's per-project JSON, with its commit", () => {
+    const body = {
+      owner: "zeldaret",
+      repo: "tp",
+      commit: { sha: "c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0", timestamp: "2026-06-23T19:52:55Z" },
+      measures: { fuzzy_match_percent: 100, total_code: 100, matched_code: 100, total_functions: 5, matched_functions: 5, complete_code: 87 },
+      report_categories: [{ id: "dol", name: "DOL", measures: { total_code: 40, matched_code: 40, complete_code: 40 } }],
+    };
+    const parsed = parseObjdiff(json(body));
+    assert.deepEqual(parsed.measures.linked, { matched: 87, total: 100 });
+    assert.equal(parsed.commit, "c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0");
+    assert.equal(parsed.commit_at, "2026-06-23T19:52:55Z");
+    assert.equal(parsed.categories[0]!.id, "dol");
+  });
+
   it("rejects newer report versions, junk and bad numbers", () => {
     assert.throws(() => parseObjdiff(json({ version: 3, measures: {} })), /version 3 is newer than supported/);
     assert.throws(() => parseObjdiff(new TextEncoder().encode("{nope")), IngestError);
@@ -131,22 +146,29 @@ function run(id: number, extra: Record<string, unknown> = {}) {
   };
 }
 
-/** GitHub API routes for the fixture's example-quest/us target. */
-function githubRoutes(state: { runs: object[]; artifactName?: string }): Route[] {
+/** GitHub API routes for the fixture's example-quest/us target: each run in `runs` produced one artifact. */
+function githubRoutes(state: { runs: any[]; artifactName?: string }): Route[] {
+  const name = () => state.artifactName ?? "us_report";
   return [
     (u) => (u.toString() === API ? Response.json({ default_branch: "main" }) : undefined),
     (u) => {
-      if (u.origin + u.pathname !== `${API}/actions/workflows/build.yml/runs`) return undefined;
-      assert.equal(u.searchParams.get("branch"), "main");
-      assert.equal(u.searchParams.get("event"), "push");
-      assert.equal(u.searchParams.get("status"), "success");
-      return Response.json({ workflow_runs: state.runs });
+      if (u.origin + u.pathname !== `${API}/actions/artifacts`) return undefined;
+      assert.equal(u.searchParams.get("name"), "us_report");
+      return Response.json({
+        artifacts: state.runs.map((r) => ({
+          id: r.id * 10,
+          name: name(),
+          size_in_bytes: reportZip.length,
+          expired: false,
+          workflow_run: { id: r.id, head_branch: r.head_branch, head_sha: r.head_sha },
+        })),
+      });
     },
     (u) => {
-      const m = /\/actions\/runs\/(\d+)\/artifacts$/.exec(u.pathname);
+      const m = /\/actions\/runs\/(\d+)$/.exec(u.pathname);
       if (!m) return undefined;
-      const name = state.artifactName ?? "us_report";
-      return Response.json({ artifacts: [{ id: Number(m[1]) * 10, name, size_in_bytes: reportZip.length, expired: false }] });
+      const r = state.runs.find((x) => x.id === Number(m[1]));
+      return r ? Response.json({ conclusion: "success", path: ".github/workflows/build.yml", ...r }) : new Response("{}", { status: 404 });
     },
     (u) => (/\/actions\/artifacts\/\d+\/zip$/.test(u.pathname) ? new Response(reportZip) : undefined),
     (u) =>
@@ -259,6 +281,25 @@ describe("runIngest", () => {
     const big = urlRoute({ etag: '"x"', body: fixture("progress/valid.json") }); // > 100 bytes
     const r2 = await runIngest({ root, dataDir: tempData(), fetch: mockFetch([big]).fetch, only: ["example-quest/jp"] });
     assert.match(r2.results[0]!.detail!, /exceeds the 100-byte limit/);
+  });
+
+  it("never uses an artifact from a pull-request run, even one on a branch named main", async () => {
+    const root = copyFixture();
+    const gh = { runs: [run(300, { event: "pull_request" }), run(100)] }; // 300: a fork PR from its own "main"
+    const { fetch } = mockFetch(githubRoutes(gh));
+    const data = tempData();
+    await runIngest({ root, dataDir: data, fetch, only: ["example-quest/us"] });
+    assert.equal(new DataStore(data).lastSnapshot("example-quest", "us")!.run_id, 100);
+  });
+
+  it("finds the build's report even when newer runs of other workflows have none", async () => {
+    // Lint runs on every push don't produce artifacts, so they never appear in the by-name listing.
+    const root = copyFixture();
+    const { fetch, calls } = mockFetch(githubRoutes({ runs: [run(90)] }));
+    const data = tempData();
+    const result = await runIngest({ root, dataDir: data, fetch, only: ["example-quest/us"] });
+    assert.equal(result.results[0]!.outcome, "new-snapshot");
+    assert.ok(calls.some((c) => c.includes("/actions/artifacts?name=us_report")));
   });
 
   it("reports a missing file inside the artifact", async () => {

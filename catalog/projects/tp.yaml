@@ -14,4 +14,6 @@ targets:
     hash: { sha1: "4997d93b9692620c40e90374a0f1dbf0e4889395" }
     progress:
       kind: objdiff
-      source: { type: github-artifact, workflow: build.yml, artifact: GZ2E01_report, path: report.json }
+      # The project has not pushed to main since June 2026, so its CI artifacts have
+      # expired; decomp.dev keeps the report from that last main build.
+      source: { type: url, url: "https://decomp.dev/zeldaret/tp.json?version=GZ2E01" }

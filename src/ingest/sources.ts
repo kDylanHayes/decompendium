@@ -99,12 +99,18 @@ export function githubRepo(url: string): { owner: string; name: string } {
   return { owner, name: name.replace(/\.git$/, "") };
 }
 
-/** How many runs back to look when the newest run has no usable artifact. */
-const RUN_FALLBACK = 5;
+/** How many of the newest artifacts with the right name to consider. */
+const ARTIFACT_LOOKBACK = 30;
+
+interface NamedArtifact extends Artifact {
+  workflow_run?: { id: number; head_branch: string; head_sha: string } | null;
+}
 
 /**
- * The newest successful push run on the default branch that has the named
- * artifact. Runs from pull requests, forks or other branches are never used:
+ * The newest unexpired artifact with the configured name that a successful
+ * push run on the default branch produced. Artifacts are looked up by name,
+ * so other workflows (lint, docs) running on every push don't hide the build's
+ * report. Runs from pull requests, forks or other branches are never used:
  * anyone can make those produce arbitrary reports.
  */
 async function fetchArtifact(
@@ -114,25 +120,21 @@ async function fetchArtifact(
   const { owner, name } = githubRepo(ctx.repo);
   const branch = await ctx.defaultBranch();
   const base = `/repos/${owner}/${name}/actions`;
-  const runsPath = source.workflow ? `${base}/workflows/${encodeURIComponent(source.workflow)}/runs` : `${base}/runs`;
-  const query = new URLSearchParams({ branch, event: "push", status: "success", per_page: "20" });
-  const page = await ctx.github.get<{ workflow_runs: WorkflowRun[] }>(`${runsPath}?${query}`);
-  if (!page) throw new IngestError(source.workflow ? `workflow ${source.workflow} not found` : "repository not found");
-
   const lastRun = ctx.previous.run_id ?? 0;
-  const runs = page.workflow_runs
-    // The API already filters these; checking again keeps the guarantee local.
-    .filter((r) => r.event === "push" && r.head_branch === branch && r.id > lastRun)
-    .sort((a, b) => b.id - a.id)
-    .slice(0, RUN_FALLBACK);
-  if (runs.length === 0) return { status: "not-modified" };
 
-  for (const run of runs) {
-    const list = await ctx.github.get<{ artifacts: Artifact[] }>(
-      `${base}/runs/${run.id}/artifacts?name=${encodeURIComponent(source.artifact)}`,
-    );
-    const artifact = list?.artifacts.find((a) => a.name === source.artifact && !a.expired);
-    if (!artifact) continue;
+  const query = new URLSearchParams({ name: source.artifact, per_page: String(ARTIFACT_LOOKBACK) });
+  const page = await ctx.github.get<{ artifacts: NamedArtifact[] }>(`${base}/artifacts?${query}`);
+  if (!page) throw new IngestError("repository not found");
+  const candidates = page.artifacts
+    .filter((a) => a.name === source.artifact && !a.expired && a.workflow_run?.head_branch === branch)
+    .sort((a, b) => (b.workflow_run!.id - a.workflow_run!.id) || b.id - a.id);
+  if (candidates[0] && candidates[0].workflow_run!.id <= lastRun) return { status: "not-modified" };
+
+  for (const artifact of candidates.filter((a) => a.workflow_run!.id > lastRun).slice(0, 5)) {
+    // Confirm what produced it: a successful push to the default branch (and the configured workflow, if any).
+    const run = await ctx.github.get<WorkflowRun & { conclusion: string | null; path?: string }>(`${base}/runs/${artifact.workflow_run!.id}`);
+    if (!run || run.event !== "push" || run.head_branch !== branch || run.conclusion !== "success") continue;
+    if (source.workflow && run.path && !run.path.endsWith(`/${source.workflow}`)) continue;
     if (artifact.size_in_bytes > ctx.limits.report_download_bytes) {
       throw new IngestError(`artifact is ${artifact.size_in_bytes} bytes, over the download limit`);
     }
@@ -147,11 +149,12 @@ async function fetchArtifact(
       state: { run_id: run.id },
     };
   }
-  // Newer runs that skipped the report (docs-only pushes, expired artifacts) are
-  // not a failure once something has been ingested: the last snapshot stands.
+  // Nothing newer that qualifies: once something has been ingested, the last snapshot stands.
   if (lastRun > 0) return { status: "not-modified" };
   throw new IngestError(
-    `no unexpired artifact "${source.artifact}" in the last ${runs.length} successful push run(s) on ${branch}`,
+    candidates.length
+      ? `no artifact "${source.artifact}" from a successful push run on ${branch}`
+      : `no unexpired artifact "${source.artifact}" on ${branch} (GitHub keeps artifacts for 90 days at most)`,
   );
 }
 

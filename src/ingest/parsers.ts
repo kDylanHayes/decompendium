@@ -94,7 +94,10 @@ export function parseObjdiff(bytes: Uint8Array): Parsed {
     return { measures, categories: [], format };
   }
 
-  const version = int(report.version, "/version");
+  // decomp.dev's per-project JSON carries objdiff measures without a version,
+  // plus the commit they came from and a report_categories list.
+  const decompDev = typeof report.commit === "object" && report.commit !== null && "sha" in report.commit;
+  const version = decompDev ? OBJDIFF_REPORT_VERSION : int(report.version, "/version");
   if (version > OBJDIFF_REPORT_VERSION) {
     throw new IngestError(
       `objdiff report version ${version} is newer than supported (${OBJDIFF_REPORT_VERSION}); Decompendium needs an update`,
@@ -103,15 +106,22 @@ export function parseObjdiff(bytes: Uint8Array): Parsed {
   const measures = objdiffMeasures(report.measures, "/measures", version >= 1);
   if (version === 0) measures.linked = linkedFromUnits(units, measures.code.total, false);
 
+  const categoryList = Array.isArray(report.categories) ? report.categories : Array.isArray(report.report_categories) ? report.report_categories : null;
   const categories: Category[] =
-    version >= 1 && Array.isArray(report.categories)
-      ? report.categories.map((c: any, i: number) => ({
+    version >= 1 && categoryList
+      ? categoryList.map((c: any, i: number) => ({
           id: String(c?.id ?? ""),
           name: String(c?.name || c?.id || ""),
           ...objdiffMeasures(c?.measures, `/categories/${i}/measures`, true),
         }))
       : [];
-  return { measures, categories, format };
+  return {
+    measures,
+    categories,
+    format,
+    ...(decompDev && /^[0-9a-f]{7,64}$/.test(String(report.commit.sha)) ? { commit: String(report.commit.sha) } : {}),
+    ...(decompDev && typeof report.commit.timestamp === "string" ? { commit_at: report.commit.timestamp } : {}),
+  };
 }
 
 /** Parse a Decompendium progress file (schema/progress.schema.json). */
