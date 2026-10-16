@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "dds"
+name: "Shin Megami Tensei: Digital Devil Saga decompilation"
+game: "shin-megami-tensei-digital-devil-saga"
+repo: https://github.com/Megami-Decomps/dds-decomp
+description: "Matching decompilation of Shin Megami Tensei: Digital Devil Saga."
+owners: [Megami-Decomps]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "battle-tables"
+    label: "battle_tables"
+    hash: { sha1: "2f924658f327b2fa285a0af24f371b368457f2b2" }
+    progress:
+      kind: none
+  - id: "event-scripts"
+    label: "event_scripts"
+    hash: { sha1: "eb145556a6e2e1cca61f5f5f422dca524f1248ac" }
+    progress:
+      kind: none
+  - id: "field-amb"
+    label: "field_amb"
+    hash: { sha1: "516865f65e9fa183b0975fec950d9781baf818e0" }
+    progress:
+      kind: none
+  - id: "field-fld1"
+    label: "field_fld1"
+    hash: { sha1: "f4ade60ad1620927f43f60eb2be55a2272ac2cc8" }
+    progress:
+      kind: none
+  - id: "field-fld2"
+    label: "field_fld2"
+    hash: { sha1: "f208ea90d62d0f5cdcc2a0ce14fd1868c8970042" }
+    progress:
+      kind: none
+  - id: "field-inf"
+    label: "field_inf"
+    hash: { sha1: "f08ff0cc77bd94abaee687500f86e5e98b5bd877" }
+    progress:
+      kind: none
+  - id: "field-lb"
+    label: "field_lb"
+    hash: { sha1: "d830c39d3f260e4b0078f6441e866c12a40c6cdb" }
+    progress:
+      kind: none
+  - id: "field-npl"
+    label: "field_npl"
+    hash: { sha1: "c7157fb16fde3b51dad24280f3818a44e39c87d5" }
+    progress:
+      kind: none
