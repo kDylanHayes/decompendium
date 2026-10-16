@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: pokemon-crystal
+name: "Pokémon Crystal"
+platform: gbc

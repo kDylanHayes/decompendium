@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: pokemon-red-and-blue
+name: "Pokémon Red and Blue"
+aliases: ["Pokémon Red", "Pokémon Blue"]
+platform: gb
