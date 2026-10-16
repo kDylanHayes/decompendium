@@ -4,7 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import { AI_POLICY_LABELS, exactTime, number, platformName, relativeTime, shortDate, STATUS_LABELS } from "../../../src/site/format.ts";
 import { percent, type ProjectView } from "../../../src/site/model.ts";
 import { BADGE_MEASURES } from "../../../src/site/api.ts";
-import { apiUrls, issueUrl, site, url } from "../../lib/data.ts";
+import { apiUrls, formUrl, site, url } from "../../lib/data.ts";
 
 export function getStaticPaths() {
   return site().projects.map((project) => ({ params: { id: project.id }, props: { project } }));
@@ -14,25 +14,14 @@ const { project } = Astro.props as { project: ProjectView };
 const now = new Date(site().builtAt);
 const ratio = (c: { matched: number; total: number }, unit: string) => `${number(c.matched)} / ${number(c.total)} ${unit}`;
 
-const optOut = issueUrl(
-  `Opt out: ${project.id}`,
-  [
-    `Project: ${project.name} (${project.repo})`,
-    "",
-    "I maintain this project and would like to (keep one):",
-    "- [ ] remove it from Decompendium entirely",
-    "- [ ] keep it on its game page but hide it from the home page",
-    "",
-    "Removal requests are carried out within 48 hours, no questions asked.",
-  ].join("\n"),
-);
+const optOut = formUrl("opt-out.yml", { title: `Opt out: ${project.id}`, project: project.id });
+const correction = formUrl("change-project.yml", { title: `Change: ${project.id}`, project: project.id });
 const urls = apiUrls();
 const withData = project.targets.filter((t) => t.kind !== "none");
 const snippet = (targetId: string, label: string) =>
   BADGE_MEASURES.map(
     (m) => `[![${label} ${m}](${urls.badge(project.id, targetId, m)})](${urls.project(project.id)})`,
   ).join("\n");
-const correction = issueUrl(`Correction: ${project.id}`, `Project: ${project.name}\n\nWhat should change:\n`);
 ---
 
 <Layout title={project.name} description={project.description}>

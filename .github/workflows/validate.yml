@@ -5,6 +5,8 @@ on:
     branches: [main]
   push:
     branches: [main]
+  # Lets the approve workflow run checks on the branches it opens PRs from.
+  workflow_dispatch:
 
 # Runs PR code, so it gets no secrets and read-only access.
 permissions:
@@ -57,4 +59,23 @@ jobs:
         env:
           PR_AUTHOR: ${{ github.event.pull_request.user.login }}
           BASE_REF: ${{ github.event.pull_request.base.ref }}
-        run: pnpm classify-pr "origin/$BASE_REF"
+        run: pnpm classify-pr "origin/$BASE_REF" --out "$RUNNER_TEMP/classification.json"
+      # The pr-labels workflow reads this to set the owner-change label; PR code never gets write access.
+      - name: Save the classification
+        if: always()
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          test -f "$RUNNER_TEMP/classification.json" || echo '{"verdict":"needs-review"}' > "$RUNNER_TEMP/classification.json"
+          node -e '
+            const fs = require("fs"), f = process.env.RUNNER_TEMP + "/classification.json";
+            const c = JSON.parse(fs.readFileSync(f, "utf8"));
+            fs.writeFileSync(f, JSON.stringify({ pr: Number(process.env.PR_NUMBER), head_sha: process.env.HEAD_SHA, verdict: c.verdict }));
+          '
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: classification
+          path: ${{ runner.temp }}/classification.json
+          retention-days: 3

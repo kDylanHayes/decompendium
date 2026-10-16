@@ -56,6 +56,27 @@ export class GitHub {
     return (await res.json()) as T;
   }
 
+  /** POST, PATCH, PUT or DELETE an API path with a JSON body. Returns the parsed response, or null when empty. */
+  async send<T>(method: "POST" | "PATCH" | "PUT" | "DELETE", path: string, body?: unknown): Promise<T | null> {
+    this.requests++;
+    const headers: Record<string, string> = {
+      accept: "application/vnd.github+json",
+      "x-github-api-version": "2022-11-28",
+      "user-agent": USER_AGENT,
+      "content-type": "application/json",
+    };
+    if (this.token) headers.authorization = `Bearer ${this.token}`;
+    const res = await this.fetch(`https://api.github.com${path}`, {
+      method,
+      headers,
+      body: body === undefined ? undefined : JSON.stringify(body),
+      signal: AbortSignal.timeout(this.timeoutMs),
+    });
+    if (!res.ok) throw new IngestError(`GitHub API ${method} ${path}: HTTP ${res.status}`);
+    const text = await res.text();
+    return text ? (JSON.parse(text) as T) : null;
+  }
+
   /** GET an API path as text (e.g. a raw README), at most `limit` bytes. Null for 404. */
   async getText(path: string, accept: string, limit: number): Promise<string | null> {
     const res = await this.request(`https://api.github.com${path}`, accept);

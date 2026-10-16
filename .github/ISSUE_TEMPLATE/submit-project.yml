@@ -1,0 +1,100 @@
+name: Submit a project
+description: Suggest a matching decompilation of a game for Decompendium.
+title: "Submit: "
+labels: [submission, needs-checks]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Anyone can submit a project; you don't need to be a maintainer. A bot checks the repo and identifies the
+        game within a few minutes, then a catalog maintainer reviews it. See [what qualifies](https://decompendium.com/about/).
+  - type: input
+    id: repo
+    attributes:
+      label: Repository URL
+      placeholder: https://github.com/owner/name
+    validations:
+      required: true
+  - type: input
+    id: game
+    attributes:
+      label: Game
+      description: The game it rebuilds. Any language is fine.
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Nintendo 64
+        - GameCube
+        - Wii
+        - PlayStation
+        - PlayStation 2
+        - PSP
+        - Game Boy
+        - Game Boy Color
+        - Game Boy Advance
+        - Nintendo DS
+        - Nintendo 3DS
+        - Wii U
+        - Nintendo Switch
+        - Super Nintendo
+        - NES
+        - Genesis / Mega Drive
+        - Saturn
+        - Dreamcast
+        - Xbox
+        - Xbox 360
+        - PlayStation 3
+        - DOS
+        - Windows
+        - Other or not sure
+    validations:
+      required: true
+  - type: textarea
+    id: targets
+    attributes:
+      label: Versions it builds
+      description: Optional. One per line, for example "USA 1.0, sha1 9bef11...". The bot detects most of this itself.
+  - type: dropdown
+    id: progress
+    attributes:
+      label: Progress data
+      options:
+        - objdiff report (CI artifact)
+        - objdiff report at a URL
+        - Decompendium progress file
+        - None
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: report
+    attributes:
+      label: Report location
+      description: Optional. The artifact name and file inside it (for example "GZLE01_report, report.json"), or a URL.
+  - type: dropdown
+    id: ai_policy
+    attributes:
+      label: AI-assisted contributions
+      options:
+        - Not stated
+        - Allowed
+        - Discouraged
+        - Prohibited
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: It's a game (not an SDK, library, compiler, emulator or system software)
+          required: true
+        - label: The build checks its output against a hash of the original binary
+          required: true
+        - label: I'm a maintainer of this project (optional)
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes

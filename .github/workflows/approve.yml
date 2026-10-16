@@ -1,0 +1,81 @@
+name: approve
+
+# A catalog maintainer comments "/approve" on a submission issue: the bot
+# writes the drafted catalog files on a new branch and opens a PR for review.
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  actions: write
+
+concurrency:
+  group: approve-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  approve:
+    if: >-
+      !github.event.issue.pull_request &&
+      startsWith(github.event.comment.body, '/approve') &&
+      contains(github.event.issue.labels.*.name, 'submission')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Only catalog maintainers can approve
+        env:
+          COMMENTER: ${{ github.event.comment.user.login }}
+        run: |
+          if ! node -e '
+            const { parse } = require("yaml");
+            const c = parse(require("fs").readFileSync("config.yaml", "utf8"));
+            process.exit(c.catalog_maintainers.map((m) => m.toLowerCase()).includes(process.env.COMMENTER.toLowerCase()) ? 0 : 1);
+          ' 2>/dev/null; then
+            echo "$COMMENTER is not a catalog maintainer." >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+      - id: week
+        run: echo "week=$(date -u +%G-%V)" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .cache/game-index.json
+          key: game-index-${{ steps.week.outputs.week }}
+      - name: Build the game index if needed
+        run: test -f .cache/game-index.json || pnpm identify --build
+      - name: Draft the catalog entry
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: pnpm submission approve --issue "$ISSUE" --out "$RUNNER_TEMP/pr.json"
+      - run: pnpm validate
+      - name: Open the pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: |
+          branch=$(node -p 'require(process.env.RUNNER_TEMP + "/pr.json").branch')
+          node -p 'require(process.env.RUNNER_TEMP + "/pr.json").title' > "$RUNNER_TEMP/title.txt"
+          node -p 'require(process.env.RUNNER_TEMP + "/pr.json").body' > "$RUNNER_TEMP/body.md"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add catalog
+          git commit -q -m "$(cat "$RUNNER_TEMP/title.txt")" -m "Closes #$ISSUE"
+          git push -q -u origin "$branch"
+          url=$(gh pr create --base main --head "$branch" --title "$(cat "$RUNNER_TEMP/title.txt")" --body-file "$RUNNER_TEMP/body.md")
+          # PRs opened with the workflow token don't trigger pull_request workflows, so run validate directly.
+          gh workflow run validate.yml --ref "$branch"
+          gh issue edit "$ISSUE" --add-label approved --remove-label ready-for-review
+          gh issue comment "$ISSUE" --body "Approved. Catalog PR: $url"

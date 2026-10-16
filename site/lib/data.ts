@@ -18,6 +18,11 @@ export function url(path = ""): string {
   return base + path.replace(/^\//, "");
 }
 
+/** A GitHub issue form on the catalog repo, with fields prefilled by their ids. */
+export function formUrl(template: string, fields: Record<string, string> = {}): string {
+  return `${REPO_URL}/issues/new?${new URLSearchParams({ template, ...fields })}`;
+}
+
 /** A prefilled GitHub issue on the catalog repo. */
 export function issueUrl(title: string, body: string): string {
   return `${REPO_URL}/issues/new?${new URLSearchParams({ title, body })}`;

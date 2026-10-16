@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Listing policy
+    url: https://decompendium.com/about/
+    about: What counts as a matching game decompilation, and how opting out works.

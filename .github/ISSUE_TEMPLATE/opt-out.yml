@@ -1,0 +1,37 @@
+name: Opt out
+description: Hide your project from the home page, or remove it from Decompendium.
+title: "Opt out: "
+labels: [opt-out]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Removal is carried out within 48 hours, without discussion. Requests from people who don't maintain the
+        project are passed to its maintainers.
+  - type: input
+    id: project
+    attributes:
+      label: Project
+      description: Its id or decompendium.com URL.
+    validations:
+      required: true
+  - type: dropdown
+    id: choice
+    attributes:
+      label: What would you like?
+      options:
+        - Remove it from Decompendium entirely
+        - Keep it on its game page, but hide it from the home page
+    validations:
+      required: true
+  - type: checkboxes
+    id: maintainer
+    attributes:
+      label: Confirmation
+      options:
+        - label: I maintain this project (I have push access to its repository)
+          required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes

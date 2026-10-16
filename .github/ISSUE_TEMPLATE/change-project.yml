@@ -1,0 +1,33 @@
+name: Change a listing
+description: Correct a listed project, or move it to new maintainers.
+title: "Change: "
+labels: [change-request]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Maintainers can also edit their entry directly with a pull request to `catalog/projects/<id>.yaml`.
+  - type: input
+    id: project
+    attributes:
+      label: Project
+      description: Its id or decompendium.com URL.
+    validations:
+      required: true
+  - type: dropdown
+    id: change
+    attributes:
+      label: What should change
+      options:
+        - Correction (name, game, versions, hashes)
+        - Description, links or AI policy
+        - Maintainers or ownership
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+    validations:
+      required: true

@@ -3,11 +3,13 @@
 // Compares HEAD against its merge base with <base-ref>. Exits 1 when the PR
 // makes changes its author is not allowed to make.
 import { execFileSync } from "node:child_process";
-import { appendFileSync, existsSync, readFileSync } from "node:fs";
+import { appendFileSync, existsSync, readFileSync, writeFileSync } from "node:fs";
 import { parseYaml, type Config } from "../catalog.ts";
 import { classifyChanges, type Change } from "../review.ts";
 
 const baseRef = process.argv[2];
+const outIndex = process.argv.indexOf("--out");
+const outFile = outIndex > 0 ? process.argv[outIndex + 1] : undefined;
 const author = process.env.PR_AUTHOR;
 if (!baseRef || !author) {
   console.error("usage: PR_AUTHOR=<login> node src/cli/classify-pr.ts <base-ref>");
@@ -49,4 +51,5 @@ const lines = [
 ];
 console.log(lines.join("\n"));
 if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, lines.join("\n") + "\n");
+if (outFile) writeFileSync(outFile, JSON.stringify(result));
 if (result.violations.length) process.exit(1);

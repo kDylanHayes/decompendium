@@ -1,25 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { issueUrl, url } from "../lib/data.ts";
+import { formUrl, url } from "../lib/data.ts";
 
-const submit = issueUrl(
-  "Submit: <game name>",
-  [
-    "Game name:",
-    "Platform:",
-    "Repository URL:",
-    "",
-    "Targets (label, region or version, expected hash of the original binary), one per line:",
-    "",
-    "Progress: objdiff / Decompendium format / none",
-    "Report location (artifact name and file path, or URL):",
-    "",
-    "- [ ] The build verifies its output against the original binary's hash",
-    "- [ ] I am a maintainer of this project (optional)",
-    "",
-    "Notes:",
-  ].join("\n"),
-);
+const submit = formUrl("submit-project.yml");
 ---
 
 <Layout title="Submit a project" current="submit" description="How to add a matching decompilation to Decompendium.">
@@ -50,7 +33,7 @@ const submit = issueUrl(
     </p>
 
     <h2>Send it in</h2>
-    <p>Submissions are GitHub issues, reviewed by a catalog maintainer, usually within a week.</p>
+    <p>Submissions are a short GitHub form. A bot checks the repo and identifies the game within minutes, then a catalog maintainer reviews it, usually within a week.</p>
     <p><a class="button" href={submit}>Open a submission on GitHub</a></p>
   </div>
 </Layout>

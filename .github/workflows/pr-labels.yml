@@ -1,0 +1,50 @@
+name: pr-labels
+
+# Sets the owner-change label from the classification the validate workflow
+# saved. Runs from main with write access, but only reads a JSON verdict, and
+# checks it belongs to the PR's current head commit; PR code never runs here.
+on:
+  workflow_run:
+    workflows: [validate]
+    types: [completed]
+
+permissions:
+  actions: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  label:
+    if: github.event.workflow_run.event == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: classification
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+      - name: Apply the label
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          RUN_HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          pr=$(node -p 'const c = require("./classification.json"); Number.isInteger(c.pr) && c.pr > 0 ? c.pr : ""')
+          verdict=$(node -p 'const v = require("./classification.json").verdict; ["owner-change", "needs-review", "maintainer"].includes(v) ? v : "needs-review"')
+          sha=$(node -p 'String(require("./classification.json").head_sha || "")')
+          if [ -z "$pr" ] || [ "$sha" != "$RUN_HEAD_SHA" ]; then
+            echo "Classification doesn't match this run; ignoring."
+            exit 0
+          fi
+          head=$(gh api "repos/$REPO/pulls/$pr" --jq .head.sha)
+          if [ "$head" != "$RUN_HEAD_SHA" ]; then
+            echo "PR #$pr has moved on since this run; ignoring."
+            exit 0
+          fi
+          if [ "$verdict" = "owner-change" ]; then
+            gh pr edit "$pr" --repo "$REPO" --add-label owner-change
+          else
+            gh pr edit "$pr" --repo "$REPO" --remove-label owner-change 2>/dev/null || true
+          fi
+          echo "PR #$pr: $verdict" >> "$GITHUB_STEP_SUMMARY"

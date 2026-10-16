@@ -18,7 +18,7 @@ export interface Identification {
   status: "identified" | "unconfirmed";
   title: string | null; // the game, e.g. "Super Mario 64"
   platform: string | null;
-  releases: (Release & { via: string })[]; // each matched release and what matched it
+  releases: (Release & { via: string; match: { kind: "hash" | "code"; value: string } })[]; // each matched release and what matched it
   nonGame: string | null; // set when the match is not a game (BIOS, cheat disc, SDK)
   aliases: string[]; // other titles the releases go by (other regions and languages)
 }
@@ -42,17 +42,17 @@ const strip = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 export function identify(e: Evidence, index: GameIndex): Identification {
   const releases: Identification["releases"] = [];
   const seen = new Set<string>();
-  const add = (r: Release, via: string) => {
+  const add = (r: Release, match: { kind: "hash" | "code"; value: string }) => {
     if (seen.has(r.name)) return;
     seen.add(r.name);
-    releases.push({ ...r, via });
+    releases.push({ ...r, via: match.kind === "hash" ? `hash ${match.value.slice(0, 12)}…` : `code ${match.value}`, match });
   };
   for (const h of e.hashes) {
     const r = index.hashes[h.toLowerCase()];
-    if (r) add(r, `hash ${h.slice(0, 12)}…`);
+    if (r) add(r, { kind: "hash", value: h.toLowerCase() });
   }
   for (const code of e.codes) {
-    for (const key of codeKeys(code)) for (const r of index.codes[key] ?? []) add(r, `code ${code}`);
+    for (const key of codeKeys(code)) for (const r of index.codes[key] ?? []) add(r, { kind: "code", value: code });
   }
   if (!releases.length) {
     return { status: "unconfirmed", title: null, platform: null, releases: [], nonGame: null, aliases: [] };
