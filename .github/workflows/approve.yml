@@ -58,6 +58,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           ISSUE: ${{ github.event.issue.number }}
+          # The same checks as the bot ran, so games IGDB confirmed stay confirmed.
+          IGDB_CLIENT_ID: ${{ secrets.IGDB_CLIENT_ID }}
+          IGDB_CLIENT_SECRET: ${{ secrets.IGDB_CLIENT_SECRET }}
         run: pnpm submission approve --issue "$ISSUE" --out "$RUNNER_TEMP/pr.json"
       - run: pnpm validate
       - name: Open the pull request
