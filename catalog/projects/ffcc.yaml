@@ -28,4 +28,5 @@ targets:
     hash: { sha1: "c96097db7f61a902ab71c5b1dfd760d9c2103aaa" }
     progress:
       kind: objdiff
-      source: { type: github-artifact, artifact: GCCP01_report, path: report.json }
+      # GitHub's artifacts API returns HTTP 500 for this artifact name (since 2026-10-16); decomp.dev has the same report.
+      source: { type: url, url: "https://decomp.dev/zcanann/FFCC-Decomp.json?version=GCCP01" }
