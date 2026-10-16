@@ -15,8 +15,8 @@ The site is live at [decompendium.com](https://decompendium.com).
 | M1: ingestion (objdiff and Decompendium progress files) | Done |
 | M2: static site | Done |
 | M3: API and badges | Done |
-| M4: submission flow (issue forms and bot) | Next |
-| M5: seed catalog and launch | Planned |
+| M4: submission flow (issue forms and bot) | Done |
+| M5: seed catalog and launch | In progress |
 
 ## How listing works
 
@@ -27,7 +27,12 @@ The site is live at [decompendium.com](https://decompendium.com).
 - Owners edit their own entry with a PR to `catalog/projects/<id>.yaml`.
   CI checks that only owner-editable fields changed.
 
-The submission form arrives with M4. Until then, open an issue.
+To add a project, use the [submission form](https://github.com/kDylanHayes/decompendium/issues/new?template=submit-project.yml).
+A bot checks the repo, identifies the game, tries its progress report and
+posts a draft catalog entry on the issue within minutes. A catalog maintainer
+then comments `/approve`, which opens a PR with that entry; merging it lists
+the project. Maintainers can also change or opt out of an entry with the
+change and opt-out forms linked from every project page.
 
 ## Layout
 
