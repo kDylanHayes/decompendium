@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "dds2"
+name: "Shin Megami Tensei: Digital Devil Saga 2 decompilation"
+game: "shin-megami-tensei-digital-devil-saga-2"
+repo: https://github.com/Megami-Decomps/dds-decomp
+# The same repo builds Digital Devil Saga 1 and 2; each game has its own entry.
+description: "Matching decompilation of Shin Megami Tensei: Digital Devil Saga 2 (the repo also covers the other Digital Devil Saga game)."
+owners: [Megami-Decomps]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "slus-21152"
+    label: "USA (SLUS-21152)"
+    hash: { sha1: "9be91ee1b4a535a4cb6ec89237b5a6ba41be2add" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: dds2_report, path: report.json }
