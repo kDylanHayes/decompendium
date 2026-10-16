@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: mkw
+name: "Mario Kart Wii decompilation"
+game: mario-kart-wii
+repo: https://github.com/doldecomp/mkw
+description: "Matching decompilation of Mario Kart Wii."
+owners: [doldecomp]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: rmcp01
+    label: "RMCP01 (Europe)"
+    region: eu
+    hash: { sha1: "ac7d72448630ade7655fc8bc5fd7a6543cb53a49" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: RMCP01_report, path: report.json }
