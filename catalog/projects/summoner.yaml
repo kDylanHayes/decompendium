@@ -9,7 +9,7 @@ confirmed: false
 listed_at: 2026-10-16
 targets:
   - id: "sum-pc"
-    label: "sum-pc"
+    label: "PC"
     hash: { sha1: "cdc5d71d447a89e9a1c5e176c65c9b129321d7fc" }
     progress:
       kind: objdiff
