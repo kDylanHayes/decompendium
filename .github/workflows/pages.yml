@@ -40,9 +40,8 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: Build
         env:
-          # Served from the project Pages URL until decompendium.com is set up.
-          SITE_URL: https://kdylanhayes.github.io
-          SITE_BASE: /decompendium
+          SITE_URL: https://decompendium.com
+          SITE_BASE: /
           ASTRO_TELEMETRY_DISABLED: "1"
         run: pnpm build
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0

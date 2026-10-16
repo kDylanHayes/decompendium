@@ -5,8 +5,7 @@ reproduces the original game binary byte for byte. Projects are grouped by
 game, so you can see what already exists before starting something new, and
 progress comes from each project's own CI output.
 
-The site is live at [kdylanhayes.github.io/decompendium](https://kdylanhayes.github.io/decompendium/)
-and will move to [decompendium.com](https://decompendium.com).
+The site is live at [decompendium.com](https://decompendium.com).
 
 ## Status
 

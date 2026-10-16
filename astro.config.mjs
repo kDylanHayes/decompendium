@@ -1,8 +1,7 @@
 import { defineConfig } from "astro/config";
 
-// Until decompendium.com points here, the site is served from
-// https://kdylanhayes.github.io/decompendium/, so links need a base path.
-// The deploy workflow sets SITE_URL and SITE_BASE; local builds default to /.
+// Served at the root of https://decompendium.com. SITE_URL and SITE_BASE can
+// override this, e.g. to preview a build under a subpath.
 export default defineConfig({
   site: process.env.SITE_URL ?? "https://decompendium.com",
   base: process.env.SITE_BASE ?? "/",
