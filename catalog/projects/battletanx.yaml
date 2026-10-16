@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "battletanx"
+name: "BattleTanx decompilation"
+game: "battletanx"
+repo: https://github.com/TheGh0stShip/BattleTanx
+description: "Matching decompilation of BattleTanx."
+owners: [TheGh0stShip]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "535860d941738ac1210c20a9b80114fea0e0ff17" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: NBXE_report, path: report.json }
