@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated_at": "2026-10-16T03:15:08.627Z",
+ "updated_at": "2026-10-16T03:28:45.579Z",
  "repos": {
   "psdwizzard/eternal-darkness---decompile": {
    "pushed_at": "2026-10-16T02:54:55Z",
@@ -254,8 +254,8 @@
    }
   },
   "tangosdev/sm64ds-decomp": {
-   "pushed_at": "2026-10-16T03:18:45Z",
-   "checked_at": "2026-10-16T03:15:08.627Z",
+   "pushed_at": "2026-10-16T03:32:43Z",
+   "checked_at": "2026-10-16T03:28:45.579Z",
    "assessment": {
     "fullName": "tangosdev/sm64ds-decomp",
     "score": 5,
@@ -1833,6 +1833,988 @@
      "adm-kr.sha1",
      "runtime/recordings/title-start.sha1",
      "README: 1fffd601d3439e37cd934e72d08e487a93fc449b"
+    ],
+    "reportArtifacts": []
+   }
+  },
+  "cosmicscribe64/tokimemo-ps1-decomp": {
+   "pushed_at": "2026-10-16T03:04:01Z",
+   "checked_at": "2026-10-16T03:28:45.579Z",
+   "assessment": {
+    "fullName": "CosmicScribe64/tokimemo-ps1-decomp",
+    "score": 23,
+    "verdict": "likely",
+    "signals": [
+     {
+      "id": "objdiff-report",
+      "weight": 5,
+      "detail": "SLPM_86.053_report"
+     },
+     {
+      "id": "decomp-dev-badge",
+      "weight": 3
+     },
+     {
+      "id": "hash-file",
+      "weight": 3,
+      "detail": "config/SLPM_86.053.sha1, config/overlays/BUNKAKEN.sha1"
+     },
+     {
+      "id": "readme-hash",
+      "weight": 2
+     },
+     {
+      "id": "decomp-tooling",
+      "weight": 3,
+      "detail": "configure.py, objdiff.json"
+     },
+     {
+      "id": "asm-macros",
+      "weight": 1
+     },
+     {
+      "id": "named-decomp",
+      "weight": 2
+     },
+     {
+      "id": "matching-claim",
+      "weight": 2
+     },
+     {
+      "id": "readme-mentions-hash",
+      "weight": 1
+     },
+     {
+      "id": "has-source",
+      "weight": 1
+     }
+    ],
+    "hashEvidence": [
+     "config/SLPM_86.053.sha1",
+     "config/overlays/BUNKAKEN.sha1",
+     "config/overlays/BUNKASAI.sha1",
+     "config/overlays/BUNKA_SD.sha1",
+     "config/overlays/DATE.sha1",
+     "README: e823bd844a8f8fa4d05483b59c66bc54b8393b26"
+    ],
+    "reportArtifacts": [
+     "SLPM_86.053_report"
+    ]
+   }
+  },
+  "brian-oblivion/lsddecomp": {
+   "pushed_at": "2026-10-05T21:20:29Z",
+   "checked_at": "2026-10-16T03:28:45.579Z",
+   "assessment": {
+    "fullName": "brian-oblivion/lsddecomp",
+    "score": 20,
+    "verdict": "likely",
+    "signals": [
+     {
+      "id": "objdiff-report",
+      "weight": 5,
+      "detail": "SLPS_015.56_report"
+     },
+     {
+      "id": "hash-file",
+      "weight": 3,
+      "detail": "build.sha1, check.sha1"
+     },
+     {
+      "id": "readme-hash",
+      "weight": 2
+     },
+     {
+      "id": "decomp-tooling",
+      "weight": 3,
+      "detail": "asm-differ, decomp-permuter"
+     },
+     {
+      "id": "asm-macros",
+      "weight": 1
+     },
+     {
+      "id": "named-decomp",
+      "weight": 2
+     },
+     {
+      "id": "matching-claim",
+      "weight": 2
+     },
+     {
+      "id": "readme-mentions-hash",
+      "weight": 1
+     },
+     {
+      "id": "has-source",
+      "weight": 1
+     }
+    ],
+    "hashEvidence": [
+     "build.sha1",
+     "check.sha1",
+     "README: 76322eeade5ebb22dca57fdeac7d68c30f06308d"
+    ],
+    "reportArtifacts": [
+     "SLPS_015.56_report"
+    ]
+   }
+  },
+  "djsaunde/1080-decomp": {
+   "pushed_at": "2026-10-15T19:49:09Z",
+   "checked_at": "2026-10-16T03:28:45.579Z",
+   "assessment": {
+    "fullName": "djsaunde/1080-decomp",
+    "score": 20,
+    "verdict": "likely",
+    "signals": [
+     {
+      "id": "objdiff-report",
+      "weight": 5,
+      "detail": "us_report"
+     },
+     {
+      "id": "hash-file",
+      "weight": 3,
+      "detail": "checksum.md5"
+     },
+     {
+      "id": "readme-hash",
+      "weight": 2
+     },
+     {
+      "id": "decomp-tooling",
+      "weight": 3,
+      "detail": "nonmatching asm split, objdiff.json, decomp-permuter"
+     },
+     {
+      "id": "asm-macros",
+      "weight": 1
+     },
+     {
+      "id": "named-decomp",
+      "weight": 2
+     },
+     {
+      "id": "matching-claim",
+      "weight": 2
+     },
+     {
+      "id": "readme-mentions-hash",
+      "weight": 1
+     },
+     {
+      "id": "has-source",
+      "weight": 1
+     }
+    ],
+    "hashEvidence": [
+     "checksum.md5",
+     "README: fa27089c425dbab99f19245c5c997613"
+    ],
+    "reportArtifacts": [
+     "us_report"
+    ]
+   }
+  },
+  "druthulu/bfm-decomp": {
+   "pushed_at": "2026-10-15T06:59:18Z",
+   "checked_at": "2026-10-16T03:28:45.579Z",
+   "assessment": {
+    "fullName": "Druthulu/BFM-decomp",
+    "score": 19,
+    "verdict": "likely",
+    "signals": [
+     {
+      "id": "objdiff-report",
+      "weight": 5,
+      "detail": "SLUS_007.26_report"
+     },
+     {
+      "id": "hash-file",
+      "weight": 3,
+      "detail": "config/check.md_MAIN_001.sha, config/check.md_MAIN_003.sha"
+     },
+     {
+      "id": "readme-hash",
+      "weight": 2
+     },
+     {
+      "id": "decomp-tooling",
+      "weight": 2,
+      "detail": "asm-differ"
+     },
+     {
+      "id": "asm-macros",
+      "weight": 1
+     },
+     {
+      "id": "named-decomp",
+      "weight": 2
+     },
+     {
+      "id": "matching-claim",
+      "weight": 2
+     },
+     {
+      "id": "readme-mentions-hash",
+      "weight": 1
+     },
+     {
+      "id": "has-source",
+      "weight": 1
+     }
+    ],
+    "hashEvidence": [
+     "config/check.md_MAIN_001.sha",
+     "config/check.md_MAIN_003.sha",
+     "config/check.md_MAIN_007.sha",
+     "config/check.md_MAIN_008.sha",
+     "config/check.md_MAIN_009.sha",
+     "README: b44f0f0a19936f23b26188b658e13201a6a9c211"
+    ],
+    "reportArtifacts": [
+     "SLUS_007.26_report"
+    ]
+   }
+  },
+  "afsenovilla/tombi-decomp": {
+   "pushed_at": "2026-10-15T15:38:21Z",
+   "checked_at": "2026-10-16T03:28:45.579Z",
+   "assessment": {
+    "fullName": "afsenovilla/Tombi-Decomp",
+    "score": 12,
+    "verdict": "likely",
+    "signals": [
+     {
+      "id": "decomp-dev-badge",
+      "weight": 3
+     },
+     {
+      "id": "readme-hash",
+      "weight": 2
+     },
+     {
+      "id": "asm-macros",
+      "weight": 1
+     },
+     {
+      "id": "named-decomp",
+      "weight": 2
+     },
+     {
+      "id": "matching-claim",
+      "weight": 2
+     },
+     {
+      "id": "readme-mentions-hash",
+      "weight": 1
+     },
+     {
+      "id": "has-source",
+      "weight": 1
+     }
+    ],
+    "hashEvidence": [
+     "README: f6c383514e5d8367d2eed06400315cf6dd57ef6b"
+    ],
+    "reportArtifacts": []
+   }
+  },
+  "theonlyzac/sly1": {
+   "pushed_at": "2026-10-11T21:59:28Z",
+   "checked_at": "2026-10-16T03:28:45.579Z",
+   "assessment": {
+    "fullName": "TheOnlyZac/sly1",
+    "score": 15,
+    "verdict": "likely",
+    "signals": [
+     {
+      "id": "decomp-dev-badge",
+      "weight": 3
+     },
+     {
+      "id": "hash-file",
+      "weight": 3,
+      "detail": "config/checksum.sha1"
+     },
+     {
+      "id": "decomp-tooling",
+      "weight": 2,
+      "detail": "configure.py"
+     },
+     {
+      "id": "asm-macros",
+      "weight": 1
+     },
+     {
+      "id": "named-decomp",
+      "weight": 2
+     },
+     {
+      "id": "matching-claim",
+      "weight": 2
+     },
+     {
+      "id": "readme-mentions-hash",
+      "weight": 1
+     },
+     {
+      "id": "has-source",
+      "weight": 1
+     }
+    ],
+    "hashEvidence": [
+     "config/checksum.sha1"
+    ],
+    "reportArtifacts": []
+   }
+  },
+  "karamzov123/fzero-gx-decomp": {
+   "pushed_at": "2026-09-09T16:01:03Z",
+   "checked_at": "2026-10-16T03:28:45.579Z",
+   "assessment": {
+    "fullName": "karamzov123/fzero-gx-decomp",
+    "score": 22,
+    "verdict": "likely",
+    "signals": [
+     {
+      "id": "objdiff-report",
+      "weight": 5,
+      "detail": "GFZE01_report"
+     },
+     {
+      "id": "decomp-dev-badge",
+      "weight": 3
+     },
+     {
+      "id": "decomp-toolkit",
+      "weight": 4,
+      "detail": "1 build.sha1"
+     },
+     {
+      "id": "readme-hash",
+      "weight": 2
+     },
+     {
+      "id": "decomp-tooling",
+      "weight": 2,
+      "detail": "configure.py"
+     },
+     {
+      "id": "named-decomp",
+      "weight": 2
+     },
+     {
+      "id": "matching-claim",
+      "weight": 2
+     },
+     {
+      "id": "readme-mentions-hash",
+      "weight": 1
+     },
+     {
+      "id": "has-source",
+      "weight": 1
+     }
+    ],
+    "hashEvidence": [
+     "config/GFZE01/build.sha1",
+     "README: 421c88106697d3275a3fc26fb7a01bf6d816b271"
+    ],
+    "reportArtifacts": [
+     "GFZE01_report"
+    ]
+   }
+  },
+  "used255/artonelico2-decomp": {
+   "pushed_at": "2026-10-16T03:17:26Z",
+   "checked_at": "2026-10-16T03:28:45.579Z",
+   "assessment": {
+    "fullName": "USED255/artonelico2-decomp",
+    "score": 17,
+    "verdict": "likely",
+    "signals": [
+     {
+      "id": "objdiff-report",
+      "weight": 5,
+      "detail": "SLPS_258.19_report, SLPS_258.19_report_provenance"
+     },
+     {
+      "id": "decomp-dev-badge",
+      "weight": 3
+     },
+     {
+      "id": "decomp-tooling",
+      "weight": 3,
+      "detail": "configure.py, splat"
+     },
+     {
+      "id": "named-decomp",
+      "weight": 2
+     },
+     {
+      "id": "matching-claim",
+      "weight": 2
+     },
+     {
+      "id": "readme-mentions-hash",
+      "weight": 1
+     },
+     {
+      "id": "has-source",
+      "weight": 1
+     }
+    ],
+    "hashEvidence": [],
+    "reportArtifacts": [
+     "SLPS_258.19_report",
+     "SLPS_258.19_report_provenance"
+    ]
+   }
+  },
+  "ser-pounce/rood-reverse": {
+   "pushed_at": "2026-10-15T20:33:28Z",
+   "checked_at": "2026-10-16T03:28:45.579Z",
+   "assessment": {
+    "fullName": "ser-pounce/rood-reverse",
+    "score": 17,
+    "verdict": "likely",
+    "signals": [
+     {
+      "id": "objdiff-report",
+      "weight": 5,
+      "detail": "SLUS_010.40_report"
+     },
+     {
+      "id": "decomp-dev-badge",
+      "weight": 3
+     },
+     {
+      "id": "decomp-tooling",
+      "weight": 3,
+      "detail": "splat, decomp-permuter"
+     },
+     {
+      "id": "asm-macros",
+      "weight": 1
+     },
+     {
+      "id": "named-decomp",
+      "weight": 2
+     },
+     {
+      "id": "matching-claim",
+      "weight": 2
+     },
+     {
+      "id": "has-source",
+      "weight": 1
+     }
+    ],
+    "hashEvidence": [],
+    "reportArtifacts": [
+     "SLUS_010.40_report"
+    ]
+   }
+  },
+  "openrac/rac3-uya-decomp": {
+   "pushed_at": "2026-10-12T06:21:39Z",
+   "checked_at": "2026-10-16T03:28:45.579Z",
+   "assessment": {
+    "fullName": "OpenRAC/rac3-uya-decomp",
+    "score": 16,
+    "verdict": "likely",
+    "signals": [
+     {
+      "id": "objdiff-report",
+      "weight": 5,
+      "detail": "SCUS_973.53_report"
+     },
+     {
+      "id": "readme-hash",
+      "weight": 2
+     },
+     {
+      "id": "decomp-tooling",
+      "weight": 2,
+      "detail": "objdiff.json"
+     },
+     {
+      "id": "asm-macros",
+      "weight": 1
+     },
+     {
+      "id": "named-decomp",
+      "weight": 2
+     },
+     {
+      "id": "matching-claim",
+      "weight": 2
+     },
+     {
+      "id": "readme-mentions-hash",
+      "weight": 1
+     },
+     {
+      "id": "has-source",
+      "weight": 1
+     }
+    ],
+    "hashEvidence": [
+     "README: 3bc94ee895e4b4af9b5602a229af599c1103b542"
+    ],
+    "reportArtifacts": [
+     "SCUS_973.53_report"
+    ]
+   }
+  },
+  "yacalox-studios/cnk-decomp": {
+   "pushed_at": "2026-09-07T22:52:38Z",
+   "checked_at": "2026-10-16T03:28:45.579Z",
+   "assessment": {
+    "fullName": "YacaloX-Studios/cnk-decomp",
+    "score": 11,
+    "verdict": "likely",
+    "signals": [
+     {
+      "id": "decomp-dev-badge",
+      "weight": 3
+     },
+     {
+      "id": "decomp-tooling",
+      "weight": 2,
+      "detail": "objdiff.json"
+     },
+     {
+      "id": "named-decomp",
+      "weight": 2
+     },
+     {
+      "id": "matching-claim",
+      "weight": 2
+     },
+     {
+      "id": "readme-mentions-hash",
+      "weight": 1
+     },
+     {
+      "id": "has-source",
+      "weight": 1
+     }
+    ],
+    "hashEvidence": [],
+    "reportArtifacts": []
+   }
+  },
+  "megami-decomps/dds-decomp": {
+   "pushed_at": "2026-10-16T03:40:42Z",
+   "checked_at": "2026-10-16T03:28:45.579Z",
+   "assessment": {
+    "fullName": "Megami-Decomps/dds-decomp",
+    "score": 23,
+    "verdict": "likely",
+    "signals": [
+     {
+      "id": "objdiff-report",
+      "weight": 5,
+      "detail": "dds2_report, dds1_report"
+     },
+     {
+      "id": "decomp-dev-badge",
+      "weight": 3
+     },
+     {
+      "id": "hash-file",
+      "weight": 3,
+      "detail": "config/dds1/battle_tables.sha1, config/dds1/event_scripts.sha1"
+     },
+     {
+      "id": "readme-hash",
+      "weight": 2
+     },
+     {
+      "id": "decomp-tooling",
+      "weight": 3,
+      "detail": "configure.py, asm-differ, decomp-permuter"
+     },
+     {
+      "id": "asm-macros",
+      "weight": 1
+     },
+     {
+      "id": "named-decomp",
+      "weight": 2
+     },
+     {
+      "id": "matching-claim",
+      "weight": 2
+     },
+     {
+      "id": "readme-mentions-hash",
+      "weight": 1
+     },
+     {
+      "id": "has-source",
+      "weight": 1
+     }
+    ],
+    "hashEvidence": [
+     "config/dds1/battle_tables.sha1",
+     "config/dds1/event_scripts.sha1",
+     "config/dds1/field_amb.sha1",
+     "config/dds1/field_fld1.sha1",
+     "config/dds1/field_fld2.sha1",
+     "README: 6d18898e2724bf1d145392766e8ba1e678487419"
+    ],
+    "reportArtifacts": [
+     "dds2_report",
+     "dds1_report"
+    ]
+   }
+  },
+  "khasinski/parasite-eve-decomp": {
+   "pushed_at": "2026-10-15T18:26:11Z",
+   "checked_at": "2026-10-16T03:28:45.579Z",
+   "assessment": {
+    "fullName": "khasinski/parasite-eve-decomp",
+    "score": 23,
+    "verdict": "likely",
+    "signals": [
+     {
+      "id": "objdiff-report",
+      "weight": 5,
+      "detail": "SLUS_006.62_report"
+     },
+     {
+      "id": "decomp-dev-badge",
+      "weight": 3
+     },
+     {
+      "id": "hash-file",
+      "weight": 3,
+      "detail": "configs/USA/checksum.sha"
+     },
+     {
+      "id": "readme-hash",
+      "weight": 2
+     },
+     {
+      "id": "decomp-tooling",
+      "weight": 3,
+      "detail": "asm-differ, decomp-permuter, m2c"
+     },
+     {
+      "id": "asm-macros",
+      "weight": 1
+     },
+     {
+      "id": "named-decomp",
+      "weight": 2
+     },
+     {
+      "id": "matching-claim",
+      "weight": 2
+     },
+     {
+      "id": "readme-mentions-hash",
+      "weight": 1
+     },
+     {
+      "id": "has-source",
+      "weight": 1
+     }
+    ],
+    "hashEvidence": [
+     "configs/USA/checksum.sha",
+     "README: 452fb033f2eaa4b18aa20a5bca60b8125af3a37b"
+    ],
+    "reportArtifacts": [
+     "SLUS_006.62_report"
+    ]
+   }
+  },
+  "banteg/harvest": {
+   "pushed_at": "2026-10-15T02:04:38Z",
+   "checked_at": "2026-10-16T03:28:45.579Z",
+   "assessment": {
+    "fullName": "banteg/harvest",
+    "score": 17,
+    "verdict": "likely",
+    "signals": [
+     {
+      "id": "objdiff-report",
+      "weight": 5,
+      "detail": "1.18-linux-amd64_report"
+     },
+     {
+      "id": "decomp-dev-badge",
+      "weight": 3
+     },
+     {
+      "id": "hash-file",
+      "weight": 3,
+      "detail": "reference/steam/15401.sha256, reference/steam/15402.sha256"
+     },
+     {
+      "id": "named-decomp",
+      "weight": 2
+     },
+     {
+      "id": "matching-claim",
+      "weight": 2
+     },
+     {
+      "id": "readme-mentions-hash",
+      "weight": 1
+     },
+     {
+      "id": "has-source",
+      "weight": 1
+     }
+    ],
+    "hashEvidence": [
+     "reference/steam/15401.sha256",
+     "reference/steam/15402.sha256",
+     "reference/steam/15403.sha256"
+    ],
+    "reportArtifacts": [
+     "1.18-linux-amd64_report"
+    ]
+   }
+  },
+  "gaberealb/parasite-eve-2-decomp": {
+   "pushed_at": "2026-10-14T00:18:48Z",
+   "checked_at": "2026-10-16T03:28:45.579Z",
+   "assessment": {
+    "fullName": "GabeRealB/parasite-eve-2-decomp",
+    "score": 13,
+    "verdict": "likely",
+    "signals": [
+     {
+      "id": "decomp-dev-badge",
+      "weight": 3
+     },
+     {
+      "id": "hash-file",
+      "weight": 3,
+      "detail": "configs/USA/checksum.sha"
+     },
+     {
+      "id": "asm-macros",
+      "weight": 1
+     },
+     {
+      "id": "named-decomp",
+      "weight": 2
+     },
+     {
+      "id": "matching-claim",
+      "weight": 2
+     },
+     {
+      "id": "readme-mentions-hash",
+      "weight": 1
+     },
+     {
+      "id": "has-source",
+      "weight": 1
+     }
+    ],
+    "hashEvidence": [
+     "configs/USA/checksum.sha"
+    ],
+    "reportArtifacts": []
+   }
+  },
+  "anzaldoivan/mmx6": {
+   "pushed_at": "2026-10-13T21:37:30Z",
+   "checked_at": "2026-10-16T03:28:45.579Z",
+   "assessment": {
+    "fullName": "anzaldoivan/mmx6",
+    "score": 17,
+    "verdict": "likely",
+    "signals": [
+     {
+      "id": "decomp-dev-badge",
+      "weight": 3
+     },
+     {
+      "id": "hash-file",
+      "weight": 3,
+      "detail": "config/check.SLUS_013.95.sha, config/check.rock_00.sha"
+     },
+     {
+      "id": "readme-hash",
+      "weight": 2
+     },
+     {
+      "id": "decomp-tooling",
+      "weight": 2,
+      "detail": "asm-differ"
+     },
+     {
+      "id": "asm-macros",
+      "weight": 1
+     },
+     {
+      "id": "named-decomp",
+      "weight": 2
+     },
+     {
+      "id": "matching-claim",
+      "weight": 2
+     },
+     {
+      "id": "readme-mentions-hash",
+      "weight": 1
+     },
+     {
+      "id": "has-source",
+      "weight": 1
+     }
+    ],
+    "hashEvidence": [
+     "config/check.SLUS_013.95.sha",
+     "config/check.rock_00.sha",
+     "config/check.rock_01.sha",
+     "config/check.rock_02.sha",
+     "config/check.rock_03.sha",
+     "README: d4f7e08371027a87a3bf13311db5a4c56733f4ea"
+    ],
+    "reportArtifacts": []
+   }
+  },
+  "nsmbw-community/nsmbw-decomp": {
+   "pushed_at": "2026-09-27T08:32:13Z",
+   "checked_at": "2026-10-16T03:28:45.579Z",
+   "assessment": {
+    "fullName": "NSMBW-Community/NSMBW-Decomp",
+    "score": 18,
+    "verdict": "likely",
+    "signals": [
+     {
+      "id": "objdiff-report",
+      "weight": 5,
+      "detail": "SMNP01-report"
+     },
+     {
+      "id": "decomp-dev-badge",
+      "weight": 3
+     },
+     {
+      "id": "readme-hash",
+      "weight": 2
+     },
+     {
+      "id": "decomp-tooling",
+      "weight": 2,
+      "detail": "configure.py"
+     },
+     {
+      "id": "named-decomp",
+      "weight": 2
+     },
+     {
+      "id": "matching-claim",
+      "weight": 2
+     },
+     {
+      "id": "readme-mentions-hash",
+      "weight": 1
+     },
+     {
+      "id": "has-source",
+      "weight": 1
+     }
+    ],
+    "hashEvidence": [
+     "README: 17096d0ed441d44a0c31039138a8d7f8"
+    ],
+    "reportArtifacts": [
+     "SMNP01-report"
+    ]
+   }
+  },
+  "bluisblu/pvz": {
+   "pushed_at": "2026-07-30T18:31:34Z",
+   "checked_at": "2026-10-16T03:28:45.579Z",
+   "assessment": {
+    "fullName": "bluisblu/pvz",
+    "score": 12,
+    "verdict": "likely",
+    "signals": [
+     {
+      "id": "objdiff-report",
+      "weight": 5,
+      "detail": "BETA_099_report"
+     },
+     {
+      "id": "decomp-tooling",
+      "weight": 2,
+      "detail": "configure.py"
+     },
+     {
+      "id": "named-decomp",
+      "weight": 2
+     },
+     {
+      "id": "matching-claim",
+      "weight": 2
+     },
+     {
+      "id": "has-source",
+      "weight": 1
+     }
+    ],
+    "hashEvidence": [],
+    "reportArtifacts": [
+     "BETA_099_report"
+    ]
+   }
+  },
+  "bryankruman/beetledecomp": {
+   "pushed_at": "2026-07-08T21:55:27Z",
+   "checked_at": "2026-10-16T03:28:45.579Z",
+   "assessment": {
+    "fullName": "bryankruman/BeetleDecomp",
+    "score": 14,
+    "verdict": "likely",
+    "signals": [
+     {
+      "id": "hash-file",
+      "weight": 3,
+      "detail": "beetleadventurerac.us.sha1"
+     },
+     {
+      "id": "readme-hash",
+      "weight": 2
+     },
+     {
+      "id": "decomp-tooling",
+      "weight": 3,
+      "detail": "asm-differ, decomp-permuter"
+     },
+     {
+      "id": "asm-macros",
+      "weight": 1
+     },
+     {
+      "id": "named-decomp",
+      "weight": 2
+     },
+     {
+      "id": "matching-claim",
+      "weight": 2
+     },
+     {
+      "id": "has-source",
+      "weight": 1
+     }
+    ],
+    "hashEvidence": [
+     "beetleadventurerac.us.sha1",
+     "README: e5ab4d226c08d22f68a2edcc48870203e67454b8"
     ],
     "reportArtifacts": []
    }
