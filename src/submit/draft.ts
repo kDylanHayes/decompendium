@@ -62,7 +62,7 @@ export async function makeDraft(opts: {
   // The game: an existing catalog game when one matches, else a new one.
   const title = id.title ?? sub.game;
   const platform = id.platform ?? sub.platform ?? "other";
-  const existing = findGame(opts.games, title, platform) ?? (sub.game ? findGame(opts.games, sub.game, platform) : undefined);
+  const existing = [title, ...id.aliases, sub.game].filter(Boolean).map((n) => findGame(opts.games, n, platform)).find(Boolean);
   let gameId = existing?.id ?? slug(title);
   if (!existing && opts.games.some((g) => g.id === gameId)) gameId = `${gameId}-${platform}`;
   const game: Game = existing ?? {
@@ -196,7 +196,7 @@ const q = (s: string) => JSON.stringify(s);
 export function gameYaml(g: Game): string {
   return [
     "# yaml-language-server: $schema=../../schema/game.schema.json",
-    `id: ${g.id}`,
+    `id: ${q(g.id)}`,
     `name: ${q(g.name)}`,
     ...(g.aliases?.length ? [`aliases: [${g.aliases.map(q).join(", ")}]`] : []),
     `platform: ${g.platform}`,
@@ -207,9 +207,9 @@ export function gameYaml(g: Game): string {
 export function projectYaml(p: Project): string {
   const lines = [
     "# yaml-language-server: $schema=../../schema/project.schema.json",
-    `id: ${p.id}`,
+    `id: ${q(p.id)}`,
     `name: ${q(p.name)}`,
-    `game: ${p.game}`,
+    `game: ${q(p.game)}`,
     `repo: ${p.repo}`,
     `description: ${q(p.description)}`,
     `owners: [${p.owners.join(", ")}]  # repo owner; maintainers can replace this with their usernames`,
@@ -220,7 +220,7 @@ export function projectYaml(p: Project): string {
   ];
   for (const t of p.targets) {
     const [algo, value] = Object.entries(t.hash)[0]!;
-    lines.push(`  - id: ${t.id}`, `    label: ${q(t.label)}`);
+    lines.push(`  - id: ${q(t.id)}`, `    label: ${q(t.label)}`);
     if (t.region) lines.push(`    region: ${t.region}`);
     lines.push(`    hash: { ${algo}: ${q(value!)} }`, "    progress:");
     const pr = t.progress;

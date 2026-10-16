@@ -103,6 +103,16 @@ describe("identify", () => {
     assert.equal(identify({ hashes: [], codes: ["SLUS_216.68"] }, index()).title, "George of the Jungle and the Search for the Secret");
   });
 
+  it("prefers the English title when only a Japanese release is built", () => {
+    const r = identify({ hashes: [], codes: ["GZLJ01"] }, index());
+    assert.equal(r.title, "The Legend of Zelda: The Wind Waker");
+    assert.deepEqual(r.aliases, ["Zelda no Densetsu: Kaze no Takt"]);
+  });
+
+  it("ignores decomp-toolkit's GAMEID placeholder", () => {
+    assert.deepEqual(codeKeys("GAMEID"), []);
+  });
+
   it("flags non-games and leaves unknowns unconfirmed", () => {
     assert.match(identify({ hashes: ["0000000000000000000000000000000000000001"], codes: [] }, index()).nonGame!, /BIOS/);
     const unknown = identify({ hashes: ["ab".repeat(20)], codes: ["dds1"] }, index());
