@@ -1,15 +1,19 @@
 // Batch-onboard finder candidates into the catalog, with the same checks and
-// drafts as the submission bot. Clear cases are written into catalog/; the
-// rest are held with a reason for a maintainer.
+// drafts as the submission bot. Clear cases are written into catalog/; repos
+// whose game couldn't be confirmed go to review as submission issues; the rest
+// are held with a reason for a maintainer.
 //
 // Usage: node src/cli/onboard.ts --ledger data/discover.json [--status likely] [--limit 400]
 //                                [--state onboard-state.json] [--report onboard.md] [--write]
-// Without --write nothing is written to catalog/. Resumable: decisions are kept
-// in --state, so a run stopped by the API rate limit continues where it left off.
+//                                [--submit --repo owner/catalog [--pace 240] [--max-issues 15]]
+// Without --write nothing is written to catalog/; without --submit no issues
+// are opened. Resumable: decisions are kept in --state, so a run stopped by the
+// API rate limit continues where it left off.
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { parseArgs } from "node:util";
 import { normalizeRepo, readCatalog, type Project } from "../catalog.ts";
+import { setTimeout as sleep } from "node:timers/promises";
 import { titleFromDescription } from "../identify/identify.ts";
 import { readIndex } from "../identify/index.ts";
 import { GitHub } from "../ingest/http.ts";
@@ -17,7 +21,7 @@ import { StopRunError } from "../ingest/types.ts";
 import { readLedger } from "../discover/run.ts";
 import { checkSubmission } from "../submit/check.ts";
 import { gameYaml, projectYaml } from "../submit/draft.ts";
-import type { Submission } from "../submit/form.ts";
+import { issueBody, readSubmission, type Submission } from "../submit/form.ts";
 
 const { values } = parseArgs({
   options: {
@@ -29,13 +33,21 @@ const { values } = parseArgs({
     report: { type: "string" },
     index: { type: "string", default: ".cache/game-index.json" },
     write: { type: "boolean", default: false },
+    submit: { type: "boolean", default: false },
+    repo: { type: "string", default: "kDylanHayes/decompendium" },
+    // The check bot runs on the catalog repo's GITHUB_TOKEN (1,000 requests an
+    // hour), so issues are opened a few minutes apart.
+    pace: { type: "string", default: "240" },
+    "max-issues": { type: "string", default: "15" },
   },
 });
 
 interface Decision {
   repo: string;
-  action: "add" | "hold";
+  action: "add" | "hold" | "review";
   reason: string;
+  guess?: string; // title from the description, for review issues
+  issue?: number;
   project?: string;
   game?: string;
   newGame?: boolean;
@@ -65,6 +77,8 @@ const COPY_NAME = /(^|[-_ ])(test(ing)?|copy|backup|mirror|old|archive|fork)$|[-
 const root = resolve(values.root!);
 const statePath = resolve(values.state!);
 const state: Record<string, Decision> = existsSync(statePath) ? JSON.parse(readFileSync(statePath, "utf8")) : {};
+// States from before the review route held unconfirmed games.
+for (const d of Object.values(state)) if (d.action === "hold" && d.reason.startsWith("game not confirmed")) d.action = "review";
 const save = () => {
   mkdirSync(dirname(statePath), { recursive: true });
   writeFileSync(statePath, JSON.stringify(state, null, 1));
@@ -127,6 +141,7 @@ for (const fullName of candidates) {
     const id = result.identification;
     const fails = result.items.filter((i) => i.status === "fail").map((i) => i.text);
     let reason: string | null = null;
+    let review = false;
     if (!f || !a) reason = fails[0] ?? "repository not available";
     else if (result.blocked) reason = fails.join(" ");
     else if (a.verdict !== "likely") reason = `rated ${a.verdict} (score ${a.score}) under the current rules`;
@@ -134,6 +149,7 @@ for (const fullName of candidates) {
     else if (!id || id.status !== "identified") {
       const guess = titleFromDescription(f.description);
       reason = `game not confirmed${guess ? ` (description says "${guess}")` : ""}`;
+      review = true;
     } else if (!result.draft || !result.draft.project.targets.length) reason = "no versions to list";
     else {
       const draft = result.draft;
@@ -145,6 +161,12 @@ for (const fullName of candidates) {
       else if (draft.gameExists && others.length && f.stars < 3) {
         reason = `${draft.game.name} is already covered by ${others.map((p) => (p.data as Project).id).join(", ")}; low-star duplicate (${f.stars} stars), check it isn't a copy`;
       }
+    }
+    if (review) {
+      const guess = titleFromDescription(f!.description);
+      state[key] = { repo: fullName, action: "review", reason: reason!, ...(guess ? { guess } : {}) };
+      console.log(`review ${fullName}: ${reason}`);
+      continue;
     }
     if (reason || !result.draft) {
       state[key] = { repo: fullName, action: "hold", reason: reason ?? "no draft" };
@@ -182,11 +204,55 @@ for (const fullName of candidates) {
 }
 save();
 
+// Open submission issues for the review decisions, paced, skipping repos that
+// already have a submission issue (open or closed) or are listed.
+let opened = 0;
+if (values.submit && !stopped) {
+  const existing = new Set<string>();
+  for (let page = 1; ; page++) {
+    const issues = await github.get<{ body: string | null; pull_request?: unknown }[]>(
+      `/repos/${values.repo}/issues?labels=submission&state=all&per_page=100&page=${page}`,
+    );
+    if (!issues?.length) break;
+    for (const i of issues) if (!i.pull_request && i.body) existing.add(normalizeRepo(readSubmission(i.body).repo));
+  }
+  const listed = new Set(readCatalog(root).projects.map((p) => normalizeRepo((p.data as Project).repo)));
+  for (const d of Object.values(state)) {
+    if (d.action !== "review" || d.issue || opened >= Number(values["max-issues"])) continue;
+    const url = `https://github.com/${d.repo}`;
+    if (existing.has(normalizeRepo(url)) || listed.has(normalizeRepo(url))) continue;
+    if (opened) await sleep(Number(values.pace) * 1000);
+    const sub: Submission = {
+      repo: url,
+      game: d.guess ?? "",
+      platform: null,
+      targets: "",
+      progress: "Not sure",
+      report: "",
+      aiPolicy: "unspecified",
+      isGame: true,
+      verifiesHash: true,
+      isMaintainer: false,
+      notes: `Submitted by the Decompendium finder for review: ${d.reason}. The boxes above are the finder's reading, not the maintainers'; check that it's a game and the build verifies a hash before approving.`,
+    };
+    const issue = await github.send<{ number: number }>("POST", `/repos/${values.repo}/issues`, {
+      title: `Submit: ${d.guess ?? d.repo}`,
+      body: issueBody(sub),
+      labels: ["submission", "needs-checks", "from-finder"],
+    });
+    d.issue = issue!.number;
+    opened++;
+    save();
+    console.log(`issue #${d.issue} for ${d.repo}`);
+  }
+}
+
 const decisions = Object.values(state);
 const added = decisions.filter((d) => d.action === "add");
 const held = decisions.filter((d) => d.action === "hold" && d.reason !== "already listed");
+const reviews = decisions.filter((d) => d.action === "review");
 const report = [
-  `### Onboarding: ${added.length} added, ${held.length} held`,
+  `### Onboarding: ${added.length} added, ${reviews.length} sent to review, ${held.length} held`,
   "",
   ...(stopped ? [`Stopped early: ${stopped}. Run again to continue.`, ""] : []),
   `Candidates: ${candidates.length} (${[...wanted].join(", ")}). API requests this run: ${github.requests}.`,
@@ -199,6 +265,12 @@ const report = [
     .sort((x, y) => (x.platform ?? "").localeCompare(y.platform ?? "") || (x.game ?? "").localeCompare(y.game ?? ""))
     .map((d) => `| ${d.project} | ${d.game}${d.newGame ? "" : " (existing game)"} | ${d.platform} | ${d.targets} | [${d.repo}](https://github.com/${d.repo}) | ${d.reason} |`),
   "",
+  "#### Sent to review (game not confirmed)",
+  "",
+  "| Repo | Issue | Why |",
+  "| --- | --- | --- |",
+  ...reviews.map((d) => `| [${d.repo}](https://github.com/${d.repo}) | ${d.issue ? `#${d.issue}` : "not opened yet"} | ${d.reason.replace(/\|/g, "\\|")} |`),
+  "",
   "#### Held for a maintainer",
   "",
   "| Repo | Why |",
@@ -206,4 +278,4 @@ const report = [
   ...held.sort((x, y) => x.reason.localeCompare(y.reason)).map((d) => `| [${d.repo}](https://github.com/${d.repo}) | ${d.reason.replace(/\|/g, "\\|")} |`),
 ].join("\n");
 if (values.report) writeFileSync(values.report, report + "\n");
-console.log(`\n${added.length} added, ${held.length} held${stopped ? ` (stopped: ${stopped})` : ""}`);
+console.log(`\n${added.length} added, ${reviews.length} to review (${opened} issues opened now), ${held.length} held${stopped ? ` (stopped: ${stopped})` : ""}`);

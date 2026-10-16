@@ -54,3 +54,28 @@ export function readSubmission(body: string): Submission {
     notes: f["Notes"] ?? "",
   };
 }
+
+/** An issue body as GitHub renders the submit form; readSubmission(issueBody(s)) gives s back. */
+export function issueBody(sub: Submission): string {
+  const field = (label: string, value: string) => `### ${label}\n\n${value.trim() || "_No response_"}\n`;
+  const box = (on: boolean, text: string) => `- [${on ? "X" : " "}] ${text}`;
+  const ai = { unspecified: "Not stated", allowed: "Allowed", discouraged: "Discouraged", prohibited: "Prohibited" }[sub.aiPolicy];
+  return [
+    field("Repository URL", sub.repo),
+    field("Game", sub.game),
+    field("Platform", sub.platform ? (PLATFORM_NAMES[sub.platform] ?? "Other or not sure") : "Other or not sure"),
+    field("Versions it builds", sub.targets),
+    field("Progress data", sub.progress || "Not sure"),
+    field("Report location", sub.report),
+    field("AI-assisted contributions", ai),
+    field(
+      "Checks",
+      [
+        box(sub.isGame, "It's a game (not an SDK, library, compiler, emulator or system software)"),
+        box(sub.verifiesHash, "The build checks its output against a hash of the original binary"),
+        box(sub.isMaintainer, "I'm a maintainer of this project (optional)"),
+      ].join("\n"),
+    ),
+    field("Notes", sub.notes),
+  ].join("\n");
+}

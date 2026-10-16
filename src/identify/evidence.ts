@@ -2,7 +2,7 @@ import type { RepoFacts } from "../discover/facts.ts";
 import type { GitHub } from "../ingest/http.ts";
 import type { Evidence } from "./identify.ts";
 
-const HEX = /\b([0-9a-fA-F]{40}|[0-9a-fA-F]{32})\b/g;
+const HEX = /\b([0-9a-fA-F]{64}|[0-9a-fA-F]{40}|[0-9a-fA-F]{32})\b/g;
 
 /** Hash files worth reading: ROM checksums, not decomp-toolkit's per-file build.sha1 or tool downloads. */
 const ROM_HASH_FILE = /(^|\/)[^/]+\.(sha1|md5)$|(^|\/)checksum[^/]*$/i;
@@ -14,6 +14,9 @@ export function codesFromFacts(f: Pick<RepoFacts, "paths" | "reportArtifacts">):
   for (const p of f.paths) {
     const m = /^configs?\/([^/]+)\//.exec(p);
     if (m && m[1] !== "GAMEID") codes.add(m[1]!); // decomp-toolkit's template placeholder
+    // File names in config folders can be codes too: config/SLES_011.76.splat.yaml, config/SLPM_86.053.sha1.
+    const file = /^configs?\/(?:[^/]+\/)?([^/]+?)(?:\.splat)?\.(?:ya?ml|sha1|md5|sha)$/i.exec(p);
+    if (file) codes.add(file[1]!);
   }
   for (const a of f.reportArtifacts) {
     const m = /^(.+)_report$/.exec(a);

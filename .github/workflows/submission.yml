@@ -43,4 +43,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           ISSUE: ${{ github.event.issue.number }}
+          # Optional: confirms games the release catalogues don't cover (PC, Switch, ...).
+          IGDB_CLIENT_ID: ${{ secrets.IGDB_CLIENT_ID }}
+          IGDB_CLIENT_SECRET: ${{ secrets.IGDB_CLIENT_SECRET }}
         run: pnpm submission check --issue "$ISSUE"

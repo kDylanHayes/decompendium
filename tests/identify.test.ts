@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { cleanTitle, parseDat, serialKeys } from "../src/identify/dat.ts";
 import { codesFromFacts, hexDigests } from "../src/identify/evidence.ts";
-import { codeKeys, identify, titleFromDescription } from "../src/identify/identify.ts";
+import { codeKeys, identify, identifyByIgdb, titleFromDescription } from "../src/identify/identify.ts";
 import { addToIndex, emptyIndex } from "../src/identify/index.ts";
 
 // Shaped like libretro-database's No-Intro and Redump DATs.
@@ -125,7 +125,7 @@ describe("evidence", () => {
   it("collects version codes and digests", () => {
     assert.deepEqual(
       codesFromFacts({ paths: ["config/GZLE01/build.sha1", "configs/USA/checksum.sha", "src/a.c"], reportArtifacts: ["SLUS_216.68_report"] }),
-      ["GZLE01", "USA", "SLUS_216.68"],
+      ["GZLE01", "build", "USA", "checksum", "SLUS_216.68"],
     );
     assert.deepEqual(hexDigests("sm64.us.z64 `sha1: 9BEF1128717F958171A4AFAC3ED78EE2BB4E86CE` and 20b854b239203baf6c961b850a4a51a2"), [
       "9bef1128717f958171a4afac3ed78ee2bb4e86ce",
@@ -138,5 +138,24 @@ describe("evidence", () => {
     assert.equal(titleFromDescription("A decompilation of Super Smash Bros Melee brought to you by a bunch of clever folks"), "Super Smash Bros Melee");
     assert.equal(titleFromDescription("Matching decomp for Rock Band 3 using dtk"), "Rock Band 3");
     assert.equal(titleFromDescription("Tools and notes"), null);
+  });
+
+  it("confirms a game on IGDB only by exact title with a clear platform", async () => {
+    const fake = (games: unknown) =>
+      (async (url: string | URL | Request) =>
+        String(url).includes("twitch")
+          ? new Response(JSON.stringify({ access_token: "t", expires_in: 3600 }))
+          : new Response(JSON.stringify(games))) as typeof fetch;
+    const creds = { clientId: "id", clientSecret: "secret" };
+    const rb3 = [{ name: "Rock Band 3", platforms: [{ name: "Wii" }, { name: "Xbox 360" }, { name: "PlayStation 3" }] }];
+    const r = await identifyByIgdb("Rock Band 3", "decomp of rock band 3 wii using dtk", creds, fake(rb3));
+    assert.equal(r?.title, "Rock Band 3");
+    assert.equal(r?.platform, "wii");
+    // Several platforms and none named in the repo: not confirmed.
+    assert.equal(await identifyByIgdb("Rock Band 3", "matching decomp", creds, fake(rb3)), null);
+    // A near title is not a match.
+    assert.equal(await identifyByIgdb("Rock Band", "wii", creds, fake(rb3)), null);
+    const alt = [{ name: "Chulip", alternative_names: [{ name: "Chu-Ri-Pu" }], platforms: [{ name: "PlayStation 2" }] }];
+    assert.equal((await identifyByIgdb("Chu-Ri-Pu", "", creds, fake(alt)))?.title, "Chulip");
   });
 });

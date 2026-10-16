@@ -86,7 +86,7 @@ export async function makeDraft(opts: {
       id: slug(version),
       label: regionName ? `${version} (${regionName})` : version,
       ...(region ? { region } : {}),
-      hash: hash.length === 40 ? { sha1: hash } : { md5: hash },
+      hash: hashField(hash),
       progress: reports.has(`${version}_report`)
         ? { kind: "objdiff", source: { type: "github-artifact", artifact: `${version}_report`, path: "report.json" } }
         : { kind: "none" },
@@ -102,7 +102,7 @@ export async function makeDraft(opts: {
         id: tid,
         label: r.name.replace(/^[^(]*\(/, "(").replace(/^\((.*)\)$/, "$1").replace(/\) \(/g, ", ") || r.name,
         ...(region ? { region } : {}),
-        hash: r.match.value.length === 40 ? { sha1: r.match.value } : { md5: r.match.value },
+        hash: hashField(r.match.value),
         progress: { kind: "none" },
       });
     }
@@ -148,7 +148,38 @@ export async function makeDraft(opts: {
       targets.push({
         id: tid,
         label: stem.length <= 3 || /^(usa|jpn|eur|pal|ntsc)$/i.test(stem) ? stem.toUpperCase() : stem,
-        hash: hash.length === 40 ? { sha1: hash } : { md5: hash },
+        hash: hashField(hash),
+        progress: artifact ? { kind: "objdiff", source: { type: "github-artifact", artifact, path: "report.json" } } : { kind: "none" },
+      });
+    }
+  }
+  if (!targets.length) {
+    // splat configs keep the executable's hash in a top-level `sha1:` field:
+    // config/SLUS_005.61.splat.yaml, config/splat.us.yaml, configs/USA/SCUS_941.82.yaml.
+    const norm = (x: string) => x.toLowerCase().replace(/[^a-z0-9]/g, "");
+    const yamls = f.paths
+      .filter((p) => /^configs?\/([^/]+\/)?[^/]+\.ya?ml$/i.test(p))
+      .map((p) => {
+        const file = p.split("/").pop()!.replace(/\.ya?ml$/i, "").replace(/(^splat[._-]|[._-]splat$)/i, "");
+        return { path: p, stem: file };
+      })
+      .filter(({ stem }) => /^[A-Z]{4}[-_ ]?\d{2,3}\.?\d{2,3}$/.test(stem) || /^(us|usa|jp|jpn|eu|eur|pal|ntsc|en|kr)$/i.test(stem) || f.reportArtifacts.some((a) => norm(a.replace(/_report$/, "")) === norm(stem)))
+      .slice(0, 8);
+    for (const { path, stem } of yamls) {
+      const text = await github.getText(
+        `/repos/${f.fullName}/contents/${path.split("/").map(encodeURIComponent).join("/")}?ref=${encodeURIComponent(f.defaultBranch)}`,
+        "application/vnd.github.raw+json",
+        50_000,
+      );
+      const hash = /^sha1:\s*["']?([0-9a-fA-F]{40})/m.exec(text ?? "")?.[1]?.toLowerCase();
+      if (!hash || targets.some((t) => Object.values(t.hash)[0] === hash)) continue;
+      const artifact = f.reportArtifacts.find((a) => norm(a.replace(/_report$/, "")) === norm(stem));
+      let tid = slug(stem) || "main";
+      for (let n = 2; targets.some((t) => t.id === tid); n++) tid = `${slug(stem) || "main"}-${n}`;
+      targets.push({
+        id: tid,
+        label: stem.length <= 4 ? stem.toUpperCase() : stem,
+        hash: { sha1: hash },
         progress: artifact ? { kind: "objdiff", source: { type: "github-artifact", artifact, path: "report.json" } } : { kind: "none" },
       });
     }
@@ -158,7 +189,7 @@ export async function makeDraft(opts: {
       const hash = hexDigests(line)[0];
       if (!hash) continue;
       const label = line.replace(hash, "").replace(/\b(sha1|md5|sha256)\b:?/gi, "").replace(/[,`:]+\s*$/, "").replace(/\s+/g, " ").trim() || "Main";
-      targets.push({ id: slug(label) || `target-${targets.length + 1}`, label, hash: hash.length === 40 ? { sha1: hash } : { md5: hash }, progress: { kind: "none" } });
+      targets.push({ id: slug(label) || `target-${targets.length + 1}`, label, hash: hashField(hash), progress: { kind: "none" } });
     }
   }
   if (!targets.length) problems.push("No versions found: add at least one target with the hash its build checks.");
@@ -192,6 +223,11 @@ export async function makeDraft(opts: {
 }
 
 const q = (s: string) => JSON.stringify(s);
+
+/** A target's hash field from a hex digest: 64 → sha256, 40 → sha1, 32 → md5. */
+export function hashField(hex: string): { sha1: string } | { md5: string } | { sha256: string } {
+  return hex.length === 64 ? { sha256: hex } : hex.length === 40 ? { sha1: hex } : { md5: hex };
+}
 
 export function gameYaml(g: Game): string {
   return [

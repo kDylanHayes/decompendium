@@ -3,7 +3,7 @@ import { deepCheck } from "../discover/deep.ts";
 import { fetchFacts, repoFromUrl, type RepoFacts } from "../discover/facts.ts";
 import { assess, type Assessment } from "../discover/signals.ts";
 import { hexDigests, repoEvidence } from "../identify/evidence.ts";
-import { identify, type Identification } from "../identify/identify.ts";
+import { identify, identifyByIgdb, igdbCredsFromEnv, titleFromDescription, type Identification } from "../identify/identify.ts";
 import type { GameIndex } from "../identify/index.ts";
 import type { GitHub } from "../ingest/http.ts";
 import { parseDecompendium, parseObjdiff, sanityErrors } from "../ingest/parsers.ts";
@@ -100,11 +100,22 @@ export async function checkSubmission(sub: Submission, ctx: CheckContext): Promi
   if (ctx.index) {
     const evidence = await repoEvidence(ctx.github, facts);
     evidence.hashes.push(...hexDigests(sub.targets));
-    const id = identify(evidence, ctx.index);
+    let id = identify(evidence, ctx.index);
+    // Nothing in the release catalogues (PC, Switch, ...): try an IGDB title search if configured.
+    const creds = igdbCredsFromEnv();
+    const guess = titleFromDescription(facts.description) ?? (sub.game || null);
+    if (!id.title && creds && guess) {
+      try {
+        const viaIgdb = await identifyByIgdb(guess, `${facts.fullName} ${facts.description} ${facts.readme.slice(0, 3000)}`, creds);
+        if (viaIgdb) id = viaIgdb;
+      } catch (err) {
+        add("info", `IGDB lookup failed: ${(err as Error).message}`);
+      }
+    }
     result.identification = id;
     if (id.nonGame) add("fail", `This builds something that isn't a game: ${id.nonGame}. Only game decomps are listed.`);
     else if (id.title) {
-      const where = id.releases.slice(0, 3).map((r) => `${r.name} (${r.via})`).join("; ");
+      const where = id.releases.length ? id.releases.slice(0, 3).map((r) => `${r.name} (${r.via})`).join("; ") : "an exact title match on IGDB";
       add("pass", `Game: **${id.title}** on ${platformName(id.platform!)}, from ${where}.`);
       if (sub.platform && sub.platform !== id.platform) add("warn", `The form says ${platformName(sub.platform)}, but the evidence says ${platformName(id.platform!)}.`);
     } else {

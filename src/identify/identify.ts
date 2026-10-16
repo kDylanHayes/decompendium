@@ -94,27 +94,88 @@ export function titleFromDescription(description: string): string | null {
   return m ? m[1]!.trim() : null;
 }
 
-/**
- * IGDB fallback, used only when Twitch credentials are configured
- * (IGDB_CLIENT_ID, IGDB_CLIENT_SECRET). Returns the best-matching game name.
- */
+// IGDB platform names to Decompendium platform ids.
+const IGDB_PLATFORMS: Record<string, string> = {
+  "Nintendo GameCube": "gc", Wii: "wii", "Wii U": "wiiu", "Nintendo 64": "n64", "Game Boy": "gb", "Game Boy Color": "gbc",
+  "Game Boy Advance": "gba", "Nintendo DS": "nds", "Nintendo 3DS": "3ds", "Nintendo Switch": "switch",
+  "Nintendo Entertainment System": "nes", "Super Nintendo Entertainment System": "snes", PlayStation: "ps1",
+  "PlayStation 2": "ps2", "PlayStation 3": "ps3", "PlayStation Portable": "psp", Xbox: "xbox", "Xbox 360": "x360",
+  "PC (Microsoft Windows)": "win32", DOS: "dos", Dreamcast: "dc", "Sega Saturn": "saturn", "Sega Mega Drive/Genesis": "genesis",
+};
+
+export interface IgdbCreds {
+  clientId: string;
+  clientSecret: string;
+}
+
+/** Credentials from IGDB_CLIENT_ID and IGDB_CLIENT_SECRET, if both are set. */
+export function igdbCredsFromEnv(env: NodeJS.ProcessEnv = process.env): IgdbCreds | null {
+  return env.IGDB_CLIENT_ID && env.IGDB_CLIENT_SECRET ? { clientId: env.IGDB_CLIENT_ID, clientSecret: env.IGDB_CLIENT_SECRET } : null;
+}
+
+let igdbToken: { value: string; expires: number } | null = null;
+
+/** Search IGDB for games by title. Returns up to five candidates with their platforms and other names. */
 export async function igdbSearch(
   title: string,
-  creds: { clientId: string; clientSecret: string },
+  creds: IgdbCreds,
   fetch: typeof globalThis.fetch = globalThis.fetch,
-): Promise<{ name: string; platforms: string[] } | null> {
-  const tokenRes = await fetch(
-    `https://id.twitch.tv/oauth2/token?${new URLSearchParams({ client_id: creds.clientId, client_secret: creds.clientSecret, grant_type: "client_credentials" })}`,
-    { method: "POST" },
-  );
-  if (!tokenRes.ok) return null;
-  const { access_token } = (await tokenRes.json()) as { access_token: string };
+): Promise<{ name: string; platforms: string[]; alt: string[] }[]> {
+  if (!igdbToken || igdbToken.expires < Date.now() + 60_000) {
+    const res = await fetch(
+      `https://id.twitch.tv/oauth2/token?${new URLSearchParams({ client_id: creds.clientId, client_secret: creds.clientSecret, grant_type: "client_credentials" })}`,
+      { method: "POST" },
+    );
+    if (!res.ok) throw new Error(`IGDB auth failed: HTTP ${res.status}`);
+    const t = (await res.json()) as { access_token: string; expires_in: number };
+    igdbToken = { value: t.access_token, expires: Date.now() + t.expires_in * 1000 };
+  }
   const res = await fetch("https://api.igdb.com/v4/games", {
     method: "POST",
-    headers: { "Client-ID": creds.clientId, Authorization: `Bearer ${access_token}`, Accept: "application/json" },
-    body: `search "${title.replace(/["\\]/g, "")}"; fields name,platforms.name; limit 1;`,
+    headers: { "Client-ID": creds.clientId, Authorization: `Bearer ${igdbToken.value}`, Accept: "application/json" },
+    body: `search "${title.replace(/["\\]/g, "")}"; fields name,alternative_names.name,platforms.name; limit 5;`,
   });
-  if (!res.ok) return null;
-  const [game] = (await res.json()) as { name: string; platforms?: { name: string }[] }[];
-  return game ? { name: game.name, platforms: (game.platforms ?? []).map((p) => p.name) } : null;
+  if (!res.ok) throw new Error(`IGDB search failed: HTTP ${res.status}`);
+  const games = (await res.json()) as { name: string; platforms?: { name: string }[]; alternative_names?: { name: string }[] }[];
+  return games.map((g) => ({ name: g.name, platforms: (g.platforms ?? []).map((p) => p.name), alt: (g.alternative_names ?? []).map((a) => a.name) }));
+}
+
+/**
+ * Confirm a game by IGDB title search: only an exact title match (ignoring case
+ * and punctuation) whose platform is clear from the repo or IGDB counts.
+ */
+export async function identifyByIgdb(
+  title: string,
+  hint: string, // repo name, description and README start, for platform words
+  creds: IgdbCreds,
+  fetch: typeof globalThis.fetch = globalThis.fetch,
+): Promise<Identification | null> {
+  const results = await igdbSearch(title, creds, fetch);
+  const key = strip(title);
+  const match = results.find((g) => strip(g.name) === key || g.alt.some((a) => strip(a) === key));
+  if (!match) return null;
+  const platforms = [...new Set(match.platforms.map((p) => IGDB_PLATFORMS[p]).filter((p): p is string => !!p))];
+  const mentioned = platforms.filter((p) => new RegExp(`\\b(${platformWords(p).join("|")})\\b`, "i").test(hint));
+  const platform = platforms.length === 1 ? platforms[0]! : mentioned.length === 1 ? mentioned[0]! : null;
+  if (!platform) return null;
+  return {
+    status: "identified",
+    title: match.name,
+    platform,
+    releases: [],
+    nonGame: null,
+    aliases: strip(match.name) === key ? [] : [title],
+  };
+}
+
+function platformWords(p: string): string[] {
+  const words: Record<string, string[]> = {
+    gc: ["gamecube", "gcn", "ngc", "gc"], wii: ["wii"], wiiu: ["wii u", "wiiu"], n64: ["n64", "nintendo 64"],
+    gb: ["game boy", "gb"], gbc: ["game boy color", "gbc"], gba: ["game boy advance", "gba"], nds: ["nintendo ds", "nds", "ds"],
+    "3ds": ["3ds"], switch: ["switch", "nx"], nes: ["nes", "famicom"], snes: ["snes", "super famicom"],
+    ps1: ["ps1", "psx", "playstation"], ps2: ["ps2", "playstation 2"], ps3: ["ps3", "playstation 3"], psp: ["psp"],
+    xbox: ["xbox"], x360: ["xbox 360", "x360"], win32: ["pc", "windows", "win32", "steam"], dos: ["dos", "ms-dos"],
+    dc: ["dreamcast"], saturn: ["saturn"], genesis: ["genesis", "mega drive"],
+  };
+  return (words[p] ?? [p]).map((w) => w.replace(/ /g, "\\s"));
 }

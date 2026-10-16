@@ -4,7 +4,7 @@ import { describe, it } from "node:test";
 import { parseYaml } from "../src/catalog.ts";
 import { COMMENT_MARKER, renderComment, type CheckResult } from "../src/submit/check.ts";
 import { findGame, gameYaml, projectYaml, slug } from "../src/submit/draft.ts";
-import { parseIssueForm, readSubmission } from "../src/submit/form.ts";
+import { issueBody, parseIssueForm, readSubmission } from "../src/submit/form.ts";
 import { schemaErrors } from "../src/schemas.ts";
 
 // What GitHub renders for a filled-in submit-project.yml.
@@ -47,6 +47,16 @@ Discouraged
 _No response_`;
 
 describe("issue form parsing", () => {
+  it("writes bodies the parser reads back (finder-made issues)", () => {
+    const sub = {
+      repo: "https://github.com/a/b", game: "Rock Band 3", platform: "wii", targets: "", progress: "Not sure", report: "",
+      aiPolicy: "unspecified" as const, isGame: true, verifiesHash: true, isMaintainer: false,
+      notes: "Submitted by the finder for review: game not confirmed.",
+    };
+    assert.deepEqual(readSubmission(issueBody(sub)), sub);
+    assert.equal(readSubmission(issueBody({ ...sub, platform: null })).platform, null);
+  });
+
   it("reads every field, treating _No response_ as empty", () => {
     const f = parseIssueForm(BODY);
     assert.equal(f["Repository URL"], "https://github.com/doldecomp/mkw");
