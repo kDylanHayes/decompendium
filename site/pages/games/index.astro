@@ -1,0 +1,35 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { platformName } from "../../../src/site/format.ts";
+import { site, url } from "../../lib/data.ts";
+
+const { games, platforms } = site();
+const byPlatform = platforms.map((platform) => ({ platform, games: games.filter((g) => g.platform === platform) }));
+---
+
+<Layout title="Games" current="games" description="Every game with a listed matching decompilation, by platform.">
+  <h1>Games</h1>
+  <p class="lede">
+    Every game with at least one listed matching decompilation. Each game page lists all of its projects, including
+    ones that don't appear on the home page.
+  </p>
+  <div class="game-groups">
+    {
+      byPlatform.map(({ platform, games }) => (
+        <section class="game-group">
+          <h2>{platformName(platform)}</h2>
+          <ul>
+            {games.map((g) => (
+              <li>
+                <a href={url(`games/${g.id}/`)}>{g.name}</a>
+                <span class="muted small">
+                  {g.projects.length} {g.projects.length === 1 ? "project" : "projects"}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </div>
+</Layout>

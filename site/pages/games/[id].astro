@@ -1,0 +1,35 @@
+---
+import ProjectRow from "../../components/ProjectRow.astro";
+import Layout from "../../layouts/Layout.astro";
+import { platformName } from "../../../src/site/format.ts";
+import type { GameView } from "../../../src/site/model.ts";
+import { site, url } from "../../lib/data.ts";
+
+export function getStaticPaths() {
+  return site().games.map((game) => ({ params: { id: game.id }, props: { game } }));
+}
+
+const { game } = Astro.props as { game: GameView };
+const count = game.projects.length;
+---
+
+<Layout
+  title={game.name}
+  current="games"
+  description={`Matching decompilation projects for ${game.name} (${platformName(game.platform)}).`}
+>
+  <div data-pagefind-body>
+    <p class="small muted" data-pagefind-ignore><a href={url("games/")}>Games</a> / {platformName(game.platform)}</p>
+    <h1 data-pagefind-meta="title">{game.name}</h1>
+    <p class="lede">
+      {`${count} matching decompilation ${count === 1 ? "project" : "projects"} for this game on ${platformName(game.platform)}, oldest listing first.`}
+      {game.aliases.length > 0 && ` Also known as ${game.aliases.join(", ")}.`}
+    </p>
+    <p class="notice">
+      Working on {game.name}? Check these projects before starting a new one. Most welcome contributors.
+    </p>
+    <ul class="project-list">
+      {game.projects.map((project) => <ProjectRow project={project} showGame={false} />)}
+    </ul>
+  </div>
+</Layout>

@@ -1,0 +1,122 @@
+---
+import ProjectRow from "../components/ProjectRow.astro";
+import Layout from "../layouts/Layout.astro";
+import { AI_POLICY_LABELS, platformName, STATUS_LABELS } from "../../src/site/format.ts";
+import { site, url } from "../lib/data.ts";
+
+const { projects, platforms, games } = site();
+const listed = projects.filter((p) => p.showInIndex);
+const hidden = projects.length - listed.length;
+---
+
+<Layout>
+  <link slot="head" href={url("pagefind/pagefind-ui.css")} rel="stylesheet" />
+  <h1>Matching decompilations, by game</h1>
+  <p class="lede">
+    Projects that rebuild a game's original binary byte for byte, with progress taken from each project's own CI
+    reports.
+  </p>
+  <p class="notice">
+    Thinking of starting a decomp? <a href={url("games/")}>Check the game pages first</a> to see what already exists.
+    Know a matching decomp that's missing? <a href={url("submit/")}>Submit it</a>.
+  </p>
+
+  <div id="search"></div>
+
+  <form class="filters js-only" id="filters" aria-label="Filter projects">
+    <label
+      >Platform
+      <select name="platform">
+        <option value="">All</option>
+        {platforms.map((p) => <option value={p}>{platformName(p)}</option>)}
+      </select>
+    </label>
+    <label
+      >Status
+      <select name="status">
+        <option value="">All</option>
+        {Object.entries(STATUS_LABELS).map(([v, l]) => <option value={v}>{l}</option>)}
+      </select>
+    </label>
+    <label
+      >AI policy
+      <select name="ai">
+        <option value="">All</option>
+        {Object.entries(AI_POLICY_LABELS).map(([v, l]) => <option value={v}>{l}</option>)}
+      </select>
+    </label>
+    <label
+      >Sort
+      <select name="sort">
+        <option value="activity">Recent activity</option>
+        <option value="name">Name A–Z</option>
+        <option value="listed">Date listed</option>
+      </select>
+    </label>
+    <label class="check"><input type="checkbox" name="recent" value="1" /> Active in the last 90 days</label>
+  </form>
+
+  <ul class="project-list" id="projects">
+    {listed.map((project) => <ProjectRow project={project} />)}
+  </ul>
+  <p class="count-line">
+    <span id="shown">{listed.length}</span> of {listed.length} projects shown.
+    {
+      hidden > 0 && (
+        <>
+          {hidden} more {hidden === 1 ? "is" : "are"} listed only on their <a href={url("games/")}>game pages</a>.
+        </>
+      )
+    }
+    {games.length} games in total.
+  </p>
+  <p class="small muted">The solid bar is fully linked code; the lighter bar is matched code.</p>
+
+  <script is:inline define:vars={{ bundlePath: url("pagefind/") }}>
+    // Search (Pagefind is generated after the Astro build, so it is absent in dev).
+    const script = document.createElement("script");
+    script.src = bundlePath + "pagefind-ui.js";
+    script.onload = () =>
+      new PagefindUI({ element: "#search", bundlePath, showSubResults: false, showImages: false, resetStyles: false });
+    document.head.appendChild(script);
+
+    // Filters and sorting, mirrored in the URL query string.
+    const form = document.getElementById("filters");
+    const list = document.getElementById("projects");
+    const shown = document.getElementById("shown");
+    const rows = [...list.children];
+    const params = new URLSearchParams(location.search);
+    for (const el of form.elements) {
+      if (!el.name || !params.has(el.name)) continue;
+      if (el.type === "checkbox") el.checked = params.get(el.name) === "1";
+      else el.value = params.get(el.name);
+    }
+    const cutoff = Date.now() - 90 * 24 * 3600 * 1000;
+    const sorters = {
+      activity: (a, b) => b.dataset.activity.localeCompare(a.dataset.activity),
+      name: (a, b) => a.dataset.name.localeCompare(b.dataset.name),
+      listed: (a, b) => b.dataset.listed.localeCompare(a.dataset.listed),
+    };
+    function apply() {
+      const f = Object.fromEntries(new FormData(form));
+      let count = 0;
+      for (const row of rows) {
+        const d = row.dataset;
+        const ok =
+          (!f.platform || d.platform === f.platform) &&
+          (!f.status || d.status === f.status) &&
+          (!f.ai || d.ai === f.ai) &&
+          (!f.recent || (d.activity && Date.parse(d.activity) >= cutoff));
+        row.hidden = !ok;
+        if (ok) count++;
+      }
+      rows.sort(sorters[f.sort] ?? sorters.activity).forEach((row) => list.appendChild(row));
+      shown.textContent = count;
+      const query = new URLSearchParams();
+      for (const [k, v] of Object.entries(f)) if (v && !(k === "sort" && v === "activity")) query.set(k, v);
+      history.replaceState(null, "", query.size ? `?${query}` : location.pathname);
+    }
+    form.addEventListener("change", apply);
+    apply();
+  </script>
+</Layout>

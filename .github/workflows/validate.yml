@@ -31,6 +31,11 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm test
       - run: pnpm validate
+      - name: Build the site (catalog only, no progress data)
+        env:
+          DATA_DIR: ${{ runner.temp }}/no-data
+          ASTRO_TELEMETRY_DISABLED: "1"
+        run: pnpm build
 
   classify:
     if: github.event_name == 'pull_request'

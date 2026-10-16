@@ -1,5 +1,5 @@
 import { readFileSync } from "node:fs";
-import { fileURLToPath } from "node:url";
+import { repoFile } from "./paths.ts";
 import { Ajv2020, type ErrorObject, type ValidateFunction } from "ajv/dist/2020.js";
 import addFormatsModule from "ajv-formats";
 
@@ -7,10 +7,8 @@ import addFormatsModule from "ajv-formats";
 const addFormats = ((addFormatsModule as unknown as { default?: typeof addFormatsModule }).default ??
   addFormatsModule) as unknown as (ajv: Ajv2020) => Ajv2020;
 
-const schemaDir = new URL("../schema/", import.meta.url);
-
 function loadSchema(name: string): object {
-  return JSON.parse(readFileSync(fileURLToPath(new URL(name, schemaDir)), "utf8"));
+  return JSON.parse(readFileSync(repoFile(`schema/${name}`), "utf8"));
 }
 
 const ajv = new Ajv2020({ allErrors: true, strict: true });

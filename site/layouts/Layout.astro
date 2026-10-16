@@ -1,0 +1,87 @@
+---
+import "../styles/global.css";
+import { exactTime, shortDate } from "../../src/site/format.ts";
+import { REPO_URL, site, url } from "../lib/data.ts";
+
+interface Props {
+  title?: string;
+  description?: string;
+  current?: "games" | "submit" | "about";
+}
+
+const { title, description, current } = Astro.props;
+const fullTitle = title ? `${title} · Decompendium` : "Decompendium · matching decompilations by game";
+const summary =
+  description ?? "A directory of matching decompilation projects, grouped by game, with progress from each project's CI.";
+const { builtAt } = site();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={summary} />
+    <link rel="icon" href={url("favicon.svg")} type="image/svg+xml" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={summary} />
+    <script is:inline>
+      // Apply the saved theme before first paint, and mark that JS is available.
+      try {
+        const saved = localStorage.getItem("theme");
+        if (saved === "light" || saved === "dark") document.documentElement.dataset.theme = saved;
+      } catch {}
+      document.documentElement.classList.add("has-js");
+    </script>
+    <slot name="head" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href={url()}>Decomp<span>endium</span></a>
+        <nav class="site-nav" aria-label="Main">
+          <a href={url("games/")} aria-current={current === "games" ? "page" : undefined}>Games</a>
+          <a href={url("submit/")} aria-current={current === "submit" ? "page" : undefined}>Submit</a>
+          <a href={url("about/")} aria-current={current === "about" ? "page" : undefined}>About</a>
+        </nav>
+        <button class="theme-toggle js-only" type="button" id="theme-toggle" aria-label="Switch color theme">Theme</button>
+      </div>
+    </header>
+    <main>
+      <div class="wrap">
+        <slot />
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>
+          Matching decompilations only. Progress comes from each project's own CI reports. Decompendium hosts no
+          code or game data.
+        </p>
+        <p>
+          Updated <time datetime={builtAt} title={exactTime(builtAt)}>{shortDate(builtAt)}</time> ·
+          <a href={REPO_URL}>Source on GitHub</a> · Code MIT, data CC0
+        </p>
+      </div>
+    </footer>
+    <script is:inline>
+      (() => {
+        const button = document.getElementById("theme-toggle");
+        const root = document.documentElement;
+        const effective = () =>
+          root.dataset.theme ?? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        const label = () => (button.textContent = effective() === "dark" ? "Light mode" : "Dark mode");
+        label();
+        button.addEventListener("click", () => {
+          root.dataset.theme = effective() === "dark" ? "light" : "dark";
+          try {
+            localStorage.setItem("theme", root.dataset.theme);
+          } catch {}
+          label();
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+---
+import { STATUS_LABELS } from "../../src/site/format.ts";
+import type { ProjectView, TargetView } from "../../src/site/model.ts";
+
+interface Props {
+  project: ProjectView;
+  target?: TargetView; // also show this target's data state
+}
+
+const { project, target } = Astro.props;
+---
+
+<span class="chips">
+  {project.status !== "active" && <span class="chip good">{STATUS_LABELS[project.status]}</span>}
+  {project.quiet && <span class="chip" title="No commits on the default branch for 180 days">Quiet</span>}
+  {target?.state === "stale" && <span class="chip warn" title="Progress has not been refreshed recently">Stale data</span>}
+  {target?.state === "failing" && <span class="chip bad" title={target.error ?? "Recent fetches failed"}>Fetch failing</span>}
+  {project.confirmed && <span class="chip good">Maintainer confirmed</span>}
+</span>

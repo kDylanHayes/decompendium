@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Content as Policy } from "../../POLICY.md";
+import { site } from "../lib/data.ts";
+
+const { config } = site();
+---
+
+<Layout title="About" current="about" description="What Decompendium lists, how progress is measured, and how to opt out.">
+  <div class="prose">
+    <h1>About Decompendium</h1>
+    <p class="lede">
+      Decompendium is a directory of matching decompilations: projects whose build reproduces a game's original
+      binary byte for byte. It exists so people can see what already exists for a game before starting something new.
+    </p>
+
+    <h2>How progress is measured</h2>
+    <p>
+      Every {config.thresholds.stale_after_days > 1 ? "few hours" : "day"}, Decompendium fetches each project's latest report
+      from its own CI. Only successful builds of the default branch count; pull requests and forks are ignored. Numbers
+      are shown as reported, never entered by hand.
+    </p>
+    <ul>
+      <li><strong>Matched code</strong>: bytes of code that compile to exactly the original instructions.</li>
+      <li><strong>Fully linked</strong>: code in translation units that are complete and linked from source.</li>
+      <li><strong>Functions</strong>: whole functions that match.</li>
+    </ul>
+    <p>
+      Nothing here is ranked by percentage. Projects differ in size, toolchain and goals, and a number alone
+      doesn't capture that.
+    </p>
+
+    <h2>Opting out</h2>
+    <p>
+      Every project page has an opt-out link. Maintainers can hide a project from the home page, or remove it
+      entirely within 48 hours.
+    </p>
+
+    <Policy />
+  </div>
+</Layout>

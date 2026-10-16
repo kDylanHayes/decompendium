@@ -1,0 +1,56 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { issueUrl, url } from "../lib/data.ts";
+
+const submit = issueUrl(
+  "Submit: <game name>",
+  [
+    "Game name:",
+    "Platform:",
+    "Repository URL:",
+    "",
+    "Targets (label, region or version, expected hash of the original binary), one per line:",
+    "",
+    "Progress: objdiff / Decompendium format / none",
+    "Report location (artifact name and file path, or URL):",
+    "",
+    "- [ ] The build verifies its output against the original binary's hash",
+    "- [ ] I am a maintainer of this project (optional)",
+    "",
+    "Notes:",
+  ].join("\n"),
+);
+---
+
+<Layout title="Submit a project" current="submit" description="How to add a matching decompilation to Decompendium.">
+  <div class="prose">
+    <h1>Submit a project</h1>
+    <p class="lede">
+      Anyone can submit a matching decompilation. You don't need to be a maintainer, and maintainers can opt out at
+      any time.
+    </p>
+
+    <h2>What qualifies</h2>
+    <ul>
+      <li>The project rebuilds a game's original binary, and its build checks the result against a published hash.</li>
+      <li>Code not yet decompiled can still be assembly. Recompilations, ports and non-matching decomps aren't listed.</li>
+      <li>The repository contains no game assets or original binaries.</li>
+      <li>
+        A second project for the same game and version is listed only if the first is inactive, or the approach is
+        genuinely different. See <a href={url("about/")}>the full policy</a>.
+      </li>
+    </ul>
+
+    <h2>Progress data</h2>
+    <p>
+      Progress comes from the project's own CI: an <a href="https://github.com/encounter/objdiff">objdiff</a> report
+      (as a workflow artifact or at a URL), or a small
+      <a href="https://github.com/kDylanHayes/decompendium/blob/main/schema/progress.schema.json">Decompendium progress file</a>
+      for projects that don't use objdiff. Projects without either are still listed.
+    </p>
+
+    <h2>Send it in</h2>
+    <p>Submissions are GitHub issues, reviewed by a catalog maintainer, usually within a week.</p>
+    <p><a class="button" href={submit}>Open a submission on GitHub</a></p>
+  </div>
+</Layout>

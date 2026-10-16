@@ -1,0 +1,20 @@
+---
+import type { Count } from "../../src/catalog.ts";
+import { fraction, percent } from "../../src/site/model.ts";
+
+interface Props {
+  code: Count;
+  linked: Count | null;
+  large?: boolean;
+}
+
+const { code, linked, large } = Astro.props;
+const matched = fraction(code) * 100;
+const linkedPct = fraction(linked) * 100;
+const label = `Matched code ${percent(code)}${linked ? `, fully linked ${percent(linked)}` : ""}`;
+---
+
+<div class:list={["bar", { large }]} role="img" aria-label={label} title={label}>
+  <div class="matched" style={`width:${matched.toFixed(2)}%`}></div>
+  {linked && <div class="linked" style={`width:${linkedPct.toFixed(2)}%`}></div>}
+</div>

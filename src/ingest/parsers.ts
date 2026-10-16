@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import protobuf from "protobufjs";
 import type { Count } from "../catalog.ts";
+import { repoFile } from "../paths.ts";
 import { progressErrors } from "../validate.ts";
 import { IngestError, type Category, type Measures, type Parsed } from "./types.ts";
 
@@ -9,7 +10,7 @@ export const OBJDIFF_REPORT_VERSION = 2;
 
 const reportType = protobuf
   // keepCase: field names stay snake_case, matching objdiff's JSON output.
-  .parse(readFileSync(new URL("./objdiff/report.proto", import.meta.url), "utf8"), { keepCase: true })
+  .parse(readFileSync(repoFile("src/ingest/objdiff/report.proto"), "utf8"), { keepCase: true })
   .root.lookupType("objdiff.report.Report");
 
 /** A non-negative integer from a JSON number or a protobuf-JSON uint64 string. */

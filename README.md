@@ -5,8 +5,8 @@ reproduces the original game binary byte for byte. Projects are grouped by
 game, so you can see what already exists before starting something new, and
 progress comes from each project's own CI output.
 
-The site will live at [decompendium.com](https://decompendium.com). It is not
-live yet.
+The site is live at [kdylanhayes.github.io/decompendium](https://kdylanhayes.github.io/decompendium/)
+and will move to [decompendium.com](https://decompendium.com).
 
 ## Status
 
@@ -14,8 +14,8 @@ live yet.
 | --- | --- |
 | M0: policy, schemas, validation | Done |
 | M1: ingestion (objdiff and Decompendium progress files) | Done |
-| M2: static site | Next |
-| M3: API and badges | Planned |
+| M2: static site | Done |
+| M3: API and badges | Next |
 | M4: submission flow (issue forms and bot) | Planned |
 | M5: seed catalog and launch | Planned |
 
@@ -37,7 +37,8 @@ catalog/games/<game>.yaml        one file per game
 catalog/projects/<project>.yaml  one file per project, targets inline
 schema/                          JSON Schemas for the files above and the progress format
 config.yaml                      platforms, allowed hosts, opt-outs, limits
-src/                             validation, review and ingestion
+src/                             validation, review, ingestion and the site's data model
+site/                            Astro pages, layout and styles
 tests/                           tests, fixture catalog (fictional), objdiff report fixtures
 ```
 
@@ -78,6 +79,10 @@ Requires Node 24 and pnpm.
 pnpm install
 pnpm check        # typecheck, tests, catalog validation
 pnpm validate     # catalog validation only
+
+# The site, using a local checkout of the data branch:
+git worktree add data origin/data
+pnpm build && pnpm preview
 
 # Live ingestion against real repos, into a throwaway directory:
 GITHUB_TOKEN=$(gh auth token) pnpm ingest --root tests/fixtures/smoke --data /tmp/smoke-data

@@ -1,0 +1,56 @@
+---
+import { exactTime, platformName, relativeTime } from "../../src/site/format.ts";
+import { percent, type ProjectView } from "../../src/site/model.ts";
+import { site, url } from "../lib/data.ts";
+import ProgressBar from "./ProgressBar.astro";
+import ProjectChips from "./ProjectChips.astro";
+
+interface Props {
+  project: ProjectView;
+  showGame?: boolean;
+}
+
+const { project, showGame = true } = Astro.props;
+const now = new Date(site().builtAt);
+const primary = project.primary;
+const latest = primary.latest;
+const others = project.targets.length - 1;
+---
+
+<li
+  class="project-row"
+  data-platform={project.game.platform}
+  data-status={project.status}
+  data-ai={project.aiPolicy}
+  data-activity={project.lastActivity ?? ""}
+  data-listed={project.listedAt}
+  data-name={project.name.toLowerCase()}
+>
+  <div>
+    <a class="title" href={url(`projects/${project.id}/`)}>{project.name}</a>
+    <ProjectChips project={project} target={primary} />
+    <div class="meta">
+      {showGame && <><a href={url(`games/${project.game.id}/`)}>{project.game.name}</a> · </>}
+      {platformName(project.game.platform)} · <span class="mono">{project.repoName}</span> · last activity{" "}
+      <time datetime={project.lastActivity ?? undefined} title={exactTime(project.lastActivity)}
+        >{relativeTime(project.lastActivity, now)}</time
+      >
+    </div>
+  </div>
+  <div class="progress">
+    {
+      latest ? (
+        <>
+          <div class="figure">
+            <span class="target-label" title={primary.label}>{primary.label}</span>
+            {others > 0 && <span class="more">+{others}</span>}
+            <span class="pct">{percent(latest.code)}</span>
+          </div>
+          <ProgressBar code={latest.code} linked={latest.linked} />
+        </>
+      ) : (
+        <span>No progress data{others > 0 && ` · ${project.targets.length} targets`}</span>
+      )
+    }
+  </div>
+</li>
