@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_at": "2026-10-16T17:10:19.808Z",
+  "updated_at": "2026-10-16T17:26:50.584Z",
   "targets": {
     "1080/japan-usa-en-ja": {
       "run_id": 38933572556,
@@ -340,10 +340,10 @@
     },
     "ffcc/gccp01": {
       "run_id": 38008185539,
-      "last_attempt_at": "2026-10-16T17:10:11.602Z",
-      "last_success_at": "2026-10-16T13:16:58.794Z",
-      "consecutive_failures": 5,
-      "last_error": "GitHub API /repos/zcanann/FFCC-Decomp/actions/artifacts?name=GCCP01_report&per_page=30: HTTP 500",
+      "last_attempt_at": "2026-10-16T17:26:50.334Z",
+      "last_success_at": "2026-10-16T17:26:50.334Z",
+      "consecutive_failures": 0,
+      "last_error": null,
       "anomaly": null
     },
     "frog-adv-temple/usa-en-fr-de-es-it": {
