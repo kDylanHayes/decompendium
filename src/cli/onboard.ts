@@ -54,6 +54,7 @@ interface Decision {
   reason: string;
   guess?: string; // title from the description, for review issues
   issue?: number;
+  rules?: number; // ONBOARD_RULES when decided
   project?: string;
   game?: string;
   newGame?: boolean;
@@ -83,6 +84,14 @@ const COPY_NAME = /(^|[-_ ])(test(ing)?|copy|backup|mirror|old|archive|fork)$|[-
 const root = resolve(values.root!);
 const statePath = resolve(values.state!);
 const state: Record<string, Decision> = existsSync(statePath) ? JSON.parse(readFileSync(statePath, "utf8")) : {};
+// Bump when drafting or the hold rules change in a way that could rescue held
+// repos; holds for missing evidence are then re-checked, a budget's worth a run.
+// 2: drafts read report file names and version folders (PR #16); byte comparisons count.
+const ONBOARD_RULES = 2;
+const RECHECK = /^(no versions to list|no hash evidence|rated possible)/i;
+for (const [k, d] of Object.entries(state)) {
+  if (d.action === "hold" && (d.rules ?? 1) < ONBOARD_RULES && RECHECK.test(d.reason)) delete state[k];
+}
 // States from before the review route held unconfirmed games.
 for (const d of Object.values(state)) if (d.action === "hold" && d.reason.startsWith("game not confirmed")) d.action = "review";
 const save = () => {
@@ -201,7 +210,7 @@ for (const fullName of candidates) {
       continue;
     }
     if (reason || !result.draft) {
-      state[key] = { repo: fullName, action: "hold", reason: reason ?? "no draft" };
+      state[key] = { repo: fullName, action: "hold", reason: reason ?? "no draft", rules: ONBOARD_RULES };
       console.log(`hold ${fullName}: ${state[key]!.reason}`);
       continue;
     }

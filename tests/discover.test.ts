@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { repoFromUrl, type RepoFacts } from "../src/discover/facts.ts";
 import { deepCheck, type DeepFindings } from "../src/discover/deep.ts";
-import { decide, evaluate, runDiscover, serializeLedger, triage, versionCodes, type Ledger } from "../src/discover/run.ts";
+import { RULES_VERSION, decide, evaluate, runDiscover, serializeLedger, triage, versionCodes, type Ledger } from "../src/discover/run.ts";
 import { searchCandidates, type Candidate } from "../src/discover/search.ts";
 import { assess, type Assessment } from "../src/discover/signals.ts";
 import { GitHub } from "../src/ingest/http.ts";
@@ -236,6 +236,25 @@ describe("runDiscover", () => {
     assert.equal(fetched.length, 2);
   });
 
+  it("re-checks repos excluded for missing evidence when the rules change", async () => {
+    const root = copyFixture();
+    const search = async () => cands([{ fullName: "a/b", description: "Decompilation of a game" }]);
+    const fetched: string[] = [];
+    const weak = async (n: string) => (fetched.push(n), facts({ fullName: n, description: "Decompilation of a game", paths: facts().paths.slice(0, 30) }));
+    const nothing = async (): Promise<DeepFindings> => ({ hashCheck: null, objdiffCI: null, checked: [] });
+    const first = await runDiscover({ root, github: github(), search, facts: weak, deep: nothing });
+    const entry = first.ledger.repos["a/b"]!;
+    assert.equal(entry.rules, RULES_VERSION);
+    // Checked under the current rules: left alone.
+    await runDiscover({ root, github: github(), search, facts: weak, deep: nothing, ledger: first.ledger });
+    assert.equal(fetched.length, 1);
+    // Checked under older rules, ruled out for missing evidence: re-checked.
+    entry.rules = RULES_VERSION - 1;
+    entry.reason = "no hash file and no hash check in build or CI";
+    await runDiscover({ root, github: github(), search, facts: weak, deep: nothing, ledger: first.ledger });
+    assert.equal(fetched.length, 2);
+  });
+
   it("looks at weak candidates last, and stops at the API-call budget", async () => {
     const root = copyFixture();
     const search = async () =>
@@ -291,6 +310,30 @@ describe("deepCheck", () => {
     const found = await deepCheck(fileServer(files), facts({ fullName: "a/b", paths: [".github/workflows/build.yml", "Makefile"] }));
     assert.match(found.hashCheck!, /^\.github\/workflows\/build\.yml: sha1sum -c/);
     assert.equal(found.objdiffCI, ".github/workflows/build.yml");
+  });
+
+  it("counts a byte-for-byte comparison with the original as a hash check", async () => {
+    for (const make of [
+      "all: $(TARGET)\n\t$(V)diff $(TARGET) $(BASEROM) && echo \"OK\"", // Harvest Moon 64
+      "COMPARE      ?= 1\ncompare:\n\t@echo", // Duke Nukem Zero Hour
+      "COMPARE_BYTES := $(PYTHON) tools/compare_bytes.py\n\t$(COMPARE_BYTES) $(MAIN) $(MAIN_TARGET)", // 3rd Strike
+      "check:\n\tcmp build/game.z64 baserom.us.z64",
+    ]) {
+      const found = await deepCheck(fileServer({ Makefile: make }), facts({ fullName: "a/b", paths: ["Makefile"] }));
+      assert.match(found.hashCheck ?? "", /^Makefile:/, make);
+    }
+    // A diff of anything else (patches, text) isn't one.
+    const none = await deepCheck(fileServer({ Makefile: "patch:\n\tdiff -u a.c b.c > fix.patch" }), facts({ fullName: "a/b", paths: ["Makefile"] }));
+    assert.equal(none.hashCheck, null);
+  });
+
+  it("reads build files before workflows, so many workflows don't hide the Makefile", async () => {
+    const workflows = Array.from({ length: 8 }, (_, i) => `.github/workflows/w${i}.yml`);
+    const found = await deepCheck(
+      fileServer({ Makefile: "\tdiff $(TARGET) $(BASEROM)" }),
+      facts({ fullName: "a/b", paths: [...workflows, "Makefile"] }),
+    );
+    assert.match(found.hashCheck ?? "", /^Makefile:/);
   });
 
   it("reads build scripts, and falls back to README instructions", async () => {

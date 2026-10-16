@@ -27,6 +27,7 @@ export interface LedgerEntry {
   checked_at: string;
   assessment: Assessment;
   deep?: DeepFindings;
+  rules?: number; // RULES_VERSION when last checked
 }
 
 export interface Ledger {
@@ -89,6 +90,11 @@ export interface DiscoverResult {
 const DAY_MS = 86_400_000;
 /** How long before likely/possible repos that were pushed again are refreshed. */
 const REFRESH_DAYS = 30;
+// Bump when the scoring or deep check changes in a way that could rescue repos
+// ruled out for missing evidence; those are then re-checked within the budget.
+// 2: a byte-for-byte comparison with the original counts as a hash check.
+export const RULES_VERSION = 2;
+const RULES_SENSITIVE = /^no hash file|no hash check|^some evidence/;
 /** How long before an excluded repo that was pushed again is looked at once more. */
 const REVISIT_EXCLUDED_DAYS = 180;
 
@@ -220,6 +226,8 @@ export async function runDiscover(opts: DiscoverOptions): Promise<DiscoverResult
       jobs.push({ c, rank: 2000 + p, why: "name, description or topics changed" });
     } else if (entry.status !== "excluded" && pushed && age(entry.checked_at) > REFRESH_DAYS * DAY_MS) {
       jobs.push({ c, rank: 1000 + p, why: "refresh" });
+    } else if ((entry.rules ?? 1) < RULES_VERSION && RULES_SENSITIVE.test(entry.reason)) {
+      jobs.push({ c, rank: 1500 + p, why: "rules changed" });
     } else if (entry.status === "excluded" && pushed && age(entry.checked_at) > REVISIT_EXCLUDED_DAYS * DAY_MS) {
       jobs.push({ c, rank: 500 + p, why: "revisit" });
     }
@@ -259,6 +267,7 @@ export async function runDiscover(opts: DiscoverOptions): Promise<DiscoverResult
         checked_at: now.toISOString(),
         assessment,
         ...(deep ? { deep } : {}),
+        rules: RULES_VERSION,
       };
     } catch (err) {
       if (err instanceof StopRunError) {
