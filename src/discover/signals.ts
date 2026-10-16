@@ -89,8 +89,8 @@ export function assess(f: RepoFacts): Assessment {
   const hashEvidence = [...hashFiles.slice(0, 5), ...(readmeHash ? [`README: ${readmeHash}`] : [])];
 
   if (f.reportArtifacts.length) add("objdiff-report", 5, f.reportArtifacts.slice(0, 3).join(", "));
-  // decomp.dev only tracks projects that publish objdiff reports.
-  if (/decomp\.dev\//.test(f.readme)) add("decomp-dev-badge", 3);
+  // decomp.dev and its successor ByteMatch only track projects whose CI publishes objdiff reports.
+  if (/(decomp|bytematch)\.dev\//.test(f.readme)) add("decomp-dev-badge", 3);
   if (dtk.length) add("decomp-toolkit", 4, `${dtk.length} build.sha1`);
   else if (hashFiles.length) add("hash-file", 3, hashFiles.slice(0, 2).join(", "));
   if (readmeHash) add("readme-hash", 2);

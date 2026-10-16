@@ -6,6 +6,7 @@ import { StopRunError } from "../ingest/types.ts";
 import { deepCheck, type DeepFindings } from "./deep.ts";
 import { fetchFacts, type RepoFacts } from "./facts.ts";
 import { MIN_PRIORITY, priority, searchCandidates, type Candidate } from "./search.ts";
+import { bytematchRepos } from "./trackers.ts";
 import { assess, LOOKALIKE_WORDS, lookalikeText, nameHasPort, TOOL_WORDS, toolText, type Assessment } from "./signals.ts";
 
 /**
@@ -196,7 +197,10 @@ export async function runDiscover(opts: DiscoverOptions): Promise<DiscoverResult
     }
   }
 
-  const candidates = await (opts.search ?? (() => searchCandidates(opts.github, { log, sleep: opts.sleep, now, wide: opts.wide })))();
+  const candidates = await (
+    opts.search ??
+    (() => searchCandidates(opts.github, { log, sleep: opts.sleep, now, wide: opts.wide, trackers: { "tracker-bytematch": () => bytematchRepos() } }))
+  )();
   const startRequests = opts.github.requests;
 
   // Sort every kept candidate into one queue, most valuable work first.

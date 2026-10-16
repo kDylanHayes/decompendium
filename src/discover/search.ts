@@ -65,6 +65,9 @@ const QUERY_WEIGHT: Record<string, number> = {
   "code-permuter": 3,
   "code-objdiff-json": 3,
   "code-asm-differ": 2,
+  // Listed on a progress tracker: its CI uploads objdiff reports. Enough on its own
+  // to be inspected the same day, since GitHub search often misses these.
+  "tracker-bytematch": 8,
   "fork-decompilation": 0,
   "fork-objdiff": 0,
 };
@@ -96,6 +99,8 @@ interface SearchOptions {
   log?: (line: string) => void;
   now?: Date;
   queries?: Query[];
+  /** Extra candidates by name from progress trackers, keyed by query id ("tracker-bytematch"). */
+  trackers?: Record<string, () => Promise<string[]>>;
 }
 
 interface RepoItem {
@@ -168,6 +173,26 @@ export async function searchCandidates(github: GitHub, opts: SearchOptions = {})
       // One refused query (code search needs a user or app token) shouldn't sink the run.
       if (!(err instanceof IngestError)) throw err;
       log(`${query.id}: skipped (${err.message})`);
+    }
+  }
+  for (const [id, list] of Object.entries(opts.trackers ?? {})) {
+    try {
+      const names = await list();
+      let added = 0;
+      for (const fullName of names) {
+        const key = fullName.toLowerCase();
+        const existing = found.get(key);
+        if (existing) {
+          if (!existing.foundBy.includes(id)) existing.foundBy.push(id);
+          continue;
+        }
+        added++;
+        // Only the name is known; the inspection fetches the rest.
+        found.set(key, { fullName, description: "", topics: [], fork: false, archived: false, stars: null, sizeKb: null, pushedAt: null, foundBy: [id] });
+      }
+      log(`${id}: ${names.length} (${added} not found by search)`);
+    } catch (err) {
+      log(`${id}: skipped (${(err as Error).message})`);
     }
   }
   return found;

@@ -3,7 +3,8 @@ import { describe, it } from "node:test";
 import { repoFromUrl, type RepoFacts } from "../src/discover/facts.ts";
 import { deepCheck, type DeepFindings } from "../src/discover/deep.ts";
 import { RULES_VERSION, decide, evaluate, runDiscover, serializeLedger, triage, versionCodes, type Ledger } from "../src/discover/run.ts";
-import { searchCandidates, type Candidate } from "../src/discover/search.ts";
+import { MIN_PRIORITY, priority, searchCandidates, type Candidate } from "../src/discover/search.ts";
+import { parseBytematchSitemap } from "../src/discover/trackers.ts";
 import { assess, type Assessment } from "../src/discover/signals.ts";
 import { GitHub } from "../src/ingest/http.ts";
 import { copyFixture, editYaml } from "./helpers.ts";
@@ -170,6 +171,53 @@ describe("searchCandidates", () => {
     assert.deepEqual(found.get("a/one")!.foundBy.sort(), ["code", "repo"]);
     assert.equal(found.get("a/one")!.sizeKb, 5); // richer repo-search fields kept
     assert.equal(found.get("b/two")!.foundBy.length, 1);
+  });
+});
+
+describe("progress trackers", () => {
+  const SITEMAP = `<?xml version="1.0"?><urlset>
+    <url><loc>https://bytematch.dev/</loc></url>
+    <url><loc>https://bytematch.dev/docs/api</loc></url>
+    <url><loc>https://bytematch.dev/games/kirby</loc></url>
+    <url><loc>https://bytematch.dev/franchises/mario</loc></url>
+    <url><loc>https://bytematch.dev/OpenRAC/rac1-decomp</loc></url>
+    <url><loc>https://bytematch.dev/liolu/Rayman-RR-usa-decomp</loc></url>
+    <url><loc>https://bytematch.dev/OpenRAC/rac1-decomp/SCES_509.16</loc></url>
+    <url><loc>https://bytematch.dev/bad name/x</loc></url>
+  </urlset>`;
+
+  it("reads ByteMatch projects from its sitemap, skipping site pages", () => {
+    assert.deepEqual(parseBytematchSitemap(SITEMAP), ["OpenRAC/rac1-decomp", "liolu/Rayman-RR-usa-decomp"]);
+  });
+
+  it("adds tracker projects as candidates, and marks ones search already found", async () => {
+    const fetch = (async () =>
+      Response.json({ total_count: 1, items: [{ full_name: "OpenRAC/rac1-decomp", description: "d", fork: false, pushed_at: RECENT }] })) as typeof globalThis.fetch;
+    const logs: string[] = [];
+    const found = await searchCandidates(new GitHub(fetch, "t", 1000), {
+      sleep: async () => {},
+      log: (l) => logs.push(l),
+      queries: [{ id: "repo", q: "decomp in:name", kind: "repositories" }],
+      trackers: { "tracker-bytematch": async () => parseBytematchSitemap(SITEMAP) },
+    });
+    assert.deepEqual(found.get("openrac/rac1-decomp")!.foundBy, ["repo", "tracker-bytematch"]);
+    const rayman = found.get("liolu/rayman-rr-usa-decomp")!;
+    assert.deepEqual(rayman.foundBy, ["tracker-bytematch"]);
+    assert.ok(priority(rayman) >= MIN_PRIORITY, "inspected the same day");
+    assert.ok(logs.some((l) => l === "tracker-bytematch: 2 (1 not found by search)"), logs.join("\n"));
+  });
+
+  it("carries on when a tracker can't be read", async () => {
+    const fetch = (async () => Response.json({ total_count: 0, items: [] })) as typeof globalThis.fetch;
+    const logs: string[] = [];
+    const found = await searchCandidates(new GitHub(fetch, "t", 1000), {
+      sleep: async () => {},
+      log: (l) => logs.push(l),
+      queries: [{ id: "repo", q: "x", kind: "repositories" }],
+      trackers: { "tracker-bytematch": async () => { throw new Error("ByteMatch sitemap: HTTP 503"); } },
+    });
+    assert.equal(found.size, 0);
+    assert.ok(logs.includes("tracker-bytematch: skipped (ByteMatch sitemap: HTTP 503)"));
   });
 });
 
