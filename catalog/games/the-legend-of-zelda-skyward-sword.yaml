@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: the-legend-of-zelda-skyward-sword
+name: "The Legend of Zelda: Skyward Sword"
+aliases: ["SS", "Skyward Sword"]
+platform: wii

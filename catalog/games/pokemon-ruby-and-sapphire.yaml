@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: pokemon-ruby-and-sapphire
+name: "Pokémon Ruby and Sapphire"
+aliases: ["Pokémon Ruby", "Pokémon Sapphire"]
+platform: gba

@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: pokeruby
+name: "Pokémon Ruby and Sapphire decompilation"
+game: pokemon-ruby-and-sapphire
+repo: https://github.com/pret/pokeruby
+description: "Matching decompilation of Pokémon Ruby and Sapphire."
+owners: [pret]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-15
+targets:
+  - id: ruby
+    label: "Ruby (USA)"
+    region: us
+    hash: { sha1: "f28b6ffc97847e94a6c21a63cacf633ee5c8df1e" }
+    progress:
+      kind: none
+  - id: sapphire
+    label: "Sapphire (USA)"
+    region: us
+    hash: { sha1: "3ccbbd45f8553c36463f13b938e833f652b793e4" }
+    progress:
+      kind: none

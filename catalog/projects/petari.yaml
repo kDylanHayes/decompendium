@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: petari
+name: "Super Mario Galaxy decompilation"
+game: super-mario-galaxy
+repo: https://github.com/SMGCommunity/Petari
+description: "Matching decompilation of Super Mario Galaxy."
+owners: [SMGCommunity]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-15
+targets:
+  - id: rmge01
+    label: "RMGE01 (USA)"
+    region: us
+    hash: { sha1: "9a71008ae1ee9010e267fa67d1f0b0d4f0e895dd" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: RMGE01_report, path: report.json }
+  - id: rmgj01
+    label: "RMGJ01 (Japan)"
+    region: jp
+    hash: { sha1: "604d0b47d446caec0aab9ac370014f132e1b4016" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: RMGJ01_report, path: report.json }
+  - id: rmgk01
+    label: "RMGK01 (Korea)"
+    region: kr
+    hash: { sha1: "25c5959534b3c21246c6c7e42021b916b41fb578" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: RMGK01_report, path: report.json }
+  - id: rmgp01
+    label: "RMGP01 (Europe)"
+    region: eu
+    hash: { sha1: "9bd1daa520bd1f573b6a4b82e03336e9c51b511f" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: RMGP01_report, path: report.json }

@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: super-mario-sunshine
+name: "Super Mario Sunshine"
+aliases: ["SMS"]
+platform: gc

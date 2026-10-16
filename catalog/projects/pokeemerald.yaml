@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: pokeemerald
+name: "Pokémon Emerald decompilation"
+game: pokemon-emerald
+repo: https://github.com/pret/pokeemerald
+description: "Matching decompilation of Pokémon Emerald."
+owners: [pret]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-15
+targets:
+  - id: emerald
+    label: "Emerald (USA)"
+    region: us
+    hash: { sha1: "f3ae088181bf583e55daf962a92bb46f4f1d07b7" }
+    progress:
+      kind: none

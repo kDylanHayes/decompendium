@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: sm64
+name: "Super Mario 64 decompilation"
+game: super-mario-64
+repo: https://github.com/n64decomp/sm64
+description: "Matching decompilation of Super Mario 64."
+owners: [n64decomp]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-15
+targets:
+  - id: us
+    label: "USA"
+    region: us
+    hash: { sha1: "9bef1128717f958171a4afac3ed78ee2bb4e86ce" }
+    progress:
+      kind: none
+  - id: jp
+    label: "Japan"
+    region: jp
+    hash: { sha1: "8a20a5c83d6ceb0f0506cfc9fa20d8f438cafe51" }
+    progress:
+      kind: none
+  - id: eu
+    label: "Europe"
+    region: eu
+    hash: { sha1: "4ac5721683d0e0b6bbb561b58a71740845dceea9" }
+    progress:
+      kind: none
+  - id: sh
+    label: "Shindou (Japan)"
+    region: jp
+    hash: { sha1: "3f319ae697533a255a1003d09202379d78d5a2e0" }
+    progress:
+      kind: none
+  - id: cn
+    label: "iQue Player (China)"
+    region: cn
+    hash: { sha1: "2e1db2780985a1f068077dc0444b685f39cd90ec" }
+    progress:
+      kind: none

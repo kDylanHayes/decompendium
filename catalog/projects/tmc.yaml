@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: tmc
+name: "The Legend of Zelda: The Minish Cap decompilation"
+game: the-legend-of-zelda-the-minish-cap
+repo: https://github.com/zeldaret/tmc
+description: "Matching decompilation of The Legend of Zelda: The Minish Cap."
+owners: [zeldaret]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-15
+targets:
+  - id: usa
+    label: "USA"
+    region: us
+    hash: { sha1: "b4bd50e4131b027c334547b4524e2dbbd4227130" }
+    progress:
+      kind: none
+  - id: jp
+    label: "Japan"
+    region: jp
+    hash: { sha1: "6c5404a1effb17f481f352181d0f1c61a2765c5d" }
+    progress:
+      kind: none
+  - id: eu
+    label: "Europe"
+    region: eu
+    hash: { sha1: "cff199b36ff173fb6faf152653d1bccf87c26fb7" }
+    progress:
+      kind: none

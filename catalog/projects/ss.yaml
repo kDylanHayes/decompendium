@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: ss
+name: "The Legend of Zelda: Skyward Sword decompilation"
+game: the-legend-of-zelda-skyward-sword
+repo: https://github.com/zeldaret/ss
+description: "Matching decompilation of The Legend of Zelda: Skyward Sword."
+owners: [zeldaret]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-15
+targets:
+  - id: soue01
+    label: "SOUE01 (USA)"
+    region: us
+    hash: { sha1: "450a6806f46d59dcf8278db08e06f94865a4b18a" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: SOUE01_report, path: report.json }

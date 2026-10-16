@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: super-mario-galaxy
+name: "Super Mario Galaxy"
+aliases: ["SMG"]
+platform: wii

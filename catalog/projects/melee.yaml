@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: melee
+name: "Super Smash Bros. Melee decompilation"
+game: super-smash-bros-melee
+repo: https://github.com/doldecomp/melee
+description: "Matching decompilation of Super Smash Bros. Melee."
+owners: [doldecomp]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-15
+targets:
+  - id: gale01
+    label: "GALE01 (USA)"
+    region: us
+    hash: { sha1: "08e0bf20134dfcb260699671004527b2d6bb1a45" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GALE01_report, path: report.json }

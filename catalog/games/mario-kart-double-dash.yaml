@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: mario-kart-double-dash
+name: "Mario Kart: Double Dash!!"
+aliases: ["MKDD"]
+platform: gc

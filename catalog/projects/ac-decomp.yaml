@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: ac-decomp
+name: "Animal Crossing decompilation"
+game: animal-crossing
+repo: https://github.com/ACreTeam/ac-decomp
+description: "Matching decompilation of Animal Crossing."
+owners: [ACreTeam]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-15
+targets:
+  - id: gafe01-00
+    label: "GAFE01_00 (USA)"
+    region: us
+    hash: { sha1: "2ae8f56e7791d37e165bd5900921f2269f9515bf" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GAFE01_00_report, path: report.json }

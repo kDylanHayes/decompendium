@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: pikmin
+name: "Pikmin decompilation"
+game: pikmin
+repo: https://github.com/projectPiki/pikmin
+description: "Matching decompilation of Pikmin."
+owners: [projectPiki]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-15
+targets:
+  - id: gpie01-00
+    label: "GPIE01_00 rev 0 (USA)"
+    region: us
+    hash: { sha1: "30a3850f203a4a910eaccb8fdc697f518d22a687" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GPIE01_00_report, path: report.json }
+  - id: gpie01-01
+    label: "GPIE01_01 rev 1 (USA)"
+    region: us
+    hash: { sha1: "02204260b7efe8742d34572e58ba3dfecd92e4e9" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GPIE01_01_report, path: report.json }
+  - id: gpij01-01
+    label: "GPIJ01_01 rev 1 (Japan)"
+    region: jp
+    hash: { sha1: "92b0ca199a36b78ad978f54541392231ef8c0cea" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GPIJ01_01_report, path: report.json }
+  - id: gpij01-02
+    label: "GPIJ01_02 rev 2 (Japan)"
+    region: jp
+    hash: { sha1: "d87f92a733fc8fa5f65045730fe81a66b0c7d146" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GPIJ01_02_report, path: report.json }
+  - id: gpip01-00
+    label: "GPIP01_00 (Europe)"
+    region: eu
+    hash: { sha1: "e5794ffe8ac72c3ead3849edbd2f27ea5e0ed440" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GPIP01_00_report, path: report.json }
+  - id: dpij01-pikidemo
+    label: "DPIJ01_PIKIDEMO demo (Japan)"
+    region: jp
+    hash: { sha1: "16aa58df2658f79b1dbb0f8500afd65399253267" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: DPIJ01_PIKIDEMO_report, path: report.json }
+  - id: g98e01-pikidemo
+    label: "G98E01_PIKIDEMO demo (USA)"
+    region: us
+    hash: { sha1: "610d4f61ff4a3ca0a8719624b24108cb7eccdf67" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: G98E01_PIKIDEMO_report, path: report.json }
+  - id: g98p01-pikidemo
+    label: "G98P01_PIKIDEMO demo (Europe)"
+    region: eu
+    hash: { sha1: "834970dc37d45cd631477530af813fb8a2c0d085" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: G98P01_PIKIDEMO_report, path: report.json }

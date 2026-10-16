@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: metroid-prime
+name: "Metroid Prime"
+aliases: ["MP1"]
+platform: gc

@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: mario-party-4
+name: "Mario Party 4"
+aliases: ["MP4"]
+platform: gc

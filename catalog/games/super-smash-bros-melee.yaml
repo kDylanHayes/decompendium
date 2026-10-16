@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: super-smash-bros-melee
+name: "Super Smash Bros. Melee"
+aliases: ["SSBM", "Melee"]
+platform: gc

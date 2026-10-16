@@ -1,0 +1,87 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: prime
+name: "Metroid Prime decompilation"
+game: metroid-prime
+repo: https://github.com/PrimeDecomp/prime
+description: "Matching decompilation of Metroid Prime."
+owners: [PrimeDecomp]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-15
+targets:
+  - id: gm8e01-00
+    label: "GM8E01_00 0-00 (USA)"
+    region: us
+    hash: { sha1: "949c5ed7368aef547e0b0db1c3678f466e2afbff" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GM8E01_00_report, path: report.json }
+  - id: gm8e01-01
+    label: "GM8E01_01 0-01 (USA)"
+    region: us
+    hash: { sha1: "860141f9671fc141ce8f55448643f713bc64b349" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GM8E01_01_report, path: report.json }
+  - id: gm8e01-02
+    label: "GM8E01_02 0-02 (USA)"
+    region: us
+    hash: { sha1: "39a2f928159ad46491e9b1ef0a72613d91e0cc40" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GM8E01_02_report, path: report.json }
+  - id: gm8e01-48
+    label: "GM8E01_48 Player's Choice (USA)"
+    region: us
+    hash: { sha1: "52316d2a71c0d18c84f054fd6f1e58bdd7bf0ded" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GM8E01_48_report, path: report.json }
+  - id: gm8eab-00
+    label: "GM8EAB_00 (USA)"
+    region: us
+    hash: { sha1: "3884b46c50ea7dc94a569856fd07caa2e8b911e5" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GM8EAB_00_report, path: report.json }
+  - id: gm8j01-00
+    label: "GM8J01_00 (Japan)"
+    region: jp
+    hash: { sha1: "f7fc8f599c8632aafe543cb071eef6df45e4a886" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GM8J01_00_report, path: report.json }
+  - id: gm8j01-dd
+    label: "GM8J01_DD (Japan)"
+    region: jp
+    hash: { sha1: "f04ce5883d5e51a0d71fae697dfd9f99ac233267" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GM8J01_DD_report, path: report.json }
+  - id: gm8p01-00
+    label: "GM8P01_00 (Europe)"
+    region: eu
+    hash: { sha1: "4d3780c77842ae7fddbdd5732b70bed100df5c65" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GM8P01_00_report, path: report.json }
+  - id: r3ij01-00
+    label: "R3IJ01_00 Wii New Play Control (Japan)"
+    region: jp
+    hash: { sha1: "976f4532c4850215b766e2f9330b0f711e48d925" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: R3IJ01_00_report, path: report.json }
+  - id: r3me01-00
+    label: "R3ME01_00 Wii Trilogy (USA)"
+    region: us
+    hash: { sha1: "e6416b2f8b92fdd8ebeb1d53f133e96f5ca9763a" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: R3ME01_00_report, path: report.json }
+  - id: r3mp01-00
+    label: "R3MP01_00 Wii Trilogy (Europe)"
+    region: eu
+    hash: { sha1: "e4ca752835a7cb5d971b97d64799ba1ba4b98e92" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: R3MP01_00_report, path: report.json }

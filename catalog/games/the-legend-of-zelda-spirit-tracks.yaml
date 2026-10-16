@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: the-legend-of-zelda-spirit-tracks
+name: "The Legend of Zelda: Spirit Tracks"
+aliases: ["ST", "Spirit Tracks"]
+platform: nds

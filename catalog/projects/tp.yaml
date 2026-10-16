@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: tp
+name: "The Legend of Zelda: Twilight Princess decompilation"
+game: the-legend-of-zelda-twilight-princess
+repo: https://github.com/zeldaret/tp
+description: "Matching decompilation of The Legend of Zelda: Twilight Princess."
+owners: [zeldaret]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-15
+targets:
+  - id: gz2e01
+    label: "GZ2E01 (USA)"
+    region: us
+    hash: { sha1: "4997d93b9692620c40e90374a0f1dbf0e4889395" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GZ2E01_report, path: report.json }
