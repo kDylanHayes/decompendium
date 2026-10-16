@@ -57,3 +57,29 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+
+  # Accessibility target from the spec (6.5): 95 or higher on each page type.
+  lighthouse:
+    needs: deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - name: Run Lighthouse
+        run: |
+          sleep 30 # let the Pages deploy reach the CDN
+          i=0
+          for path in / /games/ /games/metroid-prime/ /projects/prime/ /submit/ /about/; do
+            i=$((i + 1))
+            npx -y lighthouse@13.5.0 "https://decompendium.com$path" \
+              --only-categories=accessibility,best-practices,seo \
+              --output=json --output-path="lh-$i.json" --quiet \
+              --chrome-flags="--headless=new --no-sandbox"
+          done
+      - name: Check scores
+        run: node scripts/lighthouse-check.mjs 0.95 lh-*.json

@@ -76,8 +76,11 @@ const hidden = projects.length - listed.length;
     // Search (Pagefind is generated after the Astro build, so it is absent in dev).
     const script = document.createElement("script");
     script.src = bundlePath + "pagefind-ui.js";
-    script.onload = () =>
+    script.onload = () => {
       new PagefindUI({ element: "#search", bundlePath, showSubResults: false, showImages: false, resetStyles: false });
+      // Pagefind's input only has a title; give it a real label.
+      document.querySelector("#search input")?.setAttribute("aria-label", "Search games and projects");
+    };
     document.head.appendChild(script);
 
     // Filters and sorting, mirrored in the URL query string.

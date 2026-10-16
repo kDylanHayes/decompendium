@@ -32,4 +32,7 @@ const count = game.projects.length;
       {game.projects.map((project) => <ProjectRow project={project} showGame={false} />)}
     </ul>
   </div>
+  <p class="count-line">
+    Know a matching decomp of {game.name} that's missing here? <a href={url("submit/")}>Submit it</a>.
+  </p>
 </Layout>
