@@ -50,4 +50,3 @@ thresholds:
   stale_after_days: 7          # last successful fetch older than this
   quiet_after_days: 180        # no new commit on the default branch
   failing_after_attempts: 5    # consecutive failed fetches
-  fork_inactive_months: 12     # fork rule, POLICY.md section 3

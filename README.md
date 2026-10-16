@@ -20,7 +20,7 @@ The site is live at [decompendium.com](https://decompendium.com).
 
 ## How listing works
 
-- Read [POLICY.md](POLICY.md): what counts as matching, the fork rule, and
+- Read [POLICY.md](POLICY.md): what counts as matching, duplicates, and
   how opting out works.
 - Anyone can submit a qualifying project. Maintainers can de-emphasize or
   remove their entry at any time.
@@ -57,22 +57,34 @@ Example entries are in [tests/fixtures/catalog](tests/fixtures/catalog).
 ## Finding projects
 
 `pnpm discover` searches GitHub for repositories that look like matching
-decomps and aren't listed yet, and scores each one: objdiff report artifacts,
-decomp-toolkit `build.sha1` files, ROM hash files, decomp tooling, and README
-wording count for it; recomp, port and tool wording counts against it. It
-prints a table of likely and possible projects for a maintainer to review.
-Nothing is added to the catalog.
+decomps and aren't listed yet. Nothing is added to the catalog; it produces a
+list for a maintainer to review.
 
-A daily workflow runs it and posts the table in the run summary, caching
-results in `discover.json` on the data branch so unchanged repos aren't
-fetched again. Each run inspects the most promising repos first, up to its
-limit, and picks up where it left off the next day.
+1. **Search** (repository and code search). A weekly run adds wide searches
+   such as every repo with "decomp" in its name.
+2. **Triage, free.** Search results alone rule out listed and opted-out repos,
+   repos in `excluded` in `config.yaml`, unstarred forks, empty repos, tools,
+   and recomps or ports that never mention decompilation. These decisions are
+   remade each run at no cost, so they aren't stored.
+3. **Inspect** the rest, most promising first, within a budget of API calls:
+   objdiff report artifacts, decomp-toolkit `build.sha1` files, ROM hash files,
+   decomp tooling and README wording count for a repo; recomp, port and tool
+   wording counts against it. Weak, stale hits are deferred, not ruled out.
+4. **Deep check** for anything not clearly settled: read its CI workflows and
+   build scripts for a hash comparison or objdiff step.
+
+Every inspected repo goes into a ledger (`discover.json` on the data branch)
+as likely, possible (a person should look) or excluded, with the reason.
+Decided repos aren't inspected again unless their name, description or topics
+change, or they are pushed again after 30 days (likely, possible) or 180 days
+(excluded). To stop suggesting a repo for good, add it to `excluded` in
+`config.yaml`.
 
 To measure the finder against a list of projects you know are matching (one
 GitHub URL per line; the list is only read, never stored):
 
 ```sh
-GITHUB_TOKEN=$(gh auth token) pnpm discover --state /tmp/discover.json --evaluate known-good.txt
+GITHUB_TOKEN=$(gh auth token) pnpm discover --ledger /tmp/discover.json --evaluate known-good.txt
 ```
 
 ## Progress format for non-objdiff projects

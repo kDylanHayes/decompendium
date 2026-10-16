@@ -13,6 +13,7 @@ export interface Config {
   platforms: string[];
   allowed_hosts: string[];
   opted_out: string[];
+  excluded?: { repo: string; reason: string }[];
   limits: {
     report_download_bytes: number;
     report_read_bytes: number;
@@ -23,7 +24,6 @@ export interface Config {
     stale_after_days: number;
     quiet_after_days: number;
     failing_after_attempts: number;
-    fork_inactive_months: number;
   };
 }
 

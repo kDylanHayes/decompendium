@@ -2,14 +2,21 @@ name: discover
 
 # Looks for matching decomps that aren't listed yet. Suggestions appear in the
 # run summary for a maintainer to review; nothing is added to the catalog.
+# Decisions that cost API calls are kept in discover.json on the data branch,
+# so each repo is inspected once and only revisited when it changes.
 on:
   schedule:
-    - cron: "41 7 * * *"
+    - cron: "41 7 * * *" # daily: precise searches
+    - cron: "17 7 * * 1" # Mondays: also the wide searches
   workflow_dispatch:
     inputs:
-      limit:
-        description: Most repositories to inspect in this run
-        default: "150"
+      budget:
+        description: API calls to spend inspecting repos (searches are extra)
+        default: "600"
+      wide:
+        description: Also run the wide searches
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -21,7 +28,7 @@ concurrency:
 jobs:
   discover:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -38,12 +45,17 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: Discover
         env:
-          # Code search needs a token. The workflow token allows ~1,000 calls an hour
-          # (~150 repos plus the searches); INGEST_TOKEN (a GitHub App) allows more.
+          # The workflow token allows ~1,000 API calls an hour: searches take ~200
+          # (~700 with the wide ones), the rest is the inspection budget.
+          # INGEST_TOKEN (a GitHub App) allows more.
           GITHUB_TOKEN: ${{ secrets.INGEST_TOKEN || github.token }}
-          LIMIT: ${{ inputs.limit || '150' }}
-        run: pnpm discover --state data/discover.json --limit "$LIMIT"
-      - name: Save the cache to the data branch
+          WIDE: ${{ inputs.wide || github.event.schedule == '17 7 * * 1' }}
+          BUDGET: ${{ inputs.budget || (github.event.schedule == '17 7 * * 1' && '250') || '600' }}
+        run: |
+          args=(--ledger data/discover.json --budget "$BUDGET")
+          if [ "$WIDE" = "true" ]; then args+=(--wide); fi
+          pnpm discover "${args[@]}"
+      - name: Save the ledger to the data branch
         working-directory: data
         run: |
           git config user.name "github-actions[bot]"

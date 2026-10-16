@@ -43,21 +43,27 @@ const TOOLING: [RegExp, string][] = [
   [/^tools\/m2c(\/|$)/, "m2c"],
 ];
 
-// Words that mean the repo is a tool, template, library or list rather than a
-// game decomp. Checked in the name, description and topics; always penalized.
+// Words that mean the repo is a tool, template, library, SDK or list rather than a
+// game decomp (only games are listed, POLICY.md 1). Checked in the name,
+// description and topics; always penalized.
 export const TOOL_WORDS =
-  /\b(decompiler|disassembler|recompiler|recompile|toolkit|template|converter|awesome|binary splitting|porting games)\b|\btool\b|\btools (for|to)\b/i;
+  /\b(decompiler|disassembler|recompiler|recompile|toolkit|template|converter|awesome|binary splitting|porting games|librar(y|ies)|sdk)\b|\btool\b|\btools (for|to)\b/i;
 
 /** Name, description and topics for the tool-word check. Naming the tools a project is built with doesn't make it one. */
 export function toolText(fullName: string, description: string, topics: string[]): string {
   return `${fullName.split("/")[1]} ${description} ${topics.join(" ")}`.replace(/decomp-toolkit|\bdtk\b|objdiff|splat|m2c/gi, "");
 }
 
+/** Repo name and description for the look-alike check. URLs don't count: "a port of github.com/n64decomp/sm64" is not a decomp. */
+export function lookalikeText(fullName: string, description: string): string {
+  return `${fullName.split("/")[1]} ${description}`.replace(/\S+:\/\/\S+|\S+\.(com|org|io)\/\S*/g, "");
+}
+
 // Words that usually mean "not a matching decomp" (recomps, ports, mods), but
 // that real decomps also use ("decompilation, modding and map editing for X").
 // Penalized hard only when the name and description never mention decomp.
-const LOOKALIKE_WORDS =
-  /\b(recomp(iled|ilation)?|static recomp\w*|port of|pc[- ]port|native port|source port|ports? for modern|fork of|remake|remaster(ed)?|randomi[sz]er|modding|mod loader|reimplementation|re-implementation|engine recreation|community edition|custom version|librar(y|ies)|sdk)\b|-port\b/i;
+export const LOOKALIKE_WORDS =
+  /\b(recomp(iled|ilation)?|static recomp\w*|port of|pc[- ]port|native port|source port|ports? for modern|fork of|remake|remaster(ed)?|randomi[sz]er|modding|mod loader|reimplementation|re-implementation|engine recreation|community edition|custom version)\b|-port\b/i;
 
 const MATCHING_CLAIM =
   /byte[- ]for[- ]byte|bit[- ]for[- ]bit|byte[- ]identical|bit[- ]identical|matching decomp|identical (rom|binary|executable|copy)|rebuilds? (an? )?(identical|matching)|\bmatching\b/;
@@ -91,8 +97,7 @@ export function assess(f: RepoFacts): Assessment {
   if (/checksum|sha-?1|md5|sha256/.test(f.readme)) add("readme-mentions-hash", 1);
   if (f.paths.some((p) => /\.(c|cc|cpp|cxx)$/i.test(p))) add("has-source", 1);
 
-  // URLs don't count: "a port of github.com/n64decomp/sm64" is not a decomp.
-  const blurb = `${f.fullName.split("/")[1]} ${f.description}`.replace(/\S+:\/\/\S+|\S+\.(com|org|io)\/\S*/g, "");
+  const blurb = lookalikeText(f.fullName, f.description);
   const tool = TOOL_WORDS.exec(toolText(f.fullName, f.description, f.topics));
   if (tool) add("tool-words", -6, tool[0]);
   const lookalike = LOOKALIKE_WORDS.exec(blurb);

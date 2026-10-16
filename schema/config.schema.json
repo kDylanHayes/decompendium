@@ -35,6 +35,19 @@
       "uniqueItems": true,
       "items": { "$ref": "defs.schema.json#/$defs/https_url" }
     },
+    "excluded": {
+      "description": "Repos a maintainer has reviewed and decided not to list. The finder never suggests them again.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["repo", "reason"],
+        "additionalProperties": false,
+        "properties": {
+          "repo": { "$ref": "defs.schema.json#/$defs/https_url" },
+          "reason": { "type": "string", "minLength": 1, "maxLength": 200, "pattern": "^[^<>]*$" }
+        }
+      }
+    },
     "limits": {
       "type": "object",
       "required": ["report_download_bytes", "report_read_bytes", "report_store_bytes", "fetch_timeout_seconds"],
@@ -48,13 +61,12 @@
     },
     "thresholds": {
       "type": "object",
-      "required": ["stale_after_days", "quiet_after_days", "failing_after_attempts", "fork_inactive_months"],
+      "required": ["stale_after_days", "quiet_after_days", "failing_after_attempts"],
       "additionalProperties": false,
       "properties": {
         "stale_after_days": { "type": "integer", "minimum": 1 },
         "quiet_after_days": { "type": "integer", "minimum": 1 },
-        "failing_after_attempts": { "type": "integer", "minimum": 1 },
-        "fork_inactive_months": { "type": "integer", "minimum": 1 }
+        "failing_after_attempts": { "type": "integer", "minimum": 1 }
       }
     }
   }

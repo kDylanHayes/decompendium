@@ -1,6 +1,5 @@
 # yaml-language-server: $schema=../../../../../schema/project.schema.json
-# A second project for the same game, allowed by the fork rule because it
-# targets a region no other listed project covers.
+# A second project for the same game. Duplicates are listed too.
 id: example-quest-eu
 name: Example Quest PAL decompilation
 game: example-quest

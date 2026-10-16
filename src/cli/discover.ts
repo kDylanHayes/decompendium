@@ -1,59 +1,76 @@
 // Find repositories that look like matching decomps and are not in the catalog yet.
 // Nothing is added to the catalog: the output is a list for a maintainer to review.
 //
-// Usage: node src/cli/discover.ts [--state data/discover.json] [--limit 400] [--out report.md]
-//                                 [--evaluate known-good.txt]
-// --evaluate scores the run against a local list of known matching projects (one
-// GitHub URL per line) to measure search recall and scorer accuracy. The list is
-// only read, never stored.
+// Usage: node src/cli/discover.ts [--ledger data/discover.json] [--budget 900] [--wide]
+//                                 [--out report.md] [--evaluate known-good.txt]
+// --budget   API calls to spend inspecting repos this run (searches are extra)
+// --wide     also run broad searches; triage discards most of their results for free
+// --evaluate measure the run against a local list of known matching projects (one
+//            GitHub URL per line). The list is only read, never stored.
 import { appendFileSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { parseArgs } from "node:util";
-import { GitHub } from "../ingest/http.ts";
 import { canonicalName, repoFromUrl } from "../discover/facts.ts";
-import { evaluate, readState, runDiscover } from "../discover/run.ts";
+import { evaluate, readLedger, runDiscover, serializeLedger } from "../discover/run.ts";
+import { GitHub } from "../ingest/http.ts";
 
 const { values } = parseArgs({
   options: {
     root: { type: "string", default: "." },
-    state: { type: "string", default: "data/discover.json" },
-    limit: { type: "string", default: "400" },
+    ledger: { type: "string", default: "data/discover.json" },
+    budget: { type: "string", default: "900" },
+    wide: { type: "boolean", default: false },
     out: { type: "string" },
     evaluate: { type: "string" },
   },
 });
 
-const statePath = resolve(values.state!);
+const ledgerPath = resolve(values.ledger!);
 const github = new GitHub(fetch, process.env.GITHUB_TOKEN || undefined, 60_000);
 const result = await runDiscover({
   root: resolve(values.root!),
   github,
-  state: readState(statePath),
-  limit: Number(values.limit),
+  ledger: readLedger(ledgerPath),
+  budget: Number(values.budget),
+  wide: values.wide,
   log: (line) => console.log(line),
 });
-mkdirSync(dirname(statePath), { recursive: true });
-writeFileSync(statePath, JSON.stringify(result.state, null, 1) + "\n");
+mkdirSync(dirname(ledgerPath), { recursive: true });
+writeFileSync(ledgerPath, serializeLedger(result.ledger));
 
-const skippedCounts: Record<string, number> = {};
-for (const reason of Object.values(result.skipped)) {
-  const key = reason.startsWith("tool:") ? "tool" : reason;
-  skippedCounts[key] = (skippedCounts[key] ?? 0) + 1;
-}
+const tally = (reasons: string[]) => {
+  const counts: Record<string, number> = {};
+  for (const r of reasons) {
+    const key = r.replace(/:.*$/, "");
+    counts[key] = (counts[key] ?? 0) + 1;
+  }
+  return Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${v} ${k}`).join(", ") || "none";
+};
+const statuses = Object.values(result.ledger.repos).map((e) => e.status);
+const count = (s: string) => statuses.filter((x) => x === s).length;
+const row = (s: (typeof result.suggestions)[number]) =>
+  `| ${s.score} | [${s.fullName}](https://github.com/${s.fullName}) | ${s.why} | ${s.hashEvidence[0] ?? "—"} | ${s.reportArtifacts.slice(0, 2).join(", ") || "—"} | ${s.overlaps.length ? `same version as listed ${s.overlaps.join(", ")}` : ""} |`;
+const table = ["| Score | Repository | Why | Hash evidence | Reports | Note |", "| ---: | --- | --- | --- | --- | --- |"];
+const likely = result.suggestions.filter((s) => s.status === "likely");
+const possible = result.suggestions.filter((s) => s.status === "possible");
 
 const lines = [
   "### Discovery",
   "",
-  `Candidates found: ${result.candidates.size}. Skipped: ${Object.entries(skippedCounts).map(([k, v]) => `${v} ${k}`).join(", ") || "none"}.`,
-  `Assessed: ${result.assessed.size}. Still to check: ${result.pending}. API requests: ${github.requests}.`,
+  `Search found ${result.candidates.size} repos${values.wide ? " (wide)" : ""}. Ruled out for free: ${tally(Object.values(result.triaged))}.`,
+  `Inspected this run: ${result.inspected} (${result.requests} API calls). Waiting: ${result.queued}, of which ${result.deferred} are weak candidates looked at only with spare budget.`,
+  `Ledger: ${count("likely")} likely, ${count("possible")} possible, ${count("excluded")} excluded.`,
   ...(result.stopped ? [`Stopped early: ${result.stopped}`] : []),
   "",
-  "| Score | Verdict | Repository | Hash evidence | Reports | Note |",
-  "| ---: | --- | --- | --- | --- | --- |",
-  ...result.suggestions.map(
-    (a) =>
-      `| ${a.score} | ${a.verdict} | [${a.fullName}](https://github.com/${a.fullName}) | ${a.hashEvidence[0] ?? "none found"} | ${a.reportArtifacts.slice(0, 2).join(", ") || "—"} | ${a.overlaps.length ? `same version as listed ${a.overlaps.join(", ")} (fork rule)` : ""} |`,
-  ),
+  `#### Likely matching decomps (${likely.length})`,
+  "",
+  ...(likely.length ? [...table, ...likely.map(row)] : ["None yet."]),
+  "",
+  `#### Possible: needs a person (${possible.length})`,
+  "",
+  ...(possible.length ? [...table, ...possible.map(row)] : ["None."]),
+  "",
+  "To stop a repo being suggested, add it to `excluded` in config.yaml with a short reason.",
 ];
 
 if (values.evaluate) {
@@ -66,8 +83,8 @@ if (values.evaluate) {
     "",
     "### Evaluation against the known-good list",
     "",
-    `Found by search: ${ev.found}/${ev.total}. Passed prefilter: ${ev.passedPrefilter}. ` +
-      `Scored likely ${ev.likely}, possible ${ev.possible}, unlikely ${ev.unlikely}; not assessed yet ${ev.notAssessed}.`,
+    `Found by search: ${ev.found}/${ev.total}. Kept by triage: ${ev.keptByTriage}. ` +
+      `Inspected so far: likely ${ev.likely}, possible ${ev.possible}, excluded ${ev.excluded}; not inspected yet ${ev.notInspected}.`,
     "",
     ...ev.misses.map((m) => `- ${m.name}: ${m.reason}`),
   );

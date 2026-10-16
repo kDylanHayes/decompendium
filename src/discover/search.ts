@@ -18,6 +18,7 @@ interface Query {
   id: string;
   q: string;
   kind: "repositories" | "code";
+  wide?: boolean; // broad, low-precision: run weekly, triage throws most results away for free
 }
 
 /**
@@ -42,6 +43,9 @@ export const QUERIES: Query[] = [
   { id: "code-objdiff-json", q: "filename:objdiff.json", kind: "code" },
   { id: "code-permuter", q: "filename:permuter_settings.toml", kind: "code" },
   { id: "code-asm-differ", q: "filename:diff_settings.py", kind: "code" },
+  { id: "wide-name-decomp", q: "decomp in:name", kind: "repositories", wide: true },
+  { id: "wide-readme-decompilation", q: "decompilation in:readme", kind: "repositories", wide: true },
+  { id: "wide-readme-disassembly", q: "disassembly in:name,description", kind: "repositories", wide: true },
 ];
 
 /**
@@ -87,6 +91,7 @@ const PAGE = 100;
 const CAP = 1000;
 
 interface SearchOptions {
+  wide?: boolean;
   sleep?: (ms: number) => Promise<void>;
   log?: (line: string) => void;
   now?: Date;
@@ -156,7 +161,7 @@ export async function searchCandidates(github: GitHub, opts: SearchOptions = {})
   };
 
   const now = opts.now ?? new Date();
-  for (const query of opts.queries ?? QUERIES) {
+  for (const query of opts.queries ?? QUERIES.filter((q) => opts.wide || !q.wide)) {
     try {
       await runQuery(query, now);
     } catch (err) {

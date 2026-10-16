@@ -32,12 +32,12 @@ const submit = issueUrl(
 
     <h2>What qualifies</h2>
     <ul>
-      <li>The project rebuilds a game's original binary, and its build checks the result against a published hash.</li>
-      <li>Code not yet decompiled can still be assembly. Recompilations, ports and non-matching decomps aren't listed.</li>
+      <li>It's a game. The project rebuilds the game's original binary, and its build checks the result against a published hash.</li>
+      <li>Code not yet decompiled can still be assembly, and complete matching disassemblies count. Recompilations, ports, non-matching decomps, and decomps of SDKs, libraries or tools aren't listed.</li>
       <li>The repository contains no game assets or original binaries.</li>
       <li>
-        A second project for the same game and version is listed only if the first is inactive, or the approach is
-        genuinely different. See <a href={url("about/")}>the full policy</a>.
+        Another project already covers the game? It's still listed: the game page shows every project. See{" "}
+        <a href={url("about/")}>the full policy</a>.
       </li>
     </ul>
 

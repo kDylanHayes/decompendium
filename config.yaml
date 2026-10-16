@@ -40,6 +40,10 @@ allowed_hosts:
 # these; only a maintainer can reverse an opt-out.
 opted_out: []
 
+# Repos a maintainer reviewed and decided not to list (not matching, a
+# duplicate, a copy of a listed project). The finder never suggests them again.
+excluded: []
+
 limits:
   report_download_bytes: 104857600   # 100 MB zip
   report_read_bytes: 52428800        # 50 MB extracted report
@@ -52,4 +56,3 @@ thresholds:
   stale_after_days: 7          # last successful fetch older than this
   quiet_after_days: 180        # no new commit on the default branch
   failing_after_attempts: 5    # consecutive failed fetches
-  fork_inactive_months: 12     # fork rule, POLICY.md section 3

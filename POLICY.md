@@ -1,8 +1,8 @@
 # Decompendium listing policy
 
-Decompendium lists **matching** decompilations: projects whose build reproduces
-the original binary byte for byte. Anyone can submit a project. Maintainers can
-opt out at any time.
+Decompendium lists **matching** decompilations of **games**: projects whose
+build reproduces the original game binary byte for byte. Anyone can submit a
+project. Maintainers can opt out at any time.
 
 ## 1. What counts as matching
 
@@ -12,12 +12,17 @@ A target qualifies when all of these hold:
 2. The build compares its output against a published hash (SHA-1, MD5 or
    stronger) of the original binary, and fails or warns visibly on mismatch.
 3. The project's stated goal is a byte-identical rebuild. Undecompiled code may
-   remain as assembly or binary blobs.
-4. The repository does not contain copyrighted game assets or the original
+   remain as assembly or binary blobs, and a complete matching disassembly
+   (such as pret/pokered) counts.
+4. The binary is a game. Decomps of SDKs, libraries, compilers, operating
+   systems and emulators are not listed, even when they match.
+5. The repository does not contain copyrighted game assets or the original
    binary. Extracting them from a user-supplied copy at build time is fine.
 
 A project is listed if at least one of its targets qualifies, and only
-qualifying targets are listed.
+qualifying targets are listed. A project that builds releases on more than one
+platform (for example, a GameCube game and its Wii re-release) is listed once,
+under the original game, with each release as a target.
 
 Not listed: recompilations (static or dynamic), ports, PC ports built on a
 decomp, functionally equivalent but non-matching decompilations, and projects
@@ -50,18 +55,13 @@ catalog entry, the published pages and the stored snapshots. The repo URL is
 then added to `opted_out` in `config.yaml`, so only a maintainer can bring it
 back.
 
-## 3. Forks and duplicates
+## 3. Duplicates
 
-A fork or second project for the same game and target is listed only if:
-
-- it targets a version, region or platform no listed project covers, or
-- the existing project for that target is archived or has had no commits for
-  12 months, or
-- it uses a materially different toolchain or approach that the existing
-  maintainers acknowledge as separate.
-
-Otherwise the submission is closed as `duplicate` with a pointer to the
-existing project.
+More than one project for the same game, or even the same version, is fine:
+every qualifying project is listed, and the game page shows them all, oldest
+listing first, so people can see what already exists. A plain GitHub fork
+with no changes of its own is a copy, not a separate project, and is not
+listed.
 
 ## 4. Neutral ordering
 
