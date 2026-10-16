@@ -75,7 +75,14 @@ jobs:
           git commit -q -m "$(cat "$RUNNER_TEMP/title.txt")" -m "Closes #$ISSUE"
           git push -q -u origin "$branch"
           url=$(gh pr create --base main --head "$branch" --title "$(cat "$RUNNER_TEMP/title.txt")" --body-file "$RUNNER_TEMP/body.md")
-          # PRs opened with the workflow token don't trigger pull_request workflows, so run validate directly.
+          # The PR's own validate run is held for approval because the bot opened it; approve it,
+          # and also run validate directly in case no run was created.
           gh workflow run validate.yml --ref "$branch"
+          for _ in 1 2 3 4 5 6; do
+            sleep 10
+            for run in $(gh run list --workflow validate.yml --branch "$branch" --event pull_request --status action_required --json databaseId --jq '.[].databaseId'); do
+              gh api -X POST "repos/$GITHUB_REPOSITORY/actions/runs/$run/approve" >/dev/null && echo "Approved validate run $run"
+            done
+          done || true
           gh issue edit "$ISSUE" --add-label approved --remove-label ready-for-review
           gh issue comment "$ISSUE" --body "Approved. Catalog PR: $url"
