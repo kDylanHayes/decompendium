@@ -29,6 +29,7 @@ function facts(over: Partial<RepoFacts> = {}): RepoFacts {
     treeTruncated: false,
     readme: "",
     reportArtifacts: [],
+    reportFiles: {},
     ...over,
   };
 }

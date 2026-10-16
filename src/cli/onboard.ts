@@ -168,6 +168,7 @@ for (const fullName of candidates) {
       const others = raw.projects.filter((p) => (p.data as Project).game === draft.game.id);
       const port = portHint(f.fullName, draft.game.platform);
       if (port) reason = port;
+      else if (draft.otherGames.length) reason = `builds ${draft.otherGames.length + 1} games (${[draft.game.name, ...draft.otherGames].join(", ")}); each needs its own entry`;
       else if (COPY_NAME.test(f.fullName.split("/")[1]!)) reason = "named like a copy or test repo";
       // Duplicates are listed, but a low-star repo for an already-covered game is often a re-upload.
       else if (draft.gameExists && others.length && f.stars < 3) {

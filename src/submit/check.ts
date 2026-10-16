@@ -168,6 +168,13 @@ export async function checkSubmission(sub: Submission, ctx: CheckContext): Promi
       add("fail", "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\".");
     }
     const g = result.draft.game;
+    const otherGames = result.draft.otherGames;
+    if (otherGames.length) {
+      add(
+        "warn",
+        `This repo builds ${otherGames.length + 1} games (${[g.name, ...otherGames].map((t) => `**${t}**`).join(", ")}); each needs its own entry. The draft below covers ${g.name} only.`,
+      );
+    }
     const others = projects.filter((p) => p.game === g.id);
     if (result.draft.gameExists && others.length) {
       add("info", `${g.name} already has ${others.length} listed ${others.length === 1 ? "project" : "projects"} ([game page](${site}/games/${g.id}/)). That's fine: duplicates are listed too.`);
@@ -189,7 +196,7 @@ async function checkProgress(f: RepoFacts, sub: Submission, ctx: CheckContext): 
   try {
     const source = url
       ? ({ type: "url", url } as const)
-      : ({ type: "github-artifact", artifact: artifact!, path: /\b[\w./-]+\.json\b/.exec(sub.report.replace(artifact!, ""))?.[0] ?? "report.json" } as const);
+      : ({ type: "github-artifact", artifact: artifact!, path: /\b[\w./-]+\.json\b/.exec(sub.report.replace(artifact!, ""))?.[0] ?? f.reportFiles[artifact!] ?? "report.json" } as const);
     const fetched = await fetchSource(source, {
       fetch: globalThis.fetch,
       github: ctx.github,
