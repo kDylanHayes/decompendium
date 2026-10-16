@@ -106,9 +106,12 @@ function checkProject(
   if (config.opted_out.some((url) => normalizeRepo(url) === repo)) {
     problem(`repo "${data.repo}" opted out of listing; only a maintainer can reverse that`);
   }
-  const otherProject = repos.get(repo);
-  if (otherProject) problem(`repo "${data.repo}" is already listed as project "${otherProject}"`);
-  else repos.set(repo, data.id);
+  // One project per repo and game: a repo that builds two games (Digital Devil
+  // Saga 1 and 2) is listed once under each.
+  const key = `${repo} ${data.game}`;
+  const otherProject = repos.get(key);
+  if (otherProject) problem(`repo "${data.repo}" is already listed for this game as project "${otherProject}"`);
+  else repos.set(key, data.id);
 
   const targetIds = new Set<string>();
   for (const target of data.targets) {

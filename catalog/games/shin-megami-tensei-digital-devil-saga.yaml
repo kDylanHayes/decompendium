@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=../../schema/game.schema.json
 id: "shin-megami-tensei-digital-devil-saga"
 name: "Shin Megami Tensei: Digital Devil Saga"
-aliases: ["Shin Megami Tensei: Digital Devil Saga 2"]
+aliases: ["Digital Devil Saga", "Digital Devil Saga: Avatar Tuner"]
 platform: ps2

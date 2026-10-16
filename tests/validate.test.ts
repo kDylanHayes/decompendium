@@ -115,15 +115,21 @@ describe("validateCatalog", () => {
     );
   });
 
-  it("rejects a repo listed twice, ignoring case and .git", () => {
+  it("rejects a repo listed twice for the same game, ignoring case and .git", () => {
     const problems = problemsAfter((root) =>
-      editYaml(
-        root,
-        "catalog/projects/example-racer.yaml",
-        (p) => (p.repo = "https://github.com/Example-Org/example-quest.git"),
-      ),
+      editYaml(root, "catalog/projects/example-racer.yaml", (p) => {
+        p.repo = "https://github.com/Example-Org/example-quest.git";
+        p.game = "example-quest";
+      }),
     );
-    assertProblem(problems, /already listed as project "example-quest"/);
+    assertProblem(problems, /already listed for this game as project "example-quest"/);
+  });
+
+  it("allows one repo under two games (a repo that builds two games)", () => {
+    const problems = problemsAfter((root) =>
+      editYaml(root, "catalog/projects/example-racer.yaml", (p) => (p.repo = "https://github.com/Example-Org/example-quest")),
+    );
+    assert.deepEqual(problems.filter((p) => /already listed/.test(p)), []);
   });
 
   it("rejects repos on the opt-out list", () => {
