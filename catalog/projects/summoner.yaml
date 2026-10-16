@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "summoner"
+name: "Summoner decompilation"
+game: "summoner"
+repo: https://github.com/AARosson48/SummonerDecomp
+description: "Matching decompilation of Summoner."
+owners: [AARosson48]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "sum-pc"
+    label: "sum-pc"
+    hash: { sha1: "cdc5d71d447a89e9a1c5e176c65c9b129321d7fc" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: sum-pc_report, path: report.json }
