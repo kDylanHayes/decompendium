@@ -49,6 +49,24 @@ export class GitHub {
     return (await res.json()) as T;
   }
 
+  /** GET an API path as text (e.g. a raw README), at most `limit` bytes. Null for 404. */
+  async getText(path: string, accept: string, limit: number): Promise<string | null> {
+    const res = await this.request(`https://api.github.com${path}`, accept);
+    if (res.status === 404) return null;
+    if (!res.ok) throw new IngestError(`GitHub API ${path}: HTTP ${res.status}`);
+    // Keep the first `limit` bytes and stop reading.
+    let text = "";
+    const decoder = new TextDecoder();
+    for await (const chunk of (res.body ?? []) as AsyncIterable<Uint8Array>) {
+      text += decoder.decode(chunk, { stream: true });
+      if (text.length >= limit) {
+        await res.body?.cancel().catch(() => {});
+        break;
+      }
+    }
+    return text.slice(0, limit);
+  }
+
   /** GET a URL that GitHub redirects to storage (artifact downloads). */
   async download(path: string, limit: number): Promise<Uint8Array> {
     const res = await this.request(`https://api.github.com${path}`);
@@ -56,10 +74,10 @@ export class GitHub {
     return readLimited(res, limit, "artifact");
   }
 
-  private async request(url: string): Promise<Response> {
+  private async request(url: string, accept = "application/vnd.github+json"): Promise<Response> {
     this.requests++;
     const headers: Record<string, string> = {
-      accept: "application/vnd.github+json",
+      accept,
       "x-github-api-version": "2022-11-28",
       "user-agent": USER_AGENT,
     };

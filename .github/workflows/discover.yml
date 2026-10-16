@@ -1,0 +1,57 @@
+name: discover
+
+# Looks for matching decomps that aren't listed yet. Suggestions appear in the
+# run summary for a maintainer to review; nothing is added to the catalog.
+on:
+  schedule:
+    - cron: "41 7 * * *"
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: Most repositories to inspect in this run
+        default: "150"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ingest # shares the data branch with ingestion
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: data
+          path: data
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Discover
+        env:
+          # Code search needs a token. The workflow token allows ~1,000 calls an hour
+          # (~150 repos plus the searches); INGEST_TOKEN (a GitHub App) allows more.
+          GITHUB_TOKEN: ${{ secrets.INGEST_TOKEN || github.token }}
+          LIMIT: ${{ inputs.limit || '150' }}
+        run: pnpm discover --state data/discover.json --limit "$LIMIT"
+      - name: Save the cache to the data branch
+        working-directory: data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add discover.json
+          if git diff --cached --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git commit -q -m "discover: $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push

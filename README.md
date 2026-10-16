@@ -54,6 +54,27 @@ from pull requests, forks or other branches are ignored.
 
 Example entries are in [tests/fixtures/catalog](tests/fixtures/catalog).
 
+## Finding projects
+
+`pnpm discover` searches GitHub for repositories that look like matching
+decomps and aren't listed yet, and scores each one: objdiff report artifacts,
+decomp-toolkit `build.sha1` files, ROM hash files, decomp tooling, and README
+wording count for it; recomp, port and tool wording counts against it. It
+prints a table of likely and possible projects for a maintainer to review.
+Nothing is added to the catalog.
+
+A daily workflow runs it and posts the table in the run summary, caching
+results in `discover.json` on the data branch so unchanged repos aren't
+fetched again. Each run inspects the most promising repos first, up to its
+limit, and picks up where it left off the next day.
+
+To measure the finder against a list of projects you know are matching (one
+GitHub URL per line; the list is only read, never stored):
+
+```sh
+GITHUB_TOKEN=$(gh auth token) pnpm discover --state /tmp/discover.json --evaluate known-good.txt
+```
+
 ## Progress format for non-objdiff projects
 
 Projects that don't use objdiff can publish a small JSON file that follows

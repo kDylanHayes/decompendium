@@ -17,7 +17,8 @@
     "ingest": "node src/cli/ingest.ts",
     "build": "astro build && pagefind --site dist",
     "dev": "astro dev",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "discover": "node src/cli/discover.ts"
   },
   "dependencies": {
     "ajv": "^8.20.0",
