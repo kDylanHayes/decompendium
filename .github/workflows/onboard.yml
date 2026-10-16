@@ -1,0 +1,120 @@
+name: onboard
+
+# Turns the finder's likely and possible candidates into catalog entries. Repos
+# whose game and hashes check out go into one pull request for a maintainer to
+# merge; repos whose game couldn't be confirmed become submission issues
+# (label from-finder) for review with /approve. Decisions are kept in
+# onboard.json on the data branch, so each repo is checked once.
+on:
+  schedule:
+    - cron: "23 10 * * *" # daily, after discover
+  workflow_dispatch:
+    inputs:
+      budget:
+        description: API requests to spend checking repos (the rest wait for the next run)
+        default: "450"
+      max_issues:
+        description: Review issues to open this run
+        default: "8"
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  actions: write
+
+# Not the "ingest" group: a paced run takes most of an hour and would hold up
+# ingestion. Only onboard.json is written here, so a rebase before pushing to the
+# data branch is enough.
+concurrency:
+  group: onboard
+  cancel-in-progress: false
+
+jobs:
+  onboard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: data
+          path: data
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - id: week
+        run: echo "week=$(date -u +%G-%V)" >> "$GITHUB_OUTPUT"
+      # The game index is derived from libretro-database (CC BY-SA); it is cached, never committed.
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .cache/game-index.json
+          key: game-index-${{ steps.week.outputs.week }}
+      - name: Build the game index if needed
+        run: test -f .cache/game-index.json || pnpm identify --build
+      - name: Onboard
+        env:
+          # The workflow token allows ~1,000 API calls an hour, shared with the
+          # submission checks this run dispatches, so checking repos gets a budget.
+          GITHUB_TOKEN: ${{ github.token }}
+          BUDGET: ${{ inputs.budget || '450' }}
+          MAX_ISSUES: ${{ inputs.max_issues || '8' }}
+          IGDB_CLIENT_ID: ${{ secrets.IGDB_CLIENT_ID }}
+          IGDB_CLIENT_SECRET: ${{ secrets.IGDB_CLIENT_SECRET }}
+        run: |
+          pnpm onboard --ledger data/discover.json --status likely,possible --state data/onboard.json \
+            --budget "$BUDGET" --write --report "$RUNNER_TEMP/onboard.md" \
+            --submit --repo "$GITHUB_REPOSITORY" --max-issues "$MAX_ISSUES" --dispatch-checks
+          cat "$RUNNER_TEMP/onboard.md" >> "$GITHUB_STEP_SUMMARY"
+      - run: pnpm validate
+      - name: Open a pull request for confirmed games
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$(git status --porcelain catalog)" ]; then
+            echo "No new catalog entries."
+            exit 0
+          fi
+          count=$(git status --porcelain catalog/projects | wc -l | tr -d ' ')
+          branch="onboard/$(date -u +%Y-%m-%d-%H%M)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add catalog
+          git commit -q -m "Onboard $count decompilations found by the finder"
+          git push -q -u origin "$branch"
+          {
+            echo "Projects the onboard workflow checked and confirmed: the game is identified and the build checks a hash. Review the names and targets, then merge."
+            echo
+            echo "Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID (its summary lists everything held or sent to review)."
+          } > "$RUNNER_TEMP/body.md"
+          gh pr create --base main --head "$branch" --title "Onboard $count decompilations found by the finder" --body-file "$RUNNER_TEMP/body.md"
+          # The PR's own validate run is held for approval because the bot opened it; approve it,
+          # and also run validate directly in case no run was created.
+          gh workflow run validate.yml --ref "$branch"
+          for _ in 1 2 3 4 5 6; do
+            sleep 10
+            for run in $(gh run list --workflow validate.yml --branch "$branch" --event pull_request --status action_required --json databaseId --jq '.[].databaseId'); do
+              gh api -X POST "repos/$GITHUB_REPOSITORY/actions/runs/$run/approve" >/dev/null && echo "Approved validate run $run"
+            done
+          done || true
+      # Only after the PR is open: decisions saved from a failed run would drop its additions.
+      # (Rerunning doesn't duplicate review issues; existing submission issues are skipped.)
+      - name: Save decisions to the data branch
+        working-directory: data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add onboard.json
+          if git diff --cached --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git commit -q -m "onboard: $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull -q --rebase origin data
+          git push

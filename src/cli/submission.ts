@@ -30,7 +30,7 @@ const { values, positionals } = parseArgs({
 const command = positionals[0];
 const repo = process.env.GITHUB_REPOSITORY ?? "kDylanHayes/decompendium";
 const github = new GitHub(fetch, process.env.GITHUB_TOKEN || undefined, 60_000);
-if (!values.issue || (command !== "check" && command !== "approve")) {
+if (!values.issue || !/^\d+$/.test(values.issue) || (command !== "check" && command !== "approve")) {
   console.error("usage: submission.ts check|approve --issue <n>");
   process.exit(2);
 }

@@ -6,18 +6,25 @@ name: submission
 on:
   issues:
     types: [opened, edited, reopened]
+  # Issues opened by the onboard workflow don't trigger the event above (Actions-token
+  # events never start workflows), so it dispatches the check instead.
+  workflow_dispatch:
+    inputs:
+      issue:
+        description: Issue number to check
+        required: true
 
 permissions:
   contents: read
   issues: write
 
 concurrency:
-  group: submission-${{ github.event.issue.number }}
+  group: submission-${{ inputs.issue || github.event.issue.number }}
   cancel-in-progress: true
 
 jobs:
   check:
-    if: contains(github.event.issue.labels.*.name, 'submission')
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.issue.labels.*.name, 'submission')
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -42,7 +49,7 @@ jobs:
       - name: Check the submission
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          ISSUE: ${{ github.event.issue.number }}
+          ISSUE: ${{ inputs.issue || github.event.issue.number }}
           # Optional: confirms games the release catalogues don't cover (PC, Switch, ...).
           IGDB_CLIENT_ID: ${{ secrets.IGDB_CLIENT_ID }}
           IGDB_CLIENT_SECRET: ${{ secrets.IGDB_CLIENT_SECRET }}

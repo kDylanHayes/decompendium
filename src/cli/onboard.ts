@@ -5,7 +5,11 @@
 //
 // Usage: node src/cli/onboard.ts --ledger data/discover.json [--status likely] [--limit 400]
 //                                [--state onboard-state.json] [--report onboard.md] [--write]
-//                                [--submit --repo owner/catalog [--pace 240] [--max-issues 15]]
+//                                [--submit --repo owner/catalog [--pace 240] [--max-issues 15] [--dispatch-checks]]
+//                                [--budget 500]
+// --budget          stop checking repos after this many API requests (the rest wait for the next run)
+// --dispatch-checks run the submission check for each new issue: issues opened with the
+//                   Actions token don't trigger workflows themselves
 // Without --write nothing is written to catalog/; without --submit no issues
 // are opened. Resumable: decisions are kept in --state, so a run stopped by the
 // API rate limit continues where it left off.
@@ -39,6 +43,8 @@ const { values } = parseArgs({
     // hour), so issues are opened a few minutes apart.
     pace: { type: "string", default: "240" },
     "max-issues": { type: "string", default: "15" },
+    "dispatch-checks": { type: "boolean", default: false },
+    budget: { type: "string", default: "0" }, // 0: no limit
   },
 });
 
@@ -99,8 +105,14 @@ const candidates = Object.entries(ledger.repos)
 
 let processed = 0;
 let stopped: string | null = null;
+let budgetSpent = false;
+const budget = Number(values.budget);
 for (const fullName of candidates) {
   if (processed >= Number(values.limit)) break;
+  if (budget && github.requests >= budget) {
+    budgetSpent = true;
+    break;
+  }
   const key = fullName.toLowerCase();
   if (state[key]) continue;
 
@@ -244,6 +256,12 @@ if (values.submit && !stopped) {
     opened++;
     save();
     console.log(`issue #${d.issue} for ${d.repo}`);
+    if (values["dispatch-checks"]) {
+      await github.send("POST", `/repos/${values.repo}/actions/workflows/submission.yml/dispatches`, {
+        ref: "main",
+        inputs: { issue: String(d.issue) },
+      });
+    }
   }
 }
 
@@ -255,6 +273,7 @@ const report = [
   `### Onboarding: ${added.length} added, ${reviews.length} sent to review, ${held.length} held`,
   "",
   ...(stopped ? [`Stopped early: ${stopped}. Run again to continue.`, ""] : []),
+  ...(budgetSpent ? [`Request budget (${budget}) spent; the remaining candidates wait for the next run.`, ""] : []),
   `Candidates: ${candidates.length} (${[...wanted].join(", ")}). API requests this run: ${github.requests}.`,
   "",
   "#### Added",
