@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: pikmin2
+name: "Pikmin 2 decompilation"
+game: pikmin-2
+repo: https://github.com/projectPiki/pikmin2
+description: "Matching decompilation of Pikmin 2."
+owners: [projectPiki]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-15
+targets:
+  - id: gpve01
+    label: "GPVE01 (USA)"
+    region: us
+    hash: { sha1: "90d328bf8f190c90472e8c19e7e53c6ad0fe0d1a" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GPVE01_report, path: report.json }
+  - id: gpvj01
+    label: "GPVJ01 (Japan)"
+    region: jp
+    hash: { sha1: "5dca32da3e021f5168146844cb4bfb0db1e99461" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GPVJ01_report, path: report.json }
+  - id: gpvp01
+    label: "GPVP01 (Europe)"
+    region: eu
+    hash: { sha1: "cbd6d7b93536c8e84f75ed76027df740b4e1178b" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GPVP01_report, path: report.json }
+  - id: gpve01-d17
+    label: "GPVE01_D17 demo 17 (USA)"
+    region: us
+    hash: { sha1: "3730939092688902af4866be66d4a8404ae752c7" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GPVE01_D17_report, path: report.json }
+  - id: gpve01-d18
+    label: "GPVE01_D18 demo 18 (USA)"
+    region: us
+    hash: { sha1: "f3bcd281ea1be81d8da10a9072766e5d9980ea85" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GPVE01_D18_report, path: report.json }

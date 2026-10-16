@@ -1,0 +1,124 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: oot
+name: "The Legend of Zelda: Ocarina of Time decompilation"
+game: the-legend-of-zelda-ocarina-of-time
+repo: https://github.com/zeldaret/oot
+description: "Matching decompilation of The Legend of Zelda: Ocarina of Time."
+owners: [zeldaret]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-15
+targets:
+  - id: ntsc-1-0-jp
+    label: "NTSC 1.0 (Japan)"
+    region: jp
+    hash: { md5: "9f04c8e68534b870f707c247fa4b50fc" }
+    progress:
+      kind: none
+  - id: ntsc-1-0-us
+    label: "NTSC 1.0 (USA)"
+    region: us
+    hash: { md5: "5bd1fe107bf8106b2ab6650abecd54d6" }
+    progress:
+      kind: none
+  - id: ntsc-1-1-jp
+    label: "NTSC 1.1 (Japan)"
+    region: jp
+    hash: { md5: "1bf5f42b98c3e97948f01155f12e2d88" }
+    progress:
+      kind: none
+  - id: ntsc-1-1-us
+    label: "NTSC 1.1 (USA)"
+    region: us
+    hash: { md5: "721fdcc6f5f34be55c43a807f2a16af4" }
+    progress:
+      kind: none
+  - id: ntsc-1-2-jp
+    label: "NTSC 1.2 (Japan)"
+    region: jp
+    hash: { md5: "2258052847bdd056c8406a9ef6427f13" }
+    progress:
+      kind: none
+  - id: ntsc-1-2-us
+    label: "NTSC 1.2 (USA)"
+    region: us
+    hash: { md5: "57a9719ad547c516342e1a15d5c28c3d" }
+    progress:
+      kind: none
+  - id: pal-1-0
+    label: "PAL 1.0 (Europe)"
+    region: eu
+    hash: { md5: "e040de91a74b61e3201db0e2323f768a" }
+    progress:
+      kind: none
+  - id: pal-1-1
+    label: "PAL 1.1 (Europe)"
+    region: eu
+    hash: { md5: "d714580dd74c2c033f5e1b6dc0aeac77" }
+    progress:
+      kind: none
+  - id: gc-jp
+    label: "GameCube (Japan)"
+    region: jp
+    hash: { md5: "33fb7852c180b18ea0b9620b630f413f" }
+    progress:
+      kind: none
+  - id: gc-jp-mq
+    label: "GameCube Master Quest (Japan)"
+    region: jp
+    hash: { md5: "69895c5c78442260f6eafb2506dc482a" }
+    progress:
+      kind: none
+  - id: gc-jp-ce
+    label: "GameCube Collector's Edition (Japan)"
+    region: jp
+    hash: { md5: "0c13e0449a28ea5b925cdb8af8d29768" }
+    progress:
+      kind: none
+  - id: gc-us
+    label: "GameCube (USA)"
+    region: us
+    hash: { md5: "cd09029edcfb7c097ac01986a0f83d3f" }
+    progress:
+      kind: none
+  - id: gc-us-mq
+    label: "GameCube Master Quest (USA)"
+    region: us
+    hash: { md5: "da35577fe54579f6a266931cc75f512d" }
+    progress:
+      kind: none
+  - id: gc-eu
+    label: "GameCube (Europe)"
+    region: eu
+    hash: { md5: "2c27b4e000e85fd78dbca551f1b1c965" }
+    progress:
+      kind: none
+  - id: gc-eu-mq
+    label: "GameCube Master Quest (Europe)"
+    region: eu
+    hash: { md5: "1618403427e4344a57833043db5ce3c3" }
+    progress:
+      kind: none
+  - id: gc-eu-dbg
+    label: "GameCube Debug (Europe)"
+    region: eu
+    hash: { md5: "414fdf77955f510da713c12cbc90d6f0" }
+    progress:
+      kind: none
+  - id: gc-eu-dbg-2
+    label: "GameCube Debug, earlier build (Europe)"
+    region: eu
+    hash: { md5: "635fd8a89b9b87d16b91b7cce39ca75f" }
+    progress:
+      kind: none
+  - id: gc-eu-mq-dbg
+    label: "GameCube Master Quest Debug (Europe)"
+    region: eu
+    hash: { md5: "9704bc98c20c20319cc1633fe02b6fc7" }
+    progress:
+      kind: none
+  - id: ique-cn
+    label: "iQue Player (China)"
+    region: cn
+    hash: { md5: "0ab48b2d44a74b3bb2d384f6170c2742" }
+    progress:
+      kind: none

@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: spongebob-squarepants-battle-for-bikini-bottom
+name: "SpongeBob SquarePants: Battle for Bikini Bottom"
+aliases: ["BFBB"]
+platform: gc

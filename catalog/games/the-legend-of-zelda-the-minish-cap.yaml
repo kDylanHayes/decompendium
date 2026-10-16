@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: the-legend-of-zelda-the-minish-cap
+name: "The Legend of Zelda: The Minish Cap"
+aliases: ["TMC", "Minish Cap"]
+platform: gba

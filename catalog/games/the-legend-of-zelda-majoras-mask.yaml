@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: the-legend-of-zelda-majoras-mask
+name: "The Legend of Zelda: Majora's Mask"
+aliases: ["MM", "Majora's Mask"]
+platform: n64

@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: pokemon-emerald
+name: "Pokémon Emerald"
+platform: gba

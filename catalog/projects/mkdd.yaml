@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: mkdd
+name: "Mario Kart: Double Dash!! decompilation"
+game: mario-kart-double-dash
+repo: https://github.com/doldecomp/mkdd
+description: "Matching decompilation of Mario Kart: Double Dash!!."
+owners: [doldecomp]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-15
+targets:
+  - id: marioclub-us
+    label: "MarioClub_us (USA)"
+    region: us
+    hash: { sha1: "db87a9ec1a34275efc45d965dcdcb1a9eb131885" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: MarioClub_us_report, path: report.json }

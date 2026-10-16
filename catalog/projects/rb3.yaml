@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: rb3
+name: "Rock Band 3 decompilation"
+game: rock-band-3
+repo: https://github.com/DarkRTA/rb3
+description: "Matching decompilation of Rock Band 3."
+owners: [DarkRTA]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-15
+targets:
+  - id: szbe69-b8
+    label: "SZBE69_B8 bank 8 (USA)"
+    region: us
+    hash: { sha1: "e26b3daf41886f0d09670135910f2510cd093ae8" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: SZBE69_B8_report, path: report.json }

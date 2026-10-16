@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: rock-band-3
+name: "Rock Band 3"
+aliases: ["RB3"]
+platform: wii

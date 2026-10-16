@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: super-mario-64
+name: "Super Mario 64"
+aliases: ["SM64"]
+platform: n64

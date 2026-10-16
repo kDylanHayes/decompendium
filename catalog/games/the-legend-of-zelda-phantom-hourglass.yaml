@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: the-legend-of-zelda-phantom-hourglass
+name: "The Legend of Zelda: Phantom Hourglass"
+aliases: ["PH", "Phantom Hourglass"]
+platform: nds

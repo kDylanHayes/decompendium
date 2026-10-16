@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: bfbb
+name: "SpongeBob SquarePants: Battle for Bikini Bottom decompilation"
+game: spongebob-squarepants-battle-for-bikini-bottom
+repo: https://github.com/bfbbdecomp/bfbb
+description: "Matching decompilation of SpongeBob SquarePants: Battle for Bikini Bottom."
+owners: [bfbbdecomp]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-15
+targets:
+  - id: gqpe78
+    label: "GQPE78 (USA)"
+    region: us
+    hash: { sha1: "306526d90b48e99894c3138f5fc8f2716d9fecf6" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GQPE78_report, path: report.json }

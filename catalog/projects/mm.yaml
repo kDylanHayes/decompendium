@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: mm
+name: "The Legend of Zelda: Majora's Mask decompilation"
+game: the-legend-of-zelda-majoras-mask
+repo: https://github.com/zeldaret/mm
+description: "Matching decompilation of The Legend of Zelda: Majora's Mask."
+owners: [zeldaret]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-15
+targets:
+  - id: n64-us
+    label: "N64 (USA)"
+    region: us
+    hash: { md5: "2a0a8acb61538235bc1094d297fb6556" }
+    progress:
+      kind: none

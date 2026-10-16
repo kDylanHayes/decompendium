@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: animal-crossing
+name: "Animal Crossing"
+aliases: ["Doubutsu no Mori+"]
+platform: gc

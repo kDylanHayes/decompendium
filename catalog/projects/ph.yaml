@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: ph
+name: "The Legend of Zelda: Phantom Hourglass decompilation"
+game: the-legend-of-zelda-phantom-hourglass
+repo: https://github.com/zeldaret/ph
+description: "Matching decompilation of The Legend of Zelda: Phantom Hourglass."
+owners: [zeldaret]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-15
+targets:
+  - id: eur
+    label: "Europe"
+    region: eu
+    hash: { sha1: "02be55db55cf254bd064d2b3eb368b92a5b4156d" }
+    progress:
+      kind: none
+  - id: usa
+    label: "USA"
+    region: us
+    hash: { sha1: "4c8f52dd719918bbcd46e73a8bae8628139c1b85" }
+    progress:
+      kind: none

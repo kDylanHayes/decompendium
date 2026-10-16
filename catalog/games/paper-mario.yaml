@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: paper-mario
+name: "Paper Mario"
+aliases: ["PM64"]
+platform: n64

@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: tww
+name: "The Legend of Zelda: The Wind Waker decompilation"
+game: the-legend-of-zelda-the-wind-waker
+repo: https://github.com/zeldaret/tww
+description: "Matching decompilation of The Legend of Zelda: The Wind Waker."
+owners: [zeldaret]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-15
+targets:
+  - id: gzle01
+    label: "GZLE01 (USA)"
+    region: us
+    hash: { sha1: "8d28bab68bb5078c38e43f29206f0bd01f7e7a67" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GZLE01_report, path: report.json }
+  - id: gzlj01
+    label: "GZLJ01 (Japan)"
+    region: jp
+    hash: { sha1: "995406d914da8cd1aee4ce58f4c75217c9ec01bc" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GZLJ01_report, path: report.json }
+  - id: gzlp01
+    label: "GZLP01 (Europe)"
+    region: eu
+    hash: { sha1: "9395f87830261193a3872db4b69f580303f7c4d6" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GZLP01_report, path: report.json }
+  - id: d44j01
+    label: "D44J01 demo (Japan)"
+    region: jp
+    hash: { sha1: "e706e10ff65f59f9d5773c35d0a27567e8684813" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: D44J01_report, path: report.json }

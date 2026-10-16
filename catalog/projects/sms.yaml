@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: sms
+name: "Super Mario Sunshine decompilation"
+game: super-mario-sunshine
+repo: https://github.com/doldecomp/sms
+description: "Matching decompilation of Super Mario Sunshine."
+owners: [doldecomp]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-15
+targets:
+  - id: gmse01
+    label: "GMSE01 (USA)"
+    region: us
+    hash: { sha1: "a6782903ef79d4196c8489ecb1b57decb5b3728f" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GMSE01_report, path: report.json }
+  - id: gmsj01
+    label: "GMSJ01 (Japan)"
+    region: jp
+    hash: { sha1: "9f5a8caf56f5356aeac9d3ed28bf8de976a03625" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GMSJ01_report, path: report.json }
+  - id: gmsj01-01
+    label: "GMSJ01_01 rev 1 (Japan)"
+    region: jp
+    hash: { sha1: "60108468079d005ded8e390e8b331b1bd46fd982" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GMSJ01_01_report, path: report.json }
+  - id: gmsp01
+    label: "GMSP01 (Europe)"
+    region: eu
+    hash: { sha1: "a2edfa86880845f663f6f3b49e27cc9409d202bf" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GMSP01_report, path: report.json }
+  - id: gmsp01-nx
+    label: "GMSP01_NX NX (Europe)"
+    region: eu
+    hash: { sha1: "ed18a9ddf46c22172a6cd3edade02b5db27db65f" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, workflow: build.yml, artifact: GMSP01_NX_report, path: report.json }

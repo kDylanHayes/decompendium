@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: pokemon-firered-and-leafgreen
+name: "Pokémon FireRed and LeafGreen"
+aliases: ["Pokémon FireRed", "Pokémon LeafGreen"]
+platform: gba

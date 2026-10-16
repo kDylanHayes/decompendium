@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: the-legend-of-zelda-ocarina-of-time
+name: "The Legend of Zelda: Ocarina of Time"
+aliases: ["OoT", "Ocarina of Time"]
+platform: n64
