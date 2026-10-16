@@ -1,402 +1,402 @@
 {
   "schema": 1,
-  "updated_at": "2026-10-16T01:11:17.708Z",
+  "updated_at": "2026-10-16T01:12:10.407Z",
   "targets": {
     "ac-decomp/gafe01-00": {
       "run_id": 29626112385,
-      "last_attempt_at": "2026-10-16T01:11:05.756Z",
-      "last_success_at": "2026-10-16T01:11:05.756Z",
+      "last_attempt_at": "2026-10-16T01:11:56.795Z",
+      "last_success_at": "2026-10-16T01:11:56.795Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "bfbb/gqpe78": {
       "run_id": 33256901994,
-      "last_attempt_at": "2026-10-16T01:11:05.846Z",
-      "last_success_at": "2026-10-16T01:11:05.846Z",
+      "last_attempt_at": "2026-10-16T01:11:56.796Z",
+      "last_success_at": "2026-10-16T01:11:56.796Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "marioparty4/gmpe01-00": {
       "run_id": 38806380522,
-      "last_attempt_at": "2026-10-16T01:11:05.847Z",
-      "last_success_at": "2026-10-16T01:11:05.847Z",
+      "last_attempt_at": "2026-10-16T01:11:56.796Z",
+      "last_success_at": "2026-10-16T01:11:56.796Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "marioparty4/gmpe01-01": {
       "run_id": 38806380522,
-      "last_attempt_at": "2026-10-16T01:11:05.849Z",
-      "last_success_at": "2026-10-16T01:11:05.849Z",
+      "last_attempt_at": "2026-10-16T01:11:56.796Z",
+      "last_success_at": "2026-10-16T01:11:56.796Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "marioparty4/gmpj01-00": {
       "run_id": 38806380522,
-      "last_attempt_at": "2026-10-16T01:11:05.849Z",
-      "last_success_at": "2026-10-16T01:11:05.849Z",
+      "last_attempt_at": "2026-10-16T01:11:56.796Z",
+      "last_success_at": "2026-10-16T01:11:56.796Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "marioparty4/gmpp01-00": {
       "run_id": 38806380522,
-      "last_attempt_at": "2026-10-16T01:11:05.849Z",
-      "last_success_at": "2026-10-16T01:11:05.849Z",
+      "last_attempt_at": "2026-10-16T01:11:56.796Z",
+      "last_success_at": "2026-10-16T01:11:56.796Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "marioparty4/gmpp01-01": {
       "run_id": 38806380522,
-      "last_attempt_at": "2026-10-16T01:11:05.849Z",
-      "last_success_at": "2026-10-16T01:11:05.849Z",
+      "last_attempt_at": "2026-10-16T01:11:56.796Z",
+      "last_success_at": "2026-10-16T01:11:56.796Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "marioparty4/gmpp01-02": {
       "run_id": 38806380522,
-      "last_attempt_at": "2026-10-16T01:11:05.849Z",
-      "last_success_at": "2026-10-16T01:11:05.849Z",
+      "last_attempt_at": "2026-10-16T01:11:56.796Z",
+      "last_success_at": "2026-10-16T01:11:56.796Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "melee/gale01": {
       "run_id": 38648794007,
-      "last_attempt_at": "2026-10-16T01:11:08.042Z",
-      "last_success_at": "2026-10-16T01:11:08.042Z",
+      "last_attempt_at": "2026-10-16T01:11:57.527Z",
+      "last_success_at": "2026-10-16T01:11:57.527Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "mkdd/marioclub-us": {
       "run_id": 37305160035,
-      "last_attempt_at": "2026-10-16T01:11:08.059Z",
-      "last_success_at": "2026-10-16T01:11:08.059Z",
+      "last_attempt_at": "2026-10-16T01:11:57.630Z",
+      "last_success_at": "2026-10-16T01:11:57.630Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "petari/rmge01": {
       "run_id": 38644763965,
-      "last_attempt_at": "2026-10-16T01:11:08.099Z",
-      "last_success_at": "2026-10-16T01:11:08.099Z",
+      "last_attempt_at": "2026-10-16T01:11:57.636Z",
+      "last_success_at": "2026-10-16T01:11:57.636Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "petari/rmgj01": {
       "run_id": 38644763965,
-      "last_attempt_at": "2026-10-16T01:11:08.128Z",
-      "last_success_at": "2026-10-16T01:11:08.128Z",
+      "last_attempt_at": "2026-10-16T01:11:57.743Z",
+      "last_success_at": "2026-10-16T01:11:57.743Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "petari/rmgk01": {
       "run_id": 38644763965,
-      "last_attempt_at": "2026-10-16T01:11:08.174Z",
-      "last_success_at": "2026-10-16T01:11:08.174Z",
+      "last_attempt_at": "2026-10-16T01:11:57.835Z",
+      "last_success_at": "2026-10-16T01:11:57.835Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "petari/rmgp01": {
       "run_id": 38644763965,
-      "last_attempt_at": "2026-10-16T01:11:08.191Z",
-      "last_success_at": "2026-10-16T01:11:08.191Z",
+      "last_attempt_at": "2026-10-16T01:11:57.854Z",
+      "last_success_at": "2026-10-16T01:11:57.854Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "pikmin/dpij01-pikidemo": {
       "run_id": 37521710233,
-      "last_attempt_at": "2026-10-16T01:11:10.242Z",
-      "last_success_at": "2026-10-16T01:11:10.242Z",
+      "last_attempt_at": "2026-10-16T01:11:58.436Z",
+      "last_success_at": "2026-10-16T01:11:58.436Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "pikmin/g98e01-pikidemo": {
       "run_id": 37521710233,
-      "last_attempt_at": "2026-10-16T01:11:10.407Z",
-      "last_success_at": "2026-10-16T01:11:10.407Z",
+      "last_attempt_at": "2026-10-16T01:11:58.448Z",
+      "last_success_at": "2026-10-16T01:11:58.448Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "pikmin/g98p01-pikidemo": {
       "run_id": 37521710233,
-      "last_attempt_at": "2026-10-16T01:11:10.578Z",
-      "last_success_at": "2026-10-16T01:11:10.578Z",
+      "last_attempt_at": "2026-10-16T01:11:58.452Z",
+      "last_success_at": "2026-10-16T01:11:58.452Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "pikmin/gpie01-00": {
       "run_id": 37521710233,
-      "last_attempt_at": "2026-10-16T01:11:08.225Z",
-      "last_success_at": "2026-10-16T01:11:08.225Z",
+      "last_attempt_at": "2026-10-16T01:11:57.923Z",
+      "last_success_at": "2026-10-16T01:11:57.923Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "pikmin/gpie01-01": {
       "run_id": 37521710233,
-      "last_attempt_at": "2026-10-16T01:11:08.261Z",
-      "last_success_at": "2026-10-16T01:11:08.261Z",
+      "last_attempt_at": "2026-10-16T01:11:58.040Z",
+      "last_success_at": "2026-10-16T01:11:58.040Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "pikmin/gpij01-01": {
       "run_id": 37521710233,
-      "last_attempt_at": "2026-10-16T01:11:09.923Z",
-      "last_success_at": "2026-10-16T01:11:09.923Z",
+      "last_attempt_at": "2026-10-16T01:11:58.170Z",
+      "last_success_at": "2026-10-16T01:11:58.170Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "pikmin/gpij01-02": {
       "run_id": 37521710233,
-      "last_attempt_at": "2026-10-16T01:11:10.029Z",
-      "last_success_at": "2026-10-16T01:11:10.029Z",
+      "last_attempt_at": "2026-10-16T01:11:58.275Z",
+      "last_success_at": "2026-10-16T01:11:58.275Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "pikmin/gpip01-00": {
       "run_id": 37521710233,
-      "last_attempt_at": "2026-10-16T01:11:10.140Z",
-      "last_success_at": "2026-10-16T01:11:10.140Z",
+      "last_attempt_at": "2026-10-16T01:11:58.276Z",
+      "last_success_at": "2026-10-16T01:11:58.276Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "pikmin2/gpve01": {
       "run_id": 38430098462,
-      "last_attempt_at": "2026-10-16T01:11:10.697Z",
-      "last_success_at": "2026-10-16T01:11:10.697Z",
+      "last_attempt_at": "2026-10-16T01:11:58.575Z",
+      "last_success_at": "2026-10-16T01:11:58.575Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "pikmin2/gpve01-d17": {
       "run_id": 38430098462,
-      "last_attempt_at": "2026-10-16T01:11:11.301Z",
-      "last_success_at": "2026-10-16T01:11:11.301Z",
+      "last_attempt_at": "2026-10-16T01:11:58.843Z",
+      "last_success_at": "2026-10-16T01:11:58.843Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "pikmin2/gpve01-d18": {
       "run_id": 38430098462,
-      "last_attempt_at": "2026-10-16T01:11:11.547Z",
-      "last_success_at": "2026-10-16T01:11:11.547Z",
+      "last_attempt_at": "2026-10-16T01:11:58.948Z",
+      "last_success_at": "2026-10-16T01:11:58.948Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "pikmin2/gpvj01": {
       "run_id": 38430098462,
-      "last_attempt_at": "2026-10-16T01:11:10.761Z",
-      "last_success_at": "2026-10-16T01:11:10.761Z",
+      "last_attempt_at": "2026-10-16T01:11:58.741Z",
+      "last_success_at": "2026-10-16T01:11:58.741Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "pikmin2/gpvp01": {
       "run_id": 38430098462,
-      "last_attempt_at": "2026-10-16T01:11:11.288Z",
-      "last_success_at": "2026-10-16T01:11:11.288Z",
+      "last_attempt_at": "2026-10-16T01:11:58.823Z",
+      "last_success_at": "2026-10-16T01:11:58.823Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "prime/gm8e01-00": {
       "run_id": 38793971675,
-      "last_attempt_at": "2026-10-16T01:11:11.649Z",
-      "last_success_at": "2026-10-16T01:11:11.649Z",
+      "last_attempt_at": "2026-10-16T01:11:59.053Z",
+      "last_success_at": "2026-10-16T01:11:59.053Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "prime/gm8e01-01": {
       "run_id": 38793971675,
-      "last_attempt_at": "2026-10-16T01:11:11.662Z",
-      "last_success_at": "2026-10-16T01:11:11.662Z",
+      "last_attempt_at": "2026-10-16T01:11:59.128Z",
+      "last_success_at": "2026-10-16T01:11:59.128Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "prime/gm8e01-02": {
       "run_id": 38793971675,
-      "last_attempt_at": "2026-10-16T01:11:11.741Z",
-      "last_success_at": "2026-10-16T01:11:11.741Z",
+      "last_attempt_at": "2026-10-16T01:11:59.178Z",
+      "last_success_at": "2026-10-16T01:11:59.178Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "prime/gm8e01-48": {
       "run_id": 38793971675,
-      "last_attempt_at": "2026-10-16T01:11:12.748Z",
-      "last_success_at": "2026-10-16T01:11:12.748Z",
+      "last_attempt_at": "2026-10-16T01:11:59.455Z",
+      "last_success_at": "2026-10-16T01:11:59.455Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "prime/gm8eab-00": {
       "run_id": 38793971675,
-      "last_attempt_at": "2026-10-16T01:11:12.834Z",
-      "last_success_at": "2026-10-16T01:11:12.834Z",
+      "last_attempt_at": "2026-10-16T01:11:59.483Z",
+      "last_success_at": "2026-10-16T01:11:59.483Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "prime/gm8j01-00": {
       "run_id": 38793971675,
-      "last_attempt_at": "2026-10-16T01:11:12.983Z",
-      "last_success_at": "2026-10-16T01:11:12.983Z",
+      "last_attempt_at": "2026-10-16T01:11:59.584Z",
+      "last_success_at": "2026-10-16T01:11:59.584Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "prime/gm8j01-dd": {
       "run_id": 38793971675,
-      "last_attempt_at": "2026-10-16T01:11:13.177Z",
-      "last_success_at": "2026-10-16T01:11:13.177Z",
+      "last_attempt_at": "2026-10-16T01:11:59.592Z",
+      "last_success_at": "2026-10-16T01:11:59.592Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "prime/gm8p01-00": {
       "run_id": 38793971675,
-      "last_attempt_at": "2026-10-16T01:11:13.211Z",
-      "last_success_at": "2026-10-16T01:11:13.211Z",
+      "last_attempt_at": "2026-10-16T01:11:59.699Z",
+      "last_success_at": "2026-10-16T01:11:59.699Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "prime/r3ij01-00": {
       "run_id": 38793971675,
-      "last_attempt_at": "2026-10-16T01:11:13.250Z",
-      "last_success_at": "2026-10-16T01:11:13.250Z",
+      "last_attempt_at": "2026-10-16T01:11:59.811Z",
+      "last_success_at": "2026-10-16T01:11:59.811Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "prime/r3me01-00": {
       "run_id": 38793971675,
-      "last_attempt_at": "2026-10-16T01:11:13.719Z",
-      "last_success_at": "2026-10-16T01:11:13.719Z",
+      "last_attempt_at": "2026-10-16T01:11:59.817Z",
+      "last_success_at": "2026-10-16T01:11:59.817Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "prime/r3mp01-00": {
       "run_id": 38793971675,
-      "last_attempt_at": "2026-10-16T01:11:13.766Z",
-      "last_success_at": "2026-10-16T01:11:13.766Z",
+      "last_attempt_at": "2026-10-16T01:11:59.845Z",
+      "last_success_at": "2026-10-16T01:11:59.845Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "rb3/szbe69-b8": {
       "run_id": 37617918903,
-      "last_attempt_at": "2026-10-16T01:11:13.924Z",
-      "last_success_at": "2026-10-16T01:11:13.924Z",
+      "last_attempt_at": "2026-10-16T01:12:00.132Z",
+      "last_success_at": "2026-10-16T01:12:00.132Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "sms/gmse01": {
       "run_id": 38831936641,
-      "last_attempt_at": "2026-10-16T01:11:14.002Z",
-      "last_success_at": "2026-10-16T01:11:14.002Z",
+      "last_attempt_at": "2026-10-16T01:12:00.172Z",
+      "last_success_at": "2026-10-16T01:12:00.172Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "sms/gmsj01": {
       "run_id": 38831936641,
-      "last_attempt_at": "2026-10-16T01:11:14.407Z",
-      "last_success_at": "2026-10-16T01:11:14.407Z",
+      "last_attempt_at": "2026-10-16T01:12:00.381Z",
+      "last_success_at": "2026-10-16T01:12:00.381Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "sms/gmsj01-01": {
       "run_id": 38831936641,
-      "last_attempt_at": "2026-10-16T01:11:14.466Z",
-      "last_success_at": "2026-10-16T01:11:14.466Z",
+      "last_attempt_at": "2026-10-16T01:12:00.395Z",
+      "last_success_at": "2026-10-16T01:12:00.395Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "sms/gmsp01": {
       "run_id": 38831936641,
-      "last_attempt_at": "2026-10-16T01:11:14.607Z",
-      "last_success_at": "2026-10-16T01:11:14.607Z",
+      "last_attempt_at": "2026-10-16T01:12:00.576Z",
+      "last_success_at": "2026-10-16T01:12:00.576Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "sms/gmsp01-nx": {
       "run_id": 38831936641,
-      "last_attempt_at": "2026-10-16T01:11:14.764Z",
-      "last_success_at": "2026-10-16T01:11:14.764Z",
+      "last_attempt_at": "2026-10-16T01:12:00.583Z",
+      "last_success_at": "2026-10-16T01:12:00.583Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "ss/soue01": {
       "run_id": 38772593620,
-      "last_attempt_at": "2026-10-16T01:11:14.814Z",
-      "last_success_at": "2026-10-16T01:11:14.814Z",
+      "last_attempt_at": "2026-10-16T01:12:00.741Z",
+      "last_success_at": "2026-10-16T01:12:00.741Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "tp/gz2e01": {
       "anomaly": null,
-      "last_attempt_at": "2026-10-16T01:11:15.156Z",
+      "last_attempt_at": "2026-10-16T01:12:00.746Z",
       "last_success_at": null,
-      "consecutive_failures": 1,
+      "consecutive_failures": 2,
       "last_error": "no unexpired artifact \"GZ2E01_report\" in the last 5 successful push run(s) on main"
     },
     "tww/d44j01": {
       "run_id": 38619222013,
-      "last_attempt_at": "2026-10-16T01:11:15.780Z",
-      "last_success_at": "2026-10-16T01:11:15.780Z",
+      "last_attempt_at": "2026-10-16T01:12:01.159Z",
+      "last_success_at": "2026-10-16T01:12:01.159Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "tww/gzle01": {
       "run_id": 38619222013,
-      "last_attempt_at": "2026-10-16T01:11:15.356Z",
-      "last_success_at": "2026-10-16T01:11:15.356Z",
+      "last_attempt_at": "2026-10-16T01:12:00.765Z",
+      "last_success_at": "2026-10-16T01:12:00.765Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "tww/gzlj01": {
       "run_id": 38619222013,
-      "last_attempt_at": "2026-10-16T01:11:15.664Z",
-      "last_success_at": "2026-10-16T01:11:15.664Z",
+      "last_attempt_at": "2026-10-16T01:12:00.963Z",
+      "last_success_at": "2026-10-16T01:12:00.963Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
     },
     "tww/gzlp01": {
       "run_id": 38619222013,
-      "last_attempt_at": "2026-10-16T01:11:15.735Z",
-      "last_success_at": "2026-10-16T01:11:15.735Z",
+      "last_attempt_at": "2026-10-16T01:12:01.101Z",
+      "last_success_at": "2026-10-16T01:12:01.101Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
@@ -405,59 +405,147 @@
   "projects": {
     "ac-decomp": {
       "default_branch": "master",
-      "default_branch_checked_at": "2026-10-16T01:11:06.339Z"
+      "default_branch_checked_at": "2026-10-16T01:11:06.339Z",
+      "last_commit_at": "2026-07-18T01:55:27Z",
+      "commits_checked_at": "2026-10-16T01:12:02.487Z"
     },
     "bfbb": {
       "default_branch": "main",
-      "default_branch_checked_at": "2026-10-16T01:11:06.341Z"
+      "default_branch_checked_at": "2026-10-16T01:11:06.341Z",
+      "last_commit_at": "2026-08-29T14:10:37Z",
+      "commits_checked_at": "2026-10-16T01:12:02.751Z"
     },
     "marioparty4": {
       "default_branch": "main",
-      "default_branch_checked_at": "2026-10-16T01:11:06.334Z"
+      "default_branch_checked_at": "2026-10-16T01:11:06.334Z",
+      "last_commit_at": "2026-10-15T20:59:34Z",
+      "commits_checked_at": "2026-10-16T01:12:02.994Z"
     },
     "melee": {
       "default_branch": "master",
-      "default_branch_checked_at": "2026-10-16T01:11:08.393Z"
+      "default_branch_checked_at": "2026-10-16T01:11:08.393Z",
+      "last_commit_at": "2026-10-14T22:36:23Z",
+      "commits_checked_at": "2026-10-16T01:12:03.253Z"
     },
     "mkdd": {
       "default_branch": "main",
-      "default_branch_checked_at": "2026-10-16T01:11:08.425Z"
+      "default_branch_checked_at": "2026-10-16T01:11:08.425Z",
+      "last_commit_at": "2026-10-05T11:46:59Z",
+      "commits_checked_at": "2026-10-16T01:12:03.460Z"
+    },
+    "mm": {
+      "default_branch": "main",
+      "default_branch_checked_at": "2026-10-16T01:12:03.679Z",
+      "last_commit_at": "2026-10-11T02:53:23Z",
+      "commits_checked_at": "2026-10-16T01:12:03.879Z"
+    },
+    "oot": {
+      "default_branch": "main",
+      "default_branch_checked_at": "2026-10-16T01:12:04.139Z",
+      "last_commit_at": "2026-10-14T18:19:57Z",
+      "commits_checked_at": "2026-10-16T01:12:04.363Z"
+    },
+    "papermario": {
+      "default_branch": "main",
+      "default_branch_checked_at": "2026-10-16T01:12:04.636Z",
+      "last_commit_at": "2026-09-26T13:43:09Z",
+      "commits_checked_at": "2026-10-16T01:12:04.824Z"
     },
     "petari": {
       "default_branch": "master",
-      "default_branch_checked_at": "2026-10-16T01:11:08.386Z"
+      "default_branch_checked_at": "2026-10-16T01:11:08.386Z",
+      "last_commit_at": "2026-10-14T22:02:11Z",
+      "commits_checked_at": "2026-10-16T01:12:05.078Z"
+    },
+    "ph": {
+      "default_branch": "main",
+      "default_branch_checked_at": "2026-10-16T01:12:05.367Z",
+      "last_commit_at": "2026-10-09T16:59:14Z",
+      "commits_checked_at": "2026-10-16T01:12:05.625Z"
     },
     "pikmin": {
       "default_branch": "main",
-      "default_branch_checked_at": "2026-10-16T01:11:08.560Z"
+      "default_branch_checked_at": "2026-10-16T01:11:08.560Z",
+      "last_commit_at": "2026-10-06T19:49:06Z",
+      "commits_checked_at": "2026-10-16T01:12:05.850Z"
     },
     "pikmin2": {
       "default_branch": "main",
-      "default_branch_checked_at": "2026-10-16T01:11:10.951Z"
+      "default_branch_checked_at": "2026-10-16T01:11:10.951Z",
+      "last_commit_at": "2026-10-13T16:23:22Z",
+      "commits_checked_at": "2026-10-16T01:12:06.120Z"
+    },
+    "pokeemerald": {
+      "default_branch": "master",
+      "default_branch_checked_at": "2026-10-16T01:12:06.322Z",
+      "last_commit_at": "2026-10-01T19:02:13Z",
+      "commits_checked_at": "2026-10-16T01:12:06.515Z"
+    },
+    "pokefirered": {
+      "default_branch": "master",
+      "default_branch_checked_at": "2026-10-16T01:12:06.800Z",
+      "last_commit_at": "2026-09-26T20:54:25Z",
+      "commits_checked_at": "2026-10-16T01:12:07.000Z"
+    },
+    "pokeruby": {
+      "default_branch": "master",
+      "default_branch_checked_at": "2026-10-16T01:12:07.282Z",
+      "last_commit_at": "2026-09-29T01:40:51Z",
+      "commits_checked_at": "2026-10-16T01:12:07.513Z"
     },
     "prime": {
       "default_branch": "main",
-      "default_branch_checked_at": "2026-10-16T01:11:11.944Z"
+      "default_branch_checked_at": "2026-10-16T01:11:11.944Z",
+      "last_commit_at": "2026-10-15T19:26:49Z",
+      "commits_checked_at": "2026-10-16T01:12:07.731Z"
     },
     "rb3": {
       "default_branch": "master",
-      "default_branch_checked_at": "2026-10-16T01:11:14.183Z"
+      "default_branch_checked_at": "2026-10-16T01:11:14.183Z",
+      "last_commit_at": "2026-10-07T12:00:08Z",
+      "commits_checked_at": "2026-10-16T01:12:07.977Z"
+    },
+    "sm64": {
+      "default_branch": "master",
+      "default_branch_checked_at": "2026-10-16T01:12:08.269Z",
+      "last_commit_at": "2023-08-17T13:21:59Z",
+      "commits_checked_at": "2026-10-16T01:12:08.513Z"
     },
     "sms": {
       "default_branch": "main",
-      "default_branch_checked_at": "2026-10-16T01:11:14.272Z"
+      "default_branch_checked_at": "2026-10-16T01:11:14.272Z",
+      "last_commit_at": "2026-10-16T00:52:00Z",
+      "commits_checked_at": "2026-10-16T01:12:08.748Z"
     },
     "ss": {
       "default_branch": "main",
-      "default_branch_checked_at": "2026-10-16T01:11:15.140Z"
+      "default_branch_checked_at": "2026-10-16T01:11:15.140Z",
+      "last_commit_at": "2026-10-15T16:52:20Z",
+      "commits_checked_at": "2026-10-16T01:12:08.996Z"
+    },
+    "st": {
+      "default_branch": "main",
+      "default_branch_checked_at": "2026-10-16T01:12:09.210Z",
+      "last_commit_at": "2026-10-14T01:39:02Z",
+      "commits_checked_at": "2026-10-16T01:12:09.421Z"
+    },
+    "tmc": {
+      "default_branch": "master",
+      "default_branch_checked_at": "2026-10-16T01:12:09.651Z",
+      "last_commit_at": "2026-09-27T17:57:44Z",
+      "commits_checked_at": "2026-10-16T01:12:09.895Z"
     },
     "tp": {
       "default_branch": "main",
-      "default_branch_checked_at": "2026-10-16T01:11:15.412Z"
+      "default_branch_checked_at": "2026-10-16T01:11:15.412Z",
+      "last_commit_at": "2026-06-23T19:52:55Z",
+      "commits_checked_at": "2026-10-16T01:12:10.167Z"
     },
     "tww": {
       "default_branch": "main",
-      "default_branch_checked_at": "2026-10-16T01:11:15.668Z"
+      "default_branch_checked_at": "2026-10-16T01:11:15.668Z",
+      "last_commit_at": "2026-10-14T18:54:55Z",
+      "commits_checked_at": "2026-10-16T01:12:10.406Z"
     }
   }
 }
