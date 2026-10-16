@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { cleanTitle, parseDat, serialKeys } from "../src/identify/dat.ts";
 import { codesFromFacts, hexDigests } from "../src/identify/evidence.ts";
-import { codeKeys, identify, identifyByIgdb, titleFromDescription } from "../src/identify/identify.ts";
+import { codeKeys, identify, identifyByIgdb, titleFromDescription, titleFromRepoName } from "../src/identify/identify.ts";
 import { addToIndex, emptyIndex } from "../src/identify/index.ts";
 
 // Shaped like libretro-database's No-Intro and Redump DATs.
@@ -138,6 +138,10 @@ describe("evidence", () => {
     assert.equal(titleFromDescription("A decompilation of Super Smash Bros Melee brought to you by a bunch of clever folks"), "Super Smash Bros Melee");
     assert.equal(titleFromDescription("Matching decomp for Rock Band 3 using dtk"), "Rock Band 3");
     assert.equal(titleFromDescription("Tools and notes"), null);
+    assert.equal(titleFromRepoName("topspin4-decomp"), "topspin 4");
+    assert.equal(titleFromRepoName("PartnersInTimeDECOMP"), "Partners In Time");
+    assert.equal(titleFromRepoName("Turok-Rage-Wars-Decomp"), "Turok Rage Wars");
+    assert.equal(titleFromRepoName("mkp"), null);
   });
 
   it("confirms a game on IGDB only by exact title with a clear platform", async () => {
@@ -157,5 +161,7 @@ describe("evidence", () => {
     assert.equal(await identifyByIgdb("Rock Band", "wii", creds, fake(rb3)), null);
     const alt = [{ name: "Chulip", alternative_names: [{ name: "Chu-Ri-Pu" }], platforms: [{ name: "PlayStation 2" }] }];
     assert.equal((await identifyByIgdb("Chu-Ri-Pu", "", creds, fake(alt)))?.title, "Chulip");
+    const ts4 = [{ name: "Top Spin 4", platforms: [{ name: "Xbox 360" }] }];
+    assert.equal((await identifyByIgdb("topspin 4", "", creds, fake(ts4)))?.title, "Top Spin 4");
   });
 });

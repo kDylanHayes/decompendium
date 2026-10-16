@@ -3,7 +3,7 @@ import { deepCheck } from "../discover/deep.ts";
 import { fetchFacts, repoFromUrl, type RepoFacts } from "../discover/facts.ts";
 import { assess, type Assessment } from "../discover/signals.ts";
 import { hexDigests, repoEvidence } from "../identify/evidence.ts";
-import { identify, identifyByIgdb, igdbCredsFromEnv, titleFromDescription, type Identification } from "../identify/identify.ts";
+import { identify, identifyByIgdb, igdbCredsFromEnv, titleFromDescription, titleFromRepoName, type Identification } from "../identify/identify.ts";
 import type { GameIndex } from "../identify/index.ts";
 import type { GitHub } from "../ingest/http.ts";
 import { parseDecompendium, parseObjdiff, sanityErrors } from "../ingest/parsers.ts";
@@ -103,13 +103,20 @@ export async function checkSubmission(sub: Submission, ctx: CheckContext): Promi
     let id = identify(evidence, ctx.index);
     // Nothing in the release catalogues (PC, Switch, ...): try an IGDB title search if configured.
     const creds = igdbCredsFromEnv();
-    const guess = titleFromDescription(facts.description) ?? (sub.game || null);
-    if (!id.title && creds && guess) {
+    const guesses = [sub.game, titleFromDescription(facts.description), titleFromRepoName(facts.fullName.split("/")[1]!)]
+      .filter((g): g is string => !!g)
+      .filter((g, i, all) => all.findIndex((x) => x.toLowerCase() === g.toLowerCase()) === i);
+    for (const guess of !id.title && creds ? guesses : []) {
+      if (!creds) break;
       try {
         const viaIgdb = await identifyByIgdb(guess, `${facts.fullName} ${facts.description} ${facts.readme.slice(0, 3000)}`, creds);
-        if (viaIgdb) id = viaIgdb;
+        if (viaIgdb) {
+          id = viaIgdb;
+          break;
+        }
       } catch (err) {
         add("info", `IGDB lookup failed: ${(err as Error).message}`);
+        break;
       }
     }
     result.identification = id;
@@ -118,8 +125,10 @@ export async function checkSubmission(sub: Submission, ctx: CheckContext): Promi
       const where = id.releases.length ? id.releases.slice(0, 3).map((r) => `${r.name} (${r.via})`).join("; ") : "an exact title match on IGDB";
       add("pass", `Game: **${id.title}** on ${platformName(id.platform!)}, from ${where}.`);
       if (sub.platform && sub.platform !== id.platform) add("warn", `The form says ${platformName(sub.platform)}, but the evidence says ${platformName(id.platform!)}.`);
+    } else if (sub.game) {
+      add("warn", `Couldn't confirm the game from ROM hashes, product codes or IGDB, so the game name from the form ("${sub.game}") will be used. A maintainer will check it's a game.`);
     } else {
-      add("warn", `Couldn't confirm the game from ROM hashes or product codes, so the game name from the form ("${sub.game}") will be used. A maintainer will check it's a game.`);
+      add("fail", "Couldn't identify the game, and the form doesn't name it: edit the issue and fill in **Game** (and **Platform**), and the bot checks it again.");
     }
   } else add("info", "Game identification is unavailable in this run.");
 

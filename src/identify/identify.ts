@@ -94,6 +94,21 @@ export function titleFromDescription(description: string): string | null {
   return m ? m[1]!.trim() : null;
 }
 
+/**
+ * A title guess from a repo name, for the IGDB search: "topspin4-decomp" → "topspin 4",
+ * "PartnersInTimeDECOMP" → "Partners In Time". Null when too little is left.
+ */
+export function titleFromRepoName(name: string): string | null {
+  const t = name
+    .replace(/[-_. ]?(matching[-_ ]?)?(decomp(ilation)?|disasm|disassembly|reverse|re)([-_ ]?project)?$/i, "")
+    .replace(/^(decomp(ilation)?|disasm)[-_ ]/i, "")
+    .replace(/([a-z])([A-Z])/g, "$1 $2")
+    .replace(/([A-Za-z])(\d)/g, "$1 $2")
+    .replace(/[-_.]+/g, " ")
+    .trim();
+  return t.replace(/[^a-z]/gi, "").length >= 4 ? t : null;
+}
+
 // IGDB platform names to Decompendium platform ids.
 const IGDB_PLATFORMS: Record<string, string> = {
   "Nintendo GameCube": "gc", Wii: "wii", "Wii U": "wiiu", "Nintendo 64": "n64", "Game Boy": "gb", "Game Boy Color": "gbc",
@@ -151,8 +166,10 @@ export async function identifyByIgdb(
   fetch: typeof globalThis.fetch = globalThis.fetch,
 ): Promise<Identification | null> {
   const results = await igdbSearch(title, creds, fetch);
-  const key = strip(title);
-  const match = results.find((g) => strip(g.name) === key || g.alt.some((a) => strip(a) === key));
+  // Spaces don't count: "topspin 4" matches "Top Spin 4".
+  const tight = (t: string) => strip(t).replace(/ /g, "");
+  const key = tight(title);
+  const match = results.find((g) => tight(g.name) === key || g.alt.some((a) => tight(a) === key));
   if (!match) return null;
   const platforms = [...new Set(match.platforms.map((p) => IGDB_PLATFORMS[p]).filter((p): p is string => !!p))];
   const mentioned = platforms.filter((p) => new RegExp(`\\b(${platformWords(p).join("|")})\\b`, "i").test(hint));
@@ -164,7 +181,7 @@ export async function identifyByIgdb(
     platform,
     releases: [],
     nonGame: null,
-    aliases: strip(match.name) === key ? [] : [title],
+    aliases: tight(match.name) === key ? [] : [title],
   };
 }
 
