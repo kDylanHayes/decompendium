@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_at": "2026-10-16T16:42:31.786Z",
+  "updated_at": "2026-10-16T17:09:49.734Z",
   "targets": {
     "1080/japan-usa-en-ja": {
       "run_id": 38933572556,
@@ -340,9 +340,9 @@
     },
     "ffcc/gccp01": {
       "run_id": 38008185539,
-      "last_attempt_at": "2026-10-16T16:42:21.221Z",
+      "last_attempt_at": "2026-10-16T17:09:41.315Z",
       "last_success_at": "2026-10-16T13:16:58.794Z",
-      "consecutive_failures": 3,
+      "consecutive_failures": 4,
       "last_error": "GitHub API /repos/zcanann/FFCC-Decomp/actions/artifacts?name=GCCP01_report&per_page=30: HTTP 500",
       "anomaly": null
     },
@@ -1318,6 +1318,14 @@
       "run_id": 38869594702,
       "last_attempt_at": "2026-10-16T16:42:24.935Z",
       "last_success_at": "2026-10-16T16:42:24.935Z",
+      "consecutive_failures": 0,
+      "last_error": null,
+      "anomaly": null
+    },
+    "summoner/sum-pc": {
+      "run_id": 37096184809,
+      "last_attempt_at": "2026-10-16T17:09:41.139Z",
+      "last_success_at": "2026-10-16T17:09:41.139Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
@@ -2648,6 +2656,10 @@
       "default_branch_checked_at": "2026-10-16T13:12:24.836Z",
       "last_commit_at": "2026-10-16T07:45:52Z",
       "commits_checked_at": "2026-10-16T13:18:07.758Z"
+    },
+    "summoner": {
+      "default_branch": "main",
+      "default_branch_checked_at": "2026-10-16T17:09:41.815Z"
     },
     "super-mario-all-star": {
       "default_branch": "main",
