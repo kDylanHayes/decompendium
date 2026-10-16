@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "turok-rage-wars"
+name: "Turok: Rage Wars"
+platform: n64

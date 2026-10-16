@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "pop-n-music"
+name: "Pop'n Music"
+platform: ps1

@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "xenogears"
+name: "Xenogears"
+platform: ps1

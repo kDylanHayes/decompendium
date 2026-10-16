@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "yu-gi-oh-forbidden-memories"
+name: "Yu-Gi-Oh! Forbidden Memories"
+platform: ps1

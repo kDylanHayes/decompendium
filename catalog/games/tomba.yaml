@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "tomba"
+name: "Tomba!"
+aliases: ["Tombi!", "Ore! Tomba"]
+platform: ps1

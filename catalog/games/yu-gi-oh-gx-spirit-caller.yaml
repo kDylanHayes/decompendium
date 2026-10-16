@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "yu-gi-oh-gx-spirit-caller"
+name: "Yu-Gi-Oh! GX: Spirit Caller"
+aliases: ["Yu-Gi-Oh! Duel Monsters GX: Spirit Summoner"]
+platform: nds

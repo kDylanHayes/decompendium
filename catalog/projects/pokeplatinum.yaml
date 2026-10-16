@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "pokeplatinum"
+name: "Pokemon: Platinum Version decompilation"
+game: "pokemon-platinum-version"
+repo: https://github.com/pret/pokeplatinum
+description: "Matching decompilation of Pokemon: Platinum Version."
+owners: [pret]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa-rev-1"
+    label: "USA, Rev 1"
+    region: us
+    hash: { sha1: "0862ec35b24de5c7e2dcb88c9eea0873110d755c" }
+    progress:
+      kind: none
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "ce81046eda7d232513069519cb2085349896dec7" }
+    progress:
+      kind: none

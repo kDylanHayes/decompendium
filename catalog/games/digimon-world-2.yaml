@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "digimon-world-2"
+name: "Digimon World 2"
+platform: ps1

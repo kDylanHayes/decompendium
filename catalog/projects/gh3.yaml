@@ -1,16 +1,15 @@
 # yaml-language-server: $schema=../../schema/project.schema.json
 id: "gh3"
 name: "Guitar Hero III: Legends of Rock decompilation"
-game: "guitar-hero-iii-legends-of-rock"
-repo: https://github.com/LM12321/gh3-decomp
+game: "guitar-hero-iii-legends-of-rock-ps2"
+repo: https://github.com/Ketbome/gh3-decomp
 description: "Matching decompilation of Guitar Hero III: Legends of Rock."
-owners: [LM12321]  # repo owner; maintainers can replace this with their usernames
+owners: [Ketbome]  # repo owner; maintainers can replace this with their usernames
 confirmed: false
 listed_at: 2026-10-16
 targets:
-  - id: "rghe52"
-    label: "RGHE52 (USA)"
-    region: us
-    hash: { sha1: "edc005bcde68a5e78365cc9968fa4f3a6dca6ebf" }
+  - id: "slus-216-72"
+    label: "SLUS_216.72"
+    hash: { sha1: "cd97d0be4779d21af9467e569bd5ccbde863e41f" }
     progress:
       kind: none

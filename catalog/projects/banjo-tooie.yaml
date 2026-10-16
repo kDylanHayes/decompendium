@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "banjo-tooie"
+name: "Banjo-Tooie decompilation"
+game: "banjo-tooie"
+repo: https://github.com/Mr-Wiseguy/banjo-tooie
+description: "Matching decompilation of Banjo-Tooie."
+owners: [Mr-Wiseguy]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "af1a89e12b638b8d82cc4c085c8e01d4cba03fb3" }
+    progress:
+      kind: none

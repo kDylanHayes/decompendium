@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "parasite-eve-ii"
+name: "Parasite Eve II"
+platform: ps1

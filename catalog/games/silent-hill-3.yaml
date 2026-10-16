@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "silent-hill-3"
+name: "Silent Hill 3"
+aliases: ["Silent Hill 2"]
+platform: ps2

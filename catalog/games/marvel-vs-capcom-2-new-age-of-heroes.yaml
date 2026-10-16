@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "marvel-vs-capcom-2-new-age-of-heroes"
+name: "Marvel vs. Capcom 2: New Age of Heroes"
+platform: ps2

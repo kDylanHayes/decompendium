@@ -9,7 +9,7 @@ confirmed: false
 listed_at: 2026-10-16
 targets:
   - id: "config"
-    label: "config"
+    label: "USA (SCUS-97198)"
     hash: { sha1: "57dc305db57932ad3f1122966cdb695d2e62a47a" }
     progress:
       kind: objdiff

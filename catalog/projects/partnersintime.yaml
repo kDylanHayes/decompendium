@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "partnersintime"
+name: "Mario & Luigi: Partners in Time decompilation"
+game: "mario-luigi-partners-in-time"
+repo: https://github.com/aricloverEXTRA/PartnersInTimeDECOMP
+description: "Matching decompilation of Mario & Luigi: Partners in Time."
+owners: [aricloverEXTRA]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "europe-en-fr-de-es-it"
+    label: "Europe, En,Fr,De,Es,It"
+    region: eu
+    hash: { sha1: "ba4ec2f99b4f2e0047601552bccf00aa73e28701" }
+    progress:
+      kind: none
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "89c9136db3c3975c451a907e8bd6861ce6b81557" }
+    progress:
+      kind: none

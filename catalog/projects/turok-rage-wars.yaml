@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "turok-rage-wars"
+name: "Turok: Rage Wars decompilation"
+game: "turok-rage-wars"
+repo: https://github.com/thejunkman9000/Turok-Rage-Wars-Decomp
+description: "Matching decompilation of Turok: Rage Wars."
+owners: [thejunkman9000]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa-rev-1"
+    label: "USA, Rev 1"
+    region: us
+    hash: { sha1: "037fb397cee2669048ed6b762a64698de4a4d88a" }
+    progress:
+      kind: none

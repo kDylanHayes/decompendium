@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "digimon-world-2"
+name: "Digimon World 2 decompilation"
+game: "digimon-world-2"
+repo: https://github.com/Wyrelade/Digimon-World-2-Decomp
+description: "Matching decompilation of Digimon World 2."
+owners: [Wyrelade]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "slus-011-93"
+    label: "USA (SLUS-01193)"
+    hash: { sha1: "e55ed5bf354def07f0cbf4e1fb7fb5f99204f220" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLUS-01193_report, path: report.json }

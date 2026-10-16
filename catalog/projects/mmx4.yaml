@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "mmx4"
+name: "Mega Man X4 decompilation"
+game: "mega-man-x4"
+repo: https://github.com/sozud/mmx4
+description: "Matching decompilation of Mega Man X4."
+owners: [sozud]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "sles-011-76"
+    label: "Europe (SLES-01176)"
+    hash: { sha1: "2afbc671c7a2e5123eae482a8a8abe67616b3cdc" }
+    progress:
+      kind: none
+  - id: "slps-009-02"
+    label: "Japan (SLPS-00902)"
+    hash: { sha1: "d5f9c169267f91387d433d8ea4c692c110066b7d" }
+    progress:
+      kind: none

@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "parasite-eve-2"
+name: "Parasite Eve II decompilation"
+game: "parasite-eve-ii"
+repo: https://github.com/GabeRealB/parasite-eve-2-decomp
+description: "Matching decompilation of Parasite Eve II."
+owners: [GabeRealB]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    hash: { sha256: "67cad2a0203b4ac08cd1e27ac9c51f7568f23aebb6bccdd7d118bea8ab02a8cd" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLUS-01042_report, path: report.json }

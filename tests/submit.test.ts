@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import { describe, it } from "node:test";
 import { parseYaml } from "../src/catalog.ts";
 import { COMMENT_MARKER, renderComment, type CheckResult } from "../src/submit/check.ts";
-import { findGame, gameYaml, projectYaml, slug } from "../src/submit/draft.ts";
+import { findGame, gameYaml, projectYaml, slug, versionLabel } from "../src/submit/draft.ts";
 import { issueBody, parseIssueForm, readSubmission } from "../src/submit/form.ts";
 import { schemaErrors } from "../src/schemas.ts";
 
@@ -45,6 +45,16 @@ Discouraged
 ### Notes
 
 _No response_`;
+
+describe("version labels", () => {
+  it("names PlayStation serials by region", () => {
+    assert.equal(versionLabel("SLES_011.76"), "Europe (SLES-01176)");
+    assert.equal(versionLabel("scus_942.36"), "USA (SCUS-94236)");
+    assert.equal(versionLabel("SLPM_86.053"), "Japan (SLPM-86053)");
+    assert.equal(versionLabel("us"), "US");
+    assert.equal(versionLabel("Kiosk"), "Kiosk");
+  });
+});
 
 describe("issue form parsing", () => {
   it("writes bodies the parser reads back (finder-made issues)", () => {

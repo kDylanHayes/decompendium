@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "silent-hill"
+name: "Silent Hill decompilation"
+game: "silent-hill"
+repo: https://github.com/shdecompilations/silent-hill-decomp
+description: "Matching decompilation of Silent Hill."
+owners: [shdecompilations]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "eur"
+    label: "EUR"
+    hash: { sha256: "f044da1307dfa441439e3970477eee60a9649d92afa0dff699f2c4468b253a2c" }
+    progress:
+      kind: none
+  - id: "usa"
+    label: "USA"
+    hash: { sha256: "e73859ccd2e8000d259c6fe640bb8a6d55fed6044f67fbf071e3d86c0f202398" }
+    progress:
+      kind: none

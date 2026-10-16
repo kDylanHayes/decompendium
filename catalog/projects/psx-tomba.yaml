@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "psx-tomba"
+name: "Tomba! decompilation"
+game: "tomba"
+repo: https://github.com/hansbonini/psx_tomba
+description: "Matching decompilation of Tomba!."
+owners: [hansbonini]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "sces-013-30"
+    label: "Europe (SCES-01330)"
+    hash: { sha256: "08436f44ca2ddf9f9a9ece58f7fbbb9b88f6ab3cef6ede5b36300f51e4356df0" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SCES_013.30_report, path: report.json }
+  - id: "sces-013-31"
+    label: "Europe (SCES-01331)"
+    hash: { sha256: "dc65210e6601cbb4ab1cc0878a73f926a2ffd1bd3d8d7923d781164fd2835f29" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SCES_013.31_report, path: report.json }
+  - id: "scus-942-36"
+    label: "USA (SCUS-94236)"
+    hash: { sha256: "c45cd788df40a540d8641dc9682007c80e6ab8a4bcdd0e4a4e2c14c5108aa10b" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SCUS_942.36_report, path: report.json }
+  - id: "slps-011-44"
+    label: "Japan (SLPS-01144)"
+    hash: { sha256: "d213622bf4abc76832e9f382bc1951044e619cb6409c2bb36dc7a8e39c503022" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLPS_011.44_report, path: report.json }

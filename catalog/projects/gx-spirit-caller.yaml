@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "gx-spirit-caller"
+name: "Yu-Gi-Oh! GX: Spirit Caller decompilation"
+game: "yu-gi-oh-gx-spirit-caller"
+repo: https://github.com/cntrl-alt-lenny/gx-spirit-caller
+description: "Matching decompilation of Yu-Gi-Oh! GX: Spirit Caller."
+owners: [cntrl-alt-lenny]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "europe-en-ja-fr-de-es-it"
+    label: "Europe, En,Ja,Fr,De,Es,It"
+    region: eu
+    hash: { sha1: "1da50df7c210fae96dc69b3825554b9ce13b4f75" }
+    progress:
+      kind: none
+  - id: "japan-en-ja"
+    label: "Japan, En,Ja"
+    region: jp
+    hash: { sha1: "761fbfc62f4fe74f867e973a5eda91b8e86424f6" }
+    progress:
+      kind: none
+  - id: "usa-en-ja"
+    label: "USA, En,Ja"
+    region: us
+    hash: { sha1: "9e53dcc74d8a9db4de6b655d62a1da6f5e9c2a83" }
+    progress:
+      kind: none

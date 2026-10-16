@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "mvc2-ps2"
+name: "Marvel vs. Capcom 2: New Age of Heroes decompilation"
+game: "marvel-vs-capcom-2-new-age-of-heroes"
+repo: https://github.com/g-guthrie/mvc2-ps2-decomp
+description: "Matching decompilation of Marvel vs. Capcom 2: New Age of Heroes."
+owners: [g-guthrie]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "slus-204-86"
+    label: "USA (SLUS-20486)"
+    hash: { sha1: "a425c36425bbc1072114ea091ac4577c98c59a6a" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: ps2_report, path: report.json }

@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "marioparty3"
+name: "Mario Party 3 decompilation"
+game: "mario-party-3"
+repo: https://github.com/mariopartyrd/marioparty3
+description: "Matching decompilation of Mario Party 3."
+owners: [mariopartyrd]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "6beb80ff822b96bcf85dcdb512e8b2b7969d8259" }
+    progress:
+      kind: none

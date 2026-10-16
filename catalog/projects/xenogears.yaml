@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "xenogears"
+name: "Xenogears decompilation"
+game: "xenogears"
+repo: https://github.com/ladysilverberg/xenogears-decomp
+description: "Matching decompilation of Xenogears."
+owners: [ladysilverberg]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "slus-006-64"
+    label: "USA (SLUS-00664)"
+    hash: { sha256: "dc0b2dd786203d4cce5927c5a3fc85a18f39a3f7406078860076ebb0bbae7119" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLUS_006.64_report, path: report.json }

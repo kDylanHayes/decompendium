@@ -28,6 +28,20 @@ const CODE_REGION: Record<string, [string, string]> = { E: ["us", "USA"], J: ["j
 const regionFromCode = (code: string) => CODE_REGION[code[3] ?? ""]?.[0];
 const regionNameFromCode = (code: string) => CODE_REGION[code[3] ?? ""]?.[1];
 
+// PlayStation serial prefixes by region: SLUS/SCUS are North America, SLES/SCES Europe, ...
+const PS_REGION: Record<string, string> = { US: "USA", ES: "Europe", PS: "Japan", PM: "Japan", PD: "Japan", KA: "Korea", AJ: "Asia" };
+
+/** A readable label for a version stem: "SLES_011.76" → "Europe (SLES-01176)", "us" → "US". */
+export function versionLabel(stem: string): string {
+  const ps = /^([A-Z]{2}([A-Z]{2}))[-_ ]?(\d{2,3})\.?(\d{2,3})$/i.exec(stem);
+  if (ps && ps[3]!.length + ps[4]!.length === 5) {
+    const serial = `${ps[1]!.toUpperCase()}-${ps[3]}${ps[4]}`;
+    const region = PS_REGION[ps[2]!.toUpperCase()];
+    return region ? `${region} (${serial})` : serial;
+  }
+  return stem.length <= 4 || /^(usa|jpn|eur|pal|ntsc)$/i.test(stem) ? stem.toUpperCase() : stem;
+}
+
 /** Find a catalog game with the same title or alias on the same platform. */
 export function findGame(games: Game[], title: string, platform: string | null): Game | undefined {
   const key = normalizeName(title);
@@ -142,12 +156,14 @@ export async function makeDraft(opts: {
       if (!hash) continue;
       let stem = stemOf(path); // configs/USA/checksum.sha → USA
       stem = stem.replace(/^[a-z0-9]+[._-](?=(us|usa|jp|jpn|eu|eur|pal|ntsc)$)/i, ""); // sm64.us → us
+      // config/checksum.sha with one report artifact: name the version after the artifact.
+      if (/^(configs?|main|build|checksum)$/i.test(stem) && f.reportArtifacts.length === 1) stem = f.reportArtifacts[0]!.replace(/_report$/, "");
       const artifact = f.reportArtifacts.find((a) => norm(a.replace(/_report$/, "")) === norm(stem));
       let tid = slug(stem) || "main";
       for (let n = 2; targets.some((t) => t.id === tid); n++) tid = `${slug(stem) || "main"}-${n}`;
       targets.push({
         id: tid,
-        label: stem.length <= 3 || /^(usa|jpn|eur|pal|ntsc)$/i.test(stem) ? stem.toUpperCase() : stem,
+        label: versionLabel(stem),
         hash: hashField(hash),
         progress: artifact ? { kind: "objdiff", source: { type: "github-artifact", artifact, path: "report.json" } } : { kind: "none" },
       });
@@ -178,7 +194,7 @@ export async function makeDraft(opts: {
       for (let n = 2; targets.some((t) => t.id === tid); n++) tid = `${slug(stem) || "main"}-${n}`;
       targets.push({
         id: tid,
-        label: stem.length <= 4 ? stem.toUpperCase() : stem,
+        label: versionLabel(stem),
         hash: { sha1: hash },
         progress: artifact ? { kind: "objdiff", source: { type: "github-artifact", artifact, path: "report.json" } } : { kind: "none" },
       });
