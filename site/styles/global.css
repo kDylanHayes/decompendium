@@ -229,6 +229,17 @@ a code {
   cursor: pointer;
 }
 
+.prototype-banner {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+  padding: 8px 0;
+}
+
+.prototype-banner strong {
+  color: var(--text);
+}
+
 main {
   padding: 32px 0 64px;
 }

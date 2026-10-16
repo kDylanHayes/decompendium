@@ -7,6 +7,13 @@ progress comes from each project's own CI output.
 
 The site is live at [decompendium.com](https://decompendium.com).
 
+> [!NOTE]
+> **Decompendium is a prototype.** It may be merged into
+> [ByteMatch](https://bytematch.dev) ([source](https://github.com/Veradictus/ByteMatch)),
+> which already tracks matching-decompilation progress, rather than continue as a
+> separate site. Nothing is decided yet. The catalog and data are CC0, so they can
+> move with the project, and opt-outs will be respected either way.
+
 ## Status
 
 | Milestone | State |
