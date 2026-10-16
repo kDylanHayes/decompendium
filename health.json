@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_at": "2026-10-16T11:28:32.446Z",
+  "updated_at": "2026-10-16T11:37:23.878Z",
   "targets": {
     "ac-decomp/gafe01-00": {
       "run_id": 29626112385,
@@ -78,6 +78,14 @@
       "run_id": 37305160035,
       "last_attempt_at": "2026-10-16T11:28:24.502Z",
       "last_success_at": "2026-10-16T11:28:24.502Z",
+      "consecutive_failures": 0,
+      "last_error": null,
+      "anomaly": null
+    },
+    "mkw/rmcp01": {
+      "run_id": 38836341539,
+      "last_attempt_at": "2026-10-16T11:37:22.376Z",
+      "last_success_at": "2026-10-16T11:37:22.376Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
@@ -432,6 +440,10 @@
       "default_branch_checked_at": "2026-10-16T01:11:08.425Z",
       "last_commit_at": "2026-10-05T11:46:59Z",
       "commits_checked_at": "2026-10-16T01:12:03.460Z"
+    },
+    "mkw": {
+      "default_branch": "main",
+      "default_branch_checked_at": "2026-10-16T11:37:22.754Z"
     },
     "mm": {
       "default_branch": "main",
