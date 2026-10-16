@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "topspin4"
+name: "Top Spin 4 decompilation"
+game: "top-spin-4"
+repo: https://github.com/g-guthrie/topspin4-decomp
+description: "Matching decompilation of Top Spin 4."
+owners: [g-guthrie]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "54540859"
+    label: "54540859"
+    hash: { sha1: "335340450597ba7f520c7ee13398a94996db0801" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: 54540859_report, path: report.json }
