@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: pokered
+name: "Pokémon Red and Blue disassembly"
+game: pokemon-red-and-blue
+repo: https://github.com/pret/pokered
+description: "Matching disassembly of Pokémon Red and Blue."
+owners: [pret]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: red
+    label: "Red (USA/Europe)"
+    region: us
+    hash: { sha1: "ea9bcae617fdf159b045185467ae58b2e4a48b9a" }
+    progress:
+      kind: none
+  - id: blue
+    label: "Blue (USA/Europe)"
+    region: us
+    hash: { sha1: "d7037c83e1ae5b39bde3c30787637ba1d4c48ce2" }
+    progress:
+      kind: none
+  - id: blue-debug
+    label: "Blue debug build"
+    hash: { sha1: "5b1456177671b79b263c614ea0e7cc9ac542e9c4" }
+    progress:
+      kind: none
