@@ -1,0 +1,40 @@
+{
+ "fuzzy_match_percent": 41.5,
+ "total_code": 1000,
+ "matched_code": 400,
+ "matched_code_percent": 40,
+ "total_data": 200,
+ "matched_data": 50,
+ "matched_data_percent": 25,
+ "total_functions": 20,
+ "matched_functions": 8,
+ "matched_functions_percent": 40,
+ "units": [
+  {
+   "name": "a.c",
+   "fuzzy_match_percent": 100,
+   "total_code": 250,
+   "matched_code": 250,
+   "total_data": 0,
+   "matched_data": 0,
+   "total_functions": 5,
+   "matched_functions": 5,
+   "complete": true,
+   "sections": [],
+   "functions": []
+  },
+  {
+   "name": "b.c",
+   "fuzzy_match_percent": 20,
+   "total_code": 750,
+   "matched_code": 150,
+   "total_data": 0,
+   "matched_data": 0,
+   "total_functions": 15,
+   "matched_functions": 3,
+   "complete": false,
+   "sections": [],
+   "functions": []
+  }
+ ]
+}

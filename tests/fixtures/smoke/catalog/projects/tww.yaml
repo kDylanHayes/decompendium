@@ -1,0 +1,20 @@
+id: tww
+name: The Wind Waker decompilation
+game: the-legend-of-zelda-the-wind-waker
+repo: https://github.com/zeldaret/tww
+description: Smoke-test entry.
+owners: [zeldaret]
+listed_at: 2026-10-15
+targets:
+  - id: gzle01
+    label: USA
+    hash: { sha1: "0000000000000000000000000000000000000000" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GZLE01_report, path: report.json }
+  - id: missing
+    label: Broken source on purpose
+    hash: { sha1: "0000000000000000000000000000000000000000" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: NO_SUCH_report, path: report.json }

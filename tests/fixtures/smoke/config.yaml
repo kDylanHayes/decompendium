@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../../../schema/config.schema.json
+# Site-wide settings for Decompendium. See POLICY.md for the rules these encode.
+
+defaults:
+  # Applied to projects that do not set show_in_index. Flip to false later to
+  # make the home directory opt-in without editing every entry.
+  show_in_index: true
+
+catalog_maintainers:
+  - kDylanHayes
+
+platforms:
+  - n64
+  - gc
+  - wii
+  - ps1
+  - ps2
+  - psp
+  - gb
+  - gbc
+  - gba
+  - nds
+  - snes
+  - nes
+  - genesis
+  - saturn
+  - dc
+  - xbox
+  - dos
+  - win32
+  - other
+
+# Hosts a project's repo may live on.
+allowed_hosts:
+  - github.com
+  - gitlab.com
+  - codeberg.org
+
+# Repos whose maintainers asked to be removed. Third parties cannot resubmit
+# these; only a maintainer can reverse an opt-out.
+opted_out: []
+
+limits:
+  report_download_bytes: 104857600   # 100 MB zip
+  report_read_bytes: 52428800        # 50 MB extracted report
+  report_store_bytes: 5242880        # 5 MB latest full report kept
+  fetch_timeout_seconds: 60
+
+thresholds:
+  stale_after_days: 7          # last successful fetch older than this
+  quiet_after_days: 180        # no new commit on the default branch
+  failing_after_attempts: 5    # consecutive failed fetches
+  fork_inactive_months: 12     # fork rule, POLICY.md section 3

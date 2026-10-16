@@ -13,8 +13,8 @@ live yet.
 | Milestone | State |
 | --- | --- |
 | M0: policy, schemas, validation | Done |
-| M1: ingestion (objdiff and Decompendium progress files) | Next |
-| M2: static site | Planned |
+| M1: ingestion (objdiff and Decompendium progress files) | Done |
+| M2: static site | Next |
 | M3: API and badges | Planned |
 | M4: submission flow (issue forms and bot) | Planned |
 | M5: seed catalog and launch | Planned |
@@ -37,9 +37,20 @@ catalog/games/<game>.yaml        one file per game
 catalog/projects/<project>.yaml  one file per project, targets inline
 schema/                          JSON Schemas for the files above and the progress format
 config.yaml                      platforms, allowed hosts, opt-outs, limits
-src/                             validation and review tooling
-tests/                           tests and fixture catalog (fictional entries)
+src/                             validation, review and ingestion
+tests/                           tests, fixture catalog (fictional), objdiff report fixtures
 ```
+
+Ingestion runs every 6 hours and writes to the `data` branch:
+
+```
+snapshots/<project>/<target>.jsonl  append-only progress history
+reports/<project>/<target>.json     latest full report (if 5 MB or less)
+health.json                         fetch state, errors and repo activity per target
+```
+
+Only successful `push` runs on a repo's default branch are ingested; reports
+from pull requests, forks or other branches are ignored.
 
 Example entries are in [tests/fixtures/catalog](tests/fixtures/catalog).
 
@@ -67,6 +78,9 @@ Requires Node 24 and pnpm.
 pnpm install
 pnpm check        # typecheck, tests, catalog validation
 pnpm validate     # catalog validation only
+
+# Live ingestion against real repos, into a throwaway directory:
+GITHUB_TOKEN=$(gh auth token) pnpm ingest --root tests/fixtures/smoke --data /tmp/smoke-data
 ```
 
 ## License

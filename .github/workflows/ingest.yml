@@ -1,0 +1,71 @@
+name: ingest
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      smoke:
+        description: Ingest tests/fixtures/smoke (real repos) without saving anything
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths: ["catalog/**", "config.yaml"]
+
+# Writes only to the data branch. Never runs on pull requests.
+permissions:
+  contents: write
+
+concurrency:
+  group: ingest
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: data
+          path: data
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: Ingest
+        env:
+          # A GitHub App token once INGEST_TOKEN is set; the workflow token until then.
+          GITHUB_TOKEN: ${{ secrets.INGEST_TOKEN || github.token }}
+          SMOKE: ${{ inputs.smoke }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          args=(--data data)
+          if [ "$SMOKE" = "true" ]; then
+            args=(--root tests/fixtures/smoke --data "$RUNNER_TEMP/smoke-data")
+          elif [ "$EVENT" = "push" ]; then
+            # A catalog merge: fetch only targets never seen before.
+            args+=(--new-only)
+          fi
+          pnpm ingest "${args[@]}"
+
+      - name: Save to the data branch
+        if: inputs.smoke != true
+        working-directory: data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git commit -q -m "ingest: $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push

@@ -1,0 +1,29 @@
+{
+ "measures": {
+  "fuzzy_match_percent": 41.5,
+  "total_code": "1000",
+  "matched_code": "400",
+  "matched_code_percent": 40,
+  "total_data": "200",
+  "matched_data": "50",
+  "matched_data_percent": 25,
+  "total_functions": 20,
+  "matched_functions": 8,
+  "matched_functions_percent": 40,
+  "complete_code": "300",
+  "complete_code_percent": 30
+ },
+ "units": [],
+ "version": 1,
+ "categories": [
+  {
+   "id": "game",
+   "name": "Game",
+   "measures": {
+    "total_code": "600",
+    "matched_code": "300",
+    "complete_code": "200"
+   }
+  }
+ ]
+}

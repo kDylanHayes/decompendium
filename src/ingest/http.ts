@@ -1,0 +1,76 @@
+import { IngestError, StopRunError } from "./types.ts";
+
+export type Fetch = typeof globalThis.fetch;
+
+export const USER_AGENT = "decompendium-ingest (+https://decompendium.com)";
+
+/** Read a response body, failing as soon as it passes `limit` bytes. */
+export async function readLimited(res: Response, limit: number, what: string): Promise<Uint8Array> {
+  const declared = Number(res.headers.get("content-length") ?? NaN);
+  if (declared > limit) throw new IngestError(`${what} is ${declared} bytes, over the ${limit}-byte limit`);
+  if (!res.body) return new Uint8Array();
+  const chunks: Uint8Array[] = [];
+  let size = 0;
+  for await (const chunk of res.body as unknown as AsyncIterable<Uint8Array>) {
+    size += chunk.byteLength;
+    if (size > limit) {
+      await res.body.cancel().catch(() => {});
+      throw new IngestError(`${what} exceeds the ${limit}-byte limit`);
+    }
+    chunks.push(chunk);
+  }
+  const out = new Uint8Array(size);
+  let offset = 0;
+  for (const chunk of chunks) {
+    out.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+  return out;
+}
+
+/** Thin GitHub REST client that counts requests and stops on rate limits. */
+export class GitHub {
+  requests = 0;
+  private readonly fetch: Fetch;
+  private readonly token: string | undefined;
+  private readonly timeoutMs: number;
+
+  constructor(fetch: Fetch, token: string | undefined, timeoutMs: number) {
+    this.fetch = fetch;
+    this.token = token;
+    this.timeoutMs = timeoutMs;
+  }
+
+  /** GET an API path. Returns null for 404 so callers can say what was missing. */
+  async get<T>(path: string): Promise<T | null> {
+    const res = await this.request(`https://api.github.com${path}`);
+    if (res.status === 404) return null;
+    if (!res.ok) throw new IngestError(`GitHub API ${path}: HTTP ${res.status}`);
+    return (await res.json()) as T;
+  }
+
+  /** GET a URL that GitHub redirects to storage (artifact downloads). */
+  async download(path: string, limit: number): Promise<Uint8Array> {
+    const res = await this.request(`https://api.github.com${path}`);
+    if (!res.ok) throw new IngestError(`GitHub download ${path}: HTTP ${res.status}`);
+    return readLimited(res, limit, "artifact");
+  }
+
+  private async request(url: string): Promise<Response> {
+    this.requests++;
+    const headers: Record<string, string> = {
+      accept: "application/vnd.github+json",
+      "x-github-api-version": "2022-11-28",
+      "user-agent": USER_AGENT,
+    };
+    if (this.token) headers.authorization = `Bearer ${this.token}`;
+    // fetch drops the authorization header when the download redirects to another host.
+    const res = await this.fetch(url, { headers, redirect: "follow", signal: AbortSignal.timeout(this.timeoutMs) });
+    if ((res.status === 403 || res.status === 429) && res.headers.get("x-ratelimit-remaining") === "0") {
+      const reset = Number(res.headers.get("x-ratelimit-reset")) * 1000;
+      throw new StopRunError(`GitHub API rate limit reached; resets at ${new Date(reset).toISOString()}`);
+    }
+    if (res.status === 401) throw new StopRunError("GitHub API rejected the token (HTTP 401)");
+    return res;
+  }
+}

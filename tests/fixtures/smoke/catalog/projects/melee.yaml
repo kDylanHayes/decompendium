@@ -1,0 +1,14 @@
+id: melee
+name: Super Smash Bros. Melee decompilation
+game: super-smash-bros-melee
+repo: https://github.com/doldecomp/melee
+description: Smoke-test entry.
+owners: [doldecomp]
+listed_at: 2026-10-15
+targets:
+  - id: gale01
+    label: NTSC-U 1.02
+    hash: { sha1: "0000000000000000000000000000000000000000" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GALE01_report, path: report.json }

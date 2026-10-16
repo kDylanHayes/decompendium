@@ -1,0 +1,31 @@
+{
+ "measures": {
+  "fuzzy_match_percent": 41.5,
+  "total_code": "1000",
+  "matched_code": "400",
+  "total_functions": 20,
+  "matched_functions": 8
+ },
+ "units": [
+  {
+   "name": "a.c",
+   "measures": {
+    "total_code": "300",
+    "matched_code": "300"
+   },
+   "metadata": {
+    "complete": true
+   }
+  },
+  {
+   "name": "b.c",
+   "measures": {
+    "total_code": "700",
+    "matched_code": "100"
+   },
+   "metadata": {
+    "complete": false
+   }
+  }
+ ]
+}

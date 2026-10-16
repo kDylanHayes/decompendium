@@ -13,11 +13,14 @@
     "classify-pr": "node src/cli/classify-pr.ts",
     "test": "node --test \"tests/**/*.test.ts\"",
     "typecheck": "tsc",
-    "check": "pnpm typecheck && pnpm test && pnpm validate"
+    "check": "pnpm typecheck && pnpm test && pnpm validate",
+    "ingest": "node src/cli/ingest.ts"
   },
   "dependencies": {
     "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1",
+    "fflate": "^0.8.3",
+    "protobufjs": "^8.8.1",
     "yaml": "^2.9.1"
   },
   "devDependencies": {
