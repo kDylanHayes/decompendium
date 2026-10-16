@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "top-spin-4"
+name: "Top Spin 4"
+platform: x360
