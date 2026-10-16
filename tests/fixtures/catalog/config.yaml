@@ -20,12 +20,17 @@ platforms:
   - gbc
   - gba
   - nds
+  - 3ds
+  - wiiu
+  - switch
   - snes
   - nes
   - genesis
   - saturn
   - dc
   - xbox
+  - x360
+  - ps3
   - dos
   - win32
   - other

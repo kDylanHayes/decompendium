@@ -18,7 +18,8 @@
     "build": "astro build && pagefind --site dist",
     "dev": "astro dev",
     "preview": "astro preview",
-    "discover": "node src/cli/discover.ts"
+    "discover": "node src/cli/discover.ts",
+    "identify": "node src/cli/identify.ts"
   },
   "dependencies": {
     "ajv": "^8.20.0",
