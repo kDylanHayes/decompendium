@@ -1,0 +1,3216 @@
+{
+ "sabishii-bit/gauntlet-dark-legacy-decompilation": {
+  "repo": "sabishii-bit/Gauntlet-Dark-Legacy-Decompilation",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "gauntlet-dark-legacy",
+  "game": "Gauntlet: Dark Legacy",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "aarosson48/summonerdecomp": {
+  "repo": "AARosson48/SummonerDecomp",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Summoner\")",
+  "issue": 7
+ },
+ "cdlewis/snowboardkids-decomp": {
+  "repo": "cdlewis/snowboardkids-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "snowboardkids",
+  "game": "Snowboard Kids",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 2
+ },
+ "coaltergeist/goldensun-decomp": {
+  "repo": "Coaltergeist/goldensun-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "goldensun",
+  "game": "Golden Sun",
+  "newGame": true,
+  "platform": "gba",
+  "targets": 1
+ },
+ "cosmicscribe64/tokimemo-ps1-decomp": {
+  "repo": "CosmicScribe64/tokimemo-ps1-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "tokimemo-ps1",
+  "game": "Tokimeki Memorial: Forever with You",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 1
+ },
+ "doldecomp/ogws": {
+  "repo": "doldecomp/ogws",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "ogws",
+  "game": "Wii Sports",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 2
+ },
+ "drahsid/mischief-makers": {
+  "repo": "Drahsid/mischief-makers",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "mischief-makers",
+  "game": "Mischief Makers",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 2
+ },
+ "inspectredc/fzerox": {
+  "repo": "inspectredc/fzerox",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "fzerox",
+  "game": "F-Zero X",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 3
+ },
+ "khasinski/parasite-eve-decomp": {
+  "repo": "khasinski/parasite-eve-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "parasite-eve",
+  "game": "Parasite Eve",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 1
+ },
+ "megami-decomps/dds-decomp": {
+  "repo": "Megami-Decomps/dds-decomp",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Shin Megami Tensei: Digital Devil Saga 1 & 2\")",
+  "issue": 8
+ },
+ "n64decomp/pw64": {
+  "repo": "n64decomp/pw64",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "pw64",
+  "game": "Pilotwings 64",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 2
+ },
+ "yannicksuter/smstrikers-decomp": {
+  "repo": "yannicksuter/smstrikers-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "smstrikers",
+  "game": "Super Mario Strikers",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 3
+ },
+ "cypressru/sonicbattledecomp": {
+  "repo": "cypressru/SonicBattleDecomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "sonicbattle",
+  "game": "Sonic Battle",
+  "newGame": true,
+  "platform": "gba",
+  "targets": 1
+ },
+ "denzi-gh/crashwoc-decomp-gc": {
+  "repo": "denzi-gh/crashwoc-decomp-gc",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "crashwoc-decomp-gc",
+  "game": "Crash Bandicoot: The Wrath of Cortex",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "jrickey/frog-adv-temple-decomp": {
+  "repo": "JRickey/frog-adv-temple-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "frog-adv-temple",
+  "game": "Frogger's Adventures: Temple of the Frog",
+  "newGame": true,
+  "platform": "gba",
+  "targets": 1
+ },
+ "karamzov123/fzero-gx-decomp": {
+  "repo": "karamzov123/fzero-gx-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "fzero-gx",
+  "game": "F-Zero GX",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "mikompilation/himuro": {
+  "repo": "Mikompilation/Himuro",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "himuro",
+  "game": "Project Zero",
+  "newGame": true,
+  "platform": "ps2",
+  "targets": 3
+ },
+ "mitsevox/mvp2005": {
+  "repo": "mitsevox/mvp2005",
+  "action": "hold",
+  "reason": "named like a copy or test repo"
+ },
+ "mitsevox/tw2004": {
+  "repo": "mitsevox/tw2004",
+  "action": "hold",
+  "reason": "named like a copy or test repo"
+ },
+ "shulkmaster/mk-deception": {
+  "repo": "ShulkMaster/mk-deception",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "mk-deception",
+  "game": "Mortal Kombat: Deception",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "yannicksuter/mscharged-decomp": {
+  "repo": "yannicksuter/mscharged-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "mscharged",
+  "game": "Mario Strikers Charged",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 5
+ },
+ "alebello7276/xkrnl-decomp": {
+  "repo": "AleBello7276/xkrnl-decomp",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "alice-2010/decomp": {
+  "repo": "Alice-2010/Decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "decomp",
+  "game": "Disney Alice in Wonderland",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 2
+ },
+ "brian-oblivion/lsddecomp": {
+  "repo": "brian-oblivion/lsddecomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "lsd",
+  "game": "LSD: Dream Emulator",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 1
+ },
+ "cdlewis/snowboardkids2-decomp": {
+  "repo": "cdlewis/snowboardkids2-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "snowboardkids2",
+  "game": "Snowboard Kids 2",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 1
+ },
+ "dbalatoni13/nfsmw": {
+  "repo": "dbalatoni13/nfsmw",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "nfsmw",
+  "game": "Need for Speed: Most Wanted",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 2
+ },
+ "djsaunde/1080-decomp": {
+  "repo": "djsaunde/1080-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "1080",
+  "game": "1080 Snowboarding",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 1
+ },
+ "dougchansan/pkmn-colosseum": {
+  "repo": "dougchansan/pkmn-colosseum",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "pkmn-colosseum",
+  "game": "Pokemon Colosseum",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "dream-atelier/kl-eod-decomp": {
+  "repo": "Dream-Atelier/kl-eod-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "kl-eod",
+  "game": "Klonoa: Empire of Dreams",
+  "newGame": true,
+  "platform": "gba",
+  "targets": 1
+ },
+ "etrainquandt17/whippy": {
+  "repo": "Etrainquandt17/Whippy",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "whippy",
+  "game": "Kirby's Return to Dream Land",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 2
+ },
+ "harskov/fate-unlimited-codes-jp": {
+  "repo": "Harskov/fate-unlimited-codes-jp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "fate-unlimited-codes-jp",
+  "game": "Fate-Unlimited Codes",
+  "newGame": true,
+  "platform": "ps2",
+  "targets": 1
+ },
+ "harskov/stretch-panic-usa": {
+  "repo": "Harskov/stretch-panic-usa",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "stretch-panic-usa",
+  "game": "Freak Out",
+  "newGame": true,
+  "platform": "ps2",
+  "targets": 3
+ },
+ "jovinull/sonicheroes": {
+  "repo": "Jovinull/sonicheroes",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "sonicheroes",
+  "game": "Sonic Heroes",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "khasinski/rage-racer-decomp": {
+  "repo": "khasinski/rage-racer-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "rage-racer",
+  "game": "Rage Racer",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 2
+ },
+ "regame-labs/dcb_decomp": {
+  "repo": "ReGame-Labs/dcb_decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "dcb",
+  "game": "Digimon: Digital Card Battle",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 3
+ },
+ "ryan-myers/jet-force-gemini": {
+  "repo": "Ryan-Myers/Jet-Force-Gemini",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "jet-force-gemini",
+  "game": "Jet Force Gemini",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 3
+ },
+ "teamorre/xd-decomp": {
+  "repo": "TeamOrre/xd-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "xd",
+  "game": "Pokemon XD: Gale of Darkness",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 2
+ },
+ "vetritheretri/ssb-decomp-re": {
+  "repo": "VetriTheRetri/ssb-decomp-re",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "ssb-decomp-re",
+  "game": "Super Smash Bros.",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 1
+ },
+ "wowjinxy/kar": {
+  "repo": "wowjinxy/KAR",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "kar",
+  "game": "Kirby Air Ride",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 3
+ },
+ "zcanann/ffcc-decomp": {
+  "repo": "zcanann/FFCC-Decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "ffcc",
+  "game": "Final Fantasy Crystal Chronicles",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 3
+ },
+ "zcanann/sfa-decomp": {
+  "repo": "zcanann/SFA-Decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "sfa",
+  "game": "Star Fox Adventures",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 5
+ },
+ "acreteam/afe-decomp": {
+  "repo": "ACreTeam/afe-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "afe",
+  "game": "Doubutsu no Mori e+",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 2
+ },
+ "chameleontwistret/chameleontwistv1.0-jp": {
+  "repo": "chameleonTwistRet/chameleonTwistv1.0-JP",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "chameleontwistv1-0-jp",
+  "game": "Chameleon Twist",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 1
+ },
+ "cosmicscribe64/eds-decomp": {
+  "repo": "CosmicScribe64/eds-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "eds",
+  "game": "Yu-Gi-Oh!: The Eternal Duelist Soul",
+  "newGame": true,
+  "platform": "gba",
+  "targets": 1
+ },
+ "doldecomp/brawl": {
+  "repo": "doldecomp/brawl",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "brawl",
+  "game": "Super Smash Bros. Brawl",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "doldecomp/mkw": {
+  "repo": "doldecomp/mkw",
+  "action": "hold",
+  "reason": "already listed"
+ },
+ "druthulu/bfm-decomp": {
+  "repo": "Druthulu/BFM-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "bfm",
+  "game": "Brave Fencer Musashi",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 1
+ },
+ "g-guthrie/topspin4-decomp": {
+  "repo": "g-guthrie/topspin4-decomp",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "iirg4x/marioparty6": {
+  "repo": "iirg4x/marioparty6",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "marioparty6",
+  "game": "Mario Party 6",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "istornz/bowsers-inside-story-decomp": {
+  "repo": "istornz/bowsers-inside-story-decomp",
+  "action": "add",
+  "reason": "hash file bis_usa.sha1",
+  "project": "bowsers-inside-story",
+  "game": "Mario & Luigi: Bowser's Inside Story",
+  "newGame": true,
+  "platform": "nds",
+  "targets": 1
+ },
+ "johnsoellnerdev/mlss-decomp": {
+  "repo": "JohnSoellnerDev/mlss-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "mlss",
+  "game": "Mario & Luigi: Superstar Saga",
+  "newGame": true,
+  "platform": "gba",
+  "targets": 1
+ },
+ "naari3/mkgp2-decomp": {
+  "repo": "naari3/mkgp2-decomp",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Mario Kart Arcade GP2\")"
+ },
+ "pbr-ret/pbr-decomp": {
+  "repo": "pbr-ret/pbr-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "pbr",
+  "game": "Pokemon Battle Revolution",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "rayanht/fzgx": {
+  "repo": "rayanht/fzgx",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "fzgx",
+  "game": "F-Zero GX",
+  "newGame": false,
+  "platform": "gc",
+  "targets": 1
+ },
+ "ricky074game/marioparty9": {
+  "repo": "ricky074game/marioparty9",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "marioparty9",
+  "game": "Mario Party 9",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "rrafifnanda/fe7eu-decomp": {
+  "repo": "rrafifnanda/fe7eu-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "fe7eu",
+  "game": "Fire Emblem",
+  "newGame": true,
+  "platform": "gba",
+  "targets": 1
+ },
+ "seekyct/spm-decomp": {
+  "repo": "SeekyCt/spm-decomp",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Super Paper Mario\")"
+ },
+ "squiddonaut/pokeblack": {
+  "repo": "squiddonaut/pokeblack",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "pokeblack",
+  "game": "Pokemon: Black Version",
+  "newGame": true,
+  "platform": "nds",
+  "targets": 1
+ },
+ "sturmds/advance-wars-dual-strike-decomp": {
+  "repo": "sturmds/advance-wars-dual-strike-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "advance-wars-dual-strike",
+  "game": "Advance Wars",
+  "newGame": true,
+  "platform": "gba",
+  "targets": 1
+ },
+ "synamaxmusic/bar-decomp": {
+  "repo": "synamaxmusic/bar-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "bar",
+  "game": "Beetle Adventure Racing!",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 1
+ },
+ "1superchip/ty-decomp": {
+  "repo": "1superchip/ty-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "ty",
+  "game": "Ty the Tasmanian Tiger",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "doldecomp/ttyd": {
+  "repo": "doldecomp/ttyd",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "ttyd",
+  "game": "Paper Mario: The Thousand-Year Door",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "openblack/bw1-decomp": {
+  "repo": "openblack/bw1-decomp",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Black & White 1\")"
+ },
+ "parappadev/parappa2": {
+  "repo": "parappadev/parappa2",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "pattytrish/unending-occlusion": {
+  "repo": "PattyTrish/unending-occlusion",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "unending-occlusion",
+  "game": "Eternal Darkness: Sanity's Requiem",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "pheenoh/khcom": {
+  "repo": "Pheenoh/khcom",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "khcom",
+  "game": "Kingdom Hearts: Chain of Memories",
+  "newGame": true,
+  "platform": "gba",
+  "targets": 3
+ },
+ "tanline666/veryfat-dungeon": {
+  "repo": "Tanline666/veryfat-dungeon",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "veryfat-dungeon",
+  "game": "Wii Fit Plus",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "akiramusic000/rhae": {
+  "repo": "akiramusic000/Rhae",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "rhae",
+  "game": "Wii Play",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "almamu/crashbandicootxs-decomp": {
+  "repo": "Almamu/CrashBandicootXS-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "crashbandicootxs",
+  "game": "Crash Bandicoot XS",
+  "newGame": true,
+  "platform": "gba",
+  "targets": 2
+ },
+ "anzaldoivan/mmx6": {
+  "repo": "anzaldoivan/mmx6",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "mmx6",
+  "game": "Mega Man X6",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 8
+ },
+ "axiinyaa/lks_decomp": {
+  "repo": "axiinyaa/lks_decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "lks",
+  "game": "Little King's Story",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "bluisblu/cttr": {
+  "repo": "bluisblu/cttr",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "cttr",
+  "game": "Crash Tag Team Racing",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 2
+ },
+ "doldecomp/forecast": {
+  "repo": "doldecomp/forecast",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Wii's Forecast Channel\")"
+ },
+ "fmil95/recvx-gc-decomp": {
+  "repo": "fmil95/recvx-gc-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "recvx-gc",
+  "game": "Resident Evil: Code: Veronica X",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "hugoiglesiasdiaz/smash-melee-decompiled": {
+  "repo": "Hugoiglesiasdiaz/Smash-Melee-decompiled",
+  "action": "hold",
+  "reason": "Super Smash Bros. Melee is already covered by melee; low-star duplicate (0 stars), check it isn't a copy"
+ },
+ "koopthekoopa/wii-ipl": {
+  "repo": "koopthekoopa/wii-ipl",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "moozilla/boktai3-decomp": {
+  "repo": "moozilla/boktai3-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "boktai3",
+  "game": "Shin Bokura no Taiyou: Gyakushuu no Sabata",
+  "newGame": true,
+  "platform": "gba",
+  "targets": 1
+ },
+ "newgbaxl/drmario64-gc": {
+  "repo": "NewGBAXL/drmario64-gc",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "drmario64-gc",
+  "game": "Nintendo Puzzle Collection",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "projectpiki/pik1wii": {
+  "repo": "projectPiki/pik1wii",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "pik1wii",
+  "game": "Pikmin",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "projectpiki/pik2wii": {
+  "repo": "projectPiki/pik2wii",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "pik2wii",
+  "game": "Pikmin 2",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "regame-labs/dtbe_decomp": {
+  "repo": "ReGame-Labs/dtbe_decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "dtbe",
+  "game": "DigimonTamers: Battle Evolution",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 2
+ },
+ "rjkiv/dc3-decomp": {
+  "repo": "rjkiv/dc3-decomp",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Dance Central 3\")"
+ },
+ "rjkiv/sonic06": {
+  "repo": "rjkiv/sonic06",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Sonic the Hedgehog\")"
+ },
+ "sephdb/pokepark-wii-decomp": {
+  "repo": "SephDB/pokepark-wii-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "pokepark-wii",
+  "game": "PokePark Wii: Pikachu's Adventure",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "smgcommunity/garigari": {
+  "repo": "SMGCommunity/Garigari",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "garigari",
+  "game": "Super Mario Galaxy 2",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "somejakeguy/lm-decomp": {
+  "repo": "SomeJakeGuy/lm-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "lm",
+  "game": "Luigi's Mansion",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 4
+ },
+ "southcitycapture/hybridheaven-decomp": {
+  "repo": "southcitycapture/hybridheaven-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "hybridheaven",
+  "game": "Hybrid Heaven",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 1
+ },
+ "swiftshine/key": {
+  "repo": "Swiftshine/key",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "key",
+  "game": "Kirby's Epic Yarn",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "tgsm/pbg": {
+  "repo": "tgsm/pbg",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "pbg",
+  "game": "Disney's Piglet's Big Game",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 2
+ },
+ "goldielegenie/dqiv-decomp": {
+  "repo": "GoldieLeGenie/DQIV-DECOMP",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "dqiv",
+  "game": "Dragon Quest: The Chapters of the Chosen",
+  "newGame": true,
+  "platform": "nds",
+  "targets": 1
+ },
+ "inspectredc/fzerox-expansion-kit": {
+  "repo": "inspectredc/fzerox-expansion-kit",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "lombyte-project/lombyte": {
+  "repo": "lombyte-project/Lombyte",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "lombyte",
+  "game": "Ratchet & Clank",
+  "newGame": true,
+  "platform": "ps2",
+  "targets": 1
+ },
+ "swiftshine/kdc": {
+  "repo": "Swiftshine/kdc",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "kdc",
+  "game": "Kirby's Dream Collection: Special Edition",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "theplayerrolo/lm-decomp": {
+  "repo": "ThePlayerRolo/lm-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "lm-decomp",
+  "game": "Luigi's Mansion",
+  "newGame": false,
+  "platform": "gc",
+  "targets": 4
+ },
+ "xbret/xenoblade": {
+  "repo": "xbret/xenoblade",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Xenoblade\")"
+ },
+ "zeldaret/oot-gc": {
+  "repo": "zeldaret/oot-gc",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Gamecube Emulator\")"
+ },
+ "zeldaret/oot-vc": {
+  "repo": "zeldaret/oot-vc",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Wii Virtual Console Emulator\")"
+ },
+ "brian-oblivion/pepsiman-decomp": {
+  "repo": "brian-oblivion/pepsiman-decomp",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Pepsiman\")"
+ },
+ "fuerchter/rayman-ps1-decomp": {
+  "repo": "fuerchter/rayman-ps1-decomp",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "gcsmith/superman64decomp": {
+  "repo": "gcsmith/Superman64Decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "superman64",
+  "game": "Superman: The New Superman Aventures",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 1
+ },
+ "grant-might/dw3_decomp": {
+  "repo": "grant-might/DW3_Decomp",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "haydntrigg/castaway": {
+  "repo": "HaydnTrigg/Castaway",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "castaway",
+  "game": "The Sims 2: Castaway",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "iwillcraft-m0d/dogcomp": {
+  "repo": "IWILLCRAFT-M0d/dogcomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "dogcomp",
+  "game": "Dog's Life",
+  "newGame": true,
+  "platform": "ps2",
+  "targets": 1
+ },
+ "jacobleeharris/tmhc": {
+  "repo": "jacobleeharris/tmhc",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Twisted Metal: Harbor City\")"
+ },
+ "jaytheham/body-harvest-decompilation": {
+  "repo": "jaytheham/body-harvest-decompilation",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "body-harvest",
+  "game": "Body Harvest",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 2
+ },
+ "khasinski/crash-bandicoot-decomp": {
+  "repo": "khasinski/crash-bandicoot-decomp",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Crash Bandicoot\")"
+ },
+ "livewirecb/rw-3.5_decomp": {
+  "repo": "LivewireCB/RW-3.5_Decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "rw-3-5",
+  "game": "Nickelodeon SpongeBob SquarePants: Battle for Bikini Bottom",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "mkst/sssv": {
+  "repo": "mkst/sssv",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "sssv",
+  "game": "SpaceStation Silicon Valley",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 4
+ },
+ "natebag/sims2decomp": {
+  "repo": "natebag/Sims2DECOMP",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "sims2",
+  "game": "The Sims 2",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "overjt/knidl": {
+  "repo": "overjt/knidl",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "knidl",
+  "game": "Kirby: Nightmare in Dream Land",
+  "newGame": true,
+  "platform": "gba",
+  "targets": 1
+ },
+ "regame-labs/dw3_decomp": {
+  "repo": "ReGame-Labs/dw3_decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "dw3",
+  "game": "DigimonWorld 3: Aratanaru Bouken no Tobira",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 3
+ },
+ "roeming/sa2b": {
+  "repo": "roeming/SA2B",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "sa2b",
+  "game": "Sonic Adventure 2: Battle",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "sonicdcer/sf64": {
+  "repo": "sonicdcer/sf64",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "sf64",
+  "game": "Star Fox 64",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 1
+ },
+ "thegh0stship/battletanx-global-assault": {
+  "repo": "TheGh0stShip/BattleTanx-Global-Assault",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "battletanx-global-assault",
+  "game": "BattleTanx: Global Assault",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 1
+ },
+ "theonlyzac/sly1": {
+  "repo": "TheOnlyZac/sly1",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "sly1",
+  "game": "Sly Cooper and the Thievius Raccoonus",
+  "newGame": true,
+  "platform": "ps2",
+  "targets": 1
+ },
+ "thesorahd/thelaststorydecomp": {
+  "repo": "TheSoraHD/TheLastStoryDecomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "thelaststory",
+  "game": "The Last Story",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "zestydevy/dinosaur-planet": {
+  "repo": "zestydevy/dinosaur-planet",
+  "action": "add",
+  "reason": "hash file baserom.md5",
+  "project": "dinosaur-planet",
+  "game": "Dinosaur Planet",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 1
+ },
+ "6elphegor/fireemblem7u": {
+  "repo": "6elphegor/fireemblem7u",
+  "action": "hold",
+  "reason": "Fire Emblem is already covered by fe7eu; low-star duplicate (1 stars), check it isn't a copy"
+ },
+ "anzaldoivan/mmx5": {
+  "repo": "anzaldoivan/mmx5",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "mmx5",
+  "game": "Mega Man X5",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 4
+ },
+ "bryankruman/beetledecomp": {
+  "repo": "bryankruman/BeetleDecomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "beetle",
+  "game": "Beetle Adventure Racing!",
+  "newGame": false,
+  "platform": "n64",
+  "targets": 1
+ },
+ "coalslav/hmbtn-decomp": {
+  "repo": "coalslav/hmbtn-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "hmbtn",
+  "game": "Harvest Moon: Back to Nature",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 2
+ },
+ "daftblazer/bustin-out-decomp": {
+  "repo": "daftblazer/bustin-out-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "bustin-out",
+  "game": "The Sims: Bustin' Out",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "devin-thomas/marioparty4": {
+  "repo": "devin-thomas/marioparty4",
+  "action": "hold",
+  "reason": "Mario Party 4 is already covered by marioparty4; low-star duplicate (0 stars), check it isn't a copy"
+ },
+ "ellierocks/lsw1-decomp": {
+  "repo": "ellierocks/lsw1-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "lsw1",
+  "game": "LEGO Star Wars: The Video Game",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "fallenwyvern/godzilla---decomp-unleashed": {
+  "repo": "FallenWyvern/Godzilla---Decomp-Unleashed",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "godzilla-decomp-unleashed",
+  "game": "Godzilla: Unleashed",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "inusualz/mhtri-decomp": {
+  "repo": "InusualZ/mhtri-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "mhtri",
+  "game": "Monster Hunter Tri",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "ivanno4317/dw4-gc": {
+  "repo": "ivanno4317/dw4-gc",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "dw4-gc",
+  "game": "Digimon World 4",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "jnmartin84/sf64-dc": {
+  "repo": "jnmartin84/sf64-dc",
+  "action": "hold",
+  "reason": "named like a port to dc (the game is on n64)"
+ },
+ "justolaia/bfbbtesting": {
+  "repo": "JustOlaia/bfbbtesting",
+  "action": "hold",
+  "reason": "Nickelodeon SpongeBob SquarePants: Battle for Bikini Bottom is already covered by rw-3-5; low-star duplicate (0 stars), check it isn't a copy"
+ },
+ "k64ret/cv64": {
+  "repo": "k64ret/cv64",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "cv64",
+  "game": "Castlevania",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 1
+ },
+ "openrac/openrac": {
+  "repo": "OpenRAC/OpenRAC",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "psdwizzard/eternal-darkness---decompile": {
+  "repo": "psdwizzard/Eternal-Darkness---Decompile",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "eternal-darkness-decompile",
+  "game": "Eternal Darkness: Sanity's Requiem",
+  "newGame": false,
+  "platform": "gc",
+  "targets": 1
+ },
+ "ptitty12/mvp2005-decomp": {
+  "repo": "ptitty12/mvp2005-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "mvp2005",
+  "game": "MVP Baseball 2005",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "theeverydayninja/openpik2": {
+  "repo": "TheEverydayNinja/OpenPik2",
+  "action": "hold",
+  "reason": "named like a reimplementation (\"OpenPik2\")"
+ },
+ "vivian-green/sims-bustin-out": {
+  "repo": "Vivian-Green/sims-bustin-out",
+  "action": "hold",
+  "reason": "The Sims: Bustin' Out is already covered by bustin-out; low-star duplicate (0 stars), check it isn't a copy"
+ },
+ "wadewinningwilson/dmc3-decomp": {
+  "repo": "WadeWinningWilson/dmc3-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "dmc3",
+  "game": "Devil May Cry 3",
+  "newGame": true,
+  "platform": "ps2",
+  "targets": 2
+ },
+ "xeeynamo/sotn-decomp": {
+  "repo": "Xeeynamo/sotn-decomp",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Castlevania: Symphony of the Night\")"
+ },
+ "y0oshi/lain-psx-decompiled": {
+  "repo": "Y0oshi/lain-psx-decompiled",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "lain-psx-decompiled",
+  "game": "Serial Experiments Lain",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 1
+ },
+ "adonis-singh/re4": {
+  "repo": "adonis-singh/re4",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "re4",
+  "game": "Resident Evil 4",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "bfbbdecomp/tssm": {
+  "repo": "bfbbdecomp/tssm",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "tssm",
+  "game": "Nickelodeon The SpongeBob SquarePants Movie",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "classicrob/maciogalaxy": {
+  "repo": "classicrob/MacioGalaxy",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "maciogalaxy",
+  "game": "Super Mario Galaxy",
+  "newGame": false,
+  "platform": "wii",
+  "targets": 1
+ },
+ "daviddaco1/nconr3decomp": {
+  "repo": "daviddaco1/NCONR3decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "nconr3",
+  "game": "Naruto Shippuden: Clash of Ninja Revolution III: European Version",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "doldecomp/physdemo": {
+  "repo": "doldecomp/physdemo",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "donovanmontoya/pokemon-xd-decomp": {
+  "repo": "DonovanMontoya/pokemon-xd-decomp",
+  "action": "hold",
+  "reason": "Pokemon XD: Gale of Darkness is already covered by xd; low-star duplicate (0 stars), check it isn't a copy"
+ },
+ "ethteck/kh1": {
+  "repo": "ethteck/kh1",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Kingdom Hearts\")"
+ },
+ "fantaskink/sotc": {
+  "repo": "Fantaskink/SOTC",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "sotc",
+  "game": "Wander to Kyozou",
+  "newGame": true,
+  "platform": "ps2",
+  "targets": 2
+ },
+ "fortunestreetmodding/boom-street-decomp": {
+  "repo": "FortuneStreetModding/boom-street-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "boom-street",
+  "game": "Boom Street",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "gamemasterplc/bltouch2": {
+  "repo": "gamemasterplc/bltouch2",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "gascarcella/dw2003recomp": {
+  "repo": "gascarcella/dw2003recomp",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Digimon World 2003\")"
+ },
+ "kooshnoo/pokemon-rumble": {
+  "repo": "KooShnoo/pokemon-rumble",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Wii game Pok\u00e9mon Rumble\")"
+ },
+ "lemiur/avp2-reconstructed": {
+  "repo": "lemiur/AVP2-Reconstructed",
+  "action": "review",
+  "reason": "game not confirmed (description says \"AVP2\")"
+ },
+ "pjb3005/tppc": {
+  "repo": "PJB3005/tppc",
+  "action": "hold",
+  "reason": "The Legend of Zelda: Twilight Princess is already covered by tp; low-star duplicate (0 stars), check it isn't a copy"
+ },
+ "plyrthn/marioparty4": {
+  "repo": "plyrthn/marioparty4",
+  "action": "hold",
+  "reason": "Mario Party 4 is already covered by marioparty4; low-star duplicate (0 stars), check it isn't a copy"
+ },
+ "pret/pokepinballrs": {
+  "repo": "pret/pokepinballrs",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "pokepinballrs",
+  "game": "Pokemon Pinball: Ruby & Sapphire",
+  "newGame": true,
+  "platform": "gba",
+  "targets": 1
+ },
+ "pret/pokestadium": {
+  "repo": "pret/pokestadium",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "pokestadium",
+  "game": "Pokemon Stadium",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 2
+ },
+ "wowjinxy/kar-2025": {
+  "repo": "wowjinxy/KAR-2025",
+  "action": "hold",
+  "reason": "named like a copy or test repo"
+ },
+ "zeldaret/oot3d": {
+  "repo": "zeldaret/oot3d",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Legend of Zelda: Ocarina of Time 3D\")"
+ },
+ "adipocira/doraemon1": {
+  "repo": "adipocira/doraemon1",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "doraemon1",
+  "game": "Doraemon: Nobita to 3tsu no Seireiseki",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 1
+ },
+ "alexwestgarth/vexx-decomp": {
+  "repo": "AlexWestgarth/Vexx-Decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "vexx",
+  "game": "Vexx",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "ant0-blase/goldeneye-rag-decomp": {
+  "repo": "ant0-blase/goldeneye-rag-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "goldeneye-rag",
+  "game": "GoldenEye: Rogue Agent",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "augusdogus/tak2": {
+  "repo": "AugusDogus/tak2",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "tak2",
+  "game": "Nickelodeon Tak 2: The Staff of Dreams",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "bruceleeto/diddy-kong-racing": {
+  "repo": "Bruceleeto/Diddy-Kong-Racing",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "diddy-kong-racing",
+  "game": "Diddy Kong Racing",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 5
+ },
+ "charlese2/sgr": {
+  "repo": "Charlese2/sgr",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "sgr",
+  "game": "Summoner: A Goddess Reborn",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "chimpsatsea/reach": {
+  "repo": "ChimpsAtSea/Reach",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "code-6dof/pacman-party-decomp": {
+  "repo": "Code-6dof/pacman-party-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "pacman-party",
+  "game": "Pac-Man Party",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "davidsm64/diddy-kong-racing": {
+  "repo": "DavidSM64/Diddy-Kong-Racing",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "diddy-kong-racing-2",
+  "game": "Diddy Kong Racing",
+  "newGame": false,
+  "platform": "n64",
+  "targets": 5
+ },
+ "dev-camo/shadow-decomp": {
+  "repo": "dev-camo/shadow-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "shadow",
+  "game": "Shadow the Hedgehog",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 3
+ },
+ "eltydev/msm-decomp": {
+  "repo": "EltyDev/MSM-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "msm",
+  "game": "Mario Sports Mix",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "fmil95/santamonica": {
+  "repo": "fmil95/santamonica",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Quantic Dream's finest murder story turned sexfest turned Matrix\")"
+ },
+ "freeqaz/rb3-xenon": {
+  "repo": "freeqaz/rb3-xenon",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Rock Band 3\")"
+ },
+ "fuddlesworth/pokebw2": {
+  "repo": "fuddlesworth/pokebw2",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "pokebw2",
+  "game": "Pokemon: Black Version 2",
+  "newGame": true,
+  "platform": "nds",
+  "targets": 2
+ },
+ "galaxynostalgia/outbreak-decomp": {
+  "repo": "GalaxyNostalgia/Outbreak-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "outbreak",
+  "game": "Biohazard: Outbreak",
+  "newGame": true,
+  "platform": "ps2",
+  "targets": 2
+ },
+ "jnmartin84/mk64-dc": {
+  "repo": "jnmartin84/mk64-dc",
+  "action": "hold",
+  "reason": "named like a port to dc (the game is on n64)"
+ },
+ "lamb2k/re4dc": {
+  "repo": "lamb2k/re4dc",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "re4dc",
+  "game": "Resident Evil 4",
+  "newGame": false,
+  "platform": "gc",
+  "targets": 1
+ },
+ "lm12321/gh3-decomp": {
+  "repo": "LM12321/gh3-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "gh3",
+  "game": "Guitar Hero III: Legends of Rock",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "mkst/esa": {
+  "repo": "mkst/esa",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "mparisi20/paradise": {
+  "repo": "mparisi20/paradise",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Viva Pi\u00f1ata\")"
+ },
+ "open-ribbon/open-ribbon": {
+  "repo": "open-ribbon/open-ribbon",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "pendrokar/civizard_decomp": {
+  "repo": "Pendrokar/civizard_decomp",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Civizard - Majutsu no Keifu\")"
+ },
+ "regame-labs/dwds_decomp": {
+  "repo": "ReGame-Labs/dwds_decomp",
+  "action": "add",
+  "reason": "hash file dwds_usa.sha1",
+  "project": "dwds",
+  "game": "Digimon World DS",
+  "newGame": true,
+  "platform": "nds",
+  "targets": 1
+ },
+ "renakunisaki/sfadebug": {
+  "repo": "RenaKunisaki/sfadebug",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Star Fox Adventures debug version\")"
+ },
+ "roeming/mssb-dtk": {
+  "repo": "roeming/mssb-dtk",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "mssb-dtk",
+  "game": "Mario Superstar Baseball",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 3
+ },
+ "rootcubed/mpls_movie-decomp": {
+  "repo": "RootCubed/mpls_movie-decomp",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Wii Motion Plus Demo Video Player\")"
+ },
+ "sat-r/sa3": {
+  "repo": "SAT-R/sa3",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "sa3",
+  "game": "Sonic Advance 3",
+  "newGame": true,
+  "platform": "gba",
+  "targets": 1
+ },
+ "sblorgotech/rabbids4": {
+  "repo": "Sblorgotech/rabbids4",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "rabbids4",
+  "game": "Raving Rabbids: Travel in Time",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "snailspeed3/mkw": {
+  "repo": "snailspeed3/mkw",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "mkw-2",
+  "game": "Mario Kart Wii",
+  "newGame": false,
+  "platform": "wii",
+  "targets": 1
+ },
+ "theplayerrolo/legoclonewarswii": {
+  "repo": "ThePlayerRolo/LegoCloneWarsWii",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "legoclonewarswii",
+  "game": "LEGO Star Wars III: The Clone Wars",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 2
+ },
+ "yanis002/oot-vc-dtk": {
+  "repo": "Yanis002/oot-vc-dtk",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "z2442/oot-psp": {
+  "repo": "z2442/oot-PSP",
+  "action": "hold",
+  "reason": "named like a port to psp (the game is on n64)"
+ },
+ "zeldaret/af": {
+  "repo": "zeldaret/af",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "af",
+  "game": "Doubutsu no Mori",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 1
+ },
+ "6elphegor/acww-decomp": {
+  "repo": "6elphegor/acww-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "acww",
+  "game": "Animal Crossing: Wild World",
+  "newGame": true,
+  "platform": "nds",
+  "targets": 1
+ },
+ "aguiluxorojo40/maro-galaxy-": {
+  "repo": "aguiluxorojo40/Maro-Galaxy-",
+  "action": "hold",
+  "reason": "Super Mario Galaxy is already covered by maciogalaxy, petari; low-star duplicate (0 stars), check it isn't a copy"
+ },
+ "andresj-sanchez/frfi-decomp": {
+  "repo": "andresj-sanchez/frfi-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "frfi",
+  "game": "Freedom Fighters",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "banatic/acww-decomp": {
+  "repo": "banatic/acww-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "acww-decomp",
+  "game": "Nolleooseyo Dongmurui Sup",
+  "newGame": true,
+  "platform": "nds",
+  "targets": 1
+ },
+ "batenkaitos-dev/mh2-decomp": {
+  "repo": "Batenkaitos-dev/mh2-decomp",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Monster Hunter 2\")"
+ },
+ "break-core/doshin-gc": {
+  "repo": "break-core/doshin-gc",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "doshin-gc",
+  "game": "Doshin the Giant",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "dbalatoni13/nfsps": {
+  "repo": "dbalatoni13/nfsps",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "nfsps",
+  "game": "Need for Speed: ProStreet",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "dbalatoni13/nfsug": {
+  "repo": "dbalatoni13/nfsug",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "nfsug",
+  "game": "Need for Speed: Underground",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "freeqaz/dc3-decomp": {
+  "repo": "freeqaz/dc3-decomp",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "hotlandsoftware/wii-news-channel": {
+  "repo": "hotlandsoftware/wii-news-channel",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "jkdansereau/goldeneye-pc-port": {
+  "repo": "jkdansereau/goldeneye-pc-port",
+  "action": "hold",
+  "reason": "rated possible (score 5) under the current rules"
+ },
+ "link5669/hm-gc-decomp": {
+  "repo": "link5669/hm-gc-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "hm-gc",
+  "game": "Disney's The Haunted Mansion",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "mariopartyrd/marioparty5": {
+  "repo": "mariopartyrd/marioparty5",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "marioparty5",
+  "game": "Mario Party 5",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "maurizi/ff9-decomp": {
+  "repo": "maurizi/ff9-decomp",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Final Fantasy IX\")"
+ },
+ "mkst/conker": {
+  "repo": "mkst/conker",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "conker",
+  "game": "Conker's Bad Fur Day",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 2
+ },
+ "olink9/driver1-decomp": {
+  "repo": "olink9/driver1-decomp",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Driver: You Are the Wheelman\")"
+ },
+ "rainchus/skiesofarcadialegends": {
+  "repo": "Rainchus/SkiesOfArcadiaLegends",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "skiesofarcadialegends",
+  "game": "Skies of Arcadia: Legends",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "ryanbevins/graffito-decomp": {
+  "repo": "ryanbevins/Graffito-Decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "graffito",
+  "game": "Super Mario Sunshine",
+  "newGame": false,
+  "platform": "gc",
+  "targets": 2
+ },
+ "sat-r/sa2": {
+  "repo": "SAT-R/sa2",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "sa2",
+  "game": "Sonic Advance 2",
+  "newGame": true,
+  "platform": "gba",
+  "targets": 5
+ },
+ "sojews/fossil-fighters-decomp": {
+  "repo": "Sojews/fossil-fighters-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "fossil-fighters",
+  "game": "Fossil Fighters",
+  "newGame": true,
+  "platform": "nds",
+  "targets": 1
+ },
+ "techprogabe/opencrossing-anbernic": {
+  "repo": "TechProGabe/OpenCrossing-Anbernic",
+  "action": "hold",
+  "reason": "named like a reimplementation (\"OpenCrossing-Anbernic\")"
+ },
+ "vabold/bba-wd": {
+  "repo": "vabold/bba-wd",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "bba-wd",
+  "game": "Big Brain Academy: Wii Degree",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "yotona/twewy": {
+  "repo": "Yotona/twewy",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "z2442/pikmin-psp": {
+  "repo": "z2442/pikmin-psp",
+  "action": "hold",
+  "reason": "named like a port to psp (the game is on gc)"
+ },
+ "alebello7276/mc360-decomp": {
+  "repo": "AleBello7276/mc360-decomp",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "angelof-exe/ygo-tf-5-decomp": {
+  "repo": "angelof-exe/ygo-tf-5-decomp",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Yu-Gi-Oh! 5D's Tag Force 5\")"
+ },
+ "celestialamber/nddemo": {
+  "repo": "CelestialAmber/nddemo",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Peach's Castle Tech Demo\")"
+ },
+ "cuthor/hmmm_wii-decomp": {
+  "repo": "cuthor/hmmm_wii-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "hmmm-wii",
+  "game": "Harvest Moon: Magical Melody",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "dbalatoni13/nfsuc": {
+  "repo": "dbalatoni13/nfsuc",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "decompals/yoshis-story": {
+  "repo": "decompals/yoshis-story",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "yoshis-story",
+  "game": "Yoshi's Story",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 1
+ },
+ "freeqaz/rb3": {
+  "repo": "freeqaz/rb3",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "rb3-2",
+  "game": "Rock Band 3",
+  "newGame": false,
+  "platform": "wii",
+  "targets": 2
+ },
+ "grien25/sdwiidecomp": {
+  "repo": "Grien25/SDWiiDecomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "sdwii",
+  "game": "Spider-Man: Shattered Dimensions",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "kirby64ret/kirby64": {
+  "repo": "Kirby64Ret/kirby64",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "kirby64",
+  "game": "Kirby 64: The Crystal Shards",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 1
+ },
+ "klorfmorf/mnsg": {
+  "repo": "klorfmorf/mnsg",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "mnsg",
+  "game": "Ganbare Goemon: Neo Momoyama Bakufu no Odori",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 2
+ },
+ "llonsit/wave-race-64": {
+  "repo": "LLONSIT/Wave-Race-64",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "wave-race-64",
+  "game": "Wave Race 64: Kawasaki Jet Ski",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 1
+ },
+ "medievildecompilation/medievil-decomp": {
+  "repo": "MediEvilDecompilation/medievil-decomp",
+  "action": "review",
+  "reason": "game not confirmed (description says \"MediEvil 1\")"
+ },
+ "metroidret/mf": {
+  "repo": "metroidret/mf",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "mf",
+  "game": "Metroid Fusion",
+  "newGame": true,
+  "platform": "gba",
+  "targets": 1
+ },
+ "metroidret/mzm": {
+  "repo": "metroidret/mzm",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "mzm",
+  "game": "Metroid: Zero Mission",
+  "newGame": true,
+  "platform": "gba",
+  "targets": 3
+ },
+ "swiftshine/wlsi": {
+  "repo": "Swiftshine/wlsi",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "wlsi",
+  "game": "Wario Land: Shake It!",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "theplayerrolo/super-mario-all-star-decomp": {
+  "repo": "ThePlayerRolo/Super-Mario-All-Star-Decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "super-mario-all-star",
+  "game": "Super Mario All-Stars",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "yanis002/multibootsystem": {
+  "repo": "Yanis002/MultiBootSystem",
+  "action": "review",
+  "reason": "game not confirmed (description says \"boot menu of the Zelda: OoT Master Quest Disc\")"
+ },
+ "zeitlost/accf": {
+  "repo": "zeitlost/accf",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "accf",
+  "game": "Animal Crossing: City Folk",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "animalcrossing-3ds-port/acgc-3ds": {
+  "repo": "AnimalCrossing-3ds-Port/ACGC-3ds",
+  "action": "hold",
+  "reason": "named like a port to 3ds (the game is on gc)"
+ },
+ "conhlee/rhf": {
+  "repo": "conhlee/rhf",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "rhf",
+  "game": "Rhythm Heaven Fever",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "dqix/dqix-decomp": {
+  "repo": "DQIX/dqix-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "dqix",
+  "game": "Dragon Quest IX: Hoshizora no Mamoribito",
+  "newGame": true,
+  "platform": "nds",
+  "targets": 2
+ },
+ "duckxz/hwvx-gcn-decomp": {
+  "repo": "Duckxz/hwvx-gcn-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "hwvx-gcn",
+  "game": "Hot Wheels: Velocity X",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "fancy2209/wog-wiiware": {
+  "repo": "Fancy2209/wog-wiiware",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "francessco121/sfa-kiosk-default-dol": {
+  "repo": "Francessco121/sfa-kiosk-default-dol",
+  "action": "review",
+  "reason": "game not confirmed (description says \"default.dol executable found inside of the Star Fox Adventures Kiosk ROM\")"
+ },
+ "livewirecb/cftkk-decomp": {
+  "repo": "LivewireCB/CFTKK-Decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "cftkk",
+  "game": "Nickelodeon SpongeBob SquarePants: Creature from the Krusty Krab",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "mariopartyrd/marioparty6": {
+  "repo": "mariopartyrd/marioparty6",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "marioparty6-2",
+  "game": "Mario Party 6",
+  "newGame": false,
+  "platform": "gc",
+  "targets": 1
+ },
+ "mariopartyrd/marioparty8": {
+  "repo": "mariopartyrd/marioparty8",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "marioparty8",
+  "game": "Mario Party 8",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 1
+ },
+ "mariopartyrd/marioparty9": {
+  "repo": "mariopartyrd/marioparty9",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "marioparty9-2",
+  "game": "Mario Party 9",
+  "newGame": false,
+  "platform": "wii",
+  "targets": 1
+ },
+ "nwplayer123/d8mj01-dtk": {
+  "repo": "NWPlayer123/D8MJ01-dtk",
+  "action": "review",
+  "reason": "game not confirmed (description says \"JP Demo of Paper Mario 2\")"
+ },
+ "odrannnn/metroidprimeport": {
+  "repo": "Odrannnn/MetroidPrimePort",
+  "action": "hold",
+  "reason": "rated unlikely (score 3) under the current rules"
+ },
+ "rainchus/ttyd_dtk": {
+  "repo": "Rainchus/ttyd_dtk",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "ttyd-dtk",
+  "game": "Paper Mario: The Thousand-Year Door",
+  "newGame": false,
+  "platform": "gc",
+  "targets": 2
+ },
+ "roeming/mssbdecomp": {
+  "repo": "roeming/mssbDecomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "mssb",
+  "game": "Mario Superstar Baseball",
+  "newGame": false,
+  "platform": "gc",
+  "targets": 1
+ },
+ "seilc/rat": {
+  "repo": "seilc/rat",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Ratatouille Jan 18\")"
+ },
+ "swiftshine/krtdl": {
+  "repo": "Swiftshine/krtdl",
+  "action": "hold",
+  "reason": "Kirby's Return to Dream Land is already covered by whippy; low-star duplicate (1 stars), check it isn't a copy"
+ },
+ "techprogabe/opencrossing-dreamcast": {
+  "repo": "TechProGabe/OpenCrossing-Dreamcast",
+  "action": "hold",
+  "reason": "named like a reimplementation (\"OpenCrossing-Dreamcast\")"
+ },
+ "yakuru-43/dq8-decomp": {
+  "repo": "Yakuru-43/dq8-decomp",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Dragon Quest VIII\")"
+ },
+ "ai-tdd-labs/mkds-decomp": {
+  "repo": "ai-tdd-labs/mkds-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "mkds",
+  "game": "Mario Kart DS",
+  "newGame": true,
+  "platform": "nds",
+  "targets": 1
+ },
+ "arcnid/ffc-decomp": {
+  "repo": "arcnid/ffc-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "ffc",
+  "game": "Fossil Fighters Champions",
+  "newGame": true,
+  "platform": "nds",
+  "targets": 1
+ },
+ "itsniklas/tsss": {
+  "repo": "ItsNiklas/tsss",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "tsss",
+  "game": "DreamWorks Turbo: Super Stunt Squad",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 2
+ },
+ "jon-bassi/hm-mm": {
+  "repo": "jon-bassi/hm-mm",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "hm-mm",
+  "game": "Harvest Moon: Magical Melody",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "koopthekoopa/tfp2": {
+  "repo": "koopthekoopa/TFP2",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "tfp2",
+  "game": "Tokyo Friend Park II: Ketteiban: Minna de Chousen! Taikan Attraction!",
+  "newGame": true,
+  "platform": "wii",
+  "targets": 2
+ },
+ "mariopartyrd/marioparty7": {
+  "repo": "mariopartyrd/marioparty7",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "marioparty7",
+  "game": "Mario Party 7",
+  "newGame": true,
+  "platform": "gc",
+  "targets": 1
+ },
+ "vabold/egg": {
+  "repo": "vabold/EGG",
+  "action": "hold",
+  "reason": "rated unlikely (score 3) under the current rules"
+ },
+ "vabold/mkw": {
+  "repo": "vabold/mkw",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "mkw-3",
+  "game": "Mario Kart Wii",
+  "newGame": false,
+  "platform": "wii",
+  "targets": 1
+ },
+ "vabold/wii-shop-channel": {
+  "repo": "vabold/wii-shop-channel",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "zeranemesis/marioparty4": {
+  "repo": "zeranemesis/Marioparty4",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "marioparty4-2",
+  "game": "Mario Party 4",
+  "newGame": false,
+  "platform": "gc",
+  "targets": 6
+ },
+ "enbyd/kamakura": {
+  "repo": "enbyd/kamakura",
+  "action": "hold",
+  "reason": "rated possible (score 7) under the current rules"
+ },
+ "luispolis124/opents3-ds": {
+  "repo": "luispolis124/OpenTS3-DS",
+  "action": "hold",
+  "reason": "rated possible (score 7) under the current rules"
+ },
+ "break-core/nddemo": {
+  "repo": "break-core/NDDEMO",
+  "action": "hold",
+  "reason": "rated possible (score 5) under the current rules"
+ },
+ "hansbonini/psx_tomba": {
+  "repo": "hansbonini/psx_tomba",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "psx-tomba",
+  "game": "Tomba!",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 4
+ },
+ "dreamingmoths/memory-of-alessa": {
+  "repo": "dreamingmoths/memory-of-alessa",
+  "action": "add",
+  "reason": "hash file silent-hill-2/config/SLUS_202.28/checksum.sha",
+  "project": "memory-of-alessa",
+  "game": "Silent Hill 3",
+  "newGame": true,
+  "platform": "ps2",
+  "targets": 2
+ },
+ "raikaru/persona4-decompilation": {
+  "repo": "Raikaru/Persona4-Decompilation",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Shin Megami Tensei: Persona 4\")",
+  "guess": "Shin Megami Tensei: Persona 4"
+ },
+ "jeanxpereira/crystalosd-decomp-legacy": {
+  "repo": "JeanxPereira/CrystalOSD-Decomp-Legacy",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "plinkr/wild9-decompilation": {
+  "repo": "plinkr/Wild9-Decompilation",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "shdecompilations/silent-hill-decomp": {
+  "repo": "shdecompilations/silent-hill-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "silent-hill",
+  "game": "Silent Hill",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 2
+ },
+ "caesar0007/nfshs-psx-decomp": {
+  "repo": "Caesar0007/NFSHS-PSX-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "lucaspicoli/god-hand-decomp": {
+  "repo": "LucasPicoli/god-hand-decomp",
+  "action": "hold",
+  "reason": "no hash evidence found"
+ },
+ "nsmbw-community/nsmbw-decomp": {
+  "repo": "NSMBW-Community/NSMBW-Decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "722rsr/gtadv3-decomp": {
+  "repo": "722rsr/gtadv3-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "aaaaaaaaaaway/kaze-no-notam-decomp": {
+  "repo": "aaaaaaaaaaway/kaze-no-notam-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "banteg/harvest": {
+  "repo": "banteg/harvest",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "celophi/lom-decomp": {
+  "repo": "celophi/lom-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "lom",
+  "game": "Seiken Densetsu: Legend of Mana",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 2
+ },
+ "jdperos/chrono-cross-decomp": {
+  "repo": "jdperos/chrono-cross-decomp",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "kyleckroeger/moh-frontline-decomp": {
+  "repo": "kyleckroeger/moh-frontline-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "ladysilverberg/xenogears-decomp": {
+  "repo": "ladysilverberg/xenogears-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "xenogears",
+  "game": "Xenogears",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 1
+ },
+ "lifewillbeokay/moh-rising-sun": {
+  "repo": "lifewillbeokay/moh-rising-sun",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "openrac/rac-deadlocked-decomp": {
+  "repo": "OpenRAC/rac-deadlocked-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "ser-pounce/rood-reverse": {
+  "repo": "ser-pounce/rood-reverse",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "wyrelade/armored-core-decomp": {
+  "repo": "Wyrelade/Armored-Core-Decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "armored-core",
+  "game": "Armored Core",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 1
+ },
+ "wyrelade/digimon-world-2-decomp": {
+  "repo": "Wyrelade/Digimon-World-2-Decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "digimon-world-2",
+  "game": "Digimon World 2",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 1
+ },
+ "zm2283145/syphon-filter-omega-strain-decomp": {
+  "repo": "zm2283145/syphon-filter-omega-strain-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "abelbriggs1/tm1_decomp": {
+  "repo": "abelbriggs1/tm1_decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "tm1",
+  "game": "Twisted Metal",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 1
+ },
+ "g-guthrie/mvc2-ps2-decomp": {
+  "repo": "g-guthrie/mvc2-ps2-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "mvc2-ps2",
+  "game": "Marvel vs. Capcom 2: New Age of Heroes",
+  "newGame": true,
+  "platform": "ps2",
+  "targets": 1
+ },
+ "openrac/rac1-decomp": {
+  "repo": "OpenRAC/rac1-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "openrac/rac3-uya-decomp": {
+  "repo": "OpenRAC/rac3-uya-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "opokxeno/xsg-i-decomp": {
+  "repo": "OpokXeno/xsg-i-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "voicedrew11/kfiv-decomp": {
+  "repo": "Voicedrew11/kfiv-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "2gifts/george-decomp": {
+  "repo": "2gifts/george-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "chaconmoon/yokai-watch-2-decompiled": {
+  "repo": "ChaconMoon/yokai-watch-2-decompiled",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "dothacktranslate/okamiden-decomp": {
+  "repo": "dothacktranslate/okamiden-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "erizur/slpm86183": {
+  "repo": "Erizur/slpm86183",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "popn-music",
+  "game": "Pop'n Music",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 1
+ },
+ "gustavocanepa/tt-decomp": {
+  "repo": "gustavocanepa/tt-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "rayanht/mwcc": {
+  "repo": "rayanht/mwcc",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "roengstrom/ff8-decomp": {
+  "repo": "roengstrom/ff8-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "shibbo/3dwdecomp": {
+  "repo": "shibbo/3DWDecomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "devoldschool/conkers-bfd-decomp": {
+  "repo": "DevOldSchool/conkers-bfd-decomp",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Conker's Bad Fur Day\")",
+  "guess": "Conker's Bad Fur Day"
+ },
+ "hcbt/tbuddies-decomp": {
+  "repo": "hcbt/tbuddies-decomp",
+  "action": "hold",
+  "reason": "no hash evidence found"
+ },
+ "kdylanhayes/mystery-house-decompilation": {
+  "repo": "kDylanHayes/mystery-house-decompilation",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "rockenrooster/smash64ds_port": {
+  "repo": "rockenrooster/Smash64DS_Port",
+  "action": "hold",
+  "reason": "a port (named _Port), not a decomp of the original release"
+ },
+ "sozud/mmx4": {
+  "repo": "sozud/mmx4",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "mmx4",
+  "game": "Mega Man X4",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 2
+ },
+ "veradictus/thief3-decomp": {
+  "repo": "Veradictus/Thief3-Decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "xeeynamo/ff7-decomp": {
+  "repo": "Xeeynamo/ff7-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "aaaaaaaaaaway/chulip-decomp": {
+  "repo": "aaaaaaaaaaway/chulip-decomp",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Chulip\")",
+  "guess": "Chulip"
+ },
+ "fmil95/soul-re": {
+  "repo": "fmil95/soul-re",
+  "action": "hold",
+  "reason": "no hash evidence found"
+ },
+ "gaberealb/parasite-eve-2-decomp": {
+  "repo": "GabeRealB/parasite-eve-2-decomp",
+  "action": "add",
+  "reason": "hash file configs/USA/checksum.sha",
+  "project": "parasite-eve-2",
+  "game": "Parasite Eve II",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 1
+ },
+ "granimated/minecraftlce": {
+  "repo": "GRAnimated/MinecraftLCE",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "haydntrigg/freelancer": {
+  "repo": "HaydnTrigg/Freelancer",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "jwfeniello/scott-pilgrim-switch-decomp": {
+  "repo": "jwfeniello/scott-pilgrim-switch-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "mschienbein/shiren2-decomp": {
+  "repo": "mschienbein/shiren2-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "nsmb-decomp/nsmb": {
+  "repo": "NSMB-Decomp/nsmb",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "pablocpas/cmr2decomp": {
+  "repo": "pablocpas/CMR2Decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "themoonpeople/chronicle": {
+  "repo": "TheMoonPeople/Chronicle",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Dark Cloud\")",
+  "guess": "Dark Cloud"
+ },
+ "vonhoff/lemball-decomp": {
+  "repo": "vonhoff/lemball-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "wyrelade/kknd-decomp": {
+  "repo": "Wyrelade/KKND-Decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "afsenovilla/tombi-decomp": {
+  "repo": "afsenovilla/Tombi-Decomp",
+  "action": "hold",
+  "reason": "Tombi! is already covered by psx-tomba; low-star duplicate (1 stars), check it isn't a copy"
+ },
+ "banteg/snail": {
+  "repo": "banteg/snail",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "bluisblu/pvz": {
+  "repo": "bluisblu/pvz",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "midacoyt/harrypotterandthehalfbloodprince-decompilation": {
+  "repo": "MidacoYT/HarryPotterAndTheHalfBloodPrince-Decompilation",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "sebaamg/kinect-sports-decomp": {
+  "repo": "SebaaMG/Kinect-Sports-Decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "used255/artonelico2-decomp": {
+  "repo": "USED255/artonelico2-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "ashfordfamily/recvx-decomp": {
+  "repo": "AshfordFamily/recvx-decomp",
+  "action": "hold",
+  "reason": "no hash evidence found"
+ },
+ "cntrl-alt-lenny/gx-spirit-caller": {
+  "repo": "cntrl-alt-lenny/gx-spirit-caller",
+  "action": "add",
+  "reason": "hash file gx-spirit-caller_eur.sha1",
+  "project": "gx-spirit-caller",
+  "game": "Yu-Gi-Oh! GX: Spirit Caller",
+  "newGame": true,
+  "platform": "nds",
+  "targets": 3
+ },
+ "gonzaloberteri/ygofm-decomp": {
+  "repo": "gonzaloberteri/ygofm-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "kira-502/dotr-decomp": {
+  "repo": "kira-502/dotr-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "openrac/rac2-gc-decomp": {
+  "repo": "OpenRAC/rac2-gc-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "snaku/persona3-fes-decompilation": {
+  "repo": "snaku/Persona3-FES-Decompilation",
+  "action": "add",
+  "reason": "hash file config/SLUS_216.21/checksum.sha1",
+  "project": "persona3-fes",
+  "game": "Shin Megami Tensei: Persona 3 FES",
+  "newGame": true,
+  "platform": "ps2",
+  "targets": 1
+ },
+ "splaatsites/rayman-3": {
+  "repo": "SplaatSites/rayman-3",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "thejunkman9000/turok-rage-wars-decomp": {
+  "repo": "thejunkman9000/Turok-Rage-Wars-Decomp",
+  "action": "add",
+  "reason": "hash file README: 037fb397cee2669048ed6b762a64698de4a4d88a",
+  "project": "turok-rage-wars",
+  "game": "Turok: Rage Wars",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 1
+ },
+ "themagicalkarp/open-spyro": {
+  "repo": "theMagicalKarp/open-spyro",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "yacalox-studios/cnk-decomp": {
+  "repo": "YacaloX-Studios/cnk-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "cakehonolulu/bullseye": {
+  "repo": "cakehonolulu/Bullseye",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Capcom's Sony PlayStation 2 game\")",
+  "guess": "Capcom's Sony PlayStation 2 game"
+ },
+ "celophi/so3-decomp": {
+  "repo": "celophi/so3-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "djsaunde/glover-decomp-1": {
+  "repo": "djsaunde/glover-decomp-1",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "emoluvjd2/oregontrail-win32-decomp": {
+  "repo": "emoluvjd2/oregontrail-win32-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "emoluvjd2/thps2-demo-decomp": {
+  "repo": "emoluvjd2/thps2-demo-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "euclidvsgauss/hazardrevenge": {
+  "repo": "EuclidVsGauss/HazardRevenge",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "gustavocanepa/gt3-decomp": {
+  "repo": "gustavocanepa/gt3-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "gustavocanepa/gt4-decomp": {
+  "repo": "gustavocanepa/gt4-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "kh-recoded-decomp/kh-recoded-decomp": {
+  "repo": "kh-recoded-decomp/kh-recoded-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "kirklandsig/halo2-decompiled": {
+  "repo": "kirklandsig/halo2-decompiled",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "lofcz/bulanci-decomp": {
+  "repo": "lofcz/bulanci-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "machinegun3/ygofm-decomp": {
+  "repo": "MaChInEgUn3/ygofm-decomp",
+  "action": "add",
+  "reason": "hash file README: 84747e64f6da8e764206ec203e489acf8c9dcf7d",
+  "project": "ygofm",
+  "game": "Yu-Gi-Oh! Forbidden Memories",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 1
+ },
+ "mariopartyrd/marioparty3": {
+  "repo": "mariopartyrd/marioparty3",
+  "action": "add",
+  "reason": "hash file marioparty3.sha1",
+  "project": "marioparty3",
+  "game": "Mario Party 3",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 1
+ },
+ "masonc15/tgm2p-decomp": {
+  "repo": "masonc15/tgm2p-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "mr-wiseguy/banjo-tooie": {
+  "repo": "Mr-Wiseguy/banjo-tooie",
+  "action": "add",
+  "reason": "hash file README: af1a89e12b638b8d82cc4c085c8e01d4cba03fb3",
+  "project": "banjo-tooie",
+  "game": "Banjo-Tooie",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 1
+ },
+ "n0zom1z0/th105": {
+  "repo": "N0zoM1z0/th105",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "ozyz/awds-decomp": {
+  "repo": "ozyz/awds-decomp",
+  "action": "hold",
+  "reason": "Advance Wars is already covered by advance-wars-dual-strike; low-star duplicate (1 stars), check it isn't a copy"
+ },
+ "pakompom/spacerangershd_decomp": {
+  "repo": "pakompom/SpaceRangersHD_decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "themoonpeople/chronicletwo": {
+  "repo": "TheMoonPeople/ChronicleTwo",
+  "action": "review",
+  "reason": "game not confirmed (description says \"Dark Chronicle\")",
+  "guess": "Dark Chronicle"
+ },
+ "yokimitsuro/khdays-decomp": {
+  "repo": "Yokimitsuro/khdays-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "yokimitsuro/khrecoded-decomp": {
+  "repo": "Yokimitsuro/khrecoded-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "yunatasavior/rtwdecomp": {
+  "repo": "YunataSavior/RTWDecomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "aricloverextra/partnersintimedecomp": {
+  "repo": "aricloverEXTRA/PartnersInTimeDECOMP",
+  "action": "add",
+  "reason": "hash file PiT_eur.sha1",
+  "project": "partnersintime",
+  "game": "Mario & Luigi: Partners in Time",
+  "newGame": true,
+  "platform": "nds",
+  "targets": 2
+ },
+ "blizz127/xenogears-decomp-port": {
+  "repo": "Blizz127/xenogears-decomp-port",
+  "action": "hold",
+  "reason": "rated unlikely (score 3) under the current rules"
+ },
+ "dorgengoa/rgdecomp": {
+  "repo": "Dorgengoa/RGDecomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "facundosterzerforino/legoland-port": {
+  "repo": "facundosterzerforino/legoland-port",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "jype0/dw_decomp": {
+  "repo": "jype0/dw_decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "ketbome/gh3-decomp": {
+  "repo": "Ketbome/gh3-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "gh3",
+  "game": "Guitar Hero III: Legends of Rock",
+  "newGame": true,
+  "platform": "ps2",
+  "targets": 1
+ },
+ "malikrahey/ssbm-decomp": {
+  "repo": "malikrahey/ssbm-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "mhvuze/mh4u-decomp": {
+  "repo": "mhvuze/mh4u-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "miguelqueiroz010/decomp-no-me-un5decomp": {
+  "repo": "MiguelQueiroz010/Decomp-no-Me-UN5Decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "un5",
+  "game": "Naruto Shippuden: Ultimate Ninja 5",
+  "newGame": true,
+  "platform": "ps2",
+  "targets": 1
+ },
+ "nicklesimba/sonic-battle-decomp": {
+  "repo": "nicklesimba/sonic-battle-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "noprompt/rood-boi": {
+  "repo": "noprompt/rood-boi",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "pret/pokeplatinum": {
+  "repo": "pret/pokeplatinum",
+  "action": "add",
+  "reason": "hash file platinum.us/filesys.sha1",
+  "project": "pokeplatinum",
+  "game": "Pokemon: Platinum Version",
+  "newGame": true,
+  "platform": "nds",
+  "targets": 2
+ },
+ "siddharthakumar-98/burnout3": {
+  "repo": "siddharthakumar-98/Burnout3",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "themoonpeople/kazarov": {
+  "repo": "TheMoonPeople/Kazarov",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "thisisakill/chronoret": {
+  "repo": "ThisIsAkill/ChronoRET",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "waterrr1389/valkyrie-profile-decomp": {
+  "repo": "waterrr1389/valkyrie-profile-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "wtg334/mario-galaxy-2-decomp-maybe": {
+  "repo": "wtg334/mario-galaxy-2-decomp-maybe",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "7akeem0/albw-decomp-ai": {
+  "repo": "7akeem0/albw-decomp-ai",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "abedegno/underworld-exhumed": {
+  "repo": "abedegno/underworld-exhumed",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "anzaldoivan/psxdecomp": {
+  "repo": "anzaldoivan/psxdecomp",
+  "action": "review",
+  "reason": "game not confirmed"
+ },
+ "banjo360/bk360": {
+  "repo": "banjo360/bk360",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "dashr9230/sa-mp": {
+  "repo": "dashr9230/SA-MP",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "denzi-gh/crashwoc-decomp-ps2": {
+  "repo": "denzi-gh/crashwoc-decomp-ps2",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "govanify/kh2": {
+  "repo": "GovanifY/kh2",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "halmylyseas/vandalhearts-decomp-slpm-86007": {
+  "repo": "HalmyLyseas/VandalHearts-decomp-SLPM-86007",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "halmylyseas/vandalhearts-pcport": {
+  "repo": "HalmyLyseas/VandalHearts-PcPort",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "haydntrigg/homeworld2classic": {
+  "repo": "HaydnTrigg/Homeworld2Classic",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "hectorbailey/byte-tactics": {
+  "repo": "HectorBailey/byte-tactics",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "kazuyette/rr-decomp": {
+  "repo": "kazuyette/rr-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "kdylanhayes/civ1-decomp": {
+  "repo": "kDylanHayes/civ1-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "lawlesscowboy/ray3": {
+  "repo": "LawlessCowboy/ray3",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "liolu/blue-dragon-awakened-shadow-decomp": {
+  "repo": "liolu/blue-dragon-awakened-shadow-decomp",
+  "action": "review",
+  "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
+  "guess": "Blue Dragon: Awakened Shadow"
+ },
+ "liolu/code-lyoko-decomp": {
+  "repo": "liolu/code-lyoko-decomp",
+  "action": "review",
+  "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
+  "guess": "Code Lyoko"
+ },
+ "liolu/cooking-mama-decomp": {
+  "repo": "liolu/cooking-mama-decomp",
+  "action": "review",
+  "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
+  "guess": "Pokemon Rumble Blast"
+ },
+ "liolu/dragon-ball-origins-decomp": {
+  "repo": "liolu/dragon-ball-origins-decomp",
+  "action": "review",
+  "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
+  "guess": "Dragon Ball: Origins"
+ },
+ "liolu/eyeshield-21-decomp": {
+  "repo": "liolu/eyeshield-21-decomp",
+  "action": "review",
+  "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
+  "guess": "Eyeshield 21: Max Devil Power!"
+ },
+ "liolu/fairy-tail-kardia-decomp": {
+  "repo": "liolu/fairy-tail-kardia-decomp",
+  "action": "review",
+  "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
+  "guess": "Original Story from Fairy Tail: Gekitotsu! Kardia Daiseidou"
+ },
+ "liolu/fairy-tail-madoushi-decomp": {
+  "repo": "liolu/fairy-tail-madoushi-decomp",
+  "action": "review",
+  "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
+  "guess": "TV Anime Fairy Tail: Gekitou! Madoushi Kessen"
+ },
+ "liolu/farm-frenzy-decomp": {
+  "repo": "liolu/farm-frenzy-decomp",
+  "action": "review",
+  "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
+  "guess": "F-Zero: GP Legend"
+ },
+ "liolu/harvest-moon-ds-decomp": {
+  "repo": "liolu/harvest-moon-ds-decomp",
+  "action": "review",
+  "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
+  "guess": "Harvest Moon DS"
+ },
+ "liolu/heroes-of-mana-decomp": {
+  "repo": "liolu/heroes-of-mana-decomp",
+  "action": "review",
+  "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
+  "guess": "Heroes of Mana"
+ },
+ "liolu/lego-star-wars-ii-the-original-trilogy-decomp": {
+  "repo": "liolu/lego-star-wars-ii-the-original-trilogy-decomp",
+  "action": "review",
+  "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
+  "guess": "LEGO Star Wars II: The Original Trilogy"
+ },
+ "liolu/livly-garden-decomp": {
+  "repo": "liolu/livly-garden-decomp",
+  "action": "review",
+  "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
+  "guess": "Livly Garden"
+ },
+ "liolu/mysims-decomp": {
+  "repo": "liolu/mysims-decomp",
+  "action": "review",
+  "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
+  "guess": "MySims"
+ },
+ "liolu/nintendogs-dachshund-decomp": {
+  "repo": "liolu/nintendogs-dachshund-decomp",
+  "action": "review",
+  "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
+  "guess": "Nintendogs: Dachshund & Friends"
+ },
+ "liolu/powerpuff-girls-z-decomp": {
+  "repo": "liolu/powerpuff-girls-z-decomp",
+  "action": "review",
+  "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
+  "guess": "Game de Demashita! Powerpuff Girls Z"
+ },
+ "liolu/rayman-rr-usa-decomp": {
+  "repo": "liolu/Rayman-RR-usa-decomp",
+  "action": "review",
+  "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
+  "guess": "Rayman: Raving Rabbids"
+ },
+ "liolu/resident-evil-deadly-silence-decomp": {
+  "repo": "liolu/resident-evil-deadly-silence-decomp",
+  "action": "review",
+  "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
+  "guess": "Resident Evil: Deadly Silence"
+ },
+ "liolu/simpsons-game-decomp": {
+  "repo": "liolu/simpsons-game-decomp",
+  "action": "review",
+  "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
+  "guess": "The Simpsons Game"
+ },
+ "liolu/spider-man-web-of-shadows-decomp": {
+  "repo": "liolu/spider-man-web-of-shadows-decomp",
+  "action": "review",
+  "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
+  "guess": "Spider-Man: Web of Shadows"
+ },
+ "liolu/spyro-shadow-legacy-decomp": {
+  "repo": "liolu/spyro-shadow-legacy-decomp",
+  "action": "review",
+  "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
+  "guess": "Super Street Fighter IV: 3D Edition"
+ },
+ "liolu/ultimate-spider-man-decomp": {
+  "repo": "liolu/ultimate-spider-man-decomp",
+  "action": "review",
+  "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
+  "guess": "Ultimate Spider-Man"
+ },
+ "n0zom1z0/th08": {
+  "repo": "N0zoM1z0/th08",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "randomno/pinball-decomp": {
+  "repo": "Randomno/pinball-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "some100/th07": {
+  "repo": "some100/th07",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "wyrelade/dw2-pc": {
+  "repo": "Wyrelade/DW2-PC",
+  "action": "hold",
+  "reason": "no hash evidence found"
+ },
+ "xeeynamo/psyz": {
+  "repo": "Xeeynamo/psyz",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "banteg/crimson": {
+  "repo": "banteg/crimson",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "dberweger2017/decomp-sid-meier-s-pirates": {
+  "repo": "dberweger2017/decomp-sid-meier-s-pirates",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "matteo-pacini/theme-hospital-enhanced": {
+  "repo": "matteo-pacini/theme-hospital-enhanced",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "mitch030504/tabletroopers-decomp": {
+  "repo": "mitch030504/tabletroopers-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "sdw-community/sdw-decomp": {
+  "repo": "SDW-Community/sdw-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "slickamogus/silent-hill-decomp": {
+  "repo": "SlickAmogus/silent-hill-decomp",
+  "action": "hold",
+  "reason": "rated possible (score 7) under the current rules"
+ },
+ "therealestnwah/sotc-decomp": {
+  "repo": "TheRealestNwah/sotc-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "unchiga/yu-gi-oh-forbidden-memories-recompiled": {
+  "repo": "Unchiga/Yu-Gi-Oh-Forbidden-Memories-Recompiled",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "weaversworkshop/mlbis-decomp": {
+  "repo": "weaversworkshop/mlbis-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "yharnam-hunters/paleblood": {
+  "repo": "Yharnam-Hunters/Paleblood",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "cobanov/nfsu2-decomp": {
+  "repo": "cobanov/nfsu2-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "koopthekoopa/rfl": {
+  "repo": "koopthekoopa/RFL",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "lemiur/alien-trilogy-decomp": {
+  "repo": "lemiur/alien-trilogy-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "macabeus/urnadecomp": {
+  "repo": "macabeus/UrnaDecomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "alecnunn/freelancer-decomp": {
+  "repo": "alecnunn/freelancer-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "bignegro/totk-decomp": {
+  "repo": "bignegro/TOTK-Decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "burnoutdecomp/bp-decomp_workflow": {
+  "repo": "BurnoutDecomp/BP-Decomp_Workflow",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "maci0/rebrew": {
+  "repo": "maci0/rebrew",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "marijnvdwerf/gba-beyblade-vforce": {
+  "repo": "marijnvdwerf/gba-beyblade-vforce",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "masonleeback/yellowhead": {
+  "repo": "MasonLeeBack/yellowhead",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "musohslop/hwde-decomp": {
+  "repo": "MusohSlop/HWDE-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "opensagadev/saga": {
+  "repo": "opensagadev/saga",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "piuzera/jusdecomp": {
+  "repo": "piuzera/JUSDecomp",
+  "action": "hold",
+  "reason": "rated possible (score 5) under the current rules"
+ },
+ "swstegall/meteor-decomp": {
+  "repo": "swstegall/meteor-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ },
+ "troikoss/nfsu2-re": {
+  "repo": "troikoss/nfsu2-re",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
+ }
+}
