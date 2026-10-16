@@ -28,8 +28,9 @@ const NOT_A_GAME = /\[BIOS\]|\bBIOS\b|System Menu|Action Replay|\bDatel\b|\bSDK\
 
 /** Lookup keys for a repo's version code: GZLE01 → GZLE, GM8E01_00 → GM8E, SLUS_216.68 → SLUS21668. */
 export function codeKeys(code: string): string[] {
-  const ps = /^([A-Z]{4})[-_ ]?(\d{3})\.?(\d{2})/.exec(code);
-  if (ps) return [`${ps[1]}${ps[2]}${ps[3]}`];
+  // PlayStation: 4 letters and 5 digits, written SLUS-21668, SLUS_216.68 or SLPM_86.053.
+  const ps = /^([A-Z]{4})[-_ ]?(\d)(\d)\.?(\d)\.?(\d)(\d)$/.exec(code);
+  if (ps) return [`${ps[1]}${ps.slice(2).join("")}`];
   // Nintendo product codes are upper case: 4 characters, then an optional maker code and suffixes.
   const nin = /^([A-Z0-9]{4})([A-Z0-9]{2})?(_.*)?$/.exec(code);
   if (nin && /[A-Z]/.test(nin[1]!)) return [nin[1]!];

@@ -57,8 +57,8 @@ export function cleanTitle(name: string): string {
 /** A product code as a lookup key: "DL-DOL-GZLE-USA" → "GZLE", "SLUS-21668" → "SLUS21668". */
 export function serialKeys(serial: string): string[] {
   const s = serial.toUpperCase();
-  const ps = /\b([A-Z]{4})[-_ ]?(\d{3})\.?(\d{2})\b/.exec(s);
-  if (ps) return [`${ps[1]}${ps[2]}${ps[3]}`];
+  const ps = /\b([A-Z]{4})[-_ ]?(\d)(\d)\.?(\d)\.?(\d)(\d)\b/.exec(s);
+  if (ps) return [`${ps[1]}${ps.slice(2).join("")}`];
   // Nintendo serials: DL-DOL-GZLE-USA, RVL-RMGE-USA, NTR-AZEP-EUR, AGB-BPEE-USA, or a bare "AZEP".
   const parts = s.split(/[-_ ,]+/).filter((p) => /^[A-Z0-9]{4}$/.test(p) && !/^(USA|EUR|JPN|KOR|AUS|CHN|ROC|NOE|UKV|FRA|ESP|ITA|HOL|SCN)$/.test(p));
   return [...new Set(parts)];

@@ -80,6 +80,7 @@ describe("DAT parsing", () => {
     assert.deepEqual(codeKeys("GZLE01"), ["GZLE"]);
     assert.deepEqual(codeKeys("GM8E01_00"), ["GM8E"]);
     assert.deepEqual(codeKeys("SLUS_216.68"), ["SLUS21668"]);
+    assert.deepEqual(codeKeys("SLPM_86.053"), ["SLPM86053"]);
     assert.deepEqual(codeKeys("A2DE"), ["A2DE"]);
     for (const c of ["us", "jp", "MarioClub_us", "LEGOLAND", "1.0", "PC_20040610"]) assert.deepEqual(codeKeys(c), [], c);
   });

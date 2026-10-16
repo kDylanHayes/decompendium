@@ -28,6 +28,7 @@ export interface CheckResult {
   assessment: Assessment | null;
   identification: Identification | null;
   submitterMaintains: boolean;
+  hashCheck: string | null; // where the build compares its output with a hash, if found
   draft: Draft | null;
 }
 
@@ -38,13 +39,14 @@ export interface CheckContext {
   author: string; // the issue's author
   today: string;
   siteOrigin?: string;
+  skipProgress?: boolean; // batch onboarding: ingestion verifies reports after merge
 }
 
 /** Run every check on a submission. Network reads only; nothing is written. */
 export async function checkSubmission(sub: Submission, ctx: CheckContext): Promise<CheckResult> {
   const items: CheckItem[] = [];
   const add = (status: ItemStatus, text: string) => items.push({ status, text });
-  const result: CheckResult = { items, blocked: false, facts: null, assessment: null, identification: null, submitterMaintains: false, draft: null };
+  const result: CheckResult = { items, blocked: false, facts: null, assessment: null, identification: null, submitterMaintains: false, hashCheck: null, draft: null };
   const site = (ctx.siteOrigin ?? "https://decompendium.com").replace(/\/$/, "");
 
   const raw = readCatalog(ctx.root);
@@ -88,6 +90,7 @@ export async function checkSubmission(sub: Submission, ctx: CheckContext): Promi
   // 3. Does the build verify a hash of the original? (Required to list.)
   if (a.hashEvidence.length) add("pass", `Hash the build checks: ${a.hashEvidence.slice(0, 3).map((h) => `\`${h}\``).join(", ")}.`);
   const deep = await deepCheck(ctx.github, facts);
+  result.hashCheck = deep.hashCheck;
   if (deep.hashCheck) add("pass", `Hash comparison in the build: \`${deep.hashCheck}\`.`);
   if (!a.hashEvidence.length && !deep.hashCheck) {
     add("warn", "No hash file or hash comparison found. Listing needs a build that checks its output against a hash of the original.");
@@ -110,8 +113,10 @@ export async function checkSubmission(sub: Submission, ctx: CheckContext): Promi
   } else add("info", "Game identification is unavailable in this run.");
 
   // 5. Progress data.
-  const progress = await checkProgress(facts, sub, ctx);
-  add(progress.status, progress.text);
+  if (!ctx.skipProgress) {
+    const progress = await checkProgress(facts, sub, ctx);
+    add(progress.status, progress.text);
+  }
 
   // 6. Does the submitter maintain it? (Only decides whether the entry starts confirmed.)
   try {

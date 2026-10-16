@@ -108,6 +108,52 @@ export async function makeDraft(opts: {
     }
   }
   if (!targets.length) {
+    // Hash files of other layouts: config/SLPM_86.053.sha1, configs/USA/checksum.sha, sm64.us.sha1.
+    const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
+    const stemOf = (path: string) => {
+      const file = path.split("/").pop()!.replace(/\.(sha1|md5|sha)$/i, "");
+      return /^checksum/i.test(file) ? (path.split("/").slice(-2, -1)[0] ?? "main") : file;
+    };
+    // A version's hash file, not a per-overlay or per-module one: skip those folders, then prefer
+    // files named like a version (a product code, a region, or a report artifact's code).
+    let files = f.paths.filter(
+      (p) =>
+        /\.(sha1|md5|sha)$|(^|\/)checksum[^/]*$/i.test(p) &&
+        !/build\.sha1$|\.(tar|tgz|gz|zip|7z|exe|bin|xz)\.|^(bin|tools|ext|external|third_party|lib|libs)\/|\/(overlays?|ovl|modules?|objects?|labels|segments|assets)\//i.test(p),
+    );
+    const reportCodes = new Set(f.reportArtifacts.map((a) => norm(a.replace(/_report$/, ""))));
+    const versionLike = (stem: string) =>
+      reportCodes.has(norm(stem)) || /^[A-Z]{4}[-_ ]?\d{2,3}\.?\d{2,3}$/.test(stem) || /(^|[._-])(us|usa|jp|jpn|eu|eur|pal|ntsc|ntsc-u|ntsc-j|en|kr|cn)$/i.test(stem);
+    const named = files.filter((p) => versionLike(stemOf(p)));
+    if (named.length) files = named;
+    else {
+      const depth = (p: string) => p.split("/").length;
+      const min = Math.min(...files.map(depth));
+      files = files.filter((p) => depth(p) === min);
+    }
+    files = files.slice(0, 8);
+    for (const path of files) {
+      const text = await github.getText(
+        `/repos/${f.fullName}/contents/${path.split("/").map(encodeURIComponent).join("/")}?ref=${encodeURIComponent(f.defaultBranch)}`,
+        "application/vnd.github.raw+json",
+        20_000,
+      );
+      const hash = hexDigests(text ?? "")[0];
+      if (!hash) continue;
+      let stem = stemOf(path); // configs/USA/checksum.sha → USA
+      stem = stem.replace(/^[a-z0-9]+[._-](?=(us|usa|jp|jpn|eu|eur|pal|ntsc)$)/i, ""); // sm64.us → us
+      const artifact = f.reportArtifacts.find((a) => norm(a.replace(/_report$/, "")) === norm(stem));
+      let tid = slug(stem) || "main";
+      for (let n = 2; targets.some((t) => t.id === tid); n++) tid = `${slug(stem) || "main"}-${n}`;
+      targets.push({
+        id: tid,
+        label: stem.length <= 3 || /^(usa|jpn|eur|pal|ntsc)$/i.test(stem) ? stem.toUpperCase() : stem,
+        hash: hash.length === 40 ? { sha1: hash } : { md5: hash },
+        progress: artifact ? { kind: "objdiff", source: { type: "github-artifact", artifact, path: "report.json" } } : { kind: "none" },
+      });
+    }
+  }
+  if (!targets.length) {
     for (const line of sub.targets.split("\n")) {
       const hash = hexDigests(line)[0];
       if (!hash) continue;

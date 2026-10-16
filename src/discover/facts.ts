@@ -45,17 +45,22 @@ export async function fetchFacts(github: GitHub, fullName: string): Promise<Repo
       `/repos/${repo.full_name}/git/trees/${branch}?recursive=1`,
     ),
     github.getText(`/repos/${repo.full_name}/readme`, "application/vnd.github.raw+json", 20_000),
-    github.get<{ workflow_runs: { id: number }[] }>(
-      `/repos/${repo.full_name}/actions/runs?branch=${branch}&event=push&status=success&per_page=1`,
+    github.get<{ workflow_runs: { id: number; workflow_id: number }[] }>(
+      `/repos/${repo.full_name}/actions/runs?branch=${branch}&event=push&status=success&per_page=10`,
     ),
   ]);
+  // The newest run is often a docs or lint workflow; look at up to three
+  // different workflows' latest runs for report artifacts.
   let reportArtifacts: string[] = [];
-  const runId = runs?.workflow_runs[0]?.id;
-  if (runId) {
+  const seenWorkflows = new Set<number>();
+  for (const run of runs?.workflow_runs ?? []) {
+    if (seenWorkflows.has(run.workflow_id)) continue;
+    seenWorkflows.add(run.workflow_id);
     const artifacts = await github.get<{ artifacts: { name: string }[] }>(
-      `/repos/${repo.full_name}/actions/runs/${runId}/artifacts?per_page=100`,
+      `/repos/${repo.full_name}/actions/runs/${run.id}/artifacts?per_page=100`,
     );
     reportArtifacts = (artifacts?.artifacts ?? []).map((a) => a.name).filter((n) => /report/i.test(n));
+    if (reportArtifacts.length || seenWorkflows.size >= 3) break;
   }
   return {
     fullName: repo.full_name,

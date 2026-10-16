@@ -120,7 +120,7 @@ describe("drafts", () => {
 });
 
 describe("bot comment", () => {
-  const base: CheckResult = { items: [], blocked: false, facts: null, assessment: null, identification: null, submitterMaintains: false, draft: null };
+  const base: CheckResult = { items: [], blocked: false, facts: null, assessment: null, identification: null, submitterMaintains: false, hashCheck: null, draft: null };
 
   it("starts with a marker so the bot updates its own comment", () => {
     const body = renderComment({ ...base, items: [{ status: "pass", text: "Found it." }] }, null);
