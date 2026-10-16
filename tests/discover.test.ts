@@ -68,6 +68,13 @@ describe("assess", () => {
     assert.notEqual(a.verdict, "unlikely");
   });
 
+  it("rates unmodified decomp-toolkit template copies as unlikely", () => {
+    const a = assess(facts({ description: "Decompilation", paths: ["config/GAMEID/build.sha1", "configure.py", ...facts().paths], reportArtifacts: ["GAMEID_report"] }));
+    assert.ok(a.signals.some((s) => s.id === "template-copy"));
+    const real = assess(facts({ paths: ["config/GAMEID/build.sha1", "config/GYQE01/build.sha1", ...facts().paths] }));
+    assert.ok(!real.signals.some((s) => s.id === "template-copy"), "a real config next to the placeholder is fine");
+  });
+
   it("needs something buildable, not just words", () => {
     const a = assess(facts({ description: "matching decompilation", readme: "matching decomp", paths: ["README.md", "notes.txt"] }));
     assert.equal(a.verdict, "unlikely");
@@ -97,6 +104,10 @@ describe("triage", () => {
     assert.match(triage(candidate({ fullName: "x/Zelda64Recomp", description: "Static recompilation for PC" }), none, none, none)!, /^look-alike/);
     assert.equal(triage(candidate({ description: "Decompilation, modding and map editing" }), none, none, none), null);
     assert.equal(triage(candidate({ description: "Decompilation of Game" }), none, none, none), null);
+    // Named as a port: out, even when built on a decomp. "Recompilation" alone stays in.
+    assert.equal(triage(candidate({ fullName: "x/MetroidPrimePort", description: "Port of the Prime decomp" }), none, none, none), "look-alike: port");
+    assert.equal(triage(candidate({ fullName: "x/report-viewer", description: "Decompilation" }), none, none, none), null);
+    assert.equal(triage(candidate({ fullName: "x/mkp", description: "Recompilation project of a game" }), none, none, none), null);
     // Only games are listed.
     assert.match(triage(candidate({ description: "Decompilation of sead: the standard C++ library for Nintendo games" }), none, none, none)!, /^tool: library/);
     assert.match(triage(candidate({ description: "A decompilation of the Dolphin SDK Libraries" }), none, none, none)!, /^tool/);

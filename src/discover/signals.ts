@@ -54,6 +54,16 @@ export function toolText(fullName: string, description: string, topics: string[]
   return `${fullName.split("/")[1]} ${description} ${topics.join(" ")}`.replace(/decomp-toolkit|\bdtk\b|objdiff|splat|m2c/gi, "");
 }
 
+/** True when the repo name contains the word "port": sm64-port, MetroidPrimePort (not Report). */
+export function nameHasPort(fullName: string): boolean {
+  const words = fullName
+    .split("/")[1]!
+    .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
+    .split(/[^A-Za-z0-9]+/)
+    .map((w) => w.toLowerCase());
+  return words.includes("port") || words.includes("ports");
+}
+
 /** Repo name and description for the look-alike check. URLs don't count: "a port of github.com/n64decomp/sm64" is not a decomp. */
 export function lookalikeText(fullName: string, description: string): string {
   return `${fullName.split("/")[1]} ${description}`.replace(/\S+:\/\/\S+|\S+\.(com|org|io)\/\S*/g, "");
@@ -102,6 +112,13 @@ export function assess(f: RepoFacts): Assessment {
   if (tool) add("tool-words", -6, tool[0]);
   const lookalike = LOOKALIKE_WORDS.exec(blurb);
   if (lookalike) add("lookalike-words", /decomp|disassembl/i.test(blurb) ? -1 : -6, lookalike[0]);
+  // A repo named as a port is a port, even when it says it is built on a decomp.
+  if (nameHasPort(f.fullName)) add("port-name", -6);
+  // decomp-toolkit's template ships a placeholder config/GAMEID/. A repo whose
+  // only config is that placeholder is an unmodified copy of the template
+  // (real projects sometimes keep it next to their own configs).
+  const configs = new Set(f.paths.map((p) => /^config\/([^/]+)\//.exec(p)?.[1]).filter(Boolean));
+  if (configs.size === 1 && configs.has("GAMEID")) add("template-copy", -6);
   if (f.fork) add("fork", -3);
   if (f.archived) add("archived", -1);
   if (f.paths.length < 25 && !f.treeTruncated && !f.reportArtifacts.length) add("tiny-repo", -3, `${f.paths.length} files`);

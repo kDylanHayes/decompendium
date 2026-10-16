@@ -6,7 +6,7 @@ import { StopRunError } from "../ingest/types.ts";
 import { deepCheck, type DeepFindings } from "./deep.ts";
 import { fetchFacts, type RepoFacts } from "./facts.ts";
 import { MIN_PRIORITY, priority, searchCandidates, type Candidate } from "./search.ts";
-import { assess, LOOKALIKE_WORDS, lookalikeText, TOOL_WORDS, toolText, type Assessment } from "./signals.ts";
+import { assess, LOOKALIKE_WORDS, lookalikeText, nameHasPort, TOOL_WORDS, toolText, type Assessment } from "./signals.ts";
 
 /**
  * Where a repository stands. Only decisions that cost API calls are stored;
@@ -133,7 +133,12 @@ export function triage(c: Candidate, listed: Set<string>, optedOut: Set<string>,
   if (tool) return `tool: ${tool[0]}`;
   const text = lookalikeText(c.fullName, c.description);
   const lookalike = LOOKALIKE_WORDS.exec(text);
-  if (lookalike && !/decomp|disassembl/i.test(text)) return `look-alike: ${lookalike[0]}`;
+  // "Recompilation" alone is ambiguous (some matching projects call themselves that),
+  // so it only lowers the score at inspection rather than ruling a repo out here.
+  if (lookalike && !/decomp|disassembl/i.test(text) && !/^recompilation$/i.test(lookalike[0])) {
+    return `look-alike: ${lookalike[0]}`;
+  }
+  if (nameHasPort(c.fullName)) return "look-alike: port";
   return null;
 }
 
