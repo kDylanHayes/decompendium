@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=../../schema/project.schema.json
 id: "gh3"
 name: "Guitar Hero III: Legends of Rock decompilation"
-game: "guitar-hero-iii-legends-of-rock-ps2"
+game: "guitar-hero-iii-legends-of-rock"
 repo: https://github.com/Ketbome/gh3-decomp
 description: "Matching decompilation of Guitar Hero III: Legends of Rock."
 owners: [Ketbome]  # repo owner; maintainers can replace this with their usernames

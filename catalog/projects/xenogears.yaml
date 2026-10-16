@@ -13,4 +13,4 @@ targets:
     hash: { sha256: "dc0b2dd786203d4cce5927c5a3fc85a18f39a3f7406078860076ebb0bbae7119" }
     progress:
       kind: objdiff
-      source: { type: github-artifact, artifact: SLUS_006.64_report, path: report.json }
+      source: { type: github-artifact, artifact: SLUS_006.64_report, path: progress.json }
