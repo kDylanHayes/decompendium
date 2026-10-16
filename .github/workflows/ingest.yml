@@ -51,7 +51,7 @@ jobs:
           if [ "$SMOKE" = "true" ]; then
             args=(--root tests/fixtures/smoke --data "$RUNNER_TEMP/smoke-data")
           elif [ "$EVENT" = "push" ]; then
-            # A catalog merge: fetch only targets never seen before.
+            # A catalog merge: fetch new targets, and retry failing ones (the merge may fix them).
             args+=(--new-only)
           fi
           pnpm ingest "${args[@]}"

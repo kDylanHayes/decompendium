@@ -13,7 +13,7 @@ export interface IngestOptions {
   fetch?: Fetch;
   now?: () => Date;
   only?: string[]; // "<project>/<target>" or "<project>"
-  newOnly?: boolean; // only targets with no health entry yet (after a catalog merge)
+  newOnly?: boolean; // after a catalog merge: targets never fetched, and failing ones (the merge may fix them)
   concurrency?: number;
   deadlineMs?: number;
   log?: (line: string) => void;
@@ -60,7 +60,7 @@ export async function runIngest(opts: IngestOptions): Promise<IngestSummary> {
       .map((target) => ({ project, target, key: `${project.id}/${target.id}` })),
   );
   if (opts.only?.length) work = work.filter((w) => opts.only!.some((o) => w.key === o || w.project.id === o));
-  if (opts.newOnly) work = work.filter((w) => !health.targets[w.key]);
+  if (opts.newOnly) work = work.filter((w) => !health.targets[w.key] || health.targets[w.key]!.last_error !== null);
   // Oldest attempt first, so a run cut short by limits never starves the same targets.
   work.sort((a, b) =>
     (health.targets[a.key]?.last_attempt_at ?? "").localeCompare(health.targets[b.key]?.last_attempt_at ?? ""),
