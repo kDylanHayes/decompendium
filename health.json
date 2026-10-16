@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_at": "2026-10-16T17:47:27.572Z",
+  "updated_at": "2026-10-16T17:49:42.423Z",
   "targets": {
     "1080/japan-usa-en-ja": {
       "run_id": 38933572556,
@@ -1500,12 +1500,6 @@
       "default_branch_checked_at": "2026-10-16T13:17:06.241Z",
       "last_commit_at": "2026-04-24T23:53:24Z",
       "commits_checked_at": "2026-10-16T13:17:06.534Z"
-    },
-    "acww": {
-      "default_branch": "main",
-      "default_branch_checked_at": "2026-10-16T13:17:07.026Z",
-      "last_commit_at": "2026-10-14T16:24:51Z",
-      "commits_checked_at": "2026-10-16T13:17:07.291Z"
     },
     "acww-decomp": {
       "default_branch": "main",
