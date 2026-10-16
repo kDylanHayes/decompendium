@@ -123,7 +123,7 @@ code,
 
 code {
   background: var(--code-bg);
-  padding: 0.1em 0.35em;
+  padding: 0.05em 0.3em;
   border-radius: 4px;
 }
 
@@ -174,6 +174,23 @@ code {
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
   color: var(--text);
+}
+
+@media (max-width: 600px) {
+  .site-header .wrap {
+    gap: 6px 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .theme-toggle {
+    margin-left: auto;
+  }
+
+  .site-nav {
+    order: 3;
+    flex-basis: 100%;
+  }
 }
 
 .theme-toggle {
@@ -299,7 +316,7 @@ main {
 
 .project-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 200px;
+  grid-template-columns: minmax(0, 1fr) 220px;
   gap: 8px 24px;
   padding: 14px 0;
   border-bottom: 1px solid var(--border);
@@ -314,6 +331,10 @@ main {
 
 .project-row .title:hover {
   color: var(--accent-text);
+}
+
+.project-row .chips {
+  margin-left: 8px;
 }
 
 .project-row .meta {
@@ -358,7 +379,7 @@ main {
   flex-wrap: wrap;
   gap: 10px 16px;
   align-items: end;
-  margin: 0 0 16px;
+  margin: 0 0 20px;
   font-size: 0.85rem;
 }
 
@@ -435,8 +456,71 @@ th.num {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 18px 20px;
-  margin: 0 0 16px;
+  padding: 20px 22px;
+  margin: 0 0 20px;
+}
+
+.card h3 {
+  margin: 0;
+}
+
+.card .hash {
+  margin: 4px 0 16px;
+  overflow-wrap: anywhere;
+}
+
+.card-foot {
+  margin: 16px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* Per-target measures */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 16px 28px;
+  margin: 18px 0 0;
+}
+
+.stats > div {
+  min-width: 0;
+}
+
+.stats dt {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.stats dd {
+  margin: 2px 0 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.stats dd.detail {
+  margin-top: 2px;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.categories {
+  margin: 16px 0 0;
+}
+
+.categories summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 4px 0;
+}
+
+.categories table {
+  max-width: 560px;
+  margin-top: 8px;
 }
 
 .card h3 {
@@ -508,6 +592,35 @@ th.num {
 
 .prose {
   max-width: 70ch;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.4rem;
+}
+
+.prose li + li {
+  margin-top: 0.4rem;
+}
+
+.prose p {
+  margin: 0 0 1rem;
+}
+
+.policy {
+  margin-top: 2.6rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--border);
+}
+
+.policy h1 {
+  font-size: 1.45rem;
+  margin: 1.6rem 0 0.8rem;
+}
+
+.policy h2 {
+  font-size: 1.15rem;
+  margin: 1.8rem 0 0.6rem;
 }
 
 .prose table {

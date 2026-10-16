@@ -11,8 +11,7 @@ export function getStaticPaths() {
 
 const { project } = Astro.props as { project: ProjectView };
 const now = new Date(site().builtAt);
-const count = (c: { matched: number; total: number } | null) =>
-  c ? `${percent(c)} (${number(c.matched)} / ${number(c.total)})` : "—";
+const ratio = (c: { matched: number; total: number }, unit: string) => `${number(c.matched)} / ${number(c.total)} ${unit}`;
 
 const optOut = issueUrl(
   `Opt out: ${project.id}`,
@@ -72,26 +71,22 @@ const correction = issueUrl(`Correction: ${project.id}`, `Project: ${project.nam
             {t.state === "stale" && <span class="chip warn">Stale data</span>}
             {t.state === "failing" && <span class="chip bad">Fetch failing</span>}
           </h3>
-          <p class="small muted">
+          <p class="small muted hash">
             {t.hash.algo.toUpperCase()} <span class="mono">{t.hash.value}</span>
           </p>
           {t.latest ? (
             <>
               <ProgressBar code={t.latest.code} linked={t.latest.linked} large />
-              <div class="table-wrap">
-                <table>
-                  <tbody>
-                    <tr><th>Matched code</th><td class="num">{count(t.latest.code)}</td></tr>
-                    {t.latest.linked && <tr><th>Fully linked</th><td class="num">{count(t.latest.linked)}</td></tr>}
-                    {t.latest.functions && <tr><th>Functions</th><td class="num">{count(t.latest.functions)}</td></tr>}
-                    {t.latest.data && t.latest.data.total > 0 && <tr><th>Data</th><td class="num">{count(t.latest.data)}</td></tr>}
-                    {t.latest.fuzzy_percent !== null && <tr><th>Fuzzy match</th><td class="num">{t.latest.fuzzy_percent.toFixed(1)}%</td></tr>}
-                  </tbody>
-                </table>
-              </div>
+              <dl class="stats">
+                <div><dt>Matched code</dt><dd>{percent(t.latest.code)}</dd><dd class="detail">{ratio(t.latest.code, "bytes")}</dd></div>
+                {t.latest.linked && <div><dt>Fully linked</dt><dd>{percent(t.latest.linked)}</dd><dd class="detail">{ratio(t.latest.linked, "bytes")}</dd></div>}
+                {t.latest.functions && <div><dt>Functions</dt><dd>{percent(t.latest.functions)}</dd><dd class="detail">{ratio(t.latest.functions, "functions")}</dd></div>}
+                {t.latest.data && t.latest.data.total > 0 && <div><dt>Data</dt><dd>{percent(t.latest.data)}</dd><dd class="detail">{ratio(t.latest.data, "bytes")}</dd></div>}
+                {t.latest.fuzzy_percent !== null && <div><dt>Fuzzy match</dt><dd>{t.latest.fuzzy_percent.toFixed(1)}%</dd><dd class="detail">including partial matches</dd></div>}
+              </dl>
               {t.latest.categories.length > 0 && (
-                <details>
-                  <summary class="small">Categories</summary>
+                <details class="categories">
+                  <summary>Categories</summary>
                   <div class="table-wrap">
                     <table>
                       <thead><tr><th>Category</th><th class="num">Matched code</th><th class="num">Fully linked</th></tr></thead>
@@ -104,7 +99,7 @@ const correction = issueUrl(`Correction: ${project.id}`, `Project: ${project.nam
                   </div>
                 </details>
               )}
-              <p class="small muted">
+              <p class="small muted card-foot">
                 {t.latest.commit ? (
                   <>Commit <a class="mono" href={`${project.repo}/commit/${t.latest.commit}`}>{t.latest.commit.slice(0, 7)}</a>{t.latest.commit_at && <>, {shortDate(t.latest.commit_at)}</>}. </>
                 ) : null}
@@ -128,7 +123,7 @@ const correction = issueUrl(`Correction: ${project.id}`, `Project: ${project.nam
 
   <h2>Maintainers</h2>
   <p class="small">
-    Edit this entry with a pull request to <a href={`https://github.com/kDylanHayes/decompendium/blob/main/catalog/projects/${project.id}.yaml`}><code>catalog/projects/{project.id}.yaml</code></a>,
+    Edit this entry with a pull request to <a href={`https://github.com/kDylanHayes/decompendium/blob/main/catalog/projects/${project.id}.yaml`}><code>catalog/projects/{project.id}.yaml</code></a>,{" "}
     or <a href={correction}>report a correction</a>. Don't want to be listed? <a href={optOut}>Opt out</a>; you can hide the
     project from the home page or remove it entirely.
   </p>

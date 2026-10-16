@@ -60,7 +60,7 @@ const hidden = projects.length - listed.length;
     {listed.map((project) => <ProjectRow project={project} />)}
   </ul>
   <p class="count-line">
-    <span id="shown">{listed.length}</span> of {listed.length} projects shown.
+    <span id="shown">{listed.length}</span> of {listed.length} projects shown.{" "}
     {
       hidden > 0 && (
         <>
@@ -68,7 +68,7 @@ const hidden = projects.length - listed.length;
         </>
       )
     }
-    {games.length} games in total.
+    {` ${games.length} games in total.`}
   </p>
   <p class="small muted">The solid bar is fully linked code; the lighter bar is matched code.</p>
 
