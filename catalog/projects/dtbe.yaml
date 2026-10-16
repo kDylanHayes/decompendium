@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "dtbe"
+name: "DigimonTamers: Battle Evolution decompilation"
+game: "digimontamers-battle-evolution"
+repo: https://github.com/ReGame-Labs/dtbe_decomp
+description: "Matching decompilation of DigimonTamers: Battle Evolution."
+owners: [ReGame-Labs]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "slps-033-57"
+    label: "SLPS_033.57"
+    hash: { sha1: "6db2c1b5a9fbe9f1a9ac1145fb115cdc775463fb" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLPS_033.57_report, path: report.json }
+  - id: "slus-014-04"
+    label: "SLUS_014.04"
+    hash: { sha1: "179a3f7ae84762f9f60dc1ba97994eb7e673582e" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLUS_014.04_report, path: report.json }

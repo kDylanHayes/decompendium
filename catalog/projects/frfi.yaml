@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "frfi"
+name: "Freedom Fighters decompilation"
+game: "freedom-fighters"
+repo: https://github.com/andresj-sanchez/frfi-decomp
+description: "Matching decompilation of Freedom Fighters."
+owners: [andresj-sanchez]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gfde69"
+    label: "GFDE69 (USA)"
+    region: us
+    hash: { sha1: "13ea96ef1371fde425350bc5e957b8684ee7d1fb" }
+    progress:
+      kind: none

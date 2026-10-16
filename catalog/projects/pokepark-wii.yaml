@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "pokepark-wii"
+name: "PokePark Wii: Pikachu's Adventure decompilation"
+game: "pokepark-wii-pikachu-s-adventure"
+repo: https://github.com/SephDB/pokepark-wii-decomp
+description: "Matching decompilation of PokePark Wii: Pikachu's Adventure."
+owners: [SephDB]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "r8ae01"
+    label: "R8AE01 (USA)"
+    region: us
+    hash: { sha1: "8c241f2aa9869a2ffc6d8f68eb55fcd0b6cdf9c8" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: R8AE01_report, path: report.json }

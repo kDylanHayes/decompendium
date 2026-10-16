@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "ratchet-clank"
+name: "Ratchet & Clank"
+platform: ps2

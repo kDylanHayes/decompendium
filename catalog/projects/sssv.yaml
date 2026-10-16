@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "sssv"
+name: "SpaceStation Silicon Valley decompilation"
+game: "spacestation-silicon-valley"
+repo: https://github.com/mkst/sssv
+description: "Matching decompilation of SpaceStation Silicon Valley."
+owners: [mkst]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "e5e09205aa743a9e5043a42df72adc379c746b0b" }
+    progress:
+      kind: none
+  - id: "japan-proto"
+    label: "Japan, Proto"
+    region: jp
+    hash: { sha1: "7320f08474c011fc7781093bf1a6818c37ce51e2" }
+    progress:
+      kind: none
+  - id: "usa-rev-1"
+    label: "USA, Rev 1"
+    region: us
+    hash: { sha1: "c968bba6a90db9ecbd957e910684a80726b0497d" }
+    progress:
+      kind: none
+  - id: "europe-en-fr-de-es-it-nl-pt"
+    label: "Europe, En,Fr,De,Es,It,Nl,Pt"
+    region: eu
+    hash: { sha1: "23710541bb3394072740b0f0236a7cb1a7d41531" }
+    progress:
+      kind: none

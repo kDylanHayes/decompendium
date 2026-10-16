@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "nfsps"
+name: "Need for Speed: ProStreet decompilation"
+game: "need-for-speed-prostreet"
+repo: https://github.com/dbalatoni13/nfsps
+description: "Matching decompilation of Need for Speed: ProStreet."
+owners: [dbalatoni13]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "rnpe69"
+    label: "RNPE69 (USA)"
+    region: us
+    hash: { sha1: "6eae2050285a2a025b7b9826cbcfa577166056fa" }
+    progress:
+      kind: none

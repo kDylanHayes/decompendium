@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "hybrid-heaven"
+name: "Hybrid Heaven"
+platform: n64

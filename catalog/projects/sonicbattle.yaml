@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "sonicbattle"
+name: "Sonic Battle decompilation"
+game: "sonic-battle"
+repo: https://github.com/cypressru/SonicBattleDecomp
+description: "Matching decompilation of Sonic Battle."
+owners: [cypressru]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "bsbe78"
+    label: "BSBE78 (USA)"
+    region: us
+    hash: { sha1: "8cf4fbbe73f6b1907ab9997caab4c4e7d9708937" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: BSBE78_report, path: report.json }

@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "wii-sports"
+name: "Wii Sports"
+platform: wii

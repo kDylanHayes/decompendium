@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "metroid-fusion"
+name: "Metroid Fusion"
+platform: gba

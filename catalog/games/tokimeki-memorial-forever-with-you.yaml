@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "tokimeki-memorial-forever-with-you"
+name: "Tokimeki Memorial: Forever with You"
+platform: ps1

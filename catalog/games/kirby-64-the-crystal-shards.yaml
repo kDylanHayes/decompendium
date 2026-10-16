@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "kirby-64-the-crystal-shards"
+name: "Kirby 64: The Crystal Shards"
+platform: n64

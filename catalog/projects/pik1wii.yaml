@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "pik1wii"
+name: "Pikmin decompilation"
+game: "pikmin-wii"
+repo: https://github.com/projectPiki/pik1wii
+description: "Matching decompilation of Pikmin."
+owners: [projectPiki]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "r9ie01"
+    label: "R9IE01 (USA)"
+    region: us
+    hash: { sha1: "551306334183a633d0fde434a930b98809433b70" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: R9IE01_report, path: report.json }

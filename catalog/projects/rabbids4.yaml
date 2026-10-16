@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "rabbids4"
+name: "Raving Rabbids: Travel in Time decompilation"
+game: "raving-rabbids-travel-in-time"
+repo: https://github.com/Sblorgotech/rabbids4
+description: "Matching decompilation of Raving Rabbids: Travel in Time."
+owners: [Sblorgotech]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "sr4p41"
+    label: "SR4P41 (Europe)"
+    region: eu
+    hash: { sha1: "f8c623f9cc354b2b75e8cbcdf96408ac6d05e993" }
+    progress:
+      kind: none

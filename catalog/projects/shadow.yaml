@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "shadow"
+name: "Shadow the Hedgehog decompilation"
+game: "shadow-the-hedgehog"
+repo: https://github.com/dev-camo/shadow-decomp
+description: "Matching decompilation of Shadow the Hedgehog."
+owners: [dev-camo]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gupe8p"
+    label: "GUPE8P (USA)"
+    region: us
+    hash: { sha1: "118ef49ebd45b371b6f514e0e1b6d1ba7cf12904" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GUPE8P_report, path: report.json }
+  - id: "gupj8p"
+    label: "GUPJ8P (Japan)"
+    region: jp
+    hash: { sha1: "72f47bca7b72ec385a6fa30e123a96cc0fd19bab" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GUPJ8P_report, path: report.json }
+  - id: "gupp8p"
+    label: "GUPP8P (Europe)"
+    region: eu
+    hash: { sha1: "6ff04994371e93d6ba1015644f4e7467713b9363" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GUPP8P_report, path: report.json }

@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "sonic-heroes"
+name: "Sonic Heroes"
+platform: gc

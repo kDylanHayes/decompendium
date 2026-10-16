@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "pokebw2"
+name: "Pokemon: Black Version 2 decompilation"
+game: "pokemon-black-version-2"
+repo: https://github.com/fuddlesworth/pokebw2
+description: "Matching decompilation of Pokemon: Black Version 2."
+owners: [fuddlesworth]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa-europe-ndsi-enhanced"
+    label: "USA, Europe, NDSi Enhanced"
+    region: us
+    hash: { sha1: "e51e6dfb8678a3d19dcd2a10691b96a569ca0abb" }
+    progress:
+      kind: none
+  - id: "usa-europe-ndsi-enhanced-2"
+    label: "USA, Europe, NDSi Enhanced"
+    region: us
+    hash: { sha1: "b5d7490be7b415b8f1e672a53e978a9cc667e56a" }
+    progress:
+      kind: none

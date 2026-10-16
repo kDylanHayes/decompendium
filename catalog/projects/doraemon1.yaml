@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "doraemon1"
+name: "Doraemon: Nobita to 3tsu no Seireiseki decompilation"
+game: "doraemon-nobita-to-3tsu-no-seireiseki"
+repo: https://github.com/adipocira/doraemon1
+description: "Matching decompilation of Doraemon: Nobita to 3tsu no Seireiseki."
+owners: [adipocira]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "japan"
+    label: "Japan"
+    region: jp
+    hash: { md5: "c2166455e94e89e9e3ab612b4377c443" }
+    progress:
+      kind: none

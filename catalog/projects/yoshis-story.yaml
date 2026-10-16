@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "yoshis-story"
+name: "Yoshi's Story decompilation"
+game: "yoshi-s-story"
+repo: https://github.com/decompals/yoshis-story
+description: "Matching decompilation of Yoshi's Story."
+owners: [decompals]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa-en-ja"
+    label: "USA, En,Ja"
+    region: us
+    hash: { md5: "586a092e22604840973b82dfaceac77a" }
+    progress:
+      kind: none

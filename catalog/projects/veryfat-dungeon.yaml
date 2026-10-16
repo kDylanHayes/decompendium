@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "veryfat-dungeon"
+name: "Wii Fit Plus decompilation"
+game: "wii-fit-plus"
+repo: https://github.com/Tanline666/veryfat-dungeon
+description: "Matching decompilation of Wii Fit Plus."
+owners: [Tanline666]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "rfpe01"
+    label: "RFPE01 (USA)"
+    region: us
+    hash: { sha1: "9f79b83070e0c263257b4fa33b54983be0eefe82" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: RFPE01_report, path: report.json }

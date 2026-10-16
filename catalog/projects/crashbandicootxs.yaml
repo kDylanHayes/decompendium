@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "crashbandicootxs"
+name: "Crash Bandicoot XS decompilation"
+game: "crash-bandicoot-xs"
+repo: https://github.com/Almamu/CrashBandicootXS-decomp
+description: "Matching decompilation of Crash Bandicoot XS."
+owners: [Almamu]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "europe-en-fr-de-es-it-nl"
+    label: "Europe, En,Fr,De,Es,It,Nl"
+    region: eu
+    hash: { sha1: "bdd061e1b5187c0528928ec0ddb6886b1de16970" }
+    progress:
+      kind: none
+  - id: "europe-en-fr-de-es-it-nl-2"
+    label: "Europe, En,Fr,De,Es,It,Nl"
+    region: eu
+    hash: { sha1: "ee9234ca15ba2caa71fad7d6af71e27b2030ae0b" }
+    progress:
+      kind: none

@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "nfsmw"
+name: "Need for Speed: Most Wanted decompilation"
+game: "need-for-speed-most-wanted"
+repo: https://github.com/dbalatoni13/nfsmw
+description: "Matching decompilation of Need for Speed: Most Wanted."
+owners: [dbalatoni13]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gowe69"
+    label: "GOWE69 (USA)"
+    region: us
+    hash: { sha1: "9619ba57c9919f95f7f2ac951a2166a3517f91e3" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GOWE69_report, path: report.json }
+  - id: "sles-53558-a124"
+    label: "SLES-53558-A124"
+    hash: { sha1: "d01ad0bca1f88e1261cfaba35fccdbb8fba38d80" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLES-53558-A124_report, path: report.json }

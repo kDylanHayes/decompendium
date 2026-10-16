@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "monster-hunter-tri"
+name: "Monster Hunter Tri"
+platform: wii

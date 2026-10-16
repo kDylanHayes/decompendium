@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "rage-racer"
+name: "Rage Racer decompilation"
+game: "rage-racer"
+repo: https://github.com/khasinski/rage-racer-decomp
+description: "Matching decompilation of Rage Racer."
+owners: [khasinski]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "pal"
+    label: "PAL"
+    hash: { sha1: "2913e15648eddef40821c5f666460abc04155ee6" }
+    progress:
+      kind: none
+  - id: "usa"
+    label: "USA"
+    hash: { sha1: "2661e8bf18d209c98fd70d33e18ab88b10abd52b" }
+    progress:
+      kind: none

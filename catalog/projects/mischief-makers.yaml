@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "mischief-makers"
+name: "Mischief Makers decompilation"
+game: "mischief-makers"
+repo: https://github.com/Drahsid/mischief-makers
+description: "Matching decompilation of Mischief Makers."
+owners: [Drahsid]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa-rev-1"
+    label: "USA, Rev 1"
+    region: us
+    hash: { sha1: "811709c6473f74cbf283aa61f056e1de3046ec73" }
+    progress:
+      kind: none
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "5eb5a9d6f413a379fe297fe1542d21f728393a27" }
+    progress:
+      kind: none

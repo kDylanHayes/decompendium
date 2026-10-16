@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "xd"
+name: "Pokemon XD: Gale of Darkness decompilation"
+game: "pokemon-xd-gale-of-darkness"
+repo: https://github.com/TeamOrre/xd-decomp
+description: "Matching decompilation of Pokemon XD: Gale of Darkness."
+owners: [TeamOrre]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gxxe01"
+    label: "GXXE01 (USA)"
+    region: us
+    hash: { sha1: "ff9e752ead9914af0b363ae6c831a34ccce189d2" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GXXE01_report, path: report.json }
+  - id: "nxxj01"
+    label: "NXXJ01 (Japan)"
+    region: jp
+    hash: { sha1: "a7c85b92345a2f2a2980508917dbbb32cf5a2d34" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: NXXJ01_report, path: report.json }

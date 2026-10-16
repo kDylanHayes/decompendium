@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "boktai3"
+name: "Shin Bokura no Taiyou: Gyakushuu no Sabata decompilation"
+game: "shin-bokura-no-taiyou-gyakushuu-no-sabata"
+repo: https://github.com/moozilla/boktai3-decomp
+description: "Matching decompilation of Shin Bokura no Taiyou: Gyakushuu no Sabata."
+owners: [moozilla]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "japan"
+    label: "Japan"
+    region: jp
+    hash: { sha1: "2651c5e6875ac60abff734510d152166d211c87c" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: jp_report, path: report.json }

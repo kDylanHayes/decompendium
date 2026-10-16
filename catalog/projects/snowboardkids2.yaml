@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "snowboardkids2"
+name: "Snowboard Kids 2 decompilation"
+game: "snowboard-kids-2"
+repo: https://github.com/cdlewis/snowboardkids2-decomp
+description: "Matching decompilation of Snowboard Kids 2."
+owners: [cdlewis]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "5ce896fd64276948bc2b8cccd8cd51c25a9f32aa" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: us_report, path: report.json }

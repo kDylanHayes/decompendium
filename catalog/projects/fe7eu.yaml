@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "fe7eu"
+name: "Fire Emblem decompilation"
+game: "fire-emblem"
+repo: https://github.com/rrafifnanda/fe7eu-decomp
+description: "Matching decompilation of Fire Emblem."
+owners: [rrafifnanda]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "europe-en-fr-de"
+    label: "Europe, En,Fr,De"
+    region: eu
+    hash: { sha1: "c37e3bae84b53e6972ed7608541a62896fa5d6a3" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: eu_report, path: report.json }

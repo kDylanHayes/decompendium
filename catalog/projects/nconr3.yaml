@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "nconr3"
+name: "Naruto Shippuden: Clash of Ninja Revolution III: European Version decompilation"
+game: "naruto-shippuden-clash-of-ninja-revolution-iii-european-version"
+repo: https://github.com/daviddaco1/NCONR3decomp
+description: "Matching decompilation of Naruto Shippuden: Clash of Ninja Revolution III: European Version."
+owners: [daviddaco1]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "rnepda"
+    label: "RNEPDA (Europe)"
+    region: eu
+    hash: { sha1: "982a4f104272d2637fbbabbcad30aeead05d6e6d" }
+    progress:
+      kind: none

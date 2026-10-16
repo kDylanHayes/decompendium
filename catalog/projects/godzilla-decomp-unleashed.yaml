@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "godzilla-decomp-unleashed"
+name: "Godzilla: Unleashed decompilation"
+game: "godzilla-unleashed"
+repo: https://github.com/FallenWyvern/Godzilla---Decomp-Unleashed
+description: "Matching decompilation of Godzilla: Unleashed."
+owners: [FallenWyvern]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "rgze70"
+    label: "RGZE70 (USA)"
+    region: us
+    hash: { sha1: "24f4e5720e47a16f89ae4a6c3c072e6bb6d81070" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: RGZE70_report, path: report.json }

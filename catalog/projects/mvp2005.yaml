@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "mvp2005"
+name: "MVP Baseball 2005 decompilation"
+game: "mvp-baseball-2005"
+repo: https://github.com/ptitty12/mvp2005-decomp
+description: "Matching decompilation of MVP Baseball 2005."
+owners: [ptitty12]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gv4e69"
+    label: "GV4E69 (USA)"
+    region: us
+    hash: { sha1: "da6becdbea614d03c4b5eae9f8a0fb08e0a184dd" }
+    progress:
+      kind: none

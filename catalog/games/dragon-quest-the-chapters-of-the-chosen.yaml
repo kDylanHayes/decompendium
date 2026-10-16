@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "dragon-quest-the-chapters-of-the-chosen"
+name: "Dragon Quest: The Chapters of the Chosen"
+platform: nds

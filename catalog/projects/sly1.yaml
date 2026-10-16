@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "sly1"
+name: "Sly Cooper and the Thievius Raccoonus decompilation"
+game: "sly-cooper-and-the-thievius-raccoonus"
+repo: https://github.com/TheOnlyZac/sly1
+description: "Matching decompilation of Sly Cooper and the Thievius Raccoonus."
+owners: [TheOnlyZac]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "config"
+    label: "config"
+    hash: { sha1: "57dc305db57932ad3f1122966cdb695d2e62a47a" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SCUS_971.98_report, path: report.json }

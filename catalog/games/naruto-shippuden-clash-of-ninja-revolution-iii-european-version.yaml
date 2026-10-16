@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "naruto-shippuden-clash-of-ninja-revolution-iii-european-version"
+name: "Naruto Shippuden: Clash of Ninja Revolution III: European Version"
+platform: wii

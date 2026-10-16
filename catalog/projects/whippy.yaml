@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "whippy"
+name: "Kirby's Return to Dream Land decompilation"
+game: "kirby-s-return-to-dream-land"
+repo: https://github.com/Etrainquandt17/Whippy
+description: "Matching decompilation of Kirby's Return to Dream Land."
+owners: [Etrainquandt17]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "suke01"
+    label: "SUKE01 (USA)"
+    region: us
+    hash: { sha1: "8de035d768ef8db133901bbb2fd296c996b76781" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SUKE01_report, path: report.json }
+  - id: "sukk01"
+    label: "SUKK01 (Korea)"
+    region: kr
+    hash: { sha1: "69a103ae52dc8a917f34860f0c42323b2f6a0988" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SUKK01_report, path: report.json }

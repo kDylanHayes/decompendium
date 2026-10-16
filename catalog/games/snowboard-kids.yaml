@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "snowboard-kids"
+name: "Snowboard Kids"
+aliases: ["Snobo Kids"]
+platform: n64

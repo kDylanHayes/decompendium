@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "wario-land-shake-it"
+name: "Wario Land: Shake It!"
+platform: wii

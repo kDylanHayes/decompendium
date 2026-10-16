@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "summoner-a-goddess-reborn"
+name: "Summoner: A Goddess Reborn"
+platform: gc

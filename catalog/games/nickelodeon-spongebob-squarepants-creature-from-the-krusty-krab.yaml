@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "nickelodeon-spongebob-squarepants-creature-from-the-krusty-krab"
+name: "Nickelodeon SpongeBob SquarePants: Creature from the Krusty Krab"
+platform: gc

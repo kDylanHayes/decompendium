@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "bowsers-inside-story"
+name: "Mario & Luigi: Bowser's Inside Story decompilation"
+game: "mario-luigi-bowser-s-inside-story"
+repo: https://github.com/istornz/bowsers-inside-story-decomp
+description: "Matching decompilation of Mario & Luigi: Bowser's Inside Story."
+owners: [istornz]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa-en-fr-es"
+    label: "USA, En,Fr,Es"
+    region: us
+    hash: { sha1: "099b07d55c43601c4866d475032ab9431356cc5d" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: usa_report, path: report.json }

@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "mario-party-6"
+name: "Mario Party 6"
+platform: gc

@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "pacman-party"
+name: "Pac-Man Party decompilation"
+game: "pac-man-party"
+repo: https://github.com/Code-6dof/pacman-party-decomp
+description: "Matching decompilation of Pac-Man Party."
+owners: [Code-6dof]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "sp7eaf"
+    label: "SP7EAF (USA)"
+    region: us
+    hash: { sha1: "a29f94afcae47726e4e20b4c0852611820aa29a9" }
+    progress:
+      kind: none

@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "ty-the-tasmanian-tiger"
+name: "Ty the Tasmanian Tiger"
+platform: gc

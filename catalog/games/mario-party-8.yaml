@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "mario-party-8"
+name: "Mario Party 8"
+platform: wii

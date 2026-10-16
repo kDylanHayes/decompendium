@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "harvest-moon-back-to-nature"
+name: "Harvest Moon: Back to Nature"
+platform: ps1

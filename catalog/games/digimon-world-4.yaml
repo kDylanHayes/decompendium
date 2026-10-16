@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "digimon-world-4"
+name: "Digimon World 4"
+platform: gc

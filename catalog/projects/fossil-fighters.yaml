@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "fossil-fighters"
+name: "Fossil Fighters decompilation"
+game: "fossil-fighters"
+repo: https://github.com/Sojews/fossil-fighters-decomp
+description: "Matching decompilation of Fossil Fighters."
+owners: [Sojews]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "8148a65040b5085337b76e6051601da1b1fc28ef" }
+    progress:
+      kind: none

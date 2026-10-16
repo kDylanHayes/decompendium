@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "brave-fencer-musashi"
+name: "Brave Fencer Musashi"
+platform: ps1

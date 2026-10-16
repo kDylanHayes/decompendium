@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "lsw1"
+name: "LEGO Star Wars: The Video Game decompilation"
+game: "lego-star-wars-the-video-game"
+repo: https://github.com/ellierocks/lsw1-decomp
+description: "Matching decompilation of LEGO Star Wars: The Video Game."
+owners: [ellierocks]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gl5e4f"
+    label: "GL5E4F (USA)"
+    region: us
+    hash: { sha1: "95cca08a19224775d1a8d6cc64601fb7d0080981" }
+    progress:
+      kind: none

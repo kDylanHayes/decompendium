@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "yoshi-s-story"
+name: "Yoshi's Story"
+platform: n64

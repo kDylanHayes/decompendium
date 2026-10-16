@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "pokestadium"
+name: "Pokemon Stadium decompilation"
+game: "pokemon-stadium"
+repo: https://github.com/pret/pokestadium
+description: "Matching decompilation of Pokemon Stadium."
+owners: [pret]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { md5: "ed1378bc12115f71209a77844965ba50" }
+    progress:
+      kind: none
+  - id: "usa-2"
+    label: "USA"
+    region: us
+    hash: { md5: "1561c75d11cedf356a8ddb1a4a5f9d5d" }
+    progress:
+      kind: none

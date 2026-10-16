@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "wave-race-64"
+name: "Wave Race 64: Kawasaki Jet Ski decompilation"
+game: "wave-race-64-kawasaki-jet-ski"
+repo: https://github.com/LLONSIT/Wave-Race-64
+description: "Matching decompilation of Wave Race 64: Kawasaki Jet Ski."
+owners: [LLONSIT]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa-rev-1"
+    label: "USA, Rev 1"
+    region: us
+    hash: { sha1: "508dfc2d4caa42b6f6de5263d0aed5e44ac7966a" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: us_report, path: report.json }

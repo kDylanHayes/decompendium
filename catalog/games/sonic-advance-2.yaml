@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "sonic-advance-2"
+name: "Sonic Advance 2"
+aliases: ["Sonic Advance"]
+platform: gba

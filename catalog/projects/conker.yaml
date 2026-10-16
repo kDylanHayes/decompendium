@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "conker"
+name: "Conker's Bad Fur Day decompilation"
+game: "conker-s-bad-fur-day"
+repo: https://github.com/mkst/conker
+description: "Matching decompilation of Conker's Bad Fur Day."
+owners: [mkst]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "europe"
+    label: "Europe"
+    region: eu
+    hash: { sha1: "ee7bc6656fd1e1d9ffb3d19add759f28b88df710" }
+    progress:
+      kind: none
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "4cbadd3c4e0729dec46af64ad018050eada4f47a" }
+    progress:
+      kind: none

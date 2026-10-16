@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "sa2b"
+name: "Sonic Adventure 2: Battle decompilation"
+game: "sonic-adventure-2-battle"
+repo: https://github.com/roeming/SA2B
+description: "Matching decompilation of Sonic Adventure 2: Battle."
+owners: [roeming]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gsne8p"
+    label: "GSNE8P (USA)"
+    region: us
+    hash: { sha1: "e4c50f32242a3cd36cdc8ae776661601a52130a2" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GSNE8P_report, path: report.json }

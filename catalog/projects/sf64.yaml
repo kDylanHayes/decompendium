@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "sf64"
+name: "Star Fox 64 decompilation"
+game: "star-fox-64"
+repo: https://github.com/sonicdcer/sf64
+description: "Matching decompilation of Star Fox 64."
+owners: [sonicdcer]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa-rev-1"
+    label: "USA, Rev 1"
+    region: us
+    hash: { md5: "741a94eee093c4c8684e66b89f8685e8" }
+    progress:
+      kind: none

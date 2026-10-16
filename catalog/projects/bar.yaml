@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "bar"
+name: "Beetle Adventure Racing! decompilation"
+game: "beetle-adventure-racing"
+repo: https://github.com/synamaxmusic/bar-decomp
+description: "Matching decompilation of Beetle Adventure Racing!."
+owners: [synamaxmusic]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa-en-fr-de"
+    label: "USA, En,Fr,De"
+    region: us
+    hash: { sha1: "e5ab4d226c08d22f68a2edcc48870203e67454b8" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: us_report, path: report.json }

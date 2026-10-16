@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "recvx-gc"
+name: "Resident Evil: Code: Veronica X decompilation"
+game: "resident-evil-code-veronica-x"
+repo: https://github.com/fmil95/recvx-gc-decomp
+description: "Matching decompilation of Resident Evil: Code: Veronica X."
+owners: [fmil95]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gcde08"
+    label: "GCDE08 (USA)"
+    region: us
+    hash: { sha1: "588949393623f6d776c13ede196ab8c2aa16276b" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GCDE08_report, path: report.json }

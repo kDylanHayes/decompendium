@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "super-mario-all-star"
+name: "Super Mario All-Stars decompilation"
+game: "super-mario-all-stars"
+repo: https://github.com/ThePlayerRolo/Super-Mario-All-Star-Decomp
+description: "Matching decompilation of Super Mario All-Stars."
+owners: [ThePlayerRolo]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "svme01"
+    label: "SVME01 (USA)"
+    region: us
+    hash: { sha1: "f79fe10aa47feb1cb0665aa5cbb9bbeda3c2ba51" }
+    progress:
+      kind: none

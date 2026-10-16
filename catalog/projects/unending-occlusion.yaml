@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "unending-occlusion"
+name: "Eternal Darkness: Sanity's Requiem decompilation"
+game: "eternal-darkness-sanity-s-requiem"
+repo: https://github.com/PattyTrish/unending-occlusion
+description: "Matching decompilation of Eternal Darkness: Sanity's Requiem."
+owners: [PattyTrish]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gede01"
+    label: "GEDE01 (USA)"
+    region: us
+    hash: { sha1: "ea24b6af954876ce072562ff39cdb4c81d32be1f" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GEDE01_report, path: report.json }

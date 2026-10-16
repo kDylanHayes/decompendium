@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "dqix"
+name: "Dragon Quest IX: Hoshizora no Mamoribito decompilation"
+game: "dragon-quest-ix-hoshizora-no-mamoribito"
+repo: https://github.com/DQIX/dqix-decomp
+description: "Matching decompilation of Dragon Quest IX: Hoshizora no Mamoribito."
+owners: [DQIX]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "japan"
+    label: "Japan"
+    region: jp
+    hash: { sha1: "4b219246c06343ad56cedfb183ea3bd737776eda" }
+    progress:
+      kind: none
+  - id: "usa-en-fr-es"
+    label: "USA, En,Fr,Es"
+    region: us
+    hash: { sha1: "c7c3014c237900c8281289b8bc76a781969b6278" }
+    progress:
+      kind: none

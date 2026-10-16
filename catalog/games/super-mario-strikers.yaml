@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "super-mario-strikers"
+name: "Super Mario Strikers"
+aliases: ["Mario Smash Football"]
+platform: gc

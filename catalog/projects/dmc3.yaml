@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "dmc3"
+name: "Devil May Cry 3 decompilation"
+game: "devil-may-cry-3"
+repo: https://github.com/WadeWinningWilson/dmc3-decomp
+description: "Matching decompilation of Devil May Cry 3."
+owners: [WadeWinningWilson]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "slpm-658-80"
+    label: "SLPM_658.80"
+    hash: { sha1: "cf33e667f576d7f6eda654763579f0a3cd812d70" }
+    progress:
+      kind: none
+  - id: "slus-209-64"
+    label: "SLUS_209.64"
+    hash: { sha1: "d08b525bac178360846b21f0f396283c671706d9" }
+    progress:
+      kind: none

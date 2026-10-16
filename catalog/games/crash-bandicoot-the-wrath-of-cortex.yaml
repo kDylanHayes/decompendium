@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "crash-bandicoot-the-wrath-of-cortex"
+name: "Crash Bandicoot: The Wrath of Cortex"
+platform: gc

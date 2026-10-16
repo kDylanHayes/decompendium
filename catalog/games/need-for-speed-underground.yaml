@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "need-for-speed-underground"
+name: "Need for Speed: Underground"
+platform: gc

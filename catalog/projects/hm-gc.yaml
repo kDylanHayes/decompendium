@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "hm-gc"
+name: "Disney's The Haunted Mansion decompilation"
+game: "disney-s-the-haunted-mansion"
+repo: https://github.com/link5669/hm-gc-decomp
+description: "Matching decompilation of Disney's The Haunted Mansion."
+owners: [link5669]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "ghye6s"
+    label: "GHYE6S (USA)"
+    region: us
+    hash: { sha1: "d0f5f43d43c16bc361b65b0c8002bee7116d0f07" }
+    progress:
+      kind: none

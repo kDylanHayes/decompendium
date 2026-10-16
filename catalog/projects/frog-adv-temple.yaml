@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "frog-adv-temple"
+name: "Frogger's Adventures: Temple of the Frog decompilation"
+game: "frogger-s-adventures-temple-of-the-frog"
+repo: https://github.com/JRickey/frog-adv-temple-decomp
+description: "Matching decompilation of Frogger's Adventures: Temple of the Frog."
+owners: [JRickey]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa-en-fr-de-es-it"
+    label: "USA, En,Fr,De,Es,It"
+    region: us
+    hash: { sha1: "7b4c27009198df18555e63fb5dcad223eaf09815" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: us_report, path: report.json }

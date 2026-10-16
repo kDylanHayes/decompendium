@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "drmario64-gc"
+name: "Nintendo Puzzle Collection decompilation"
+game: "nintendo-puzzle-collection"
+repo: https://github.com/NewGBAXL/drmario64-gc
+description: "Matching decompilation of Nintendo Puzzle Collection."
+owners: [NewGBAXL]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gpzj01"
+    label: "GPZJ01 (Japan)"
+    region: jp
+    hash: { sha1: "00ab0f4fd4cff96b9087ed1176f9a6e839b57dde" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GPZJ01_report, path: report.json }

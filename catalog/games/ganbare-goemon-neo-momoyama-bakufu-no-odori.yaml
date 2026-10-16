@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "ganbare-goemon-neo-momoyama-bakufu-no-odori"
+name: "Ganbare Goemon: Neo Momoyama Bakufu no Odori"
+aliases: ["Mystical Ninja Starring Goemon"]
+platform: n64

@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "re4"
+name: "Resident Evil 4 decompilation"
+game: "resident-evil-4"
+repo: https://github.com/adonis-singh/re4
+description: "Matching decompilation of Resident Evil 4."
+owners: [adonis-singh]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "g4be08"
+    label: "G4BE08 (USA)"
+    region: us
+    hash: { sha1: "6b9aa68da68edae786b5a519590776ce3eac85a5" }
+    progress:
+      kind: none

@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "kirby-nightmare-in-dream-land"
+name: "Kirby: Nightmare in Dream Land"
+platform: gba

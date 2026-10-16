@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "rhf"
+name: "Rhythm Heaven Fever decompilation"
+game: "rhythm-heaven-fever"
+repo: https://github.com/conhlee/rhf
+description: "Matching decompilation of Rhythm Heaven Fever."
+owners: [conhlee]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "some01"
+    label: "SOME01 (USA)"
+    region: us
+    hash: { sha1: "d96d2c7e50b0c713cb8fcb18835258351ada5576" }
+    progress:
+      kind: none

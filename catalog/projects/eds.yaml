@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "eds"
+name: "Yu-Gi-Oh!: The Eternal Duelist Soul decompilation"
+game: "yu-gi-oh-the-eternal-duelist-soul"
+repo: https://github.com/CosmicScribe64/eds-decomp
+description: "Matching decompilation of Yu-Gi-Oh!: The Eternal Duelist Soul."
+owners: [CosmicScribe64]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "510fbba212aca9bab95ea12f8fd933e62ee34dea" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: AY5E_report, path: report.json }

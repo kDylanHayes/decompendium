@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "cv64"
+name: "Castlevania decompilation"
+game: "castlevania"
+repo: https://github.com/k64ret/cv64
+description: "Matching decompilation of Castlevania."
+owners: [k64ret]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "989a28782ed6b0bc489a1bbbd7bec355d8f2707e" }
+    progress:
+      kind: none

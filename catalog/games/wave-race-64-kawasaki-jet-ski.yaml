@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "wave-race-64-kawasaki-jet-ski"
+name: "Wave Race 64: Kawasaki Jet Ski"
+platform: n64

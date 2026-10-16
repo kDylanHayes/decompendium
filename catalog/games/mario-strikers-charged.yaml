@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "mario-strikers-charged"
+name: "Mario Strikers Charged"
+aliases: ["Mario Power Soccer", "Mario Strikers Charged Football"]
+platform: wii

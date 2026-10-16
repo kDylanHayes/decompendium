@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "resident-evil-outbreak"
+name: "Resident Evil Outbreak"
+aliases: ["Biohazard: Outbreak", "Biohazard: Outbreak: File 2"]
+platform: ps2

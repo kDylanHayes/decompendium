@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "rb3-2"
+name: "Rock Band 3 decompilation"
+game: "rock-band-3"
+repo: https://github.com/freeqaz/rb3
+description: "Matching decompilation of Rock Band 3."
+owners: [freeqaz]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "szbe69"
+    label: "SZBE69 (USA)"
+    region: us
+    hash: { sha1: "189b001188a2f8ab769e72364440022407fe09d2" }
+    progress:
+      kind: none
+  - id: "szbe69-b8"
+    label: "SZBE69_B8 (USA)"
+    region: us
+    hash: { sha1: "e26b3daf41886f0d09670135910f2510cd093ae8" }
+    progress:
+      kind: none

@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "afe"
+name: "Doubutsu no Mori e+ decompilation"
+game: "doubutsu-no-mori-e"
+repo: https://github.com/ACreTeam/afe-decomp
+description: "Matching decompilation of Doubutsu no Mori e+."
+owners: [ACreTeam]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gaej01-00"
+    label: "GAEJ01_00 (Japan)"
+    region: jp
+    hash: { sha1: "25d65de224306e90b12e89613c5658e4214c63b2" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GAEJ01_00_report, path: report.json }
+  - id: "gaej01-01"
+    label: "GAEJ01_01 (Japan)"
+    region: jp
+    hash: { sha1: "7574bec2692efc921c0975c52af41038f3fb7093" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GAEJ01_01_report, path: report.json }

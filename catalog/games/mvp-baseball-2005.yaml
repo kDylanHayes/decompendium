@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "mvp-baseball-2005"
+name: "MVP Baseball 2005"
+platform: gc

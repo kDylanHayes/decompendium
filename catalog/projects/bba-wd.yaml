@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "bba-wd"
+name: "Big Brain Academy: Wii Degree decompilation"
+game: "big-brain-academy-wii-degree"
+repo: https://github.com/vabold/bba-wd
+description: "Matching decompilation of Big Brain Academy: Wii Degree."
+owners: [vabold]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "rywe01"
+    label: "RYWE01 (USA)"
+    region: us
+    hash: { sha1: "7a45e56500a435d97e80438915d944c14dc67f9c" }
+    progress:
+      kind: none

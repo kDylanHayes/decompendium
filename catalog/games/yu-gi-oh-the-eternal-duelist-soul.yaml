@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "yu-gi-oh-the-eternal-duelist-soul"
+name: "Yu-Gi-Oh!: The Eternal Duelist Soul"
+aliases: ["Let's Yoga!"]
+platform: gba

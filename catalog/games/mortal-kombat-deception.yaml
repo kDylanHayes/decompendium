@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "mortal-kombat-deception"
+name: "Mortal Kombat: Deception"
+platform: gc

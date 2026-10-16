@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "garigari"
+name: "Super Mario Galaxy 2 decompilation"
+game: "super-mario-galaxy-2"
+repo: https://github.com/SMGCommunity/Garigari
+description: "Matching decompilation of Super Mario Galaxy 2."
+owners: [SMGCommunity]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "sb4e01"
+    label: "SB4E01 (USA)"
+    region: us
+    hash: { sha1: "7d79810889824edd01c4ff02624713060a69818c" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SB4E01_report, path: report.json }

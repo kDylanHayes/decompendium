@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "dwds"
+name: "Digimon World DS decompilation"
+game: "digimon-world-ds"
+repo: https://github.com/ReGame-Labs/dwds_decomp
+description: "Matching decompilation of Digimon World DS."
+owners: [ReGame-Labs]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "225ffc25aaf1ab4006fcdce5896d411a8fee870f" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: usa_report, path: report.json }

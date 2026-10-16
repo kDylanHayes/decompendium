@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "luigi-s-mansion"
+name: "Luigi's Mansion"
+aliases: ["Luigi Mansion"]
+platform: gc

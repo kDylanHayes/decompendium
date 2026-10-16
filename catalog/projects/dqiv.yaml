@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "dqiv"
+name: "Dragon Quest: The Chapters of the Chosen decompilation"
+game: "dragon-quest-the-chapters-of-the-chosen"
+repo: https://github.com/GoldieLeGenie/DQIV-DECOMP
+description: "Matching decompilation of Dragon Quest: The Chapters of the Chosen."
+owners: [GoldieLeGenie]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "europe-en-fr-de-es-it"
+    label: "Europe, En,Fr,De,Es,It"
+    region: eu
+    hash: { sha1: "a9842d8d21df070e620779f461ed7cee4ca88b52" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: eur_report, path: report.json }

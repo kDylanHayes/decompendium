@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "hmbtn"
+name: "Harvest Moon: Back to Nature decompilation"
+game: "harvest-moon-back-to-nature"
+repo: https://github.com/coalslav/hmbtn-decomp
+description: "Matching decompilation of Harvest Moon: Back to Nature."
+owners: [coalslav]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "binaries"
+    label: "binaries"
+    hash: { sha1: "07fbcffbdd96080d39939e569f84abe76b9d1039" }
+    progress:
+      kind: none
+  - id: "disc"
+    label: "disc"
+    hash: { sha1: "f4ebfcbcf21481a85d9a7bd4f70e19ec2057a91d" }
+    progress:
+      kind: none

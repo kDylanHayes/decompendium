@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "kar"
+name: "Kirby Air Ride decompilation"
+game: "kirby-air-ride"
+repo: https://github.com/wowjinxy/KAR
+description: "Matching decompilation of Kirby Air Ride."
+owners: [wowjinxy]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gkye01"
+    label: "GKYE01 (USA)"
+    region: us
+    hash: { sha1: "977533bb96e6a16e127946396489be1b4164ac42" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GKYE01_report, path: report.json }
+  - id: "gkyj01"
+    label: "GKYJ01 (Japan)"
+    region: jp
+    hash: { sha1: "e901b9912af1b622c1f6d16fab6efe6cf505f108" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GKYJ01_report, path: report.json }
+  - id: "gkyp01"
+    label: "GKYP01 (Europe)"
+    region: eu
+    hash: { sha1: "14e43ef2e3d971bbb6aae596a175ac485ff242a8" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GKYP01_report, path: report.json }

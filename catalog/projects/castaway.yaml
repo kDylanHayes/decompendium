@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "castaway"
+name: "The Sims 2: Castaway decompilation"
+game: "the-sims-2-castaway"
+repo: https://github.com/HaydnTrigg/Castaway
+description: "Matching decompilation of The Sims 2: Castaway."
+owners: [HaydnTrigg]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "r42p69"
+    label: "R42P69 (Europe)"
+    region: eu
+    hash: { sha1: "11e139f12c86f46ea1563e059a0c3c67bfa29d90" }
+    progress:
+      kind: none

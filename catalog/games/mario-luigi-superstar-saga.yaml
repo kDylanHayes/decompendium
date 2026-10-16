@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "mario-luigi-superstar-saga"
+name: "Mario & Luigi: Superstar Saga"
+platform: gba

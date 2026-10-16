@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "the-sims-2-castaway"
+name: "The Sims 2: Castaway"
+platform: wii

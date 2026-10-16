@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "super-smash-bros"
+name: "Super Smash Bros."
+platform: n64

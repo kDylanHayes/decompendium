@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "hm-mm"
+name: "Harvest Moon: Magical Melody decompilation"
+game: "harvest-moon-magical-melody-gc"
+repo: https://github.com/jon-bassi/hm-mm
+description: "Matching decompilation of Harvest Moon: Magical Melody."
+owners: [jon-bassi]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "g4aee9"
+    label: "G4AEE9 (USA)"
+    region: us
+    hash: { sha1: "5977972cd798d60ecfcf5c1f26a86dcecc36446f" }
+    progress:
+      kind: none

@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "frogger-s-adventures-temple-of-the-frog"
+name: "Frogger's Adventures: Temple of the Frog"
+platform: gba

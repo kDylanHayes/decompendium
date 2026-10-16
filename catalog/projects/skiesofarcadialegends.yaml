@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "skiesofarcadialegends"
+name: "Skies of Arcadia: Legends decompilation"
+game: "skies-of-arcadia-legends"
+repo: https://github.com/Rainchus/SkiesOfArcadiaLegends
+description: "Matching decompilation of Skies of Arcadia: Legends."
+owners: [Rainchus]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "geae8p"
+    label: "GEAE8P (USA)"
+    region: us
+    hash: { sha1: "8c0e278126fa3b0173400fdb632038172743cc13" }
+    progress:
+      kind: none

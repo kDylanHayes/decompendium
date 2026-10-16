@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "ogws"
+name: "Wii Sports decompilation"
+game: "wii-sports"
+repo: https://github.com/doldecomp/ogws
+description: "Matching decompilation of Wii Sports."
+owners: [doldecomp]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "rspe01-00"
+    label: "RSPE01_00 (USA)"
+    region: us
+    hash: { sha1: "affe3e260e4ebf99f13ef291c9504de1bd0bb7ec" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: RSPE01_00_report, path: report.json }
+  - id: "rspe01-01"
+    label: "RSPE01_01 (USA)"
+    region: us
+    hash: { sha1: "8bb422971b88b5551a37de98db69557df7b46637" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: RSPE01_01_report, path: report.json }

@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "thelaststory"
+name: "The Last Story decompilation"
+game: "the-last-story"
+repo: https://github.com/TheSoraHD/TheLastStoryDecomp
+description: "Matching decompilation of The Last Story."
+owners: [TheSoraHD]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "slsp01"
+    label: "SLSP01 (Europe)"
+    region: eu
+    hash: { sha1: "d4275869483fbc681f2ce6eddfbd9742e40c6b64" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLSP01_report, path: report.json }

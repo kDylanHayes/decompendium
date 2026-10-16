@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "resident-evil-4"
+name: "Resident Evil 4"
+platform: gc

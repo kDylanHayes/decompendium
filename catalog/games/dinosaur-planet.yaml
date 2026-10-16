@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "dinosaur-planet"
+name: "Dinosaur Planet"
+platform: n64

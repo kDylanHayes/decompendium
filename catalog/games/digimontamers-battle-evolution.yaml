@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "digimontamers-battle-evolution"
+name: "DigimonTamers: Battle Evolution"
+aliases: ["Digimon Rumble Arena"]
+platform: ps1

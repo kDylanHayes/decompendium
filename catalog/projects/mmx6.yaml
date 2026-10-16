@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "mmx6"
+name: "Mega Man X6 decompilation"
+game: "mega-man-x6"
+repo: https://github.com/anzaldoivan/mmx6
+description: "Matching decompilation of Mega Man X6."
+owners: [anzaldoivan]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "check-slus-013-95"
+    label: "check.SLUS_013.95"
+    hash: { sha1: "667ce8f792cfaa69abe6e999a87513f798bbcac4" }
+    progress:
+      kind: none
+  - id: "check-rock-00"
+    label: "check.rock_00"
+    hash: { sha1: "69773d2a408885d98d647055d17dc1b282fc5213" }
+    progress:
+      kind: none
+  - id: "check-rock-01"
+    label: "check.rock_01"
+    hash: { sha1: "d74b4b48b82f2492b6eda8649394a0c4f8f1c2ee" }
+    progress:
+      kind: none
+  - id: "check-rock-02"
+    label: "check.rock_02"
+    hash: { sha1: "916236d52eb0d35f6f983a9f598b94180e9a62db" }
+    progress:
+      kind: none
+  - id: "check-rock-03"
+    label: "check.rock_03"
+    hash: { sha1: "7689ce69bda8ccae68752ff6fade03c396a44d7b" }
+    progress:
+      kind: none
+  - id: "check-rock-04"
+    label: "check.rock_04"
+    hash: { sha1: "5ed3f80f580908d8df4e9a9bc408c2880b9ba1ad" }
+    progress:
+      kind: none
+  - id: "check-rock-05"
+    label: "check.rock_05"
+    hash: { sha1: "3e39d45c0e054e772c0bafa060f1e33b0e43259e" }
+    progress:
+      kind: none
+  - id: "check-rock-06"
+    label: "check.rock_06"
+    hash: { sha1: "90557cb4965c0578b32a9169bcc57eb97f1ba49b" }
+    progress:
+      kind: none

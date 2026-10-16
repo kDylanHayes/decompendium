@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "lombyte"
+name: "Ratchet & Clank decompilation"
+game: "ratchet-clank"
+repo: https://github.com/lombyte-project/Lombyte
+description: "Matching decompilation of Ratchet & Clank."
+owners: [lombyte-project]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "us"
+    label: "US"
+    hash: { sha1: "72fd1de379dafd8f243dceeb3be50980f3fd3cd5" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SCUS_971.99_report, path: report.json }

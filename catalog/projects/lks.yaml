@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "lks"
+name: "Little King's Story decompilation"
+game: "little-king-s-story"
+repo: https://github.com/axiinyaa/lks_decomp
+description: "Matching decompilation of Little King's Story."
+owners: [axiinyaa]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "ro3exj"
+    label: "RO3EXJ (USA)"
+    region: us
+    hash: { sha1: "07ffee3033bb1784c0da378f8034271ef43e7c28" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: RO3EXJ_report, path: report.json }

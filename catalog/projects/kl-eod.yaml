@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "kl-eod"
+name: "Klonoa: Empire of Dreams decompilation"
+game: "klonoa-empire-of-dreams"
+repo: https://github.com/Dream-Atelier/kl-eod-decomp
+description: "Matching decompilation of Klonoa: Empire of Dreams."
+owners: [Dream-Atelier]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "a0a298d9dba1ba15d04a42fc2eb35893d1a9569b" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: us_report, path: report.json }

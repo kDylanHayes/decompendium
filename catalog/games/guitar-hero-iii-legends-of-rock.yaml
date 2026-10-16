@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "guitar-hero-iii-legends-of-rock"
+name: "Guitar Hero III: Legends of Rock"
+platform: wii

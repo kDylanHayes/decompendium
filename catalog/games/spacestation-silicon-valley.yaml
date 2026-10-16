@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "spacestation-silicon-valley"
+name: "SpaceStation Silicon Valley"
+platform: n64

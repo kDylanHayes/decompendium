@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "chameleontwistv1-0-jp"
+name: "Chameleon Twist decompilation"
+game: "chameleon-twist"
+repo: https://github.com/chameleonTwistRet/chameleonTwistv1.0-JP
+description: "Matching decompilation of Chameleon Twist."
+owners: [chameleonTwistRet]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "japan"
+    label: "Japan"
+    region: jp
+    hash: { sha1: "a1faf5c4ca961ab2c029c84ecfa556755e7f70c8" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: jp_report, path: report.json }

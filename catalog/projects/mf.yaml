@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "mf"
+name: "Metroid Fusion decompilation"
+game: "metroid-fusion"
+repo: https://github.com/metroidret/mf
+description: "Matching decompilation of Metroid Fusion."
+owners: [metroidret]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "ca33f4348c2c05dd330d37b97e2c5a69531dfe87" }
+    progress:
+      kind: none

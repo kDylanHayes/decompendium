@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "acww"
+name: "Animal Crossing: Wild World decompilation"
+game: "animal-crossing-wild-world"
+repo: https://github.com/6elphegor/acww-decomp
+description: "Matching decompilation of Animal Crossing: Wild World."
+owners: [6elphegor]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa-rev-1"
+    label: "USA, Rev 1"
+    region: us
+    hash: { sha1: "77fde3e30e1e6068395d1f96ea63be569b61c351" }
+    progress:
+      kind: none

@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "dcb"
+name: "Digimon: Digital Card Battle decompilation"
+game: "digimon-digital-card-battle"
+repo: https://github.com/ReGame-Labs/dcb_decomp
+description: "Matching decompilation of Digimon: Digital Card Battle."
+owners: [ReGame-Labs]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "sles-039-00"
+    label: "SLES_039.00"
+    hash: { sha1: "050ae623135d5c233c255c9e76956eaeabd2fa6e" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLES_039.00_report, path: report.json }
+  - id: "slps-025-06"
+    label: "SLPS_025.06"
+    hash: { sha1: "447c5256757685728bfbecaf3b3b2e7c0164b6cc" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLPS_025.06_report, path: report.json }
+  - id: "slus-013-28"
+    label: "SLUS_013.28"
+    hash: { sha1: "fa4e03b5e0671dce399a35f2747080ced492d2c3" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLUS_013.28_report, path: report.json }

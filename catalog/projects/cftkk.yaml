@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "cftkk"
+name: "Nickelodeon SpongeBob SquarePants: Creature from the Krusty Krab decompilation"
+game: "nickelodeon-spongebob-squarepants-creature-from-the-krusty-krab"
+repo: https://github.com/LivewireCB/CFTKK-Decomp
+description: "Matching decompilation of Nickelodeon SpongeBob SquarePants: Creature from the Krusty Krab."
+owners: [LivewireCB]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gq4e78"
+    label: "GQ4E78 (USA)"
+    region: us
+    hash: { sha1: "0123456789abcdef0123456789abcdef01234567" }
+    progress:
+      kind: none

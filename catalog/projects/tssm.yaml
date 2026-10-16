@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "tssm"
+name: "Nickelodeon The SpongeBob SquarePants Movie decompilation"
+game: "nickelodeon-the-spongebob-squarepants-movie"
+repo: https://github.com/bfbbdecomp/tssm
+description: "Matching decompilation of Nickelodeon The SpongeBob SquarePants Movie."
+owners: [bfbbdecomp]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "ggve78"
+    label: "GGVE78 (USA)"
+    region: us
+    hash: { sha1: "f772db7f38b9b55e27169822ed17184fa2dc2574" }
+    progress:
+      kind: none

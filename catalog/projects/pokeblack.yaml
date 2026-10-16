@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "pokeblack"
+name: "Pokemon: Black Version decompilation"
+game: "pokemon-black-version"
+repo: https://github.com/squiddonaut/pokeblack
+description: "Matching decompilation of Pokemon: Black Version."
+owners: [squiddonaut]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa-europe-ndsi-enhanced"
+    label: "USA, Europe, NDSi Enhanced"
+    region: us
+    hash: { sha1: "26ad0b9967aa279c4a266ee69f52b9b2332399a5" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: black.us_report, path: report.json }

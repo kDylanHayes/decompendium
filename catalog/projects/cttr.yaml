@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "cttr"
+name: "Crash Tag Team Racing decompilation"
+game: "crash-tag-team-racing"
+repo: https://github.com/bluisblu/cttr
+description: "Matching decompilation of Crash Tag Team Racing."
+owners: [bluisblu]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "g9re7d"
+    label: "G9RE7D (USA)"
+    region: us
+    hash: { sha1: "2156f6152170740733706877fd4ae1d2cff48608" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: G9RE7D_report, path: report.json }
+  - id: "g9rj7d"
+    label: "G9RJ7D (Japan)"
+    region: jp
+    hash: { sha1: "f54a5f373fca710fd7951232791a525ed5b0745e" }
+    progress:
+      kind: none

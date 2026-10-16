@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "doubutsu-no-mori"
+name: "Doubutsu no Mori"
+platform: n64

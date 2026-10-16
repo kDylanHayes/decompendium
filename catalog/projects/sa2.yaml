@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "sa2"
+name: "Sonic Advance 2 decompilation"
+game: "sonic-advance-2"
+repo: https://github.com/SAT-R/sa2
+description: "Matching decompilation of Sonic Advance 2."
+owners: [SAT-R]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "europe-en-ja-fr-de-es"
+    label: "Europe, En,Ja,Fr,De,Es"
+    region: eu
+    hash: { sha1: "eb00f101af23d728075ac2117e27ecd8a4b4c3e9" }
+    progress:
+      kind: none
+  - id: "usa-en-ja-fr-de-es-it"
+    label: "USA, En,Ja,Fr,De,Es,It"
+    region: us
+    hash: { sha1: "7bcd6a07af7c894746fa28073fe0c0e34408022d" }
+    progress:
+      kind: none
+  - id: "europe-en-ja-fr-de-es-it"
+    label: "Europe, En,Ja,Fr,De,Es,It"
+    region: eu
+    hash: { sha1: "b0f64bdca097f2de8f05ac4c8caea2b80c5faeb1" }
+    progress:
+      kind: none
+  - id: "japan-en-ja-fr-de-es-it"
+    label: "Japan, En,Ja,Fr,De,Es,It"
+    region: jp
+    hash: { sha1: "dffd0188fc78154b42b401398a224ae0713edf23" }
+    progress:
+      kind: none
+  - id: "japan-en-ja-fr-de-es-it-virtual-console"
+    label: "Japan, En,Ja,Fr,De,Es,It, Virtual Console"
+    region: jp
+    hash: { sha1: "2aa6ee2cf2b0ebfafbea6d6d24165b252a7e329e" }
+    progress:
+      kind: none

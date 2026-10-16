@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "star-fox-64"
+name: "Star Fox 64"
+platform: n64

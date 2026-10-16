@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "diddy-kong-racing"
+name: "Diddy Kong Racing"
+platform: n64

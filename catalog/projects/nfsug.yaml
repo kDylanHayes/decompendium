@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "nfsug"
+name: "Need for Speed: Underground decompilation"
+game: "need-for-speed-underground"
+repo: https://github.com/dbalatoni13/nfsug
+description: "Matching decompilation of Need for Speed: Underground."
+owners: [dbalatoni13]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gndp8p"
+    label: "GNDP8P (Europe)"
+    region: eu
+    hash: { sha1: "f7df6349739089094409b89bb2e5f7cb54c0a756" }
+    progress:
+      kind: none

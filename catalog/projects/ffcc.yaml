@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "ffcc"
+name: "Final Fantasy Crystal Chronicles decompilation"
+game: "final-fantasy-crystal-chronicles"
+repo: https://github.com/zcanann/FFCC-Decomp
+description: "Matching decompilation of Final Fantasy Crystal Chronicles."
+owners: [zcanann]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gcce01"
+    label: "GCCE01 (USA)"
+    region: us
+    hash: { sha1: "ba57add3e93ea97b0a93ed77037173217bc89eaa" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GCCE01_report, path: report.json }
+  - id: "gccjgc"
+    label: "GCCJGC (Japan)"
+    region: jp
+    hash: { sha1: "81d3be06499abe9273dcabbb023ed6095f7b34b6" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GCCJGC_report, path: report.json }
+  - id: "gccp01"
+    label: "GCCP01 (Europe)"
+    region: eu
+    hash: { sha1: "c96097db7f61a902ab71c5b1dfd760d9c2103aaa" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GCCP01_report, path: report.json }

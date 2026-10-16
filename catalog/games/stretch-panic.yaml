@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "stretch-panic"
+name: "Stretch Panic"
+aliases: ["Freak Out", "Hippa Linda"]
+platform: ps2

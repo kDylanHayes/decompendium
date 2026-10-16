@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "eternal-darkness-sanity-s-requiem"
+name: "Eternal Darkness: Sanity's Requiem"
+platform: gc

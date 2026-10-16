@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "shadow-of-the-colossus"
+name: "Shadow of the Colossus"
+aliases: ["Wander to Kyozou"]
+platform: ps2

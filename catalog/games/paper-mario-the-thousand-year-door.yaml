@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "paper-mario-the-thousand-year-door"
+name: "Paper Mario: The Thousand-Year Door"
+aliases: ["Paper Mario RPG"]
+platform: gc

@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "key"
+name: "Kirby's Epic Yarn decompilation"
+game: "kirby-s-epic-yarn"
+repo: https://github.com/Swiftshine/key
+description: "Matching decompilation of Kirby's Epic Yarn."
+owners: [Swiftshine]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "rk5e01"
+    label: "RK5E01 (USA)"
+    region: us
+    hash: { sha1: "f4280a2b0709bfde4132be22e9f7fa8ecfa2a130" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: RK5E01_report, path: report.json }

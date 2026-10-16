@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "jet-force-gemini"
+name: "Jet Force Gemini"
+aliases: ["Star Twins"]
+platform: n64

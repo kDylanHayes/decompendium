@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "ffc"
+name: "Fossil Fighters Champions decompilation"
+game: "fossil-fighters-champions"
+repo: https://github.com/arcnid/ffc-decomp
+description: "Matching decompilation of Fossil Fighters Champions."
+owners: [arcnid]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa-ndsi-enhanced"
+    label: "USA, NDSi Enhanced"
+    region: us
+    hash: { sha1: "f8263e010974259a955124b5395ec00f25079c35" }
+    progress:
+      kind: none

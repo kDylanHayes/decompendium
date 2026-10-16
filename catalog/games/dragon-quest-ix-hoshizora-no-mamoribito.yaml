@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "dragon-quest-ix-hoshizora-no-mamoribito"
+name: "Dragon Quest IX: Hoshizora no Mamoribito"
+aliases: ["Dragon Quest IX: Sentinels of the Starry Skies"]
+platform: nds

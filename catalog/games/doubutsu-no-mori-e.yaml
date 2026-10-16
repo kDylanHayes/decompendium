@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "doubutsu-no-mori-e"
+name: "Doubutsu no Mori e+"
+platform: gc

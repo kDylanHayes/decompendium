@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "vexx"
+name: "Vexx decompilation"
+game: "vexx"
+repo: https://github.com/AlexWestgarth/Vexx-Decomp
+description: "Matching decompilation of Vexx."
+owners: [AlexWestgarth]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gjxp51"
+    label: "GJXP51 (Europe)"
+    region: eu
+    hash: { sha1: "8b48e23a123a4a5509f5ee924bda11bfc780b76e" }
+    progress:
+      kind: none

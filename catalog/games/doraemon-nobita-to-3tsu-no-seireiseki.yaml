@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "doraemon-nobita-to-3tsu-no-seireiseki"
+name: "Doraemon: Nobita to 3tsu no Seireiseki"
+platform: n64

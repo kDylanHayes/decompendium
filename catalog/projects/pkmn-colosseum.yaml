@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "pkmn-colosseum"
+name: "Pokemon Colosseum decompilation"
+game: "pokemon-colosseum"
+repo: https://github.com/dougchansan/pkmn-colosseum
+description: "Matching decompilation of Pokemon Colosseum."
+owners: [dougchansan]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gc6e01"
+    label: "GC6E01 (USA)"
+    region: us
+    hash: { sha1: "870e8b9693ca780782d80f22a6a4572d8ba9458f" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GC6E01_report, path: report.json }

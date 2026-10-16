@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "goldeneye-rag"
+name: "GoldenEye: Rogue Agent decompilation"
+game: "goldeneye-rogue-agent"
+repo: https://github.com/ant0-blase/goldeneye-rag-decomp
+description: "Matching decompilation of GoldenEye: Rogue Agent."
+owners: [ant0-blase]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "goye69"
+    label: "GOYE69 (USA)"
+    region: us
+    hash: { sha1: "8166561f15be238ab0699dc9e49da7483da3acc1" }
+    progress:
+      kind: none

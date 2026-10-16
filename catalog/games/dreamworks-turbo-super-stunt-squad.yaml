@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "dreamworks-turbo-super-stunt-squad"
+name: "DreamWorks Turbo: Super Stunt Squad"
+platform: wii

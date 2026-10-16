@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "tsss"
+name: "DreamWorks Turbo: Super Stunt Squad decompilation"
+game: "dreamworks-turbo-super-stunt-squad"
+repo: https://github.com/ItsNiklas/tsss
+description: "Matching decompilation of DreamWorks Turbo: Super Stunt Squad."
+owners: [ItsNiklas]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "soseg9"
+    label: "SOSEG9 (USA)"
+    region: us
+    hash: { sha1: "30289c9025ecfe13b2b6a9ef213a0506840ef78a" }
+    progress:
+      kind: none
+  - id: "sospaf"
+    label: "SOSPAF (Europe)"
+    region: eu
+    hash: { sha1: "c039128307bb2df6ad49ebadca0f2acec4a42dc0" }
+    progress:
+      kind: none

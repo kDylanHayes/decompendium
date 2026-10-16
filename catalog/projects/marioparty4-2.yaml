@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "marioparty4-2"
+name: "Mario Party 4 decompilation"
+game: "mario-party-4"
+repo: https://github.com/zeranemesis/Marioparty4
+description: "Matching decompilation of Mario Party 4."
+owners: [zeranemesis]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gmpe01-00"
+    label: "GMPE01_00 (USA)"
+    region: us
+    hash: { sha1: "ff8d894776d37167e454ae3f0c9e644407c1e6b1" }
+    progress:
+      kind: none
+  - id: "gmpe01-01"
+    label: "GMPE01_01 (USA)"
+    region: us
+    hash: { sha1: "64b42eac733a57a53d2ce25e7e47f54fc1e31915" }
+    progress:
+      kind: none
+  - id: "gmpj01-00"
+    label: "GMPJ01_00 (Japan)"
+    region: jp
+    hash: { sha1: "abe951fa239e7cb5de67e1ac091cfbc14010d6e0" }
+    progress:
+      kind: none
+  - id: "gmpp01-00"
+    label: "GMPP01_00 (Europe)"
+    region: eu
+    hash: { sha1: "65ef91650e9201047f50a3c39c7693a21fff2b29" }
+    progress:
+      kind: none
+  - id: "gmpp01-01"
+    label: "GMPP01_01 (Europe)"
+    region: eu
+    hash: { sha1: "65ef91650e9201047f50a3c39c7693a21fff2b29" }
+    progress:
+      kind: none
+  - id: "gmpp01-02"
+    label: "GMPP01_02 (Europe)"
+    region: eu
+    hash: { sha1: "65ef91650e9201047f50a3c39c7693a21fff2b29" }
+    progress:
+      kind: none

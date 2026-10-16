@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "super-mario-all-stars"
+name: "Super Mario All-Stars"
+platform: wii

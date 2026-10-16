@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "resident-evil-code-veronica-x"
+name: "Resident Evil: Code: Veronica X"
+platform: gc

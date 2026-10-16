@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "godzilla-unleashed"
+name: "Godzilla: Unleashed"
+platform: wii

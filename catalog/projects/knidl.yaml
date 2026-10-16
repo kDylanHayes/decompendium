@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "knidl"
+name: "Kirby: Nightmare in Dream Land decompilation"
+game: "kirby-nightmare-in-dream-land"
+repo: https://github.com/overjt/knidl
+description: "Matching decompilation of Kirby: Nightmare in Dream Land."
+owners: [overjt]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "37a476567d133c146fee6b5e2eb0b07a215da6b0" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: A7KE_report, path: report.json }

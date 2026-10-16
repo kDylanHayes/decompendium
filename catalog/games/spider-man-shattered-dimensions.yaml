@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "spider-man-shattered-dimensions"
+name: "Spider-Man: Shattered Dimensions"
+platform: wii

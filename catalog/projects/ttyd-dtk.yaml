@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "ttyd-dtk"
+name: "Paper Mario: The Thousand-Year Door decompilation"
+game: "paper-mario-the-thousand-year-door"
+repo: https://github.com/Rainchus/ttyd_dtk
+description: "Matching decompilation of Paper Mario: The Thousand-Year Door."
+owners: [Rainchus]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "g8me01"
+    label: "G8ME01 (USA)"
+    region: us
+    hash: { sha1: "bc62d5e4674d139fd50d6c05694b34f955e37039" }
+    progress:
+      kind: none
+  - id: "g8mj01"
+    label: "G8MJ01 (Japan)"
+    region: jp
+    hash: { sha1: "cf559d97fef1b3efb8788126250aee88f0491410" }
+    progress:
+      kind: none

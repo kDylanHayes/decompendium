@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "goldensun"
+name: "Golden Sun decompilation"
+game: "golden-sun"
+repo: https://github.com/Coaltergeist/goldensun-decomp
+description: "Matching decompilation of Golden Sun."
+owners: [Coaltergeist]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa-europe"
+    label: "USA, Europe"
+    region: us
+    hash: { sha1: "5c4695205413df7db52b9a184815a07783999971" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: USA_report, path: report.json }

@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "kirby-s-dream-collection-special-edition"
+name: "Kirby's Dream Collection: Special Edition"
+platform: wii

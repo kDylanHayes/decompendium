@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "fate-unlimited-codes"
+name: "Fate-Unlimited Codes"
+platform: ps2

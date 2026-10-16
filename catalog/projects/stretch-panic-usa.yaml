@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "stretch-panic-usa"
+name: "Stretch Panic decompilation"
+game: "stretch-panic"
+repo: https://github.com/Harskov/stretch-panic-usa
+description: "Matching decompilation of Stretch Panic."
+owners: [Harskov]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "sles-503-10"
+    label: "SLES_503.10"
+    hash: { sha1: "fe80cf507bb438e5cf51cc55f7865ec962125e6a" }
+    progress:
+      kind: none
+  - id: "slpm-621-09"
+    label: "SLPM_621.09"
+    hash: { sha1: "14fb5cef008dc24b7826492cccdef7fe7d6cbdd3" }
+    progress:
+      kind: none
+  - id: "slus-201-82"
+    label: "SLUS_201.82"
+    hash: { sha1: "0a330e76424b7254e4096d8809b2a927603d3581" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLUS_201.82_report, path: report.json }

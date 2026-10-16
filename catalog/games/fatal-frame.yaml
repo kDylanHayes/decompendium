@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "fatal-frame"
+name: "Fatal Frame"
+aliases: ["Project Zero", "Zero"]
+platform: ps2
