@@ -1,4 +1,5 @@
 import { resolve } from "node:path";
+import { Urls } from "../../src/site/api.ts";
 import { loadSite, type SiteModel } from "../../src/site/model.ts";
 
 export const REPO_URL = "https://github.com/kDylanHayes/decompendium";
@@ -20,4 +21,10 @@ export function url(path = ""): string {
 /** A prefilled GitHub issue on the catalog repo. */
 export function issueUrl(title: string, body: string): string {
   return `${REPO_URL}/issues/new?${new URLSearchParams({ title, body })}`;
+}
+
+/** Absolute URLs for the API, from the configured site and base path. */
+export function apiUrls(): Urls {
+  const site = import.meta.env.SITE ?? "https://decompendium.com";
+  return new Urls(new URL(import.meta.env.BASE_URL, site).href);
 }

@@ -663,3 +663,47 @@ th.num {
   --pagefind-ui-tag: var(--chip-bg);
   --pagefind-ui-font: var(--font);
 }
+
+/* Badge snippets on project pages */
+.badge-block {
+  margin: 12px 0 0;
+}
+
+.badge-block p {
+  margin: 0 0 4px;
+}
+
+.badge-rows {
+  display: grid;
+  gap: 6px;
+  margin: 0 0 8px;
+}
+
+.badge-preview {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.badge-label {
+  min-width: 11rem;
+  color: var(--muted);
+}
+
+.snippet {
+  margin: 0;
+  padding: 10px 12px;
+  background: var(--code-bg);
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.snippet code {
+  background: none;
+  padding: 0;
+}

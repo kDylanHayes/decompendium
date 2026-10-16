@@ -62,7 +62,7 @@ const { builtAt } = site();
         </p>
         <p>
           Updated <time datetime={builtAt} title={exactTime(builtAt)}>{shortDate(builtAt)}</time> ·
-          <a href={REPO_URL}>Source on GitHub</a> · Code MIT, data CC0
+          <a href={REPO_URL}>Source on GitHub</a> · <a href={url("api/v1/index.json")}>API</a> · Code MIT, data CC0
         </p>
       </div>
     </footer>

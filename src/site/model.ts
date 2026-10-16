@@ -48,6 +48,7 @@ export interface GameView extends Game {
 
 export interface SiteModel {
   builtAt: string;
+  dataDir: string; // the data branch checkout, for history
   config: Config;
   games: GameView[]; // by name
   projects: ProjectView[]; // most recent activity first
@@ -87,6 +88,7 @@ export function loadSite(root: string, dataDir: string, now: Date = new Date()):
   const used = new Set(games.map((g) => g.platform));
   return {
     builtAt: now.toISOString(),
+    dataDir,
     config,
     games,
     projects,

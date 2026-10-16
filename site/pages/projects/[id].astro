@@ -3,7 +3,8 @@ import ProgressBar from "../../components/ProgressBar.astro";
 import Layout from "../../layouts/Layout.astro";
 import { AI_POLICY_LABELS, exactTime, number, platformName, relativeTime, shortDate, STATUS_LABELS } from "../../../src/site/format.ts";
 import { percent, type ProjectView } from "../../../src/site/model.ts";
-import { issueUrl, site, url } from "../../lib/data.ts";
+import { BADGE_MEASURES } from "../../../src/site/api.ts";
+import { apiUrls, issueUrl, site, url } from "../../lib/data.ts";
 
 export function getStaticPaths() {
   return site().projects.map((project) => ({ params: { id: project.id }, props: { project } }));
@@ -25,6 +26,12 @@ const optOut = issueUrl(
     "Removal requests are carried out within 48 hours, no questions asked.",
   ].join("\n"),
 );
+const urls = apiUrls();
+const withData = project.targets.filter((t) => t.kind !== "none");
+const snippet = (targetId: string, label: string) =>
+  BADGE_MEASURES.map(
+    (m) => `[![${label} ${m}](${urls.badge(project.id, targetId, m)})](${urls.project(project.id)})`,
+  ).join("\n");
 const correction = issueUrl(`Correction: ${project.id}`, `Project: ${project.name}\n\nWhat should change:\n`);
 ---
 
@@ -120,6 +127,44 @@ const correction = issueUrl(`Correction: ${project.id}`, `Project: ${project.nam
       ))
     }
   </div>
+
+  <h2>Badges and data</h2>
+  {
+    withData.length > 0 ? (
+      <>
+        <div class="badge-rows">
+          {withData.map((t) => (
+            <p class="badge-preview">
+              <span class="badge-label">{t.label}</span>
+              {BADGE_MEASURES.map((m) => (
+                <img src={url(`badges/${project.id}/${t.id}/${m}.svg`)} alt={`${t.label}: ${m} badge`} height="20" loading="lazy" />
+              ))}
+            </p>
+          ))}
+        </div>
+        <details class="categories">
+          <summary>README snippets ({withData.length} {withData.length === 1 ? "target" : "targets"})</summary>
+          {withData.map((t) => (
+            <div class="badge-block">
+              <p class="small"><strong>{t.label}</strong></p>
+              <pre class="snippet"><code>{snippet(t.id, t.label)}</code></pre>
+            </div>
+          ))}
+        </details>
+        <p class="small muted">Badges update with each ingestion run; grey means the data is stale or missing.</p>
+      </>
+    ) : (
+      <p class="small muted">
+        No progress data is published yet, so badges read "no data". Projects that publish an objdiff report or a
+        Decompendium progress file get live badges.
+      </p>
+    )
+  }
+  <p class="small">
+    Machine-readable: <a href={urls.api(`projects/${project.id}.json`)}>project JSON</a>
+    {withData.length > 0 && <>{" · "}<a href={urls.api(`history/${project.id}/${withData[0]!.id}.json`)}>history of {withData[0]!.label}</a></>}
+    {" · "}<a href={urls.api("index.json")}>API index</a>. Data is CC0.
+  </p>
 
   <h2>Maintainers</h2>
   <p class="small">

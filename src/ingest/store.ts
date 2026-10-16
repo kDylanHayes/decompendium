@@ -58,6 +58,16 @@ export class DataStore {
     return last ? (JSON.parse(last) as Snapshot) : undefined;
   }
 
+  /** Every snapshot for a target, oldest first. */
+  readSnapshots(project: string, target: string): Snapshot[] {
+    const path = join(this.dir, "snapshots", project, `${target}.jsonl`);
+    if (!existsSync(path)) return [];
+    return readFileSync(path, "utf8")
+      .split("\n")
+      .filter(Boolean)
+      .map((line) => JSON.parse(line) as Snapshot);
+  }
+
   appendSnapshot(project: string, target: string, snapshot: Snapshot): void {
     const path = join(this.dir, "snapshots", project, `${target}.jsonl`);
     mkdirSync(dirname(path), { recursive: true });

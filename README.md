@@ -14,8 +14,8 @@ The site is live at [decompendium.com](https://decompendium.com).
 | M0: policy, schemas, validation | Done |
 | M1: ingestion (objdiff and Decompendium progress files) | Done |
 | M2: static site | Done |
-| M3: API and badges | Next |
-| M4: submission flow (issue forms and bot) | Planned |
+| M3: API and badges | Done |
+| M4: submission flow (issue forms and bot) | Next |
 | M5: seed catalog and launch | Planned |
 
 ## How listing works
@@ -86,6 +86,16 @@ GitHub URL per line; the list is only read, never stored):
 ```sh
 GITHUB_TOKEN=$(gh auth token) pnpm discover --ledger /tmp/discover.json --evaluate known-good.txt
 ```
+
+## API and badges
+
+Everything on the site is also static JSON under
+[`/api/v1/`](https://decompendium.com/api/v1/index.json) (CC0): games, projects
+with their latest measures, and each target's full history. Every target has
+README badges at `/badges/<project>/<target>/<code|linked|functions>.svg` and a
+[shields.io endpoint](https://shields.io/badges/endpoint-badge) at
+`/api/v1/shields/<project>/<target>/<measure>.json`. Badge colour shows
+freshness (blue current, grey stale or no data), not progress.
 
 ## Progress format for non-objdiff projects
 

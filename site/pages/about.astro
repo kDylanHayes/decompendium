@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Content as Policy } from "../../POLICY.md";
-import { site } from "../lib/data.ts";
+import { site, url } from "../lib/data.ts";
 
 const { config } = site();
 ---
@@ -28,6 +28,14 @@ const { config } = site();
     <p>
       Nothing here is ranked by percentage. Projects differ in size, toolchain and goals, and a number alone
       doesn't capture that.
+    </p>
+
+    <h2>API and badges</h2>
+    <p>
+      Everything on the site is available as JSON under <a href={url("api/v1/index.json")}><code>/api/v1/</code></a>,
+      including every project's progress history, and the data is CC0. Each target has README badges for matched
+      code, fully linked code and functions, plus a <a href="https://shields.io/badges/endpoint-badge">shields.io endpoint</a>
+      for custom styling. Badge colour shows whether the data is fresh, not how far along a project is.
     </p>
 
     <h2>Opting out</h2>
