@@ -42,6 +42,26 @@ interface Decision {
   platform?: string;
   targets?: number;
 }
+// Platform words in repo names. A name naming another platform than the game's
+// own ("sf64-dc", "oot-PSP") is a port, not a decomp of that release.
+const PLATFORM_WORDS: Record<string, string> = {
+  dc: "dc", dreamcast: "dc", psp: "psp", "3ds": "3ds", n3ds: "3ds", pc: "win32", windows: "win32", win: "win32",
+  win32: "win32", linux: "win32", switch: "switch", nx: "switch", vita: "vita", android: "android", anbernic: "android",
+  wiiu: "wiiu", ps2: "ps2", ps3: "ps3", ps1: "ps1", psx: "ps1", gc: "gc", gcn: "gc", ngc: "gc", gamecube: "gc",
+  wii: "wii", n64: "n64", nds: "nds", gba: "gba", xbox: "xbox", x360: "x360",
+};
+function portHint(fullName: string, platform: string): string | null {
+  const name = fullName.split("/")[1]!;
+  if (/^Open[A-Z]/.test(name)) return `named like a reimplementation ("${name}")`;
+  const words = name.replace(/([a-z0-9])([A-Z])/g, "$1 $2").split(/[^A-Za-z0-9]+/).map((w) => w.toLowerCase());
+  for (const w of words) {
+    const other = PLATFORM_WORDS[w];
+    if (other && other !== platform) return `named like a port to ${w} (the game is on ${platform})`;
+  }
+  return null;
+}
+const COPY_NAME = /(^|[-_ ])(test(ing)?|copy|backup|mirror|old|archive|fork)$|[-_ ]?20\d\d$/i;
+
 const root = resolve(values.root!);
 const statePath = resolve(values.state!);
 const state: Record<string, Decision> = existsSync(statePath) ? JSON.parse(readFileSync(statePath, "utf8")) : {};
@@ -115,6 +135,17 @@ for (const fullName of candidates) {
       const guess = titleFromDescription(f.description);
       reason = `game not confirmed${guess ? ` (description says "${guess}")` : ""}`;
     } else if (!result.draft || !result.draft.project.targets.length) reason = "no versions to list";
+    else {
+      const draft = result.draft;
+      const others = raw.projects.filter((p) => (p.data as Project).game === draft.game.id);
+      const port = portHint(f.fullName, draft.game.platform);
+      if (port) reason = port;
+      else if (COPY_NAME.test(f.fullName.split("/")[1]!)) reason = "named like a copy or test repo";
+      // Duplicates are listed, but a low-star repo for an already-covered game is often a re-upload.
+      else if (draft.gameExists && others.length && f.stars < 3) {
+        reason = `${draft.game.name} is already covered by ${others.map((p) => (p.data as Project).id).join(", ")}; low-star duplicate (${f.stars} stars), check it isn't a copy`;
+      }
+    }
     if (reason || !result.draft) {
       state[key] = { repo: fullName, action: "hold", reason: reason ?? "no draft" };
       console.log(`hold ${fullName}: ${state[key]!.reason}`);

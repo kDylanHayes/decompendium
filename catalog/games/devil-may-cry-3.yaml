@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "devil-may-cry-3"
+name: "Devil May Cry 3"
+aliases: ["Devil May Cry 3: Dante's Awakening"]
+platform: ps2

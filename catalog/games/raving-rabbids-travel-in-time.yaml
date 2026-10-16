@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "raving-rabbids-travel-in-time"
+name: "Raving Rabbids: Travel in Time"
+platform: wii

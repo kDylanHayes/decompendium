@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "dw4-gc"
+name: "Digimon World 4 decompilation"
+game: "digimon-world-4"
+repo: https://github.com/ivanno4317/dw4-gc
+description: "Matching decompilation of Digimon World 4."
+owners: [ivanno4317]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gdjeb2"
+    label: "GDJEB2 (USA)"
+    region: us
+    hash: { sha1: "e409a88a7379ed1a536f93b0a303a0ce7cd5d877" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GDJEB2_report, path: report.json }

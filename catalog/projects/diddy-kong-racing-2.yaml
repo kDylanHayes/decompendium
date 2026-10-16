@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "diddy-kong-racing-2"
+name: "Diddy Kong Racing decompilation"
+game: "diddy-kong-racing"
+repo: https://github.com/DavidSM64/Diddy-Kong-Racing
+description: "Matching decompilation of Diddy Kong Racing."
+owners: [DavidSM64]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa-en-fr"
+    label: "USA, En,Fr"
+    region: us
+    hash: { sha1: "0cb115d8716dbbc2922fda38e533b9fe63bb9670" }
+    progress:
+      kind: none
+  - id: "japan"
+    label: "Japan"
+    region: jp
+    hash: { sha1: "23ba3d302025153d111416e751027cef11213a19" }
+    progress:
+      kind: none
+  - id: "europe-en-fr-de"
+    label: "Europe, En,Fr,De"
+    region: eu
+    hash: { sha1: "dd5d64dd140cb7aa28404fa35abdcaba33c29260" }
+    progress:
+      kind: none
+  - id: "europe-en-fr-de-rev-1"
+    label: "Europe, En,Fr,De, Rev 1"
+    region: eu
+    hash: { sha1: "b7f628073237b3d211d40406aa0884ff8fdd70d5" }
+    progress:
+      kind: none
+  - id: "usa-en-fr-rev-1"
+    label: "USA, En,Fr, Rev 1"
+    region: us
+    hash: { sha1: "6d96743d46f8c0cd0edb0ec5600b003c89b93755" }
+    progress:
+      kind: none

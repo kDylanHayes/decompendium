@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "lain-psx-decompiled"
+name: "Serial Experiments Lain decompilation"
+game: "serial-experiments-lain"
+repo: https://github.com/Y0oshi/lain-psx-decompiled
+description: "Matching decompilation of Serial Experiments Lain."
+owners: [Y0oshi]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "slps-016-03"
+    label: "SLPS_016.03"
+    hash: { sha1: "a0012634f82dd7fcc4ee5a3f97ddc052573b4815" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLPS_016.03_report, path: report.json }

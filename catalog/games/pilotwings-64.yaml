@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "pilotwings-64"
+name: "Pilotwings 64"
+platform: n64

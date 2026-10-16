@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "mscharged"
+name: "Mario Strikers Charged decompilation"
+game: "mario-strikers-charged"
+repo: https://github.com/yannicksuter/mscharged-decomp
+description: "Matching decompilation of Mario Strikers Charged."
+owners: [yannicksuter]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "r4qe01"
+    label: "R4QE01 (USA)"
+    region: us
+    hash: { sha1: "e96d2298067b70652752145b4e63644e6e1b1560" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: R4QE01_report, path: report.json }
+  - id: "r4qj01"
+    label: "R4QJ01 (Japan)"
+    region: jp
+    hash: { sha1: "74be723403329158b1645d9961a3cd6be755cdb8" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: R4QJ01_report, path: report.json }
+  - id: "r4qk01"
+    label: "R4QK01 (Korea)"
+    region: kr
+    hash: { sha1: "c2f893aa71911c4ad4dcead1474e517e8e598fcb" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: R4QK01_report, path: report.json }
+  - id: "r4qp01-rev1"
+    label: "R4QP01_rev1 (Europe)"
+    region: eu
+    hash: { sha1: "0a066b755b469648a371d1cfc2d1bcad315b2b4a" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: R4QP01_rev1_report, path: report.json }
+  - id: "r4qp01-rev2"
+    label: "R4QP01_rev2 (Europe)"
+    region: eu
+    hash: { sha1: "c39e1eda1942aa2fc96a6a71bfef051698e23516" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: R4QP01_rev2_report, path: report.json }

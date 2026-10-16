@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "chameleon-twist"
+name: "Chameleon Twist"
+platform: n64

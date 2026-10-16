@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "sonicheroes"
+name: "Sonic Heroes decompilation"
+game: "sonic-heroes"
+repo: https://github.com/Jovinull/sonicheroes
+description: "Matching decompilation of Sonic Heroes."
+owners: [Jovinull]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "g9se8p"
+    label: "G9SE8P (USA)"
+    region: us
+    hash: { sha1: "9214426b8a3fb1d6fe3dcff09bcc1a959e1e04a8" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: G9SE8P_report, path: report.json }

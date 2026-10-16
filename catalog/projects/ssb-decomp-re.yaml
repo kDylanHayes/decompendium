@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "ssb-decomp-re"
+name: "Super Smash Bros. decompilation"
+game: "super-smash-bros"
+repo: https://github.com/VetriTheRetri/ssb-decomp-re
+description: "Matching decompilation of Super Smash Bros.."
+owners: [VetriTheRetri]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "e2929e10fccc0aa84e5776227e798abc07cedabf" }
+    progress:
+      kind: none

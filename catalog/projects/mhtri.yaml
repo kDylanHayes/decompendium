@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "mhtri"
+name: "Monster Hunter Tri decompilation"
+game: "monster-hunter-tri"
+repo: https://github.com/InusualZ/mhtri-decomp
+description: "Matching decompilation of Monster Hunter Tri."
+owners: [InusualZ]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "rmhe08"
+    label: "RMHE08 (USA)"
+    region: us
+    hash: { sha1: "bf4850739478caaedfe675949eb7c28595a7fde9" }
+    progress:
+      kind: none

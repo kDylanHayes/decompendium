@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "sgr"
+name: "Summoner: A Goddess Reborn decompilation"
+game: "summoner-a-goddess-reborn"
+repo: https://github.com/Charlese2/sgr
+description: "Matching decompilation of Summoner: A Goddess Reborn."
+owners: [Charlese2]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gs2e78"
+    label: "GS2E78 (USA)"
+    region: us
+    hash: { sha1: "81eed189cc27a22ca6140c700f05e86829f4e841" }
+    progress:
+      kind: none

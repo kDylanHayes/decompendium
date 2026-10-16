@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "mario-luigi-bowser-s-inside-story"
+name: "Mario & Luigi: Bowser's Inside Story"
+platform: nds

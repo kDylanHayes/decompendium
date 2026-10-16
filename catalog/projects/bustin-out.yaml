@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "bustin-out"
+name: "The Sims: Bustin' Out decompilation"
+game: "the-sims-bustin-out"
+repo: https://github.com/daftblazer/bustin-out-decomp
+description: "Matching decompilation of The Sims: Bustin' Out."
+owners: [daftblazer]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "g4me69"
+    label: "G4ME69 (USA)"
+    region: us
+    hash: { sha1: "26f0bf319a5fd3ea3d3d86e6117fbc78e259231c" }
+    progress:
+      kind: none

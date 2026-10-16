@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "jet-force-gemini"
+name: "Jet Force Gemini decompilation"
+game: "jet-force-gemini"
+repo: https://github.com/Ryan-Myers/Jet-Force-Gemini
+description: "Matching decompilation of Jet Force Gemini."
+owners: [Ryan-Myers]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "493ced9008dbe932d6e91179b68e8630cf23a023" }
+    progress:
+      kind: none
+  - id: "japan"
+    label: "Japan"
+    region: jp
+    hash: { sha1: "15099233760b36e7afad7da36b9464da1512c4b1" }
+    progress:
+      kind: none
+  - id: "europe-en-fr-de-es"
+    label: "Europe, En,Fr,De,Es"
+    region: eu
+    hash: { sha1: "50651c4e0c46332f7f0b45870263f0a8b9a49602" }
+    progress:
+      kind: none

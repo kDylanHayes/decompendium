@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "serial-experiments-lain"
+name: "Serial Experiments Lain"
+platform: ps1

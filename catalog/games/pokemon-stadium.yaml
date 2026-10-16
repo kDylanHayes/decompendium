@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "pokemon-stadium"
+name: "Pokemon Stadium"
+aliases: ["Pokemon Stadium 2"]
+platform: n64

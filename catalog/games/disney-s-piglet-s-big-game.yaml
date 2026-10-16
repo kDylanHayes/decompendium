@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "disney-s-piglet-s-big-game"
+name: "Disney's Piglet's Big Game"
+platform: gc

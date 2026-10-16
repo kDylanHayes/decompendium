@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "pac-man-party"
+name: "Pac-Man Party"
+platform: wii

@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "bfm"
+name: "Brave Fencer Musashi decompilation"
+game: "brave-fencer-musashi"
+repo: https://github.com/Druthulu/BFM-decomp
+description: "Matching decompilation of Brave Fencer Musashi."
+owners: [Druthulu]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "us"
+    label: "US"
+    hash: { sha1: "143dbb89f34491258bbc27810d0a12ec8b43a8dd" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLUS_007.26_report, path: report.json }

@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "sotc"
+name: "Shadow of the Colossus decompilation"
+game: "shadow-of-the-colossus"
+repo: https://github.com/Fantaskink/SOTC
+description: "Matching decompilation of Shadow of the Colossus."
+owners: [Fantaskink]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "main"
+    label: "main"
+    hash: { sha1: "ac00c937b84cbe2e283a97e59e09a11886118388" }
+    progress:
+      kind: none
+  - id: "main-2"
+    label: "main"
+    hash: { sha1: "c4d5576d1cae3721c411a746c7845f5c6f026dbb" }
+    progress:
+      kind: none

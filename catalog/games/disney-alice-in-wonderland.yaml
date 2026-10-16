@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "disney-alice-in-wonderland"
+name: "Disney Alice in Wonderland"
+platform: wii

@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "pw64"
+name: "Pilotwings 64 decompilation"
+game: "pilotwings-64"
+repo: https://github.com/n64decomp/pw64
+description: "Matching decompilation of Pilotwings 64."
+owners: [n64decomp]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "ec771aedf54ee1b214c25404fb4ec51cfd43191a" }
+    progress:
+      kind: none
+  - id: "japan"
+    label: "Japan"
+    region: jp
+    hash: { sha1: "892a5472d9a6811b881d093020de81f72baeeec9" }
+    progress:
+      kind: none

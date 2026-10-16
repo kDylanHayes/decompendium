@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "acww-decomp"
+name: "Animal Crossing: Wild World decompilation"
+game: "animal-crossing-wild-world"
+repo: https://github.com/banatic/acww-decomp
+description: "Matching decompilation of Animal Crossing: Wild World."
+owners: [banatic]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "korea"
+    label: "Korea"
+    region: kr
+    hash: { sha1: "1fffd601d3439e37cd934e72d08e487a93fc449b" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: adm-kr_report, path: report.json }

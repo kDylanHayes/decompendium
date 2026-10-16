@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "kirby-s-epic-yarn"
+name: "Kirby's Epic Yarn"
+platform: wii

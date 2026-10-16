@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "hybridheaven"
+name: "Hybrid Heaven decompilation"
+game: "hybrid-heaven"
+repo: https://github.com/southcitycapture/hybridheaven-decomp
+description: "Matching decompilation of Hybrid Heaven."
+owners: [southcitycapture]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "16dbc21620b52deab5c5abf8a309ac60adfbee85" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: us_report, path: report.json }

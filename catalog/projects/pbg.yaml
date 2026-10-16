@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "pbg"
+name: "Disney's Piglet's Big Game decompilation"
+game: "disney-s-piglet-s-big-game"
+repo: https://github.com/tgsm/pbg
+description: "Matching decompilation of Disney's Piglet's Big Game."
+owners: [tgsm]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gple9g"
+    label: "GPLE9G (USA)"
+    region: us
+    hash: { sha1: "5501fbd775091bb1724569d76d8dd50814daf44a" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GPLE9G_report, path: report.json }
+  - id: "gplp9g"
+    label: "GPLP9G (Europe)"
+    region: eu
+    hash: { sha1: "372011f665db095e915bc849c7e0dce88ca4047b" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GPLP9G_report, path: report.json }

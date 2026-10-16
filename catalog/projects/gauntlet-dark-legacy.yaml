@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "gauntlet-dark-legacy"
+name: "Gauntlet: Dark Legacy decompilation"
+game: "gauntlet-dark-legacy"
+repo: https://github.com/sabishii-bit/Gauntlet-Dark-Legacy-Decompilation
+description: "Matching decompilation of Gauntlet: Dark Legacy."
+owners: [sabishii-bit]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gune5d"
+    label: "GUNE5D (USA)"
+    region: us
+    hash: { sha1: "540bed0b54c94c6fc63e94b6db20ec927cc66b53" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GUNE5D_report, path: report.json }

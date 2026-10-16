@@ -13,7 +13,7 @@ export function codesFromFacts(f: Pick<RepoFacts, "paths" | "reportArtifacts">):
   const codes = new Set<string>();
   for (const p of f.paths) {
     const m = /^configs?\/([^/]+)\//.exec(p);
-    if (m) codes.add(m[1]!);
+    if (m && m[1] !== "GAMEID") codes.add(m[1]!); // decomp-toolkit's template placeholder
   }
   for (const a of f.reportArtifacts) {
     const m = /^(.+)_report$/.exec(a);

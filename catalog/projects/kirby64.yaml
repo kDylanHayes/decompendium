@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "kirby64"
+name: "Kirby 64: The Crystal Shards decompilation"
+game: "kirby-64-the-crystal-shards"
+repo: https://github.com/Kirby64Ret/kirby64
+description: "Matching decompilation of Kirby 64: The Crystal Shards."
+owners: [Kirby64Ret]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "6cea2d46b929a3bb347b060a77fccc83526fb855" }
+    progress:
+      kind: none

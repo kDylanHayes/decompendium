@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "beetle-adventure-racing"
+name: "Beetle Adventure Racing!"
+platform: n64

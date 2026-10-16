@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "accf"
+name: "Animal Crossing: City Folk decompilation"
+game: "animal-crossing-city-folk"
+repo: https://github.com/zeitlost/accf
+description: "Matching decompilation of Animal Crossing: City Folk."
+owners: [zeitlost]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "ruue01"
+    label: "RUUE01 (USA)"
+    region: us
+    hash: { sha1: "c87967b9ac0a943ba04ac16d875f5f79b4c46516" }
+    progress:
+      kind: none

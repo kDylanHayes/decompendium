@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "mario-sports-mix"
+name: "Mario Sports Mix"
+platform: wii

@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "pikmin-2-wii"
+name: "Pikmin 2"
+platform: wii

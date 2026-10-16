@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "crash-tag-team-racing"
+name: "Crash Tag Team Racing"
+aliases: ["Crash Bandicoot: Gatchanko World"]
+platform: gc

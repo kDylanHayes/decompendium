@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "mnsg"
+name: "Ganbare Goemon: Neo Momoyama Bakufu no Odori decompilation"
+game: "ganbare-goemon-neo-momoyama-bakufu-no-odori"
+repo: https://github.com/klorfmorf/mnsg
+description: "Matching decompilation of Ganbare Goemon: Neo Momoyama Bakufu no Odori."
+owners: [klorfmorf]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "japan"
+    label: "Japan"
+    region: jp
+    hash: { sha1: "9843ee979b5f6c80f5eda85df0baed9ae7c4e73b" }
+    progress:
+      kind: none
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "df8083a54296b8c151917c5333e1c85f014a2a66" }
+    progress:
+      kind: none

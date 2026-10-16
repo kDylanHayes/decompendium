@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "tokimemo-ps1"
+name: "Tokimeki Memorial: Forever with You decompilation"
+game: "tokimeki-memorial-forever-with-you"
+repo: https://github.com/CosmicScribe64/tokimemo-ps1-decomp
+description: "Matching decompilation of Tokimeki Memorial: Forever with You."
+owners: [CosmicScribe64]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "slpm-86-053"
+    label: "SLPM_86.053"
+    hash: { sha1: "e823bd844a8f8fa4d05483b59c66bc54b8393b26" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLPM_86.053_report, path: report.json }

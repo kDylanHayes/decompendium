@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "parasite-eve"
+name: "Parasite Eve decompilation"
+game: "parasite-eve"
+repo: https://github.com/khasinski/parasite-eve-decomp
+description: "Matching decompilation of Parasite Eve."
+owners: [khasinski]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    hash: { sha1: "452fb033f2eaa4b18aa20a5bca60b8125af3a37b" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLUS_006.62_report, path: report.json }

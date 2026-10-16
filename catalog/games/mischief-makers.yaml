@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "mischief-makers"
+name: "Mischief Makers"
+platform: n64

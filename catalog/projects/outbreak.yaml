@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "outbreak"
+name: "Resident Evil Outbreak disassembly"
+game: "resident-evil-outbreak"
+repo: https://github.com/GalaxyNostalgia/Outbreak-decomp
+description: "Matching disassembly of Resident Evil Outbreak."
+owners: [GalaxyNostalgia]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "slpm-654-28"
+    label: "SLPM_654.28"
+    hash: { sha1: "0211217647e5ad47aec97073feb8b8f9265d361b" }
+    progress:
+      kind: none
+  - id: "slpm-656-92"
+    label: "SLPM_656.92"
+    hash: { sha1: "5c82ff5cabe85ddea2a92fbd4e70cbe630dcaa9e" }
+    progress:
+      kind: none

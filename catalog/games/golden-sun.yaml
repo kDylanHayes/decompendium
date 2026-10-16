@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "golden-sun"
+name: "Golden Sun"
+platform: gba

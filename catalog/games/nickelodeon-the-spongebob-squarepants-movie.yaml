@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "nickelodeon-the-spongebob-squarepants-movie"
+name: "Nickelodeon The SpongeBob SquarePants Movie"
+platform: gc

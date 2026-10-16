@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "snowboard-kids-2"
+name: "Snowboard Kids 2"
+platform: n64

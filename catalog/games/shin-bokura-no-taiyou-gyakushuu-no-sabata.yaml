@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "shin-bokura-no-taiyou-gyakushuu-no-sabata"
+name: "Shin Bokura no Taiyou: Gyakushuu no Sabata"
+platform: gba

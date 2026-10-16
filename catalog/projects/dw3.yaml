@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "dw3"
+name: "DigimonWorld 3: Aratanaru Bouken no Tobira decompilation"
+game: "digimonworld-3-aratanaru-bouken-no-tobira"
+repo: https://github.com/ReGame-Labs/dw3_decomp
+description: "Matching decompilation of DigimonWorld 3: Aratanaru Bouken no Tobira."
+owners: [ReGame-Labs]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "sles-039-36"
+    label: "SLES_039.36"
+    hash: { sha1: "d1b7e4d646e3a9c2b88fdb25d20b5f7116bbb06d" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLES_039.36_report, path: report.json }
+  - id: "slps-034-46"
+    label: "SLPS_034.46"
+    hash: { sha1: "0e5b6b9ee2f99a804ed8c4117c805482c10e260b" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLPS_034.46_report, path: report.json }
+  - id: "slus-014-36"
+    label: "SLUS_014.36"
+    hash: { sha1: "444653259f78ddb483fd22af72cce9276f42f214" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLUS_014.36_report, path: report.json }

@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "battletanx-global-assault"
+name: "BattleTanx: Global Assault decompilation"
+game: "battletanx-global-assault"
+repo: https://github.com/TheGh0stShip/BattleTanx-Global-Assault
+description: "Matching decompilation of BattleTanx: Global Assault."
+owners: [TheGh0stShip]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "805248fb0a0ee694cad8d7dc927b631d860dd8cf" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: NBQE_report, path: report.json }

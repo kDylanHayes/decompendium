@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "pokepark-wii-pikachu-s-adventure"
+name: "PokePark Wii: Pikachu's Adventure"
+platform: wii

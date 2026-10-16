@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "conker-s-bad-fur-day"
+name: "Conker's Bad Fur Day"
+platform: n64

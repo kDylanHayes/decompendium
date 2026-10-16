@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "kirby-s-return-to-dream-land"
+name: "Kirby's Return to Dream Land"
+aliases: ["Byeorui Kirby Wii"]
+platform: wii

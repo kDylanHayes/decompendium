@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "mk-deception"
+name: "Mortal Kombat: Deception decompilation"
+game: "mortal-kombat-deception"
+repo: https://github.com/ShulkMaster/mk-deception
+description: "Matching decompilation of Mortal Kombat: Deception."
+owners: [ShulkMaster]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gqne5d"
+    label: "GQNE5D (USA)"
+    region: us
+    hash: { sha1: "ef001212c6cd4da3194c041d24956a61bc5e9fcd" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GQNE5D_report, path: report.json }

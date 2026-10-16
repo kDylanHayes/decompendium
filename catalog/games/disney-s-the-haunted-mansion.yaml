@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "disney-s-the-haunted-mansion"
+name: "Disney's The Haunted Mansion"
+platform: gc

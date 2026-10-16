@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "sa3"
+name: "Sonic Advance 3 decompilation"
+game: "sonic-advance-3"
+repo: https://github.com/SAT-R/sa3
+description: "Matching decompilation of Sonic Advance 3."
+owners: [SAT-R]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "europe-en-ja-fr-de-es-it"
+    label: "Europe, En,Ja,Fr,De,Es,It"
+    region: eu
+    hash: { sha1: "685af3a2dc0f1b3f8922e73ec42c1dc92e210e39" }
+    progress:
+      kind: none

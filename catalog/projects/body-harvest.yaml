@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "body-harvest"
+name: "Body Harvest decompilation"
+game: "body-harvest"
+repo: https://github.com/jaytheham/body-harvest-decompilation
+description: "Matching decompilation of Body Harvest."
+owners: [jaytheham]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "bbb6666f5014a473747ee4145f036d9fb25d7348" }
+    progress:
+      kind: none
+  - id: "europe-en-fr-de"
+    label: "Europe, En,Fr,De"
+    region: eu
+    hash: { sha1: "67750e2e7ab46fedf65a271ab7f4c7aad92ae355" }
+    progress:
+      kind: none

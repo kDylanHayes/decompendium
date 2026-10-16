@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "pokemon-black-version-2"
+name: "Pokemon: Black Version 2"
+aliases: ["Pokemon: White Version 2"]
+platform: nds

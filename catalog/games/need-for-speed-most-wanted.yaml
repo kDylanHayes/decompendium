@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "need-for-speed-most-wanted"
+name: "Need for Speed: Most Wanted"
+aliases: ["Need for Speed: Most Wanted: Black Edition"]
+platform: gc

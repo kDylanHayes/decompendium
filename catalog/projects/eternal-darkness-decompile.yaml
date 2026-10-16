@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "eternal-darkness-decompile"
+name: "Eternal Darkness: Sanity's Requiem decompilation"
+game: "eternal-darkness-sanity-s-requiem"
+repo: https://github.com/psdwizzard/Eternal-Darkness---Decompile
+description: "Matching decompilation of Eternal Darkness: Sanity's Requiem."
+owners: [psdwizzard]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gede01"
+    label: "GEDE01 (USA)"
+    region: us
+    hash: { sha1: "ea24b6af954876ce072562ff39cdb4c81d32be1f" }
+    progress:
+      kind: none

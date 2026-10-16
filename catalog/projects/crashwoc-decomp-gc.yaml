@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "crashwoc-decomp-gc"
+name: "Crash Bandicoot: The Wrath of Cortex decompilation"
+game: "crash-bandicoot-the-wrath-of-cortex"
+repo: https://github.com/denzi-gh/crashwoc-decomp-gc
+description: "Matching decompilation of Crash Bandicoot: The Wrath of Cortex."
+owners: [denzi-gh]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gcbe7d"
+    label: "GCBE7D (USA)"
+    region: us
+    hash: { sha1: "c9cbd49a9eb0006f55533eb7d0fb5ebe2a73b72f" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GCBE7D_report, path: report.json }

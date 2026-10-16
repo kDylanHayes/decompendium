@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "star-fox-adventures"
+name: "Star Fox Adventures"
+platform: gc

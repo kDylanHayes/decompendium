@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "animal-crossing-wild-world"
+name: "Animal Crossing: Wild World"
+aliases: ["Nolleooseyo Dongmurui Sup"]
+platform: nds

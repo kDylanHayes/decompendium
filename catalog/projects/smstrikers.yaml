@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "smstrikers"
+name: "Super Mario Strikers decompilation"
+game: "super-mario-strikers"
+repo: https://github.com/yannicksuter/smstrikers-decomp
+description: "Matching decompilation of Super Mario Strikers."
+owners: [yannicksuter]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "g4qe01"
+    label: "G4QE01 (USA)"
+    region: us
+    hash: { sha1: "376d699c99b6b0949abe1b4ceccefdef7828d2b5" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: G4QE01_report, path: report.json }
+  - id: "g4qj01"
+    label: "G4QJ01 (Japan)"
+    region: jp
+    hash: { sha1: "d116f02b778a4f69725fd1c00656012d16ebf94a" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: G4QJ01_report, path: report.json }
+  - id: "g4qp01"
+    label: "G4QP01 (Europe)"
+    region: eu
+    hash: { sha1: "6dc83dc91d0a5887f0056623498d4cbcd88bc463" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: G4QP01_report, path: report.json }

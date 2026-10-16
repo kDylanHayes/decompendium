@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "boom-street"
+name: "Boom Street decompilation"
+game: "boom-street"
+repo: https://github.com/FortuneStreetModding/boom-street-decomp
+description: "Matching decompilation of Boom Street."
+owners: [FortuneStreetModding]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "st7p01"
+    label: "ST7P01 (Europe)"
+    region: eu
+    hash: { sha1: "327fe0460c0b5497c5b8fe17bb4b4475b6cdeed3" }
+    progress:
+      kind: none

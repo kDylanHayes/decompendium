@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "dogcomp"
+name: "Dog's Life decompilation"
+game: "dog-s-life"
+repo: https://github.com/IWILLCRAFT-M0d/dogcomp
+description: "Matching decompilation of Dog's Life."
+owners: [IWILLCRAFT-M0d]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "configs"
+    label: "configs"
+    hash: { sha1: "19d81d0d8aa04af0ffc12cdcc73fa7d6d5bee3cb" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SCES_512.48_report, path: report.json }

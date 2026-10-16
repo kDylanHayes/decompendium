@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "battletanx-global-assault"
+name: "BattleTanx: Global Assault"
+platform: n64

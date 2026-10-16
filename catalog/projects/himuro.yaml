@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "himuro"
+name: "Fatal Frame decompilation"
+game: "fatal-frame"
+repo: https://github.com/Mikompilation/Himuro
+description: "Matching decompilation of Fatal Frame."
+owners: [Mikompilation]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "eu"
+    label: "EU"
+    hash: { sha1: "cb36d4365e70be9e9dc5bb66e2aa083811a39f12" }
+    progress:
+      kind: none
+  - id: "jp"
+    label: "JP"
+    hash: { sha1: "7aa0b147649b015a14f86c8f89cc7c1b89430958" }
+    progress:
+      kind: none
+  - id: "us"
+    label: "US"
+    hash: { sha1: "5ac4626e0d76218e977b01f4fae5948de9a1755e" }
+    progress:
+      kind: none

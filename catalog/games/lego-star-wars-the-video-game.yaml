@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "lego-star-wars-the-video-game"
+name: "LEGO Star Wars: The Video Game"
+platform: gc

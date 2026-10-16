@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "shadow-the-hedgehog"
+name: "Shadow the Hedgehog"
+platform: gc

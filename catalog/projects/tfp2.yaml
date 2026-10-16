@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "tfp2"
+name: "Tokyo Friend Park II: Ketteiban: Minna de Chousen! Taikan Attraction! decompilation"
+game: "tokyo-friend-park-ii-ketteiban-minna-de-chousen-taikan-attractio"
+repo: https://github.com/koopthekoopa/TFP2
+description: "Matching decompilation of Tokyo Friend Park II: Ketteiban: Minna de Chousen! Taikan Attraction!."
+owners: [koopthekoopa]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "r89jel-dbg"
+    label: "R89JEL_DBG (Japan)"
+    region: jp
+    hash: { sha1: "f687776526f3870fbea78073d0f3e1c5c509c92a" }
+    progress:
+      kind: none
+  - id: "r89jel-rel"
+    label: "R89JEL_REL (Japan)"
+    region: jp
+    hash: { sha1: "749d553c01c8d253b134aea0c6193bad7ff95e38" }
+    progress:
+      kind: none

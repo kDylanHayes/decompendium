@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "ty"
+name: "Ty the Tasmanian Tiger decompilation"
+game: "ty-the-tasmanian-tiger"
+repo: https://github.com/1superchip/ty-decomp
+description: "Matching decompilation of Ty the Tasmanian Tiger."
+owners: [1superchip]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gtye69"
+    label: "GTYE69 (USA)"
+    region: us
+    hash: { sha1: "c398adeba17e80b18e7b25d13dbc30c2939479c5" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GTYE69_report, path: report.json }

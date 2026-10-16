@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "boom-street"
+name: "Boom Street"
+platform: wii

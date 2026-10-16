@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "sims2"
+name: "The Sims 2 decompilation"
+game: "the-sims-2"
+repo: https://github.com/natebag/Sims2DECOMP
+description: "Matching decompilation of The Sims 2."
+owners: [natebag]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "g4ze69"
+    label: "G4ZE69 (USA)"
+    region: us
+    hash: { sha1: "d15b7be1396544a15728f25f732db63a7cfcc877" }
+    progress:
+      kind: none

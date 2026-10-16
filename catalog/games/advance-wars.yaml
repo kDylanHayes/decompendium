@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "advance-wars"
+name: "Advance Wars"
+aliases: ["Advance Wars: Dual Strike", "Wreck-It Ralph"]
+platform: gba

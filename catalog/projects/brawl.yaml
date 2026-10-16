@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "brawl"
+name: "Super Smash Bros. Brawl decompilation"
+game: "super-smash-bros-brawl"
+repo: https://github.com/doldecomp/brawl
+description: "Matching decompilation of Super Smash Bros. Brawl."
+owners: [doldecomp]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "rsbe01-02"
+    label: "RSBE01_02 (USA)"
+    region: us
+    hash: { sha1: "a09cb9af20ae8356396374c27e31883d893f9ebe" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: RSBE01_02_report, path: report.json }

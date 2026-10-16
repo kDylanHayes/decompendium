@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "digimon-digital-card-battle"
+name: "Digimon: Digital Card Battle"
+aliases: ["DigimonWorld: Digital Card Battle"]
+platform: ps1

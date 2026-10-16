@@ -32,6 +32,7 @@ export function codeKeys(code: string): string[] {
   const ps = /^([A-Z]{4})[-_ ]?(\d)(\d)\.?(\d)\.?(\d)(\d)$/.exec(code);
   if (ps) return [`${ps[1]}${ps.slice(2).join("")}`];
   // Nintendo product codes are upper case: 4 characters, then an optional maker code and suffixes.
+  if (code === "GAMEID") return []; // decomp-toolkit's template placeholder
   const nin = /^([A-Z0-9]{4})([A-Z0-9]{2})?(_.*)?$/.exec(code);
   if (nin && /[A-Z]/.test(nin[1]!)) return [nin[1]!];
   return [];
@@ -70,8 +71,21 @@ export function identify(e: Evidence, index: GameIndex): Identification {
   }
   const best = [...tally.values()].sort((a, b) => b.n - a.n || Number(b.hash) - Number(a.hash))[0]!;
   const nonGame = releases.find((r) => NOT_A_GAME.test(r.name))?.name ?? null;
-  const aliases = [...new Set(releases.map((r) => r.title))].filter((t) => strip(t) !== strip(best.title));
-  return { status: "identified", title: best.title, platform: best.platform, releases, nonGame, aliases };
+  let title = best.title;
+  const english = (r: Release) => /\b(USA|Europe|World|UK|Australia)\b/.test(r.region ?? "") || /\((USA|Europe|World)/.test(r.name);
+  if (!releases.some(english)) {
+    for (const r of releases.filter((x) => x.match.kind === "code")) {
+      const key = codeKeys(r.match.value)[0];
+      if (!key || key.length !== 4) continue;
+      const sibling = ["E", "P"].map((c) => index.codes[key.slice(0, 3) + c]?.find((x) => x.platform === best.platform && english(x))).find(Boolean);
+      if (sibling) {
+        title = sibling.title;
+        break;
+      }
+    }
+  }
+  const aliases = [...new Set(releases.map((r) => r.title))].filter((t) => strip(t) !== strip(title));
+  return { status: "identified", title, platform: best.platform, releases, nonGame, aliases };
 }
 
 /** A title guess from a description like "Decompilation of Rock Band 3 (Wii)". */

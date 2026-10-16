@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "dog-s-life"
+name: "Dog's Life"
+platform: ps2

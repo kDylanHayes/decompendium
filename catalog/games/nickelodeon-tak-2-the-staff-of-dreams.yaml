@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "nickelodeon-tak-2-the-staff-of-dreams"
+name: "Nickelodeon Tak 2: The Staff of Dreams"
+platform: gc

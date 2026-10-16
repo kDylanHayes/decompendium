@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "sly-cooper-and-the-thievius-raccoonus"
+name: "Sly Cooper and the Thievius Raccoonus"
+platform: ps2

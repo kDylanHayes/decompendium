@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "graffito"
+name: "Super Mario Sunshine decompilation"
+game: "super-mario-sunshine"
+repo: https://github.com/ryanbevins/Graffito-Decomp
+description: "Matching decompilation of Super Mario Sunshine."
+owners: [ryanbevins]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gmsj01"
+    label: "GMSJ01 (Japan)"
+    region: jp
+    hash: { sha1: "9f5a8caf56f5356aeac9d3ed28bf8de976a03625" }
+    progress:
+      kind: none
+  - id: "gmsp01"
+    label: "GMSP01 (Europe)"
+    region: eu
+    hash: { sha1: "a2edfa86880845f663f6f3b49e27cc9409d202bf" }
+    progress:
+      kind: none

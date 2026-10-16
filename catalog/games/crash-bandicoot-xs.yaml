@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "crash-bandicoot-xs"
+name: "Crash Bandicoot XS"
+aliases: ["Crash Bandicoot 2: N-Tranced"]
+platform: gba

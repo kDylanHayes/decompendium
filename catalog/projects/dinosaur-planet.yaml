@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "dinosaur-planet"
+name: "Dinosaur Planet decompilation"
+game: "dinosaur-planet"
+repo: https://github.com/zestydevy/dinosaur-planet
+description: "Matching decompilation of Dinosaur Planet."
+owners: [zestydevy]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa-proto"
+    label: "USA, Proto"
+    region: us
+    hash: { md5: "49f7bb346ade39d1915c22e090ffd748" }
+    progress:
+      kind: none

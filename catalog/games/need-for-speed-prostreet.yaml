@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "need-for-speed-prostreet"
+name: "Need for Speed: ProStreet"
+platform: wii

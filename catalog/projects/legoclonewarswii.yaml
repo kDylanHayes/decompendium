@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "legoclonewarswii"
+name: "LEGO Star Wars III: The Clone Wars decompilation"
+game: "lego-star-wars-iii-the-clone-wars"
+repo: https://github.com/ThePlayerRolo/LegoCloneWarsWii
+description: "Matching decompilation of LEGO Star Wars III: The Clone Wars."
+owners: [ThePlayerRolo]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "sc4e64"
+    label: "SC4E64 (USA)"
+    region: us
+    hash: { sha1: "2a942004e921780a69adb1eaa66c0220684812e2" }
+    progress:
+      kind: none
+  - id: "sc4p64"
+    label: "SC4P64 (Europe)"
+    region: eu
+    hash: { sha1: "2a942004e921780a69adb1eaa66c0220684812e2" }
+    progress:
+      kind: none

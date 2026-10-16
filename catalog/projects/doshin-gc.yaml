@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "doshin-gc"
+name: "Doshin the Giant decompilation"
+game: "doshin-the-giant"
+repo: https://github.com/break-core/doshin-gc
+description: "Matching decompilation of Doshin the Giant."
+owners: [break-core]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gkdp01"
+    label: "GKDP01 (Europe)"
+    region: eu
+    hash: { sha1: "b4208659ae08447e8fa5872e81690e5af6babb91" }
+    progress:
+      kind: none

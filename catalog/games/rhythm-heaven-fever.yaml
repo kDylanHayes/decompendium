@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "rhythm-heaven-fever"
+name: "Rhythm Heaven Fever"
+platform: wii

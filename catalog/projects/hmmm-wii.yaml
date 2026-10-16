@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "hmmm-wii"
+name: "Harvest Moon: Magical Melody decompilation"
+game: "harvest-moon-magical-melody"
+repo: https://github.com/cuthor/hmmm_wii-decomp
+description: "Matching decompilation of Harvest Moon: Magical Melody."
+owners: [cuthor]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "rhmee9"
+    label: "RHMEE9 (USA)"
+    region: us
+    hash: { sha1: "78cdbf39b231b351be4c0d789f0b141db606405e" }
+    progress:
+      kind: none

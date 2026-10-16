@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "pokemon-xd-gale-of-darkness"
+name: "Pokemon XD: Gale of Darkness"
+platform: gc

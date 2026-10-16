@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "kingdom-hearts-chain-of-memories"
+name: "Kingdom Hearts: Chain of Memories"
+platform: gba

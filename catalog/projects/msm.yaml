@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "msm"
+name: "Mario Sports Mix decompilation"
+game: "mario-sports-mix"
+repo: https://github.com/EltyDev/MSM-decomp
+description: "Matching decompilation of Mario Sports Mix."
+owners: [EltyDev]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "rmkp01"
+    label: "RMKP01 (Europe)"
+    region: eu
+    hash: { sha1: "02f2329b2e50cf12504f0bc1c7ed6e5a7841ae22" }
+    progress:
+      kind: none

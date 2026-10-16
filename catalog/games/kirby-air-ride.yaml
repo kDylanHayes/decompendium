@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "kirby-air-ride"
+name: "Kirby Air Ride"
+aliases: ["Kirby's Airride"]
+platform: gc

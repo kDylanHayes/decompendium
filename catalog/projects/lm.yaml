@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "lm"
+name: "Luigi's Mansion decompilation"
+game: "luigi-s-mansion"
+repo: https://github.com/SomeJakeGuy/lm-decomp
+description: "Matching decompilation of Luigi's Mansion."
+owners: [SomeJakeGuy]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "glme01"
+    label: "GLME01 (USA)"
+    region: us
+    hash: { sha1: "77d49225e7d28b9777916cdbe5809345c570ecbc" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GLME01_report, path: report.json }
+  - id: "glmj01"
+    label: "GLMJ01 (Japan)"
+    region: jp
+    hash: { sha1: "722005ea9c1eab54b114f814734d8f327e5614ee" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GLMJ01_report, path: report.json }
+  - id: "glmp01-00"
+    label: "GLMP01_00 (Europe)"
+    region: eu
+    hash: { sha1: "a1e2bd82813787cfe0b11afb5d138f08fdbd94f1" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GLMP01_00_report, path: report.json }
+  - id: "glmp01-01"
+    label: "GLMP01_01 (Europe)"
+    region: eu
+    hash: { sha1: "c9099665a33be49b16caa5c216c7e1094276c032" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GLMP01_01_report, path: report.json }

@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "sdwii"
+name: "Spider-Man: Shattered Dimensions decompilation"
+game: "spider-man-shattered-dimensions"
+repo: https://github.com/Grien25/SDWiiDecomp
+description: "Matching decompilation of Spider-Man: Shattered Dimensions."
+owners: [Grien25]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "spde52"
+    label: "SPDE52 (USA)"
+    region: us
+    hash: { sha1: "b2df499fc3325ad5a11db613f62256888be9ead8" }
+    progress:
+      kind: none

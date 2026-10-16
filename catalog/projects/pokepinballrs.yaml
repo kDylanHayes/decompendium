@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "pokepinballrs"
+name: "Pokemon Pinball: Ruby & Sapphire decompilation"
+game: "pokemon-pinball-ruby-sapphire"
+repo: https://github.com/pret/pokepinballrs
+description: "Matching decompilation of Pokemon Pinball: Ruby & Sapphire."
+owners: [pret]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "9fec81ce2c5df589e0371a0bf2f92a5fe8db730b" }
+    progress:
+      kind: none

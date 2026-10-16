@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "klonoa-empire-of-dreams"
+name: "Klonoa: Empire of Dreams"
+platform: gba

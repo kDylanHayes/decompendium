@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "fzerox"
+name: "F-Zero X decompilation"
+game: "f-zero-x"
+repo: https://github.com/inspectredc/fzerox
+description: "Matching decompilation of F-Zero X."
+owners: [inspectredc]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { md5: "753437d0d8ada1d12f3f9cf0f0a5171f" }
+    progress:
+      kind: none
+  - id: "japan"
+    label: "Japan"
+    region: jp
+    hash: { md5: "58d200d43620007314304f4e6c9e6528" }
+    progress:
+      kind: none
+  - id: "europe"
+    label: "Europe"
+    region: eu
+    hash: { md5: "ee79a8fe287b5dcaea584439363342fc" }
+    progress:
+      kind: none

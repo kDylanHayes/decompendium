@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "goldeneye-rogue-agent"
+name: "GoldenEye: Rogue Agent"
+platform: gc

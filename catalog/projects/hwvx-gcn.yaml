@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "hwvx-gcn"
+name: "Hot Wheels: Velocity X decompilation"
+game: "hot-wheels-velocity-x"
+repo: https://github.com/Duckxz/hwvx-gcn-decomp
+description: "Matching decompilation of Hot Wheels: Velocity X."
+owners: [Duckxz]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "ghwe78"
+    label: "GHWE78 (USA)"
+    region: us
+    hash: { sha1: "227ec09f53e56159b836a4180f85efacde495db6" }
+    progress:
+      kind: none

@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "wii-fit-plus"
+name: "Wii Fit Plus"
+platform: wii

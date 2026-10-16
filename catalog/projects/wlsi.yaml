@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "wlsi"
+name: "Wario Land: Shake It! decompilation"
+game: "wario-land-shake-it"
+repo: https://github.com/Swiftshine/wlsi
+description: "Matching decompilation of Wario Land: Shake It!."
+owners: [Swiftshine]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "rwle01"
+    label: "RWLE01 (USA)"
+    region: us
+    hash: { sha1: "332548f09599e6da3e36f81f275d8d16c10dc72c" }
+    progress:
+      kind: none

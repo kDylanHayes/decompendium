@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "mario-superstar-baseball"
+name: "Mario Superstar Baseball"
+platform: gc

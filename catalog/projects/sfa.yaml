@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "sfa"
+name: "Star Fox Adventures decompilation"
+game: "star-fox-adventures"
+repo: https://github.com/zcanann/SFA-Decomp
+description: "Matching decompilation of Star Fox Adventures."
+owners: [zcanann]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gsae01"
+    label: "GSAE01 (USA)"
+    region: us
+    hash: { sha1: "e750e8e894707a52446118a4b84f1b58b677b269" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GSAE01_report, path: report.json }
+  - id: "gsae01-rev1"
+    label: "GSAE01_rev1 (USA)"
+    region: us
+    hash: { sha1: "8bde4669c75260cc058b8b44ef36bacff3a67d20" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GSAE01_rev1_report, path: report.json }
+  - id: "gsaj01"
+    label: "GSAJ01 (Japan)"
+    region: jp
+    hash: { sha1: "a0646def31229c051f5143e6551840e6560b0556" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GSAJ01_report, path: report.json }
+  - id: "gsap01"
+    label: "GSAP01 (Europe)"
+    region: eu
+    hash: { sha1: "c5bb4a7fd3c4aff48c40e282d4d54795c37155f0" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GSAP01_report, path: report.json }
+  - id: "gsap01-rev1"
+    label: "GSAP01_rev1 (Europe)"
+    region: eu
+    hash: { sha1: "c1a6ccdc61c7e719e20ea7cc59c8de09fd183e66" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GSAP01_rev1_report, path: report.json }

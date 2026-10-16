@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "doshin-the-giant"
+name: "Doshin the Giant"
+platform: gc

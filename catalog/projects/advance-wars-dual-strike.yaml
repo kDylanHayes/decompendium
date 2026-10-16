@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "advance-wars-dual-strike"
+name: "Advance Wars decompilation"
+game: "advance-wars"
+repo: https://github.com/sturmds/advance-wars-dual-strike-decomp
+description: "Matching decompilation of Advance Wars."
+owners: [sturmds]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "usa-australia"
+    label: "USA, Australia"
+    region: us
+    hash: { sha1: "5a8d22d41caa2c0ff41fb4a2b885a6be607e22d9" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: AWRE_report, path: report.json }

@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "pbr"
+name: "Pokemon Battle Revolution decompilation"
+game: "pokemon-battle-revolution"
+repo: https://github.com/pbr-ret/pbr-decomp
+description: "Matching decompilation of Pokemon Battle Revolution."
+owners: [pbr-ret]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "rpbp01"
+    label: "RPBP01 (Europe)"
+    region: eu
+    hash: { sha1: "ffcd539d239722b8bb27e45c9ad4aacc818c8933" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: RPBP01_report, path: report.json }

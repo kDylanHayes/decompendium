@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "final-fantasy-crystal-chronicles"
+name: "Final Fantasy Crystal Chronicles"
+platform: gc

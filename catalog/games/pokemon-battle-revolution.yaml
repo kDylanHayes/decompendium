@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "pokemon-battle-revolution"
+name: "Pokemon Battle Revolution"
+platform: wii

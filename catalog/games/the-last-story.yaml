@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "the-last-story"
+name: "The Last Story"
+platform: wii

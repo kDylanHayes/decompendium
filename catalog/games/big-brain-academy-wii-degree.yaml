@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "big-brain-academy-wii-degree"
+name: "Big Brain Academy: Wii Degree"
+platform: wii

@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "mmx5"
+name: "Mega Man X5 decompilation"
+game: "mega-man-x5"
+repo: https://github.com/anzaldoivan/mmx5
+description: "Matching decompilation of Mega Man X5."
+owners: [anzaldoivan]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "check-rockx5"
+    label: "check.rockx5"
+    hash: { sha1: "3ab6c9cf7532d9702699b655d761c0dc0c2a7fab" }
+    progress:
+      kind: none
+  - id: "check-slus"
+    label: "check.slus"
+    hash: { sha1: "476e55ff4ac698a1ee0654c0f08804a5837bd2f3" }
+    progress:
+      kind: none
+  - id: "firewall-fixture"
+    label: "firewall-fixture"
+    hash: { sha1: "d4bc7b5d67878461ceac039b458b0f9db0e6adaa" }
+    progress:
+      kind: none
+  - id: "medium"
+    label: "medium"
+    hash: { sha1: "10709231f857636b5ccd3cd9acebc91458dcb5fd" }
+    progress:
+      kind: none

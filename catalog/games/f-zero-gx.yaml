@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "f-zero-gx"
+name: "F-Zero GX"
+platform: gc

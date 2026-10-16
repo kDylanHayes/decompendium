@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "lego-star-wars-iii-the-clone-wars"
+name: "LEGO Star Wars III: The Clone Wars"
+platform: wii

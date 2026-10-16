@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "rhae"
+name: "Wii Play decompilation"
+game: "wii-play"
+repo: https://github.com/akiramusic000/Rhae
+description: "Matching decompilation of Wii Play."
+owners: [akiramusic000]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "rhae01-01"
+    label: "RHAE01_01 (USA)"
+    region: us
+    hash: { sha1: "0da5e7e51135219f580ad011d1b635bc83569bb9" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: RHAE01_01_report, path: report.json }

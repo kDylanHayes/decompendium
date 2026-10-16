@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "fate-unlimited-codes-jp"
+name: "Fate-Unlimited Codes decompilation"
+game: "fate-unlimited-codes"
+repo: https://github.com/Harskov/fate-unlimited-codes-jp
+description: "Matching decompilation of Fate-Unlimited Codes."
+owners: [Harskov]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "slpm-551-08"
+    label: "SLPM_551.08"
+    hash: { sha1: "825b867ecf30b761b8261a528e86101aa4bc03ca" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLPM_551.08_report, path: report.json }

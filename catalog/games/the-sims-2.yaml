@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "the-sims-2"
+name: "The Sims 2"
+platform: gc

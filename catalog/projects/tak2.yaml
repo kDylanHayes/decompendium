@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "tak2"
+name: "Nickelodeon Tak 2: The Staff of Dreams decompilation"
+game: "nickelodeon-tak-2-the-staff-of-dreams"
+repo: https://github.com/AugusDogus/tak2
+description: "Matching decompilation of Nickelodeon Tak 2: The Staff of Dreams."
+owners: [AugusDogus]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "g2fe78"
+    label: "G2FE78 (USA)"
+    region: us
+    hash: { sha1: "ef623a8ce7bbc1e320bacae8ea62be4664ec92c6" }
+    progress:
+      kind: none

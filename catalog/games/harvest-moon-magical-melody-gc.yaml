@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "harvest-moon-magical-melody-gc"
+name: "Harvest Moon: Magical Melody"
+platform: gc

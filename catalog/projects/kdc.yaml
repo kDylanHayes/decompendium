@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "kdc"
+name: "Kirby's Dream Collection: Special Edition decompilation"
+game: "kirby-s-dream-collection-special-edition"
+repo: https://github.com/Swiftshine/kdc
+description: "Matching decompilation of Kirby's Dream Collection: Special Edition."
+owners: [Swiftshine]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "s72e01"
+    label: "S72E01 (USA)"
+    region: us
+    hash: { sha1: "14bf34bafa177caf1eada83bbe26f1c130ed3c4a" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: S72E01_report, path: report.json }

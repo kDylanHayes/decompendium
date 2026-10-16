@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "the-sims-bustin-out"
+name: "The Sims: Bustin' Out"
+platform: gc

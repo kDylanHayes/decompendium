@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "mssb"
+name: "Mario Superstar Baseball decompilation"
+game: "mario-superstar-baseball"
+repo: https://github.com/roeming/mssbDecomp
+description: "Matching decompilation of Mario Superstar Baseball."
+owners: [roeming]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gyqe01"
+    label: "GYQE01 (USA)"
+    region: us
+    hash: { sha1: "8a7f951cd701a9db6ed13a0bd59456d7a44b6fbb" }
+    progress:
+      kind: none

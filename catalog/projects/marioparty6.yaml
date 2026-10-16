@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "marioparty6"
+name: "Mario Party 6 decompilation"
+game: "mario-party-6"
+repo: https://github.com/iirg4x/marioparty6
+description: "Matching decompilation of Mario Party 6."
+owners: [iirg4x]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gp6e01"
+    label: "GP6E01 (USA)"
+    region: us
+    hash: { sha1: "b897e6ade6b3a0cd2f9907689f38a3b19c327e70" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GP6E01_report, path: report.json }

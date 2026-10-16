@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "hot-wheels-velocity-x"
+name: "Hot Wheels: Velocity X"
+platform: gc

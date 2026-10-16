@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "fzero-gx"
+name: "F-Zero GX decompilation"
+game: "f-zero-gx"
+repo: https://github.com/karamzov123/fzero-gx-decomp
+description: "Matching decompilation of F-Zero GX."
+owners: [karamzov123]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "gfze01"
+    label: "GFZE01 (USA)"
+    region: us
+    hash: { sha1: "421c88106697d3275a3fc26fb7a01bf6d816b271" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: GFZE01_report, path: report.json }

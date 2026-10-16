@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "mario-kart-ds"
+name: "Mario Kart DS"
+platform: nds

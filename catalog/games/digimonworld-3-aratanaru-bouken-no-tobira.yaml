@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "digimonworld-3-aratanaru-bouken-no-tobira"
+name: "DigimonWorld 3: Aratanaru Bouken no Tobira"
+aliases: ["Digimon World 3", "Digimon World 2003"]
+platform: ps1

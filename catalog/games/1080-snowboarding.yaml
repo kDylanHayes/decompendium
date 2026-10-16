@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "1080-snowboarding"
+name: "1080 Snowboarding"
+platform: n64

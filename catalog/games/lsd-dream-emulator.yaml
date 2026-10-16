@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "lsd-dream-emulator"
+name: "LSD: Dream Emulator"
+platform: ps1
