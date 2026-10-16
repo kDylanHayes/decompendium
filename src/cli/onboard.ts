@@ -172,7 +172,10 @@ for (const fullName of candidates) {
       reason = `game not confirmed${guess ? ` (description says "${guess}")` : ""}`;
       review = true;
     } else if (!result.draft || !result.draft.project.targets.length) reason = "no versions to list";
-    else if (result.nameMismatch) {
+    else if (result.portText) {
+      reason = `the README describes it as a port ("${result.portText}")`;
+      review = true;
+    } else if (result.nameMismatch) {
       reason = `the name doesn't mention ${result.draft.game.name}, the game its hashes identify; check it isn't a template copy`;
       review = true;
     } else if ((ownerCounts.get(fullName.split("/")[0]!.toLowerCase()) ?? 0) >= BULK_OWNER) {

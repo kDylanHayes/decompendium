@@ -11,7 +11,7 @@ import { fetchSource } from "../ingest/sources.ts";
 import { IngestError } from "../ingest/types.ts";
 import { percent } from "../site/model.ts";
 import { platformName } from "../site/format.ts";
-import { namesGame } from "./copycheck.ts";
+import { namesGame, portText } from "./copycheck.ts";
 import { makeDraft, type Draft } from "./draft.ts";
 import type { Submission } from "./form.ts";
 
@@ -32,6 +32,7 @@ export interface CheckResult {
   hashCheck: string | null; // where the build compares its output with a hash, if found
   draft: Draft | null;
   nameMismatch?: boolean; // the name doesn't mention the identified game
+  portText?: string; // the README's words describing the repo as a port
 }
 
 export interface CheckContext {
@@ -182,6 +183,11 @@ export async function checkSubmission(sub: Submission, ctx: CheckContext): Promi
     if (!namesGame(facts.fullName.split("/")[1]!, facts.description, [g.name, ...(g.aliases ?? [])], codesFromFacts(facts))) {
       result.nameMismatch = true;
       add("warn", `The repo's name and description don't mention **${g.name}**, the game its hashes identify. Check it isn't a copy of another project's template.`);
+    }
+    const port = portText(facts.description, facts.readme);
+    if (port) {
+      result.portText = port;
+      add("warn", `The README describes this repo as a port ("${port}"). Ports aren't listed; only decomps of the original release are.`);
     }
     const others = projects.filter((p) => p.game === g.id);
     if (result.draft.gameExists && others.length) {

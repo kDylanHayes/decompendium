@@ -87,3 +87,15 @@ function isSubsequence(small: string, big: string): boolean {
   for (const ch of big) if (ch === small[i]) i++;
   return i === small.length;
 }
+
+// The repo describing itself as a port ("... as a native PC program", "This is a
+// PC port of"), not a decomp that mentions a separate port or a port as a goal,
+// and not one saying what it isn't ("This is NOT a PC port").
+const PORT_TEXT =
+  /\bas a native (?:pc|windows|linux|mac) (?:program|app|application|executable|game)\b|\b(?:this|it) is an? (?:native |unofficial )?(?:pc|windows|linux|android) port\b|\b(?:this|it) is an? static recomp(?:ilation)?\b/i;
+
+/** The phrase that makes the repo read like a port, or null. */
+export function portText(description: string, readme: string): string | null {
+  const m = PORT_TEXT.exec(`${description}\n${readme.slice(0, 3000)}`);
+  return m ? m[0] : null;
+}

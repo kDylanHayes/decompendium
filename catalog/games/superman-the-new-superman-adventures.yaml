@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "superman-the-new-superman-adventures"
+name: "Superman: The New Superman Adventures"
+aliases: ["Superman 64", "Superman: The New Superman Aventures"]
+platform: n64

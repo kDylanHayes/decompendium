@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { acronyms, namesGame } from "../src/submit/copycheck.ts";
+import { acronyms, namesGame, portText } from "../src/submit/copycheck.ts";
 
 describe("copy check: does the repo name its game?", () => {
   it("accepts names, short forms, aliases and codes", () => {
@@ -34,5 +34,20 @@ describe("copy check: does the repo name its game?", () => {
     const a = acronyms("Tokyo Friend Park II");
     assert.ok(a.has("tfp2"));
     assert.ok(acronyms("Mario Kart 64").has("mk64"));
+  });
+});
+
+describe("copy check: ports", () => {
+  it("flags a repo that describes itself as a port", () => {
+    assert.ok(portText("", "Animal Crossing: Wild World (Nintendo DS) as a native PC program."));
+    assert.ok(portText("", "This is a PC port of Star Fox 64."));
+  });
+  it("ignores decomps that mention a separate port, a port goal, or say they aren't one", () => {
+    for (const text of [
+      "This is NOT a PC PORT. It builds the ROM.",
+      "The recovered source is the upstream reference for the separate native PC port.",
+      "A work-in-progress decompilation, with a long-term goal of a native PC port.",
+      "aiming for a native PC version built from the same source",
+    ]) assert.equal(portText("", text), null, text);
   });
 });

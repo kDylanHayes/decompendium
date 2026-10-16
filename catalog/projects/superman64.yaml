@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=../../schema/project.schema.json
 id: "superman64"
-name: "Superman: The New Superman Aventures decompilation"
-game: "superman-the-new-superman-aventures"
+name: "Superman: The New Superman Adventures decompilation"
+game: "superman-the-new-superman-adventures"
 repo: https://github.com/gcsmith/Superman64Decomp
-description: "Matching decompilation of Superman: The New Superman Aventures."
+description: "Matching decompilation of Superman: The New Superman Adventures."
 owners: [gcsmith]  # repo owner; maintainers can replace this with their usernames
 confirmed: false
 listed_at: 2026-10-16
