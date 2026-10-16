@@ -2,7 +2,7 @@ import { normalizeRepo, readCatalog, type Config, type Game, type Project } from
 import { deepCheck } from "../discover/deep.ts";
 import { fetchFacts, repoFromUrl, type RepoFacts } from "../discover/facts.ts";
 import { assess, type Assessment } from "../discover/signals.ts";
-import { hexDigests, repoEvidence } from "../identify/evidence.ts";
+import { codesFromFacts, hexDigests, repoEvidence } from "../identify/evidence.ts";
 import { identify, identifyByIgdb, igdbCredsFromEnv, titleFromDescription, titleFromRepoName, type Identification } from "../identify/identify.ts";
 import type { GameIndex } from "../identify/index.ts";
 import type { GitHub } from "../ingest/http.ts";
@@ -11,6 +11,7 @@ import { fetchSource } from "../ingest/sources.ts";
 import { IngestError } from "../ingest/types.ts";
 import { percent } from "../site/model.ts";
 import { platformName } from "../site/format.ts";
+import { namesGame } from "./copycheck.ts";
 import { makeDraft, type Draft } from "./draft.ts";
 import type { Submission } from "./form.ts";
 
@@ -30,6 +31,7 @@ export interface CheckResult {
   submitterMaintains: boolean;
   hashCheck: string | null; // where the build compares its output with a hash, if found
   draft: Draft | null;
+  nameMismatch?: boolean; // the name doesn't mention the identified game
 }
 
 export interface CheckContext {
@@ -174,6 +176,12 @@ export async function checkSubmission(sub: Submission, ctx: CheckContext): Promi
         "warn",
         `This repo builds ${otherGames.length + 1} games (${[g.name, ...otherGames].map((t) => `**${t}**`).join(", ")}); each needs its own entry. The draft below covers ${g.name} only.`,
       );
+    }
+    // A repo whose name and description don't mention the game its hashes identify
+    // is often a template carried over with someone else's hashes.
+    if (!namesGame(facts.fullName.split("/")[1]!, facts.description, [g.name, ...(g.aliases ?? [])], codesFromFacts(facts))) {
+      result.nameMismatch = true;
+      add("warn", `The repo's name and description don't mention **${g.name}**, the game its hashes identify. Check it isn't a copy of another project's template.`);
     }
     const others = projects.filter((p) => p.game === g.id);
     if (result.draft.gameExists && others.length) {

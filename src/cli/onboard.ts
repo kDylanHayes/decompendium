@@ -98,6 +98,15 @@ if (!index) {
 const github = new GitHub(fetch, process.env.GITHUB_TOKEN || undefined, 60_000);
 const ledger = readLedger(resolve(values.ledger!));
 const wanted = new Set(values.status!.split(","));
+// Owners with many candidate repos: established groups have up to about six
+// (doldecomp, mariopartyrd); one account with 21 near-identical repos was bulk-made.
+const BULK_OWNER = 8;
+const ownerCounts = new Map<string, number>();
+for (const [name, e] of Object.entries(ledger.repos)) {
+  if (e.status !== "likely" && e.status !== "possible") continue;
+  const owner = name.split("/")[0]!.toLowerCase();
+  ownerCounts.set(owner, (ownerCounts.get(owner) ?? 0) + 1);
+}
 const candidates = Object.entries(ledger.repos)
   .filter(([, e]) => wanted.has(e.status))
   .sort((a, b) => b[1].assessment.score - a[1].assessment.score)
@@ -163,7 +172,14 @@ for (const fullName of candidates) {
       reason = `game not confirmed${guess ? ` (description says "${guess}")` : ""}`;
       review = true;
     } else if (!result.draft || !result.draft.project.targets.length) reason = "no versions to list";
-    else {
+    else if (result.nameMismatch) {
+      reason = `the name doesn't mention ${result.draft.game.name}, the game its hashes identify; check it isn't a template copy`;
+      review = true;
+    } else if ((ownerCounts.get(fullName.split("/")[0]!.toLowerCase()) ?? 0) >= BULK_OWNER) {
+      const n = ownerCounts.get(fullName.split("/")[0]!.toLowerCase())!;
+      reason = `one of ${n} decomp repos from ${fullName.split("/")[0]}; check they aren't bulk-made or copies`;
+      review = true;
+    } else {
       const draft = result.draft;
       const others = raw.projects.filter((p) => (p.data as Project).game === draft.game.id);
       const port = portHint(f.fullName, draft.game.platform);
