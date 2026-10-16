@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "armored-core"
+name: "Armored Core decompilation"
+game: "armored-core"
+repo: https://github.com/Wyrelade/Armored-Core-Decomp
+description: "Matching decompilation of Armored Core."
+owners: [Wyrelade]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "scus-941-82"
+    label: "USA (SCUS-94182)"
+    hash: { sha1: "ee884a2cb3ce30bc13255142fecd5a2f02ba04ad" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SCUS-94182_report, path: report.json }

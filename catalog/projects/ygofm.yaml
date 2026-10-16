@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "ygofm"
+name: "Yu-Gi-Oh! Forbidden Memories decompilation"
+game: "yu-gi-oh-forbidden-memories"
+repo: https://github.com/MaChInEgUn3/ygofm-decomp
+description: "Matching decompilation of Yu-Gi-Oh! Forbidden Memories."
+owners: [MaChInEgUn3]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "slus-014-11"
+    label: "USA (SLUS-01411)"
+    hash: { sha1: "84747e64f6da8e764206ec203e489acf8c9dcf7d" }
+    progress:
+      kind: none

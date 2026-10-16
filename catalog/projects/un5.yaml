@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "un5"
+name: "Naruto Shippuden: Ultimate Ninja 5 decompilation"
+game: "naruto-shippuden-ultimate-ninja-5"
+repo: https://github.com/MiguelQueiroz010/Decomp-no-Me-UN5Decomp
+description: "Matching decompilation of Naruto Shippuden: Ultimate Ninja 5."
+owners: [MiguelQueiroz010]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "sles-556-05"
+    label: "Europe (SLES-55605)"
+    hash: { sha1: "f81e8e0e48632cdc7d25589cb061ba3e038b1681" }
+    progress:
+      kind: none

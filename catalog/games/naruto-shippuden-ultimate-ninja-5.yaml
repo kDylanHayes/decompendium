@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "naruto-shippuden-ultimate-ninja-5"
+name: "Naruto Shippuden: Ultimate Ninja 5"
+platform: ps2

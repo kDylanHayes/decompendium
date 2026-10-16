@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "shin-megami-tensei-persona-3-fes"
+name: "Shin Megami Tensei: Persona 3 FES"
+platform: ps2

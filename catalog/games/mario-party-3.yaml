@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "mario-party-3"
+name: "Mario Party 3"
+platform: n64

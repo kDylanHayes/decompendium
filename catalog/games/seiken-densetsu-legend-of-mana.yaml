@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "seiken-densetsu-legend-of-mana"
+name: "Seiken Densetsu: Legend of Mana"
+aliases: ["Legend of Mana"]
+platform: ps1

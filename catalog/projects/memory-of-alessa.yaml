@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "memory-of-alessa"
+name: "Silent Hill 3 decompilation"
+game: "silent-hill-3"
+repo: https://github.com/dreamingmoths/memory-of-alessa
+description: "Matching decompilation of Silent Hill 3."
+owners: [dreamingmoths]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "slus-202-28"
+    label: "USA (SLUS-20228)"
+    hash: { sha256: "f47309277af4f1d6a1a8034ab625d0fd39eafa4e7aeb755524988692c28ea0e3" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLUS_202.28_report, path: report.json }
+  - id: "slus-206-22"
+    label: "USA (SLUS-20622)"
+    hash: { sha256: "90e0e14431442682ef7fe98ce953b5c0f652f45e4319a7c739410c2dce8d0d5b" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLUS_206.22_report, path: report.json }

@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "persona3-fes"
+name: "Shin Megami Tensei: Persona 3 FES decompilation"
+game: "shin-megami-tensei-persona-3-fes"
+repo: https://github.com/snaku/Persona3-FES-Decompilation
+description: "Matching decompilation of Shin Megami Tensei: Persona 3 FES."
+owners: [snaku]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "slus-216-21"
+    label: "USA (SLUS-21621)"
+    hash: { sha1: "3929cd7c02be944f25ec6b924e5f1eab9bc5e9cb" }
+    progress:
+      kind: none

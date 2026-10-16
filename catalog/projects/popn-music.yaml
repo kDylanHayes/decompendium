@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "popn-music"
+name: "Pop'n Music decompilation"
+game: "pop-n-music"
+repo: https://github.com/Erizur/slpm86183
+description: "Matching decompilation of Pop'n Music."
+owners: [Erizur]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "slpm-861-83"
+    label: "Japan (SLPM-86183)"
+    hash: { sha256: "ad9debcf503eaeddba0094bd7ae87b87b0e93752f4350aecccd5d0d9afe2c5b8" }
+    progress:
+      kind: none

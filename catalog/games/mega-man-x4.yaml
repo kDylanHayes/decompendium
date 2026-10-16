@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "mega-man-x4"
+name: "Mega Man X4"
+aliases: ["Rockman X4"]
+platform: ps1

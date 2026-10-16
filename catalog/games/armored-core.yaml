@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "armored-core"
+name: "Armored Core"
+platform: ps1

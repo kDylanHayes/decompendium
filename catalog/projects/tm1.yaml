@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "tm1"
+name: "Twisted Metal decompilation"
+game: "twisted-metal"
+repo: https://github.com/abelbriggs1/tm1_decomp
+description: "Matching decompilation of Twisted Metal."
+owners: [abelbriggs1]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "sips-600-07"
+    label: "Japan (SIPS-60007)"
+    hash: { sha1: "8cf1312728d9145a95f35c33eaf5ba3eb37e43f7" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: jp_report, path: report.json }

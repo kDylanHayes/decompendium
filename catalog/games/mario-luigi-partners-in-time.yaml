@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "mario-luigi-partners-in-time"
+name: "Mario & Luigi: Partners in Time"
+platform: nds

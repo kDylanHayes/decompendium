@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "lom"
+name: "Seiken Densetsu: Legend of Mana decompilation"
+game: "seiken-densetsu-legend-of-mana"
+repo: https://github.com/celophi/lom-decomp
+description: "Matching decompilation of Seiken Densetsu: Legend of Mana."
+owners: [celophi]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-16
+targets:
+  - id: "slps-021-70"
+    label: "Japan (SLPS-02170)"
+    hash: { sha1: "b067188a92e4de9a4db7bb7e5343c757e9884bfa" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLPS_021.70_report, path: report.json }
+  - id: "slus-010-13"
+    label: "USA (SLUS-01013)"
+    hash: { sha1: "d11dfdd50d412ac3fa3e2eb80fbde138da118f27" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLUS_010.13_report, path: report.json }

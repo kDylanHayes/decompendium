@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "pokemon-platinum-version"
+name: "Pokemon: Platinum Version"
+platform: nds
