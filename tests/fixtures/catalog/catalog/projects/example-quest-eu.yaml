@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../../../../schema/project.schema.json
+# A second project for the same game, allowed by the fork rule because it
+# targets a region no other listed project covers.
+id: example-quest-eu
+name: Example Quest PAL decompilation
+game: example-quest
+repo: https://gitlab.com/someone/example-quest-pal
+description: Matching decompilation of the European release.
+owners: [pal-maintainer]
+listed_at: 2026-11-09
+targets:
+  - id: eu
+    label: EU 1.1
+    region: eu
+    version: "1.1"
+    hash: { sha256: "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef" }

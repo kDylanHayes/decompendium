@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://decompendium.com/schema/game.schema.json",
+  "title": "Game",
+  "description": "A released title on one platform family. One file per game in catalog/games/.",
+  "type": "object",
+  "required": ["id", "name", "platform"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "$ref": "defs.schema.json#/$defs/slug",
+      "description": "Must equal the file name without .yaml."
+    },
+    "name": {
+      "type": "string",
+      "allOf": [{ "$ref": "defs.schema.json#/$defs/plain_text" }],
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "aliases": {
+      "description": "Other names people search for. Used by search and duplicate checks.",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "allOf": [{ "$ref": "defs.schema.json#/$defs/plain_text" }],
+        "minLength": 1,
+        "maxLength": 120
+      }
+    },
+    "platform": {
+      "$ref": "defs.schema.json#/$defs/slug",
+      "description": "One of the platforms listed in config.yaml."
+    },
+    "released": {
+      "type": "integer",
+      "minimum": 1970,
+      "maximum": 2100
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "yaml.schemas": {
+    "./schema/game.schema.json": "catalog/games/*.yaml",
+    "./schema/project.schema.json": "catalog/projects/*.yaml",
+    "./schema/config.schema.json": "config.yaml"
+  }
+}

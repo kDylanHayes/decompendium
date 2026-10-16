@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../../../../schema/project.schema.json
+# Listed without progress data: still appears on its game page.
+id: example-racer
+name: Example Racer decomp
+game: example-racer
+repo: https://github.com/racer-team/example-racer
+description: Matching decompilation of Example Racer (SLUS-00000).
+owners: [racer-dev]
+show_in_index: false
+listed_at: 2026-11-10
+targets:
+  - id: us
+    label: US
+    hash: { sha1: "89abcdef0123456789abcdef0123456789abcdef" }
+    progress:
+      kind: none

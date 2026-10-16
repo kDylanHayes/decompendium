@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://decompendium.com/schema/progress.schema.json",
+  "title": "Decompendium progress format, version 1",
+  "description": "For projects that do not produce objdiff reports. Code and data are measured in bytes; functions in whole functions. \"Matched\" means byte-identical to the original in the verified build.",
+  "type": "object",
+  "required": ["schema", "code"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "decompendium-progress/1" },
+    "commit": { "type": "string", "pattern": "^[0-9a-f]{7,64}$" },
+    "commit_at": { "type": "string", "format": "date-time" },
+    "code": { "$ref": "defs.schema.json#/$defs/count" },
+    "functions": { "$ref": "defs.schema.json#/$defs/count" },
+    "data": { "$ref": "defs.schema.json#/$defs/count" },
+    "categories": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "code"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "minLength": 1, "maxLength": 64 },
+          "name": { "type": "string", "minLength": 1, "maxLength": 100 },
+          "code": { "$ref": "defs.schema.json#/$defs/count" },
+          "functions": { "$ref": "defs.schema.json#/$defs/count" },
+          "data": { "$ref": "defs.schema.json#/$defs/count" }
+        }
+      }
+    }
+  }
+}

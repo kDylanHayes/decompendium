@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=../../../../../schema/project.schema.json
+# Two targets: one reports through objdiff artifacts, one through a
+# Decompendium progress file at a URL.
+id: example-quest
+name: Example Quest decompilation
+game: example-quest
+repo: https://github.com/example-org/example-quest
+description: Matching decompilation of Example Quest.
+owners: [example-maintainer, second-maintainer]
+status: active
+show_in_index: true
+ai_policy: discouraged
+confirmed: true
+note: Looking for help with the audio library.
+links:
+  contributing: https://github.com/example-org/example-quest/blob/main/CONTRIBUTING.md
+listed_at: 2026-11-02
+targets:
+  - id: us
+    label: US 1.0
+    region: us
+    version: "1.0"
+    hash: { sha1: "0123456789abcdef0123456789abcdef01234567" }
+    progress:
+      kind: objdiff
+      source:
+        type: github-artifact
+        workflow: build.yml
+        artifact: us_report
+        path: report.json
+  - id: jp
+    label: JP 1.0
+    region: jp
+    version: "1.0"
+    hash: { md5: "0123456789abcdef0123456789abcdef" }
+    progress:
+      kind: decompendium
+      source:
+        type: url
+        url: https://example-org.github.io/example-quest/progress/jp.json

@@ -1,0 +1,7 @@
+# yaml-language-server: $schema=../../../../../schema/game.schema.json
+# Fictional game used by the tests and as a copyable example.
+id: example-quest
+name: Example Quest
+aliases: [EQ, "Example Quest 64"]
+platform: n64
+released: 1997

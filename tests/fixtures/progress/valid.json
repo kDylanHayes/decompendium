@@ -1,0 +1,11 @@
+{
+  "schema": "decompendium-progress/1",
+  "commit": "4f1c2a9e0b7d3c5a1e2f4b6d8c0a2e4f6b8d0c2a",
+  "commit_at": "2026-11-02T21:14:03Z",
+  "code": { "matched": 182340, "total": 412992 },
+  "functions": { "matched": 610, "total": 1544 },
+  "data": { "matched": 40112, "total": 90880 },
+  "categories": [
+    { "id": "engine", "name": "Engine", "code": { "matched": 120000, "total": 200000 } }
+  ]
+}

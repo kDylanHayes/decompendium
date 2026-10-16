@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://decompendium.com/schema/config.schema.json",
+  "title": "Site configuration",
+  "type": "object",
+  "required": ["defaults", "catalog_maintainers", "platforms", "allowed_hosts", "opted_out", "limits", "thresholds"],
+  "additionalProperties": false,
+  "properties": {
+    "defaults": {
+      "type": "object",
+      "required": ["show_in_index"],
+      "additionalProperties": false,
+      "properties": { "show_in_index": { "type": "boolean" } }
+    },
+    "catalog_maintainers": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "defs.schema.json#/$defs/github_user" }
+    },
+    "platforms": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "defs.schema.json#/$defs/slug" }
+    },
+    "allowed_hosts": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "format": "hostname" }
+    },
+    "opted_out": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "defs.schema.json#/$defs/https_url" }
+    },
+    "limits": {
+      "type": "object",
+      "required": ["report_download_bytes", "report_read_bytes", "report_store_bytes", "fetch_timeout_seconds"],
+      "additionalProperties": false,
+      "properties": {
+        "report_download_bytes": { "type": "integer", "minimum": 1 },
+        "report_read_bytes": { "type": "integer", "minimum": 1 },
+        "report_store_bytes": { "type": "integer", "minimum": 1 },
+        "fetch_timeout_seconds": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "thresholds": {
+      "type": "object",
+      "required": ["stale_after_days", "quiet_after_days", "failing_after_attempts", "fork_inactive_months"],
+      "additionalProperties": false,
+      "properties": {
+        "stale_after_days": { "type": "integer", "minimum": 1 },
+        "quiet_after_days": { "type": "integer", "minimum": 1 },
+        "failing_after_attempts": { "type": "integer", "minimum": 1 },
+        "fork_inactive_months": { "type": "integer", "minimum": 1 }
+      }
+    }
+  }
+}

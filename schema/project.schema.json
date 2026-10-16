@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://decompendium.com/schema/project.schema.json",
+  "title": "Project",
+  "description": "One matching decompilation project. One file per project in catalog/projects/, targets inline.",
+  "type": "object",
+  "required": ["id", "name", "game", "repo", "description", "owners", "listed_at", "targets"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "$ref": "defs.schema.json#/$defs/slug",
+      "description": "Must equal the file name without .yaml. Never reused after removal."
+    },
+    "name": {
+      "type": "string",
+      "allOf": [{ "$ref": "defs.schema.json#/$defs/plain_text" }],
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "game": {
+      "$ref": "defs.schema.json#/$defs/slug",
+      "description": "The id of a file in catalog/games/."
+    },
+    "repo": {
+      "$ref": "defs.schema.json#/$defs/https_url",
+      "description": "Repository URL. The host must be in config.yaml allowed_hosts."
+    },
+    "description": {
+      "type": "string",
+      "allOf": [{ "$ref": "defs.schema.json#/$defs/plain_text" }],
+      "minLength": 1,
+      "maxLength": 300
+    },
+    "owners": {
+      "description": "GitHub usernames of the project's maintainers.",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "defs.schema.json#/$defs/github_user" }
+    },
+    "status": {
+      "enum": ["active", "complete", "archived"],
+      "default": "active"
+    },
+    "show_in_index": {
+      "type": "boolean",
+      "description": "Whether the project appears on the home directory. Defaults to config.yaml defaults.show_in_index."
+    },
+    "ai_policy": {
+      "enum": ["unspecified", "allowed", "discouraged", "prohibited"],
+      "default": "unspecified"
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "description": "True once a maintainer has submitted, edited or confirmed the entry. Set by catalog maintainers or the bot."
+    },
+    "note": {
+      "type": "string",
+      "allOf": [{ "$ref": "defs.schema.json#/$defs/plain_text" }],
+      "maxLength": 280
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "contributing": { "$ref": "defs.schema.json#/$defs/https_url" },
+        "chat": { "$ref": "defs.schema.json#/$defs/https_url" },
+        "website": { "$ref": "defs.schema.json#/$defs/https_url" }
+      }
+    },
+    "listed_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "targets": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/target" }
+    }
+  },
+  "$defs": {
+    "target": {
+      "type": "object",
+      "required": ["id", "label", "hash"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "defs.schema.json#/$defs/slug",
+          "description": "Unique within the project. Full target id is <project>/<target>."
+        },
+        "label": {
+          "type": "string",
+          "allOf": [{ "$ref": "defs.schema.json#/$defs/plain_text" }],
+          "minLength": 1,
+          "maxLength": 60
+        },
+        "region": { "$ref": "defs.schema.json#/$defs/slug" },
+        "version": {
+          "type": "string",
+          "allOf": [{ "$ref": "defs.schema.json#/$defs/plain_text" }],
+          "maxLength": 40
+        },
+        "hash": {
+          "description": "Hash of the original binary that the build verifies against.",
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": false,
+          "properties": {
+            "sha1": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+            "md5": { "type": "string", "pattern": "^[0-9a-f]{32}$" },
+            "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+          }
+        },
+        "progress": { "$ref": "#/$defs/progress" }
+      }
+    },
+    "progress": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["kind"],
+          "additionalProperties": false,
+          "properties": { "kind": { "const": "none" } }
+        },
+        {
+          "type": "object",
+          "required": ["kind", "source"],
+          "additionalProperties": false,
+          "properties": {
+            "kind": { "enum": ["objdiff", "decompendium"] },
+            "source": { "$ref": "#/$defs/source" }
+          }
+        }
+      ]
+    },
+    "source": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["type", "artifact", "path"],
+          "additionalProperties": false,
+          "properties": {
+            "type": { "const": "github-artifact" },
+            "workflow": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9._-]+\\.ya?ml$",
+              "description": "Workflow file name; narrows the runs searched."
+            },
+            "artifact": { "type": "string", "minLength": 1, "maxLength": 200 },
+            "path": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 300,
+              "pattern": "^(?!/)(?!.*\\.\\.)",
+              "description": "File inside the artifact zip."
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": ["type", "url"],
+          "additionalProperties": false,
+          "properties": {
+            "type": { "const": "url" },
+            "url": { "$ref": "defs.schema.json#/$defs/https_url" }
+          }
+        }
+      ]
+    }
+  }
+}
