@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_at": "2026-10-16T13:35:35.753Z",
+  "updated_at": "2026-10-16T14:57:14.291Z",
   "targets": {
     "1080/japan-usa-en-ja": {
       "run_id": 38796963214,
@@ -54,6 +54,14 @@
       "run_id": 35128293466,
       "last_attempt_at": "2026-10-16T13:35:22.253Z",
       "last_success_at": "2026-10-16T13:35:22.253Z",
+      "consecutive_failures": 0,
+      "last_error": null,
+      "anomaly": null
+    },
+    "armored-core/scus-941-82": {
+      "run_id": 38444026785,
+      "last_attempt_at": "2026-10-16T14:57:09.620Z",
+      "last_success_at": "2026-10-16T14:57:09.620Z",
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
@@ -177,6 +185,13 @@
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
+    },
+    "digimon-world-2/slus-011-93": {
+      "anomaly": null,
+      "last_attempt_at": "2026-10-16T14:57:09.663Z",
+      "last_success_at": null,
+      "consecutive_failures": 1,
+      "last_error": "report.json not found in artifact (contains: progress.json)"
     },
     "dogcomp/configs": {
       "run_id": 36196927643,
@@ -506,6 +521,20 @@
       "last_error": null,
       "anomaly": null
     },
+    "lom/slps-021-70": {
+      "anomaly": null,
+      "last_attempt_at": "2026-10-16T14:57:09.664Z",
+      "last_success_at": null,
+      "consecutive_failures": 1,
+      "last_error": "report.json not found in artifact (contains: progress.json)"
+    },
+    "lom/slus-010-13": {
+      "anomaly": null,
+      "last_attempt_at": "2026-10-16T14:57:09.665Z",
+      "last_success_at": null,
+      "consecutive_failures": 1,
+      "last_error": "report.json not found in artifact (contains: progress.json)"
+    },
     "lombyte/us": {
       "run_id": 38905806188,
       "last_attempt_at": "2026-10-16T13:35:25.430Z",
@@ -594,6 +623,22 @@
       "last_error": null,
       "anomaly": null
     },
+    "memory-of-alessa/slus-202-28": {
+      "run_id": 38773040968,
+      "last_attempt_at": "2026-10-16T14:57:09.665Z",
+      "last_success_at": "2026-10-16T14:57:09.665Z",
+      "consecutive_failures": 0,
+      "last_error": null,
+      "anomaly": null
+    },
+    "memory-of-alessa/slus-206-22": {
+      "run_id": 38773040968,
+      "last_attempt_at": "2026-10-16T14:57:09.666Z",
+      "last_success_at": "2026-10-16T14:57:09.666Z",
+      "consecutive_failures": 0,
+      "last_error": null,
+      "anomaly": null
+    },
     "mk-deception/gqne5d": {
       "run_id": 38849942110,
       "last_attempt_at": "2026-10-16T13:35:25.977Z",
@@ -666,6 +711,14 @@
       "last_error": null,
       "anomaly": null
     },
+    "mvc2-ps2/slus-204-86": {
+      "run_id": 37692569723,
+      "last_attempt_at": "2026-10-16T14:57:09.666Z",
+      "last_success_at": "2026-10-16T14:57:09.666Z",
+      "consecutive_failures": 0,
+      "last_error": null,
+      "anomaly": null
+    },
     "nfsmw/gowe69": {
       "run_id": 38059407276,
       "last_attempt_at": "2026-10-16T13:35:26.493Z",
@@ -697,6 +750,13 @@
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
+    },
+    "parasite-eve-2/usa": {
+      "anomaly": null,
+      "last_attempt_at": "2026-10-16T14:57:09.667Z",
+      "last_success_at": null,
+      "consecutive_failures": 1,
+      "last_error": "report.json not found in artifact (contains: progress.json)"
     },
     "parasite-eve/usa": {
       "run_id": 38785603442,
@@ -994,6 +1054,34 @@
       "last_error": null,
       "anomaly": null
     },
+    "psx-tomba/sces-013-30": {
+      "anomaly": null,
+      "last_attempt_at": "2026-10-16T14:57:10.552Z",
+      "last_success_at": null,
+      "consecutive_failures": 1,
+      "last_error": "report.json not found in artifact (contains: progress.json)"
+    },
+    "psx-tomba/sces-013-31": {
+      "anomaly": null,
+      "last_attempt_at": "2026-10-16T14:57:10.725Z",
+      "last_success_at": null,
+      "consecutive_failures": 1,
+      "last_error": "report.json not found in artifact (contains: progress.json)"
+    },
+    "psx-tomba/scus-942-36": {
+      "anomaly": null,
+      "last_attempt_at": "2026-10-16T14:57:10.734Z",
+      "last_success_at": null,
+      "consecutive_failures": 1,
+      "last_error": "report.json not found in artifact (contains: progress.json)"
+    },
+    "psx-tomba/slps-011-44": {
+      "anomaly": null,
+      "last_attempt_at": "2026-10-16T14:57:10.735Z",
+      "last_success_at": null,
+      "consecutive_failures": 1,
+      "last_error": "report.json not found in artifact (contains: progress.json)"
+    },
     "rb3/szbe69-b8": {
       "run_id": 37617918903,
       "last_attempt_at": "2026-10-16T13:35:20.188Z",
@@ -1210,6 +1298,14 @@
       "last_error": null,
       "anomaly": null
     },
+    "tm1/sips-600-07": {
+      "run_id": 38848136689,
+      "last_attempt_at": "2026-10-16T14:57:10.887Z",
+      "last_success_at": "2026-10-16T14:57:10.887Z",
+      "consecutive_failures": 0,
+      "last_error": null,
+      "anomaly": null
+    },
     "tokimemo-ps1/slpm-86-053": {
       "run_id": 38908474984,
       "last_attempt_at": "2026-10-16T13:35:28.618Z",
@@ -1328,6 +1424,13 @@
       "consecutive_failures": 0,
       "last_error": null,
       "anomaly": null
+    },
+    "xenogears/slus-006-64": {
+      "anomaly": null,
+      "last_attempt_at": "2026-10-16T14:57:11.068Z",
+      "last_success_at": null,
+      "consecutive_failures": 1,
+      "last_error": "report.json not found in artifact (contains: progress.json)"
     }
   },
   "projects": {
@@ -1378,6 +1481,10 @@
       "default_branch_checked_at": "2026-10-16T13:12:01.238Z",
       "last_commit_at": "2026-09-16T17:27:23Z",
       "commits_checked_at": "2026-10-16T13:17:08.122Z"
+    },
+    "armored-core": {
+      "default_branch": "main",
+      "default_branch_checked_at": "2026-10-16T14:57:09.959Z"
     },
     "bar": {
       "default_branch": "main",
@@ -1516,6 +1623,10 @@
       "default_branch_checked_at": "2026-10-16T13:17:16.856Z",
       "last_commit_at": "2026-10-01T19:46:44Z",
       "commits_checked_at": "2026-10-16T13:17:17.095Z"
+    },
+    "digimon-world-2": {
+      "default_branch": "main",
+      "default_branch_checked_at": "2026-10-16T14:57:09.962Z"
     },
     "dinosaur-planet": {
       "default_branch": "master",
@@ -1823,6 +1934,10 @@
       "last_commit_at": "2026-10-06T18:25:54Z",
       "commits_checked_at": "2026-10-16T13:17:36.951Z"
     },
+    "lom": {
+      "default_branch": "master",
+      "default_branch_checked_at": "2026-10-16T14:57:09.958Z"
+    },
     "lombyte": {
       "default_branch": "main",
       "default_branch_checked_at": "2026-10-16T13:12:14.676Z",
@@ -1900,6 +2015,10 @@
       "default_branch_checked_at": "2026-10-16T01:11:08.393Z",
       "last_commit_at": "2026-10-14T22:36:23Z",
       "commits_checked_at": "2026-10-16T01:12:03.253Z"
+    },
+    "memory-of-alessa": {
+      "default_branch": "main",
+      "default_branch_checked_at": "2026-10-16T14:57:09.990Z"
     },
     "mf": {
       "default_branch": "main",
@@ -2009,6 +2128,10 @@
       "last_commit_at": "2026-07-12T19:53:29Z",
       "commits_checked_at": "2026-10-16T13:17:48.287Z"
     },
+    "mvc2-ps2": {
+      "default_branch": "main",
+      "default_branch_checked_at": "2026-10-16T14:57:09.955Z"
+    },
     "mvp2005": {
       "default_branch": "main",
       "default_branch_checked_at": "2026-10-16T13:17:48.950Z",
@@ -2080,6 +2203,10 @@
       "default_branch_checked_at": "2026-10-16T13:12:18.261Z",
       "last_commit_at": "2026-10-15T18:26:07Z",
       "commits_checked_at": "2026-10-16T13:17:52.916Z"
+    },
+    "parasite-eve-2": {
+      "default_branch": "main",
+      "default_branch_checked_at": "2026-10-16T14:57:09.961Z"
     },
     "pbg": {
       "default_branch": "main",
@@ -2200,6 +2327,10 @@
       "default_branch_checked_at": "2026-10-16T01:11:11.944Z",
       "last_commit_at": "2026-10-15T19:26:49Z",
       "commits_checked_at": "2026-10-16T01:12:07.731Z"
+    },
+    "psx-tomba": {
+      "default_branch": "main",
+      "default_branch_checked_at": "2026-10-16T14:57:10.791Z"
     },
     "pw64": {
       "default_branch": "main",
@@ -2429,6 +2560,10 @@
       "last_commit_at": "2026-10-12T21:59:30Z",
       "commits_checked_at": "2026-10-16T13:18:10.010Z"
     },
+    "tm1": {
+      "default_branch": "master",
+      "default_branch_checked_at": "2026-10-16T14:57:11.166Z"
+    },
     "tmc": {
       "default_branch": "master",
       "default_branch_checked_at": "2026-10-16T01:12:09.651Z",
@@ -2524,6 +2659,10 @@
       "default_branch_checked_at": "2026-10-16T13:12:27.229Z",
       "last_commit_at": "2026-09-11T15:11:05Z",
       "commits_checked_at": "2026-10-16T13:18:14.643Z"
+    },
+    "xenogears": {
+      "default_branch": "main",
+      "default_branch_checked_at": "2026-10-16T14:57:11.278Z"
     },
     "yoshis-story": {
       "default_branch": "main",
