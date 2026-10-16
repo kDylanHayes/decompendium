@@ -1,21 +1,20 @@
+/* Catppuccin: Latte for light mode, Mocha for dark (https://catppuccin.com/palette).
+   Each flavor sets the --ctp-* palette; the site's tokens below are derived from it. */
 :root {
   color-scheme: light;
-  --bg: #fbfaf7;
-  --surface: #ffffff;
-  --text: #1d1c1a;
-  --muted: #6a665f;
-  --border: #e5e1da;
-  --accent: #23705b;
-  --accent-text: #1d5f4d;
-  --bar-track: #ebe7e0;
-  --bar-matched: #9fcfbf;
-  --bar-linked: #23705b;
-  --warn: #8a5a00;
-  --warn-bg: #fbf0d9;
-  --bad: #a3312a;
-  --bad-bg: #fbe5e2;
-  --chip-bg: #f0ede7;
-  --code-bg: #f3f0ea;
+  --ctp-base: #eff1f5;
+  --ctp-mantle: #e6e9ef;
+  --ctp-crust: #dce0e8;
+  --ctp-text: #4c4f69;
+  --ctp-subtext0: #6c6f85;
+  --ctp-surface0: #ccd0da;
+  --ctp-surface1: #bcc0cc;
+  --ctp-mauve: #8839ef;
+  --ctp-lavender: #7287fd;
+  --ctp-yellow: #df8e1d;
+  --ctp-red: #d20f39;
+  --ctp-green: #40a02b;
+
   --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
 }
@@ -23,43 +22,56 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --bg: #131312;
-    --surface: #1b1b19;
-    --text: #ecebe7;
-    --muted: #a19d95;
-    --border: #2f2e2b;
-    --accent: #6cc4a8;
-    --accent-text: #86d3ba;
-    --bar-track: #2a2927;
-    --bar-matched: #2f6b5a;
-    --bar-linked: #6cc4a8;
-    --warn: #e8b85a;
-    --warn-bg: #3a2f17;
-    --bad: #f08a80;
-    --bad-bg: #3d1f1c;
-    --chip-bg: #262523;
-    --code-bg: #232220;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext0: #a6adc8;
+    --ctp-surface0: #313244;
+    --ctp-surface1: #45475a;
+    --ctp-mauve: #cba6f7;
+    --ctp-lavender: #b4befe;
+    --ctp-yellow: #f9e2af;
+    --ctp-red: #f38ba8;
+    --ctp-green: #a6e3a1;
   }
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #131312;
-  --surface: #1b1b19;
-  --text: #ecebe7;
-  --muted: #a19d95;
-  --border: #2f2e2b;
-  --accent: #6cc4a8;
-  --accent-text: #86d3ba;
-  --bar-track: #2a2927;
-  --bar-matched: #2f6b5a;
-  --bar-linked: #6cc4a8;
-  --warn: #e8b85a;
-  --warn-bg: #3a2f17;
-  --bad: #f08a80;
-  --bad-bg: #3d1f1c;
-  --chip-bg: #262523;
-  --code-bg: #232220;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext0: #a6adc8;
+  --ctp-surface0: #313244;
+  --ctp-surface1: #45475a;
+  --ctp-mauve: #cba6f7;
+  --ctp-lavender: #b4befe;
+  --ctp-yellow: #f9e2af;
+  --ctp-red: #f38ba8;
+  --ctp-green: #a6e3a1;
+}
+
+:root,
+:root[data-theme] {
+  --bg: var(--ctp-base);
+  --surface: var(--ctp-mantle);
+  --text: var(--ctp-text);
+  --muted: var(--ctp-subtext0);
+  --border: var(--ctp-surface0);
+  --accent: var(--ctp-mauve);
+  --accent-text: var(--ctp-mauve);
+  --bar-track: var(--ctp-surface0);
+  --bar-matched: color-mix(in srgb, var(--ctp-mauve) 35%, var(--ctp-surface0));
+  --bar-linked: var(--ctp-mauve);
+  --warn: color-mix(in srgb, var(--ctp-yellow) 70%, var(--ctp-text));
+  --warn-bg: color-mix(in srgb, var(--ctp-yellow) 16%, var(--ctp-base));
+  --bad: var(--ctp-red);
+  --bad-bg: color-mix(in srgb, var(--ctp-red) 14%, var(--ctp-base));
+  --good: var(--ctp-green);
+  --chip-bg: var(--ctp-surface0);
+  --code-bg: var(--ctp-surface0);
 }
 
 *,
