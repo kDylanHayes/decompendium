@@ -273,7 +273,7 @@ describe("runIngest", () => {
     const root = copyFixture();
     const limited: Route = (u) =>
       u.hostname === "api.github.com"
-        ? new Response("{}", { status: 403, headers: { "x-ratelimit-remaining": "0", "x-ratelimit-reset": "1700000000" } })
+        ? new Response("{}", { status: 403, headers: { "x-ratelimit-remaining": "0", "x-ratelimit-reset": "4102444800" } })
         : undefined;
     const result = await runIngest({ root, dataDir: tempData(), fetch: mockFetch([limited]).fetch, only: ["example-quest/us"] });
     assert.match(result.stopped!, /rate limit reached/);

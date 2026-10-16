@@ -34,11 +34,18 @@ export class GitHub {
   private readonly fetch: Fetch;
   private readonly token: string | undefined;
   private readonly timeoutMs: number;
+  private readonly sleep: (ms: number) => Promise<void>;
 
-  constructor(fetch: Fetch, token: string | undefined, timeoutMs: number) {
+  constructor(
+    fetch: Fetch,
+    token: string | undefined,
+    timeoutMs: number,
+    sleep: (ms: number) => Promise<void> = (ms) => new Promise((r) => setTimeout(r, ms)),
+  ) {
     this.fetch = fetch;
     this.token = token;
     this.timeoutMs = timeoutMs;
+    this.sleep = sleep;
   }
 
   /** GET an API path. Returns null for 404 so callers can say what was missing. */
@@ -74,7 +81,33 @@ export class GitHub {
     return readLimited(res, limit, "artifact");
   }
 
+  /**
+   * Waits out short throttles: secondary rate limits (429 or 403 with
+   * Retry-After) and per-minute search limits that reset within two minutes.
+   * A spent hourly limit stops the run instead.
+   */
   private async request(url: string, accept = "application/vnd.github+json"): Promise<Response> {
+    for (let attempt = 0; ; attempt++) {
+      const res = await this.attempt(url, accept);
+      const throttled = res.status === 429 || (res.status === 403 && res.headers.has("retry-after"));
+      const spent = (res.status === 403 || res.status === 429) && res.headers.get("x-ratelimit-remaining") === "0";
+      if (!throttled && !spent) {
+        if (res.status === 401) throw new StopRunError("GitHub API rejected the token (HTTP 401)");
+        return res;
+      }
+      const reset = Number(res.headers.get("x-ratelimit-reset")) * 1000;
+      const retryAfter = Number(res.headers.get("retry-after")) * 1000;
+      const wait = spent ? reset - Date.now() + 1000 : retryAfter > 0 ? retryAfter : 60_000 * (attempt + 1);
+      if (attempt >= 3 || wait > 120_000) {
+        if (spent) throw new StopRunError(`GitHub API rate limit reached; resets at ${new Date(reset).toISOString()}`);
+        return res; // still throttled: let the caller record the failure
+      }
+      await res.body?.cancel().catch(() => {});
+      await this.sleep(Math.max(wait, 1000));
+    }
+  }
+
+  private async attempt(url: string, accept: string): Promise<Response> {
     this.requests++;
     const headers: Record<string, string> = {
       accept,
@@ -83,12 +116,6 @@ export class GitHub {
     };
     if (this.token) headers.authorization = `Bearer ${this.token}`;
     // fetch drops the authorization header when the download redirects to another host.
-    const res = await this.fetch(url, { headers, redirect: "follow", signal: AbortSignal.timeout(this.timeoutMs) });
-    if ((res.status === 403 || res.status === 429) && res.headers.get("x-ratelimit-remaining") === "0") {
-      const reset = Number(res.headers.get("x-ratelimit-reset")) * 1000;
-      throw new StopRunError(`GitHub API rate limit reached; resets at ${new Date(reset).toISOString()}`);
-    }
-    if (res.status === 401) throw new StopRunError("GitHub API rejected the token (HTTP 401)");
-    return res;
+    return this.fetch(url, { headers, redirect: "follow", signal: AbortSignal.timeout(this.timeoutMs) });
   }
 }

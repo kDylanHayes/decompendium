@@ -183,6 +183,20 @@ describe("runDiscover", () => {
   });
 });
 
+describe("GitHub client throttling", () => {
+  it("waits out a secondary rate limit and retries", async () => {
+    let calls = 0;
+    const waits: number[] = [];
+    const fetch = (async () => {
+      calls++;
+      return calls === 1 ? new Response("{}", { status: 429, headers: { "retry-after": "2" } }) : Response.json({ ok: true });
+    }) as typeof globalThis.fetch;
+    const github = new GitHub(fetch, "t", 1000, async (ms) => void waits.push(ms));
+    assert.deepEqual(await github.get("/x"), { ok: true });
+    assert.deepEqual(waits, [2000]);
+  });
+});
+
 describe("versionCodes", () => {
   it("reads version codes from decomp-toolkit configs and report artifacts", () => {
     assert.deepEqual(
