@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "fire-emblem-shadow-dragon"
+name: "Fire Emblem: Shadow Dragon"
+platform: nds

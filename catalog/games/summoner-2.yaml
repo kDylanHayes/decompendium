@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "summoner-2"
+name: "Summoner 2"
+platform: ps2

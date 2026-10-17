@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "fe11-us"
+name: "Fire Emblem: Shadow Dragon decompilation"
+game: "fire-emblem-shadow-dragon"
+repo: https://github.com/Eebit/fe11-us
+description: "Matching decompilation of Fire Emblem: Shadow Dragon."
+owners: [Eebit]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-17
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "7b7b307ef819ac31a7b71aed2e8e47ff23c1765e" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: YFEE01_report, path: report.json }

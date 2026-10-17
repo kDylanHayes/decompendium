@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "paperboy-n64"
+name: "Paperboy decompilation"
+game: "paperboy"
+repo: https://github.com/marijnvdwerf/paperboy-n64
+description: "Matching decompilation of Paperboy."
+owners: [marijnvdwerf]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-17
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "b043c47b9758fa6bb289ca7dba2068bda6cafa3a" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: ntsc_report, path: report.json }

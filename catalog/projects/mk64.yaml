@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "mk64"
+name: "Mario Kart 64 decompilation"
+game: "mario-kart-64"
+repo: https://github.com/n64decomp/mk64
+description: "Matching decompilation of Mario Kart 64."
+owners: [n64decomp]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-17
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "579c48e211ae952530ffc8738709f078d5dd215e" }
+    progress:
+      kind: none
+  - id: "europe"
+    label: "Europe"
+    region: eu
+    hash: { sha1: "a729039453210b84f17019dda3f248d5888f7690" }
+    progress:
+      kind: none
+  - id: "europe-rev-1"
+    label: "Europe, Rev 1"
+    region: eu
+    hash: { sha1: "f6b5f519dd57ea59e9f013cc64816e9d273b2329" }
+    progress:
+      kind: none

@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "motoracerworldtour"
+name: "Moto Racer World Tour decompilation"
+game: "moto-racer-world-tour"
+repo: https://github.com/Almamu/MotoRacerWorldTour-decomp
+description: "Matching decompilation of Moto Racer World Tour."
+owners: [Almamu]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-17
+targets:
+  - id: "eu"
+    label: "EU"
+    hash: { sha1: "b773b2906d3407bf0eabfb640d785061918badbe" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: eu_report, path: report.json }

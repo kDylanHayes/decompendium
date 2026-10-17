@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "mario-kart-64"
+name: "Mario Kart 64"
+platform: n64

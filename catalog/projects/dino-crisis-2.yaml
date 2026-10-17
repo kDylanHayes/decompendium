@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "dino-crisis-2"
+name: "Dino Crisis 2 decompilation"
+game: "dino-crisis-2"
+repo: https://github.com/anzaldoivan/dino-crisis-2-decomp
+description: "Matching decompilation of Dino Crisis 2."
+owners: [anzaldoivan]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-17
+targets:
+  - id: "check-bin-e00"
+    label: "check.bin_e00"
+    hash: { sha1: "716529c31701acea6f168a197b6c485ae3ed8896" }
+    progress:
+      kind: none
+  - id: "check-bin-e10"
+    label: "check.bin_e10"
+    hash: { sha1: "bad5e63cf397e9fd6475fc533075f267daecf2bc" }
+    progress:
+      kind: none
+  - id: "check-bin-e20"
+    label: "check.bin_e20"
+    hash: { sha1: "598464f3e6016807e95cc687eb40833ed40daff4" }
+    progress:
+      kind: none
+  - id: "check-bin-e30"
+    label: "check.bin_e30"
+    hash: { sha1: "c17e23d0ea1169754cbd52923c30231a04397f3c" }
+    progress:
+      kind: none
+  - id: "check-bin-e31"
+    label: "check.bin_e31"
+    hash: { sha1: "0179db5de9ef44fb4632394aba10f80985682ec5" }
+    progress:
+      kind: none
+  - id: "check-bin-e32"
+    label: "check.bin_e32"
+    hash: { sha1: "99d62bea294de621de4258104ae3365fbd9262cf" }
+    progress:
+      kind: none
+  - id: "check-bin-e40"
+    label: "check.bin_e40"
+    hash: { sha1: "502d1edf33c0300b307462abc979e3714431763f" }
+    progress:
+      kind: none
+  - id: "check-bin-e50"
+    label: "check.bin_e50"
+    hash: { sha1: "7f795b7e5a1f1bf2dccccd277a61996842f6d8cb" }
+    progress:
+      kind: none
