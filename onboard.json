@@ -481,7 +481,8 @@
  "naari3/mkgp2-decomp": {
   "repo": "naari3/mkgp2-decomp",
   "action": "review",
-  "reason": "game not confirmed (description says \"Mario Kart Arcade GP2\")"
+  "reason": "game not confirmed (description says \"Mario Kart Arcade GP2\")",
+  "issue": 17
  },
  "pbr-ret/pbr-decomp": {
   "repo": "pbr-ret/pbr-decomp",
@@ -526,7 +527,8 @@
  "seekyct/spm-decomp": {
   "repo": "SeekyCt/spm-decomp",
   "action": "review",
-  "reason": "game not confirmed (description says \"Super Paper Mario\")"
+  "reason": "game not confirmed (description says \"Super Paper Mario\")",
+  "issue": 18
  },
  "squiddonaut/pokeblack": {
   "repo": "squiddonaut/pokeblack",
@@ -581,12 +583,14 @@
  "openblack/bw1-decomp": {
   "repo": "openblack/bw1-decomp",
   "action": "review",
-  "reason": "game not confirmed (description says \"Black & White 1\")"
+  "reason": "game not confirmed (description says \"Black & White 1\")",
+  "issue": 19
  },
  "parappadev/parappa2": {
   "repo": "parappadev/parappa2",
   "action": "review",
-  "reason": "game not confirmed"
+  "reason": "game not confirmed",
+  "issue": 20
  },
  "pattytrish/unending-occlusion": {
   "repo": "PattyTrish/unending-occlusion",
@@ -671,7 +675,8 @@
  "doldecomp/forecast": {
   "repo": "doldecomp/forecast",
   "action": "review",
-  "reason": "game not confirmed (description says \"Wii's Forecast Channel\")"
+  "reason": "game not confirmed (description says \"Wii's Forecast Channel\")",
+  "issue": 21
  },
  "fmil95/recvx-gc-decomp": {
   "repo": "fmil95/recvx-gc-decomp",
@@ -691,7 +696,8 @@
  "koopthekoopa/wii-ipl": {
   "repo": "koopthekoopa/wii-ipl",
   "action": "review",
-  "reason": "game not confirmed"
+  "reason": "game not confirmed",
+  "issue": 22
  },
  "moozilla/boktai3-decomp": {
   "repo": "moozilla/boktai3-decomp",
@@ -746,12 +752,14 @@
  "rjkiv/dc3-decomp": {
   "repo": "rjkiv/dc3-decomp",
   "action": "review",
-  "reason": "game not confirmed (description says \"Dance Central 3\")"
+  "reason": "game not confirmed (description says \"Dance Central 3\")",
+  "issue": 23
  },
  "rjkiv/sonic06": {
   "repo": "rjkiv/sonic06",
   "action": "review",
-  "reason": "game not confirmed (description says \"Sonic the Hedgehog\")"
+  "reason": "game not confirmed (description says \"Sonic the Hedgehog\")",
+  "issue": 24
  },
  "sephdb/pokepark-wii-decomp": {
   "repo": "SephDB/pokepark-wii-decomp",
@@ -1703,11 +1711,6 @@
   "action": "review",
   "reason": "game not confirmed"
  },
- "jkdansereau/goldeneye-pc-port": {
-  "repo": "jkdansereau/goldeneye-pc-port",
-  "action": "hold",
-  "reason": "rated possible (score 5) under the current rules"
- },
  "link5669/hm-gc-decomp": {
   "repo": "link5669/hm-gc-decomp",
   "action": "add",
@@ -2188,21 +2191,6 @@
   "platform": "gc",
   "targets": 6
  },
- "enbyd/kamakura": {
-  "repo": "enbyd/kamakura",
-  "action": "hold",
-  "reason": "rated possible (score 7) under the current rules"
- },
- "luispolis124/opents3-ds": {
-  "repo": "luispolis124/OpenTS3-DS",
-  "action": "hold",
-  "reason": "rated possible (score 7) under the current rules"
- },
- "break-core/nddemo": {
-  "repo": "break-core/NDDEMO",
-  "action": "hold",
-  "reason": "rated possible (score 5) under the current rules"
- },
  "hansbonini/psx_tomba": {
   "repo": "hansbonini/psx_tomba",
   "action": "add",
@@ -2229,16 +2217,6 @@
   "reason": "game not confirmed (description says \"Shin Megami Tensei: Persona 4\")",
   "guess": "Shin Megami Tensei: Persona 4"
  },
- "jeanxpereira/crystalosd-decomp-legacy": {
-  "repo": "JeanxPereira/CrystalOSD-Decomp-Legacy",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "plinkr/wild9-decompilation": {
-  "repo": "plinkr/Wild9-Decompilation",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
  "shdecompilations/silent-hill-decomp": {
   "repo": "shdecompilations/silent-hill-decomp",
   "action": "add",
@@ -2248,36 +2226,6 @@
   "newGame": true,
   "platform": "ps1",
   "targets": 2
- },
- "caesar0007/nfshs-psx-decomp": {
-  "repo": "Caesar0007/NFSHS-PSX-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "lucaspicoli/god-hand-decomp": {
-  "repo": "LucasPicoli/god-hand-decomp",
-  "action": "hold",
-  "reason": "no hash evidence found"
- },
- "nsmbw-community/nsmbw-decomp": {
-  "repo": "NSMBW-Community/NSMBW-Decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "722rsr/gtadv3-decomp": {
-  "repo": "722rsr/gtadv3-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "aaaaaaaaaaway/kaze-no-notam-decomp": {
-  "repo": "aaaaaaaaaaway/kaze-no-notam-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "banteg/harvest": {
-  "repo": "banteg/harvest",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
  },
  "celophi/lom-decomp": {
   "repo": "celophi/lom-decomp",
@@ -2294,11 +2242,6 @@
   "action": "review",
   "reason": "game not confirmed"
  },
- "kyleckroeger/moh-frontline-decomp": {
-  "repo": "kyleckroeger/moh-frontline-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
  "ladysilverberg/xenogears-decomp": {
   "repo": "ladysilverberg/xenogears-decomp",
   "action": "add",
@@ -2308,21 +2251,6 @@
   "newGame": true,
   "platform": "ps1",
   "targets": 1
- },
- "lifewillbeokay/moh-rising-sun": {
-  "repo": "lifewillbeokay/moh-rising-sun",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "openrac/rac-deadlocked-decomp": {
-  "repo": "OpenRAC/rac-deadlocked-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "ser-pounce/rood-reverse": {
-  "repo": "ser-pounce/rood-reverse",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
  },
  "wyrelade/armored-core-decomp": {
   "repo": "Wyrelade/Armored-Core-Decomp",
@@ -2344,11 +2272,6 @@
   "platform": "ps1",
   "targets": 1
  },
- "zm2283145/syphon-filter-omega-strain-decomp": {
-  "repo": "zm2283145/syphon-filter-omega-strain-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
  "abelbriggs1/tm1_decomp": {
   "repo": "abelbriggs1/tm1_decomp",
   "action": "add",
@@ -2369,41 +2292,6 @@
   "platform": "ps2",
   "targets": 1
  },
- "openrac/rac1-decomp": {
-  "repo": "OpenRAC/rac1-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "openrac/rac3-uya-decomp": {
-  "repo": "OpenRAC/rac3-uya-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "opokxeno/xsg-i-decomp": {
-  "repo": "OpokXeno/xsg-i-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "voicedrew11/kfiv-decomp": {
-  "repo": "Voicedrew11/kfiv-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "2gifts/george-decomp": {
-  "repo": "2gifts/george-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "chaconmoon/yokai-watch-2-decompiled": {
-  "repo": "ChaconMoon/yokai-watch-2-decompiled",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "dothacktranslate/okamiden-decomp": {
-  "repo": "dothacktranslate/okamiden-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
  "erizur/slpm86183": {
   "repo": "Erizur/slpm86183",
   "action": "add",
@@ -2414,41 +2302,11 @@
   "platform": "ps1",
   "targets": 1
  },
- "gustavocanepa/tt-decomp": {
-  "repo": "gustavocanepa/tt-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "rayanht/mwcc": {
-  "repo": "rayanht/mwcc",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "roengstrom/ff8-decomp": {
-  "repo": "roengstrom/ff8-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "shibbo/3dwdecomp": {
-  "repo": "shibbo/3DWDecomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
  "devoldschool/conkers-bfd-decomp": {
   "repo": "DevOldSchool/conkers-bfd-decomp",
   "action": "review",
   "reason": "game not confirmed (description says \"Conker's Bad Fur Day\")",
   "guess": "Conker's Bad Fur Day"
- },
- "hcbt/tbuddies-decomp": {
-  "repo": "hcbt/tbuddies-decomp",
-  "action": "hold",
-  "reason": "no hash evidence found"
- },
- "kdylanhayes/mystery-house-decompilation": {
-  "repo": "kDylanHayes/mystery-house-decompilation",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
  },
  "rockenrooster/smash64ds_port": {
   "repo": "rockenrooster/Smash64DS_Port",
@@ -2465,26 +2323,11 @@
   "platform": "ps1",
   "targets": 2
  },
- "veradictus/thief3-decomp": {
-  "repo": "Veradictus/Thief3-Decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "xeeynamo/ff7-decomp": {
-  "repo": "Xeeynamo/ff7-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
  "aaaaaaaaaaway/chulip-decomp": {
   "repo": "aaaaaaaaaaway/chulip-decomp",
   "action": "review",
   "reason": "game not confirmed (description says \"Chulip\")",
   "guess": "Chulip"
- },
- "fmil95/soul-re": {
-  "repo": "fmil95/soul-re",
-  "action": "hold",
-  "reason": "no hash evidence found"
  },
  "gaberealb/parasite-eve-2-decomp": {
   "repo": "GabeRealB/parasite-eve-2-decomp",
@@ -2496,86 +2339,16 @@
   "platform": "ps1",
   "targets": 1
  },
- "granimated/minecraftlce": {
-  "repo": "GRAnimated/MinecraftLCE",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "haydntrigg/freelancer": {
-  "repo": "HaydnTrigg/Freelancer",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "jwfeniello/scott-pilgrim-switch-decomp": {
-  "repo": "jwfeniello/scott-pilgrim-switch-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "mschienbein/shiren2-decomp": {
-  "repo": "mschienbein/shiren2-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "nsmb-decomp/nsmb": {
-  "repo": "NSMB-Decomp/nsmb",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "pablocpas/cmr2decomp": {
-  "repo": "pablocpas/CMR2Decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
  "themoonpeople/chronicle": {
   "repo": "TheMoonPeople/Chronicle",
   "action": "review",
   "reason": "game not confirmed (description says \"Dark Cloud\")",
   "guess": "Dark Cloud"
  },
- "vonhoff/lemball-decomp": {
-  "repo": "vonhoff/lemball-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "wyrelade/kknd-decomp": {
-  "repo": "Wyrelade/KKND-Decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
  "afsenovilla/tombi-decomp": {
   "repo": "afsenovilla/Tombi-Decomp",
   "action": "hold",
   "reason": "Tombi! is already covered by psx-tomba; low-star duplicate (1 stars), check it isn't a copy"
- },
- "banteg/snail": {
-  "repo": "banteg/snail",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "bluisblu/pvz": {
-  "repo": "bluisblu/pvz",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "midacoyt/harrypotterandthehalfbloodprince-decompilation": {
-  "repo": "MidacoYT/HarryPotterAndTheHalfBloodPrince-Decompilation",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "sebaamg/kinect-sports-decomp": {
-  "repo": "SebaaMG/Kinect-Sports-Decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "used255/artonelico2-decomp": {
-  "repo": "USED255/artonelico2-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "ashfordfamily/recvx-decomp": {
-  "repo": "AshfordFamily/recvx-decomp",
-  "action": "hold",
-  "reason": "no hash evidence found"
  },
  "cntrl-alt-lenny/gx-spirit-caller": {
   "repo": "cntrl-alt-lenny/gx-spirit-caller",
@@ -2587,21 +2360,6 @@
   "platform": "nds",
   "targets": 3
  },
- "gonzaloberteri/ygofm-decomp": {
-  "repo": "gonzaloberteri/ygofm-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "kira-502/dotr-decomp": {
-  "repo": "kira-502/dotr-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "openrac/rac2-gc-decomp": {
-  "repo": "OpenRAC/rac2-gc-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
  "snaku/persona3-fes-decompilation": {
   "repo": "snaku/Persona3-FES-Decompilation",
   "action": "add",
@@ -2611,11 +2369,6 @@
   "newGame": true,
   "platform": "ps2",
   "targets": 1
- },
- "splaatsites/rayman-3": {
-  "repo": "SplaatSites/rayman-3",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
  },
  "thejunkman9000/turok-rage-wars-decomp": {
   "repo": "thejunkman9000/Turok-Rage-Wars-Decomp",
@@ -2627,71 +2380,11 @@
   "platform": "n64",
   "targets": 1
  },
- "themagicalkarp/open-spyro": {
-  "repo": "theMagicalKarp/open-spyro",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "yacalox-studios/cnk-decomp": {
-  "repo": "YacaloX-Studios/cnk-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
  "cakehonolulu/bullseye": {
   "repo": "cakehonolulu/Bullseye",
   "action": "review",
   "reason": "game not confirmed (description says \"Capcom's Sony PlayStation 2 game\")",
   "guess": "Capcom's Sony PlayStation 2 game"
- },
- "celophi/so3-decomp": {
-  "repo": "celophi/so3-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "djsaunde/glover-decomp-1": {
-  "repo": "djsaunde/glover-decomp-1",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "emoluvjd2/oregontrail-win32-decomp": {
-  "repo": "emoluvjd2/oregontrail-win32-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "emoluvjd2/thps2-demo-decomp": {
-  "repo": "emoluvjd2/thps2-demo-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "euclidvsgauss/hazardrevenge": {
-  "repo": "EuclidVsGauss/HazardRevenge",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "gustavocanepa/gt3-decomp": {
-  "repo": "gustavocanepa/gt3-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "gustavocanepa/gt4-decomp": {
-  "repo": "gustavocanepa/gt4-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "kh-recoded-decomp/kh-recoded-decomp": {
-  "repo": "kh-recoded-decomp/kh-recoded-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "kirklandsig/halo2-decompiled": {
-  "repo": "kirklandsig/halo2-decompiled",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "lofcz/bulanci-decomp": {
-  "repo": "lofcz/bulanci-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
  },
  "machinegun3/ygofm-decomp": {
   "repo": "MaChInEgUn3/ygofm-decomp",
@@ -2713,11 +2406,6 @@
   "platform": "n64",
   "targets": 1
  },
- "masonc15/tgm2p-decomp": {
-  "repo": "masonc15/tgm2p-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
  "mr-wiseguy/banjo-tooie": {
   "repo": "Mr-Wiseguy/banjo-tooie",
   "action": "add",
@@ -2728,41 +2416,16 @@
   "platform": "n64",
   "targets": 1
  },
- "n0zom1z0/th105": {
-  "repo": "N0zoM1z0/th105",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
  "ozyz/awds-decomp": {
   "repo": "ozyz/awds-decomp",
   "action": "hold",
   "reason": "Advance Wars is already covered by advance-wars-dual-strike; low-star duplicate (1 stars), check it isn't a copy"
- },
- "pakompom/spacerangershd_decomp": {
-  "repo": "pakompom/SpaceRangersHD_decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
  },
  "themoonpeople/chronicletwo": {
   "repo": "TheMoonPeople/ChronicleTwo",
   "action": "review",
   "reason": "game not confirmed (description says \"Dark Chronicle\")",
   "guess": "Dark Chronicle"
- },
- "yokimitsuro/khdays-decomp": {
-  "repo": "Yokimitsuro/khdays-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "yokimitsuro/khrecoded-decomp": {
-  "repo": "Yokimitsuro/khrecoded-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "yunatasavior/rtwdecomp": {
-  "repo": "YunataSavior/RTWDecomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
  },
  "aricloverextra/partnersintimedecomp": {
   "repo": "aricloverEXTRA/PartnersInTimeDECOMP",
@@ -2779,21 +2442,6 @@
   "action": "hold",
   "reason": "rated unlikely (score 3) under the current rules"
  },
- "dorgengoa/rgdecomp": {
-  "repo": "Dorgengoa/RGDecomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "facundosterzerforino/legoland-port": {
-  "repo": "facundosterzerforino/legoland-port",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "jype0/dw_decomp": {
-  "repo": "jype0/dw_decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
  "ketbome/gh3-decomp": {
   "repo": "Ketbome/gh3-decomp",
   "action": "add",
@@ -2803,16 +2451,6 @@
   "newGame": true,
   "platform": "ps2",
   "targets": 1
- },
- "malikrahey/ssbm-decomp": {
-  "repo": "malikrahey/ssbm-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "mhvuze/mh4u-decomp": {
-  "repo": "mhvuze/mh4u-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
  },
  "miguelqueiroz010/decomp-no-me-un5decomp": {
   "repo": "MiguelQueiroz010/Decomp-no-Me-UN5Decomp",
@@ -2824,16 +2462,6 @@
   "platform": "ps2",
   "targets": 1
  },
- "nicklesimba/sonic-battle-decomp": {
-  "repo": "nicklesimba/sonic-battle-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "noprompt/rood-boi": {
-  "repo": "noprompt/rood-boi",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
  "pret/pokeplatinum": {
   "repo": "pret/pokeplatinum",
   "action": "add",
@@ -2844,100 +2472,10 @@
   "platform": "nds",
   "targets": 2
  },
- "siddharthakumar-98/burnout3": {
-  "repo": "siddharthakumar-98/Burnout3",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "themoonpeople/kazarov": {
-  "repo": "TheMoonPeople/Kazarov",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "thisisakill/chronoret": {
-  "repo": "ThisIsAkill/ChronoRET",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "waterrr1389/valkyrie-profile-decomp": {
-  "repo": "waterrr1389/valkyrie-profile-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "wtg334/mario-galaxy-2-decomp-maybe": {
-  "repo": "wtg334/mario-galaxy-2-decomp-maybe",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "7akeem0/albw-decomp-ai": {
-  "repo": "7akeem0/albw-decomp-ai",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "abedegno/underworld-exhumed": {
-  "repo": "abedegno/underworld-exhumed",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
  "anzaldoivan/psxdecomp": {
   "repo": "anzaldoivan/psxdecomp",
   "action": "review",
   "reason": "game not confirmed"
- },
- "banjo360/bk360": {
-  "repo": "banjo360/bk360",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "dashr9230/sa-mp": {
-  "repo": "dashr9230/SA-MP",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "denzi-gh/crashwoc-decomp-ps2": {
-  "repo": "denzi-gh/crashwoc-decomp-ps2",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "govanify/kh2": {
-  "repo": "GovanifY/kh2",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "halmylyseas/vandalhearts-decomp-slpm-86007": {
-  "repo": "HalmyLyseas/VandalHearts-decomp-SLPM-86007",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "halmylyseas/vandalhearts-pcport": {
-  "repo": "HalmyLyseas/VandalHearts-PcPort",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "haydntrigg/homeworld2classic": {
-  "repo": "HaydnTrigg/Homeworld2Classic",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "hectorbailey/byte-tactics": {
-  "repo": "HectorBailey/byte-tactics",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "kazuyette/rr-decomp": {
-  "repo": "kazuyette/rr-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "kdylanhayes/civ1-decomp": {
-  "repo": "kDylanHayes/civ1-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "lawlesscowboy/ray3": {
-  "repo": "LawlessCowboy/ray3",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
  },
  "liolu/blue-dragon-awakened-shadow-decomp": {
   "repo": "liolu/blue-dragon-awakened-shadow-decomp",
@@ -3065,156 +2603,6 @@
   "reason": "one account created many decomp repos at once and some carry another game's hash; check it isn't a template copy",
   "guess": "Ultimate Spider-Man"
  },
- "n0zom1z0/th08": {
-  "repo": "N0zoM1z0/th08",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "randomno/pinball-decomp": {
-  "repo": "Randomno/pinball-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "some100/th07": {
-  "repo": "some100/th07",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "wyrelade/dw2-pc": {
-  "repo": "Wyrelade/DW2-PC",
-  "action": "hold",
-  "reason": "no hash evidence found"
- },
- "xeeynamo/psyz": {
-  "repo": "Xeeynamo/psyz",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "banteg/crimson": {
-  "repo": "banteg/crimson",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "dberweger2017/decomp-sid-meier-s-pirates": {
-  "repo": "dberweger2017/decomp-sid-meier-s-pirates",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "matteo-pacini/theme-hospital-enhanced": {
-  "repo": "matteo-pacini/theme-hospital-enhanced",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "mitch030504/tabletroopers-decomp": {
-  "repo": "mitch030504/tabletroopers-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "sdw-community/sdw-decomp": {
-  "repo": "SDW-Community/sdw-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "slickamogus/silent-hill-decomp": {
-  "repo": "SlickAmogus/silent-hill-decomp",
-  "action": "hold",
-  "reason": "rated possible (score 7) under the current rules"
- },
- "therealestnwah/sotc-decomp": {
-  "repo": "TheRealestNwah/sotc-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "unchiga/yu-gi-oh-forbidden-memories-recompiled": {
-  "repo": "Unchiga/Yu-Gi-Oh-Forbidden-Memories-Recompiled",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "weaversworkshop/mlbis-decomp": {
-  "repo": "weaversworkshop/mlbis-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "yharnam-hunters/paleblood": {
-  "repo": "Yharnam-Hunters/Paleblood",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "cobanov/nfsu2-decomp": {
-  "repo": "cobanov/nfsu2-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "koopthekoopa/rfl": {
-  "repo": "koopthekoopa/RFL",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "lemiur/alien-trilogy-decomp": {
-  "repo": "lemiur/alien-trilogy-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "macabeus/urnadecomp": {
-  "repo": "macabeus/UrnaDecomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "alecnunn/freelancer-decomp": {
-  "repo": "alecnunn/freelancer-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "bignegro/totk-decomp": {
-  "repo": "bignegro/TOTK-Decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "burnoutdecomp/bp-decomp_workflow": {
-  "repo": "BurnoutDecomp/BP-Decomp_Workflow",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "maci0/rebrew": {
-  "repo": "maci0/rebrew",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "marijnvdwerf/gba-beyblade-vforce": {
-  "repo": "marijnvdwerf/gba-beyblade-vforce",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "masonleeback/yellowhead": {
-  "repo": "MasonLeeBack/yellowhead",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "musohslop/hwde-decomp": {
-  "repo": "MusohSlop/HWDE-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "opensagadev/saga": {
-  "repo": "opensagadev/saga",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "piuzera/jusdecomp": {
-  "repo": "piuzera/JUSDecomp",
-  "action": "hold",
-  "reason": "rated possible (score 5) under the current rules"
- },
- "swstegall/meteor-decomp": {
-  "repo": "swstegall/meteor-decomp",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
- "troikoss/nfsu2-re": {
-  "repo": "troikoss/nfsu2-re",
-  "action": "hold",
-  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\"."
- },
  "thegh0stship/battletanx": {
   "repo": "TheGh0stShip/BattleTanx",
   "action": "add",
@@ -3224,5 +2612,282 @@
   "newGame": true,
   "platform": "n64",
   "targets": 1
+ },
+ "arceuss/mm9decomp": {
+  "repo": "arceuss/mm9decomp",
+  "action": "hold",
+  "reason": "Couldn't identify the game, and the form doesn't name it: edit the issue and fill in **Game** (and **Platform**), and the bot checks it again.",
+  "rules": 2
+ },
+ "anzaldoivan/dino-crisis-2-decomp": {
+  "repo": "anzaldoivan/dino-crisis-2-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "dino-crisis-2",
+  "game": "Dino Crisis 2",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 8
+ },
+ "jeanxpereira/crystalosd-decomp-legacy": {
+  "repo": "JeanxPereira/CrystalOSD-Decomp-Legacy",
+  "action": "hold",
+  "reason": "Couldn't identify the game, and the form doesn't name it: edit the issue and fill in **Game** (and **Platform**), and the bot checks it again.",
+  "rules": 2
+ },
+ "plinkr/wild9-decompilation": {
+  "repo": "plinkr/Wild9-Decompilation",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\".",
+  "rules": 2
+ },
+ "righteousryan1/melee": {
+  "repo": "RighteousRyan1/melee",
+  "action": "hold",
+  "reason": "Super Smash Bros. Melee is already covered by melee; low-star duplicate (0 stars), check it isn't a copy",
+  "rules": 2
+ },
+ "caesar0007/nfshs-psx-decomp": {
+  "repo": "Caesar0007/NFSHS-PSX-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\".",
+  "rules": 2
+ },
+ "daniel-mccarthy/spps": {
+  "repo": "Daniel-McCarthy/SPPS",
+  "action": "review",
+  "reason": "the name doesn't mention Final Fantasy IX, the game its hashes identify; check it isn't a template copy"
+ },
+ "lucaspicoli/god-hand-decomp": {
+  "repo": "LucasPicoli/god-hand-decomp",
+  "action": "hold",
+  "reason": "no hash evidence found",
+  "rules": 2
+ },
+ "nsmbw-community/nsmbw-decomp": {
+  "repo": "NSMBW-Community/NSMBW-Decomp",
+  "action": "hold",
+  "reason": "Couldn't identify the game, and the form doesn't name it: edit the issue and fill in **Game** (and **Platform**), and the bot checks it again.",
+  "rules": 2
+ },
+ "722rsr/gtadv3-decomp": {
+  "repo": "722rsr/gtadv3-decomp",
+  "action": "hold",
+  "reason": "Couldn't identify the game, and the form doesn't name it: edit the issue and fill in **Game** (and **Platform**), and the bot checks it again.",
+  "rules": 2
+ },
+ "aaaaaaaaaaway/kaze-no-notam-decomp": {
+  "repo": "aaaaaaaaaaway/kaze-no-notam-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\".",
+  "rules": 2
+ },
+ "antonsynd/pokeheartgold-slop": {
+  "repo": "antonsynd/pokeheartgold-slop",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "pokeheartgold-slop",
+  "game": "Pokemon: HeartGold Version",
+  "newGame": true,
+  "platform": "nds",
+  "targets": 2
+ },
+ "banteg/harvest": {
+  "repo": "banteg/harvest",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\".",
+  "rules": 2
+ },
+ "harskov/redakai-vs-lokar-flash": {
+  "repo": "Harskov/redakai-vs-lokar-flash",
+  "action": "hold",
+  "reason": "Couldn't identify the game, and the form doesn't name it: edit the issue and fill in **Game** (and **Platform**), and the bot checks it again.",
+  "rules": 2
+ },
+ "lifewillbeokay/moh-rising-sun": {
+  "repo": "lifewillbeokay/moh-rising-sun",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\".",
+  "rules": 2
+ },
+ "openrac/rac-deadlocked-decomp": {
+  "repo": "OpenRAC/rac-deadlocked-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\".",
+  "rules": 2
+ },
+ "s-ilent/cannon-seed": {
+  "repo": "s-ilent/cannon-seed",
+  "action": "hold",
+  "reason": "Couldn't identify the game, and the form doesn't name it: edit the issue and fill in **Game** (and **Platform**), and the bot checks it again.",
+  "rules": 2
+ },
+ "ser-pounce/rood-reverse": {
+  "repo": "ser-pounce/rood-reverse",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\".",
+  "rules": 2
+ },
+ "used255/artonelico2-decomp": {
+  "repo": "USED255/artonelico2-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\".",
+  "rules": 2
+ },
+ "zm2283145/syphon-filter-omega-strain-decomp": {
+  "repo": "zm2283145/syphon-filter-omega-strain-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\".",
+  "rules": 2
+ },
+ "almamu/motoracerworldtour-decomp": {
+  "repo": "Almamu/MotoRacerWorldTour-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "motoracerworldtour",
+  "game": "Moto Racer World Tour",
+  "newGame": true,
+  "platform": "ps1",
+  "targets": 1
+ },
+ "chrissotraidis/galaxypad-engine": {
+  "repo": "chrissotraidis/galaxypad-engine",
+  "action": "hold",
+  "reason": "Super Mario Galaxy is already covered by petari; low-star duplicate (1 stars), check it isn't a copy",
+  "rules": 2
+ },
+ "marijnvdwerf/paperboy-n64": {
+  "repo": "marijnvdwerf/paperboy-n64",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "paperboy-n64",
+  "game": "Paperboy",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 1
+ },
+ "mikegoforth/summoner-2-decomp": {
+  "repo": "mikegoforth/summoner-2-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "summoner-2",
+  "game": "Summoner 2",
+  "newGame": true,
+  "platform": "ps2",
+  "targets": 1
+ },
+ "openrac/rac1-decomp": {
+  "repo": "OpenRAC/rac1-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\".",
+  "rules": 2
+ },
+ "openrac/rac3-uya-decomp": {
+  "repo": "OpenRAC/rac3-uya-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\".",
+  "rules": 2
+ },
+ "opokxeno/xsg-i-decomp": {
+  "repo": "OpokXeno/xsg-i-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\".",
+  "rules": 2
+ },
+ "shohamc1/heat2002": {
+  "repo": "shohamc1/heat2002",
+  "action": "hold",
+  "reason": "named like a copy or test repo",
+  "rules": 2
+ },
+ "tclamb/mhp2g-decomp": {
+  "repo": "tclamb/mhp2g-decomp",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "mhp2g",
+  "game": "Monster Hunter Portable 2nd G",
+  "newGame": true,
+  "platform": "psp",
+  "targets": 1
+ },
+ "voicedrew11/kfiv-decomp": {
+  "repo": "Voicedrew11/kfiv-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\".",
+  "rules": 2
+ },
+ "2gifts/george-decomp": {
+  "repo": "2gifts/george-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\".",
+  "rules": 2
+ },
+ "atyr647/mk64-netlib-test": {
+  "repo": "atyr647/mk64-netlib-test",
+  "action": "hold",
+  "reason": "named like a copy or test repo",
+  "rules": 2
+ },
+ "chaconmoon/yokai-watch-2-decompiled": {
+  "repo": "ChaconMoon/yokai-watch-2-decompiled",
+  "action": "hold",
+  "reason": "Couldn't identify the game, and the form doesn't name it: edit the issue and fill in **Game** (and **Platform**), and the bot checks it again.",
+  "rules": 2
+ },
+ "dothacktranslate/okamiden-decomp": {
+  "repo": "dothacktranslate/okamiden-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\".",
+  "rules": 2
+ },
+ "eebit/fe11-us": {
+  "repo": "Eebit/fe11-us",
+  "action": "add",
+  "reason": "hash file config/YFEE01/fe11_YFEE01.sha1",
+  "project": "fe11-us",
+  "game": "Fire Emblem: Shadow Dragon",
+  "newGame": true,
+  "platform": "nds",
+  "targets": 1
+ },
+ "gustavocanepa/gt4-decomp": {
+  "repo": "gustavocanepa/gt4-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\".",
+  "rules": 2
+ },
+ "gustavocanepa/tt-decomp": {
+  "repo": "gustavocanepa/tt-decomp",
+  "action": "hold",
+  "reason": "No versions to list: add the versions it builds, each with the hash its build checks, under \"Versions it builds\".",
+  "rules": 2
+ },
+ "m3cinat/nfsmw_": {
+  "repo": "m3cinat/nfsmw_",
+  "action": "hold",
+  "reason": "Need for Speed: Most Wanted is already covered by nfsmw; low-star duplicate (0 stars), check it isn't a copy",
+  "rules": 2
+ },
+ "merrsootul/nfsmw-personal": {
+  "repo": "Merrsootul/nfsmw-personal",
+  "action": "hold",
+  "reason": "Need for Speed: Most Wanted is already covered by nfsmw; low-star duplicate (0 stars), check it isn't a copy",
+  "rules": 2
+ },
+ "n64decomp/mk64": {
+  "repo": "n64decomp/mk64",
+  "action": "add",
+  "reason": "build checks a hash",
+  "project": "mk64",
+  "game": "Mario Kart 64",
+  "newGame": true,
+  "platform": "n64",
+  "targets": 3
+ },
+ "rayanht/mwcc": {
+  "repo": "rayanht/mwcc",
+  "action": "hold",
+  "reason": "Couldn't identify the game, and the form doesn't name it: edit the issue and fill in **Game** (and **Platform**), and the bot checks it again.",
+  "rules": 2
  }
 }
