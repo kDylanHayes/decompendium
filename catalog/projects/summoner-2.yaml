@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "summoner-2"
+name: "Summoner 2 decompilation"
+game: "summoner-2"
+repo: https://github.com/mikegoforth/summoner-2-decomp
+description: "Matching decompilation of Summoner 2."
+owners: [mikegoforth]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-17
+targets:
+  - id: "slus-204-48"
+    label: "USA (SLUS-20448)"
+    hash: { sha1: "678c865a3f17fa34c7c0c775fd9c3c03f8f352c7" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: SLUS_204.48_report, path: report.json }

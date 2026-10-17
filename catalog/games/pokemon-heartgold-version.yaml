@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "pokemon-heartgold-version"
+name: "Pokemon: HeartGold Version"
+aliases: ["Pokemon: SoulSilver Version"]
+platform: nds

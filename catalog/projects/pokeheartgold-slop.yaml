@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "pokeheartgold-slop"
+name: "Pokemon: HeartGold Version decompilation"
+game: "pokemon-heartgold-version"
+repo: https://github.com/antonsynd/pokeheartgold-slop
+description: "Matching decompilation of Pokemon: HeartGold Version."
+owners: [antonsynd]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-17
+targets:
+  - id: "usa"
+    label: "USA"
+    region: us
+    hash: { sha1: "4fcded0e2713dc03929845de631d0932ea2b5a37" }
+    progress:
+      kind: none
+  - id: "usa-australia"
+    label: "USA, Australia"
+    region: us
+    hash: { sha1: "f8dc38ea20c17541a43b58c5e6d18c1732c7e582" }
+    progress:
+      kind: none

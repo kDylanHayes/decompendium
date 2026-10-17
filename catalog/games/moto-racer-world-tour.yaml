@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "moto-racer-world-tour"
+name: "Moto Racer World Tour"
+platform: ps1

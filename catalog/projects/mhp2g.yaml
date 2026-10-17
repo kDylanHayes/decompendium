@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/project.schema.json
+id: "mhp2g"
+name: "Monster Hunter Portable 2nd G decompilation"
+game: "monster-hunter-portable-2nd-g"
+repo: https://github.com/tclamb/mhp2g-decomp
+description: "Matching decompilation of Monster Hunter Portable 2nd G."
+owners: [tclamb]  # repo owner; maintainers can replace this with their usernames
+confirmed: false
+listed_at: 2026-10-17
+targets:
+  - id: "uljm-05500"
+    label: "ULJM-05500"
+    hash: { sha1: "18b948c992e93517b325fa0bd0d9a3d787c1a2e4" }
+    progress:
+      kind: objdiff
+      source: { type: github-artifact, artifact: ULJM_05500_report, path: report.json }

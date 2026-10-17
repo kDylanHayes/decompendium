@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "dino-crisis-2"
+name: "Dino Crisis 2"
+platform: ps1

@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "paperboy"
+name: "Paperboy"
+platform: n64

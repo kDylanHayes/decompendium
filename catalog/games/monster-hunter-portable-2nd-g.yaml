@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../schema/game.schema.json
+id: "monster-hunter-portable-2nd-g"
+name: "Monster Hunter Portable 2nd G"
+platform: psp
